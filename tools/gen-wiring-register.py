@@ -2,6 +2,12 @@
 """Generate as-built/wiring-register.md from as-built/wiring.csv.
 
 wiring.csv is the source of truth. Never hand-edit the generated markdown.
+
+WHAT BELONGS HERE: circuits that differ from the FSM wiring diagrams. A part
+that is merely aftermarket but mimics OEM electrically is a part, not a
+deviation - it belongs in parts.csv only. Keeping non-deviations out is what
+makes this document mean something.
+
 Pin-level rows (connector/pin/wire filled in) are what a next owner actually
 needs; rows without them are system-level notes.
 """

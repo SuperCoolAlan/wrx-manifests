@@ -7,9 +7,9 @@
 > supersedes those diagrams for every circuit listed. Where a circuit is *not* listed,
 > the FSM diagram still applies.
 
-**17 recorded deviations** · ✅ confirmed · ⚠️ needs verification
+**16 recorded deviations** · ✅ confirmed · ⚠️ needs verification
 
-**Pin-level detail recorded for 0 of 17 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
+**Pin-level detail recorded for 0 of 16 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
 
 ---
 
@@ -31,8 +31,6 @@
 | ✅ | Wideband | — | **added** | Link CAN Lambda 125-1000 in the POST-TURBO bung | Replaces both factory O2 circuits |
 | | | | | Rear O2 deleted; catless | |
 | ✅ | DBW pedal | — | **added** | Subaru 36010FE020 pedal on an iWire DBW pedal adapter plate | 2004 chassis did not have drive-by-wire |
-| ⚠️ | Crank position sensor | — | **replaced** | New non-OEM sensor |  |
-| | | | | Brand/PN not recorded | |
 
 ## Fuel system
 
@@ -83,6 +81,5 @@
 
 - [ ] **Flex fuel sensor** — Not yet installed - see CPU-57
 - [ ] **VSS** — Verify against the cluster at commissioning
-- [ ] **Crank position sensor** — Brand/PN not recorded
 - [ ] **Boost control** — Confirm Link output frequency with the tuner
 

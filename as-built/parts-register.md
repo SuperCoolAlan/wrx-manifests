@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**99 parts** — 73 installed · 17 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing
+**100 parts** — 73 installed · 18 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing
 
 ---
 
@@ -94,6 +94,8 @@
 | ✅ | Alternator | Michael Singer 200A / 220A peak - 128.5mm Denso hairpin 6-phase | OEM 90A 23700AA430 | *[to-buy]* DECIDED 2026-08-20. Denso case direct replacement for 23700AA430. 150A IDLE output. 14.8V regulator - specced by Singer knowing battery is Interstate MTX-35 AGM. Supersedes DC Power 180A and JS 250A. Confirm pulley with builder for belt sizing |
 | ✅ | Battery | Interstate MTX-35 AGM Group 35 | OEM battery | ENGINE BAY - OEM LOCATION (corrected 2026-08-20; was wrongly recorded as relocated to rear) |
 | ✅ | Battery tray | Custom 3D print ASA | OEM tray 82122AA031/032 | Engine bay. Cavity 236x182mm. Integrated platform for 2x Blue Sea 5001 MEGA fuse holders. Retains stock J-hook strap clamp |
+| ✅ | Belt - A/C | Bando or Mitsuboshi 4PK895 (352K4) | OEM belt | *[to-buy]* REAR belt (crank > A/C > idler). 4 ribs 895mm. Subaru OEM equiv 73323AC000. Tension 350-450 N |
+| ✅ | Belt - alternator + power steering | Bando or Mitsuboshi 5PK875 (344K5) | OEM belt | *[to-buy]* FRONT belt. 5 ribs 875mm. Gates equiv K050345. Tension 490-640 N. Alternator is its own tensioner |
 | ✅ | Big 3 wiring upgrade | Knukonceptz / Stinger / Sky High 1/0 AWG OFC 3-cable kit | OEM charging cables | *[to-buy]*  |
 | ✅ | DBW pedal | Subaru 36010FE020 |  | 05 STi drive-by-wire |
 | ✅ | DCCD controller | iWire Spiider | OEM DCCD control | Functional test needed at commissioning |
@@ -110,7 +112,6 @@
 | ⚠️ | MAF sensor | Hitachi OE / Subaru OEM 22680AA380 / 22680AA38A |  | *[to-buy]* RETAINED for IAT element in speed density mode - verify exact PN |
 | ✅ | MAP sensor | Omni Power MAP-STI-4BR | OEM 2.5-bar Denso | 4-bar; cal 11.97 psia/V +0.506 offset |
 | ✅ | Oil pressure sensor | Prosport 0-100 PSI 1/8in NPT 0.5-4.5V | OEM switch | 24in hose w/ M18x1.5 galley adapter - confirms galley + header bung thread |
-| ✅ | Serpentine belt | Gates / Goodyear / Subaru OEM TBD per fitment | OEM belt | *[to-buy]* Size to the actual pulley combination |
 | ✅ | Spark plugs | NGK ILTR7L8R | OEM plugs | One heat range colder for E85 at 500whp |
 | ✅ | VSS | iWire VSS Pro |  | Speedo correction for 6MT |
 | ✅ | Wideband | Link CAN Lambda | OEM front O2 | *[to-buy]* Post-turbo bung |

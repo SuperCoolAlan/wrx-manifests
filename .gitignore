@@ -1,0 +1,47 @@
+# ── Personal / sensitive — NEVER commit ──────────────────────
+# Once in git history these are permanent, even if deleted later.
+oklahoma-title.jpg
+*title*.jpg
+*title*.jpeg
+*title*.png
+Verification of Insurance.pdf
+*Insurance*.pdf
+708-D Demonstration of Support or Affiliation Plate.pdf
+*Receipt*.pdf
+*receipt*.pdf
+Receipts/
+
+# ── Large binaries — keep the repo about the documentation ───
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.gif
+*.zip
+*.stl
+*.3mf
+*.step
+*.f3d
+*.mp4
+*.mov
+
+# ── Spreadsheets: superseded by markdown, kept on disk only ──
+*.xlsx
+*.xls
+*.csv
+
+# ── Bulk asset folders ──────────────────────────────────────
+eBay/
+3D Prints/
+wrx-tgv/
+hammond/
+Rock Auto returns/
+APS 725 FMIC/
+valve_shim_ebay_listing/
+
+# ── OS / editor cruft ───────────────────────────────────────
+.DS_Store
+._*
+.claude/

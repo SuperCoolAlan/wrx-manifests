@@ -13,23 +13,23 @@ WBG=(.99,.96,.90); WINK=(.55,.33,.05)
 
 # system, product, spec/PN, OEM capacity (STi 6MT column), actual/notes
 ROWS=[
- ("ENGINE OIL — break-in","Motul Break-In 10W-40","108080 (1L)","4.3 L / 4.5 qt*","* OEM w/ filter. IAG PAN CHANGES THIS — MEASURE"),
+ ("ENGINE OIL — break-in","Motul Break-In 10W-40","108080 (1L)","4.3 L / 4.5 qt*","* OEM figure w/ filter. IAG pan changes it - MEASURE"),
  ("ENGINE OIL — synthetic","Motul 300V Competition 5W-40","110817 (2L) x3","4.3 L / 4.5 qt*","From 750 mi. HTHS 4.0. OCI 1200-1500 mi on E85"),
  ("COOLANT","Asian-formula, green pref.","phosphate, silicate-free","7.7 L / 8.1 qt","2 gal concentrate + 2 gal DISTILLED, 50/50"),
  ("TRANSMISSION 6MT","Motul Gear 300 75W-90","105777 (1L)","4.1 L / 4.3 qt","Shares sump with FRONT DIFF + DCCD"),
  ("REAR DIFF R180","Motul Gear 300 75W-90","105777 (1L)","1.0 L / 1.1 qt","STi column. Torsen - NO friction modifier"),
- ("BRAKE FLUID","ATE Typ 200 (DOT 4)","2 x 1L","~1.1-1.3 L total","536F dry / 392F wet. Covers clutch too"),
- ("CLUTCH FLUID","ATE Typ 200 (DOT 4)","same as brakes","incl. above","SEPARATE CIRCUIT - own bleed. Never DOT 5"),
+ ("BRAKE FLUID","ATE Typ 200 (DOT 4)","DOT 4","500 mL / 16.9 fl oz","Entire brake system, per FSM. Reservoir 205 cm3"),
+ ("CLUTCH FLUID","ATE Typ 200 (DOT 4)","DOT 4 - same fluid","70 mL / 2.4 fl oz","Total clutch system, per FSM. SEPARATE CIRCUIT, own bleed"),
  ("POWER STEERING","Any Dexron III ATF","1 qt","0.7 L / 0.7 qt","Subaru PS spec is Dexron ATF"),
 ]
 
-FLAGS=["ENGINE OIL CAPACITY IS UNKNOWN. The IAG pan changes it from the 4.3 L OEM figure.",
- "   Fill to the dipstick, measure what actually went in, and write it here.",
- "GEAR OIL QUANTITY IS TIGHT. 4.1 L trans + 1.0 L rear = 5.1 L needed; 5 x 1L ordered.",
- "   Buy a 6th litre. Fill to the level plug, not to a volume.",
- "R180 IS 1.0 L, NOT 0.8 L. The 0.8 figure is the non-STi column (R160).",
+FLAGS=["ENGINE OIL CAPACITY IS NOT THE OEM FIGURE. The IAG pan changes it.",
+ "   Fill to the dipstick, measure what goes in, and write the real number here: ______",
+ "GEAR OIL: 4.1 L trans + 1.0 L rear = 5.1 L TOTAL. Fill to the level plug, not a volume.",
+ "R180 IS 1.0 L, NOT 0.8 L. The 0.8 figure is the non-STi column - that is the R160.",
  "COOLANT: 1 gal concentrate + 1 gal distilled = 8 qt of mix for an 8.1 qt system.",
- "   That is why the plan is 2 gal + 2 gal - no margin otherwise for ECFT burping."]
+ "   Buy 2 gal + 2 gal - otherwise there is no margin for ECFT burping or spills.",
+ "BRAKE + CLUTCH ARE SEPARATE CIRCUITS. Same fluid, two bleeds. Never DOT 5."]
 
 CAPNOTE=("Radiator caps","Mishimoto radiator ships TWO 1.3 bar caps: ONE-WAY on the radiator, TWO-WAY on the ECFT. "
           "They are NOT interchangeable - fitting them backwards stops the system drawing coolant back on "

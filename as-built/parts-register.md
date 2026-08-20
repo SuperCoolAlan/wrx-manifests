@@ -49,7 +49,7 @@
 | ✅ | Valve retainers | Cosworth PR7561 | OEM retainers | Titanium. Note: mixed with Manley springs - confirm they were fitted as a matched combination |
 | ✅ | Valve springs | Manley 22180-16 | OEM springs | Spring seats machined deeper to accept them |
 | ❓ | Valve stem seals | UNKNOWN | OEM | Replaced during build? Not recorded |
-| ⚠️ | Valves | Oversized - brand TBD | OEM valves | OVERSIZED. Intake/exhaust sizes and material NOT RECORDED |
+| ⚠️ | Valves | Oversized - brand TBD | OEM valves | OVERSIZED - believed +1mm (Alan 2026-08-20 - RECOLLECTION NOT CONFIRMED). +1mm is a common EJ oversize so plausible. Intake/exhaust split and material not recorded. Sources to confirm: the heads for-sale thread / Cosworth published spec for V25 heads / calipers if a head comes apart |
 
 ## Oiling · Binder TAB 2
 
@@ -213,7 +213,7 @@
 - [ ] ⚠️ **AFR gauge** (ecu-electrical) — Separate from CAN Lambda
 - [ ] ⚠️ **Fuel pressure sensor** (ecu-electrical) — Single-function NOT Bosch combined
 - [ ] ⚠️ **MAF sensor** (ecu-electrical) — RETAINED for IAT element in speed density mode - verify exact PN
-- [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED. Intake/exhaust sizes and material NOT RECORDED
+- [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (Alan 2026-08-20 - RECOLLECTION NOT CONFIRMED). +1mm is a common EJ oversize so plausible. Intake/exhaust split and material not recorded. Sources to confirm: the heads for-sale thread / Cosworth published spec for V25 heads / calipers if a head comes apart
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **Radiator hoses** (engine-lower) — Already owned
 - [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters

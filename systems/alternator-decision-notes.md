@@ -1,4 +1,28 @@
-# Alternator Sizing Decision — REOPENED 2026-05-30
+# Alternator Sizing Decision — ✅ RESOLVED 2026-08-20
+
+> ## ✅ FINAL: 200A / 220A peak, custom builder, $449
+>
+> | Spec | Value |
+> |---|---|
+> | Rated output | **200A** (220A peak) |
+> | **Idle output** | **150A** |
+> | Case | **128.5mm Denso hairpin style, 6-phase** |
+> | Regulator | **14.8V** (stock ≈ 14.4V) |
+> | Fitment | **Factory location replacement** |
+> | Price | **$449** |
+>
+> Supersedes **both** options in the matrix below — neither DC Power 180A HP ($640) nor JS Alternators 250A. Builder also offered a 180A / 200A-peak variant at $429; the 200A was taken for $20 more.
+>
+> ### Open verifications
+> - [ ] **Pulley diameter + groove count** — ask the builder. Sole variable deciding whether OEM belt sizing works. Factory location means OEM mounting geometry, and the alternator is its own tensioner on the front belt, so a matching pulley means OEM belt length with adjuster range to spare.
+> - [ ] **Battery max charge voltage vs 14.8V.** AGMs typically want 14.4-14.7V absorb; sustained overvoltage accelerates aging, and flooded types gas and lose water. Battery is relocated to the cargo area where symptoms are less visible.
+> - [ ] **Fusing.** Going from a 90A OEM core to 200A/220A peak. Big 3 upgrade now mandatory rather than advisory, and **the charge wire needs a fuse at the battery end** — a long unprotected high-current run through the cabin is the main fire risk in a relocated-battery setup. Confirm existing fusing is not still sized for the stock 90A alternator.
+>
+> ---
+>
+> *Everything below is the historical decision process, retained for reference.*
+
+## Historical — decision was REOPENED 2026-05-30
 
 **Status:** 🟢 ACTIVE — All American confirmed (2026-05-30) they don't offer Mitsubishi rewinds. Local rewind path is dead. Decision now between aftermarket-only options. Default pick: **JS Alternators 250A ($519)** unless a better-vetted alternative surfaces.
 **Date last updated:** 2026-05-30

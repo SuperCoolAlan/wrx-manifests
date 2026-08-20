@@ -91,7 +91,7 @@
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | AFR gauge | Innovate MTX-L |  | Separate from CAN Lambda |
-| ✅ | Alternator | DC Power Inc 180A HP | OEM alternator | *[to-buy]* High output for 04-07 WRX/STI EJ 2.5L |
+| ✅ | Alternator | Custom builder 200A / 220A peak - 128.5mm Denso hairpin 6-phase | OEM 90A 23700AA430 | *[to-buy]* DECIDED 2026-08-20. Factory-location replacement. 150A IDLE output. Includes 14.8V regulator. Supersedes both DC Power 180A and JS Alternators 250A. VERIFY pulley diameter + groove count with builder for belt sizing. VERIFY battery max charge voltage suits 14.8V |
 | ✅ | Battery relocation | Custom 3D-printed tray | Stock location | Cavity 236x182mm |
 | ✅ | Big 3 wiring upgrade | Knukonceptz / Stinger / Sky High 1/0 AWG OFC 3-cable kit | OEM charging cables | *[to-buy]*  |
 | ✅ | DBW pedal | Subaru 36010FE020 |  | 05 STi drive-by-wire |

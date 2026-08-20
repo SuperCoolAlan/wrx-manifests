@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**105 parts** — 75 installed · 19 to-buy · 2 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
+**111 parts** — 81 installed · 19 to-buy · 2 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
 
 ---
 
@@ -39,8 +39,14 @@
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | Camshafts | Subaru OEM |  | Stage 2 considered not fitted |
+| ✅ | Cylinder heads | Cosworth | OEM heads | **FSM: Head/valvetrain FSM section governed by casting - STILL UNRESOLVED** · COSWORTH HEADS. Ported and polished; flows matched between banks; milled to allow larger cams |
+| ✅ | Head gaskets | Subaru OEM | OEM | OEM head gaskets. Sound pairing with ARP studs - factory multi-layer gaskets are well regarded and the studs provide the clamp |
+| ✅ | Head machining - valve spring seats |  | OEM seats | VALVE SPRING SEATS MODIFIED (deeper) to accept taller Manley springs and allow more lift. DECK SURFACE NOT MILLED - so compression stays at the 8.5:1 from the Manley dish pistons and cam timing geometry is unchanged |
+| ✅ | Head porting | Cosworth Port + polish + flow matched | OEM ports | Flows matched between banks. Shop/who performed NOT RECORDED |
+| ✅ | Head studs | ARP | OEM TTY head bolts | ARP STUDS CONFIRMED 2026-08-20. Resolves the main reliability concern at 500whp on E85 - OEM TTY bolts are the known weak point for head lift. Exact ARP kit PN not recorded |
 | ✅ | Valve springs + retainers | Manley 22180-16 | OEM springs | Titanium retainers |
-| ❓ | Valves | Cosworth UNKNOWN | OEM valves | PN not recorded |
+| ❓ | Valve stem seals | UNKNOWN | OEM | Replaced during build? Not recorded |
+| ⚠️ | Valves | Oversized - brand TBD | OEM valves | OVERSIZED. Intake/exhaust sizes and material NOT RECORDED |
 
 ## Oiling · Binder TAB 2
 
@@ -71,7 +77,7 @@
 | ❓ | Gasket - turbo to downpipe | TBD | OEM gasket | *[verify-existing]* NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing |
 | ✅ | Header | Perrin Equal Length | OEM manifold | 304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons |
 | ✅ | Intercooler | APS D/R 725 FMIC | OEM TMIC | **FSM: IN TMIC content void; hood scoop freed** · Core 28x9.5x4.5 bar-and-plate |
-| ✅ | TGV | DELETED | OEM TGVs | **FSM: IN TGV content void** · Used |
+| ✅ | TGV deletes | IAG | OEM TGVs | **FSM: IN TGV content void** · IAG TGV deletes. Bought used. Holes drilled slightly to bolt to the intake manifold |
 | ✅ | Turbo inlet | Forced Performance FP 8005010A 84mm | OEM inlet | 84mm silicone; fits FP 84mm FAP cover; has recirc return bung + Mishimoto BPV recirc hose |
 | ✅ | Turbocharger | Forced Performance FP STi Red HTZ R690701874 | OEM VF-series | USED. HTZ variant - older proven design w/ journal-bearing option; CONFIRM bearing type for oil restrictor sizing |
 | ✅ | Uppipe | PLM 38mm EWG | OEM uppipe | Bundle price with wastegate; 2-bolt flange matches Perrin collector |
@@ -192,7 +198,7 @@
 
 ## Open items — needs confirmation
 
-- [ ] ❓ **Valves** (engine-heads) — PN not recorded
+- [ ] ❓ **Valve stem seals** (engine-heads) — Replaced during build? Not recorded
 - [ ] ❓ **Coolant hose kit** (engine-lower) — Covers Modine + turbo coolant hoses - confirm whether owned
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
 - [ ] ❓ **BOV adapter** (induction) — Sheet says not needed if going bung-to-hose direct - depends on final BOV choice
@@ -204,6 +210,7 @@
 - [ ] ⚠️ **AFR gauge** (ecu-electrical) — Separate from CAN Lambda
 - [ ] ⚠️ **Fuel pressure sensor** (ecu-electrical) — Single-function NOT Bosch combined
 - [ ] ⚠️ **MAF sensor** (ecu-electrical) — RETAINED for IAT element in speed density mode - verify exact PN
+- [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED. Intake/exhaust sizes and material NOT RECORDED
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **Radiator hoses** (engine-lower) — Already owned
 - [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters

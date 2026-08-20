@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**65 parts** — 55 installed · 4 to-buy · 2 sell · 1 undecided · 1 fabricate · 1 planned · 1 spare
+**78 parts** — 67 installed · 5 to-buy · 2 sell · 1 undecided · 1 fabricate · 1 planned · 1 spare
 
 ---
 
@@ -17,6 +17,7 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
+| ✅ | Crank + cam seals | Subaru OEM | OEM | Crank seal + 4 cam seals |
 | ✅ | Crankshaft | Subaru OEM 12200AA430 | OEM WRX crank | Nitride-treated STi |
 | ⚠️ | Harmonic damper | Fluidampr 531101 | OEM crank pulley | *[to-buy]* Supersedes Perrin lightweight pulley; internally balanced |
 | ✅ | Main bearings | King STDX | OEM | Mains fine-tuned by mixing shell halves; see as-built-engine-specs.md |
@@ -24,6 +25,8 @@
 | ✅ | Pistons | Manley 612000C-4 | OEM pistons | EJ257 99.75mm std stroke std bore 8.5:1 dish |
 | ✅ | Rod bearings | King STD | OEM | Ran STD rod bearings |
 | ✅ | Rods | Manley 15024-4 H-Tuff | OEM rods |  |
+| ✅ | Timing belt kit | Cosworth / RCM High Grip tensioner + Cosworth belt | OEM timing kit | Kevlar belt 300pct stronger than OE |
+| ✅ | Water pump + thermostat | Roger Clark Motorsport Black Series 3-Port | OEM water pump/thermostat | Cast impeller + 70C low-temp thermostat; 3-Port USDM manual |
 
 ## Engine — Heads & Valvetrain · Binder TAB 2
 
@@ -37,9 +40,13 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
+| ⚠️ | AVCS oil feed lines | Subaru OEM | OEM | *[to-buy]* Driver side ordered; passenger side TBD - OEM or HEL braided |
 | ✅ | Air-oil separator | IAG AOS | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · Cap PCV portions of 21141AA131 |
+| ✅ | Oil dipstick tube | Subaru OEM STI/J3 |  | Tube only - verify dipstick rod separately |
 | ✅ | Oil pan | IAG | OEM pan | **FSM: Changes oil capacity - measure and record** |
+| ✅ | Oil pickup tube | IAG | Moroso unit | Moroso didn't fit the IAG pan |
 | ✅ | Oil pressure sender | remote | OEM switch location | Firewall mounted 2026-08-20; torque 25 Nm; THREE BOND 1324 |
+| ✅ | Turbo oil supply line | Forced Performance FP Turbo Oil Supply Line - EJ | OEM feed line | Stainless braided; brand-matched to FP Red |
 
 ## Turbo · Induction · Exhaust · Binder TAB 3
 
@@ -47,10 +54,10 @@
 |:-:|---|---|---|---|
 | ❓ | Blow-off valve | UNDECIDED | OEM BPV | *[undecided]* Kit shipped w Turbosmart Race Port VTA - presence unconfirmed; see Linear CPU-36 |
 | ✅ | Header | Perrin Equal Length | OEM manifold | 304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons |
-| ⚠️ | Intake | AEM Fender intake | OEM airbox |  |
+| ✅ | Intake | AEM 21-477 / 21-477C | OEM airbox | Cold air intake 02-07 WRX/STI - verify exact PN |
 | ✅ | Intercooler | APS D/R 725 FMIC | OEM TMIC | **FSM: IN TMIC content void; hood scoop freed** · Core 28x9.5x4.5 bar-and-plate |
 | ✅ | TGV | DELETED | OEM TGVs | **FSM: IN TGV content void** · Used |
-| ✅ | Turbo inlet | Oversized | OEM inlet | Has recirc return bung |
+| ✅ | Turbo inlet | Forced Performance FP 8005010A 84mm | OEM inlet | 84mm silicone; fits FP 84mm FAP cover; has recirc return bung + Mishimoto BPV recirc hose |
 | ✅ | Turbocharger | Forced Performance FP Red | OEM VF-series | Journal vs ball bearing UNKNOWN - affects oil restrictor sizing |
 | ✅ | Uppipe | PLM 38mm EWG | OEM uppipe | Bundle price with wastegate; 2-bolt flange matches Perrin collector |
 | ✅ | Wastegate | TiAL MVS 38mm | OEM internal WG | Spring pressure UNKNOWN - record when fitted |
@@ -61,11 +68,13 @@
 |:-:|---|---|---|---|
 | ✅ | FPR / flex bracket | Custom | Washer bottle location | *[fabricate]* Washer system deleted |
 | ✅ | Flex fuel sensor |  | n/a new capability | *[to-buy]* Bench-tested; mounts on new FPR bracket |
+| ✅ | Fuel filter | DeatschWerks 8-03-110-010K-6 | OEM filter | 10 micron; -6AN ports (NOT -010K-8) |
 | ✅ | Fuel lines | Red Horse 235 series -6AN 15ft | OEM hard/soft lines | *[to-buy]* ECO+FKM E85-safe liner; SS under-braid + nylon jacket |
 | ✅ | Fuel pressure regulator | Aeromotive 15633 | OEM FPR | Plus Aeromotive gauge 40.90 |
-| ✅ | Fuel pump | DeatschWerks | OEM pump | **FSM: FU pump content void; FPCM bypassed** · See fuel-pump-isolator-notes.md |
+| ✅ | Fuel pump | DeatschWerks DW400 9-401-1041 | OEM pump | **FSM: FU pump content void; FPCM bypassed** · 415 LPH BRUSHED motor (not brushless); see fuel-pump-isolator-notes.md |
+| ✅ | Fuel pump hardwire kit | DeatschWerks FPHWK-10-HD | OEM pump wiring | High-current 10 AWG heavy duty relay kit battery-direct |
 | ⚠️ | Fuel rails | Aeromotive | OEM rails | CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters |
-| ❓ | Injectors | UNKNOWN | OEM injectors | Installed - brand and size not recorded |
+| ✅ | Injectors | DeatschWerks DW1500 16M-07-1500-4 | OEM injectors | Set of 4; sized per tuner for 500whp E85 |
 
 ## Engine Management · Electrical · Binder TAB 7
 
@@ -75,12 +84,15 @@
 | ✅ | Battery relocation | Custom 3D-printed tray | Stock location | Cavity 236x182mm |
 | ✅ | DBW pedal | Subaru 36010FE020 |  | 05 STi drive-by-wire |
 | ✅ | DCCD controller | iWire Spiider | OEM DCCD control | Functional test needed at commissioning |
-| ✅ | ECU | Link | OEM ECU 22611AJ242 | **FSM: ALL OEM ECU / OBD-II / immobilizer sections VOID** |
+| ✅ | ECU | Link Engine Management G4X Fury SubaruLink / WRXLink WRX104X 224-4000 | OEM ECU 22611AJ242 | **FSM: ALL OEM ECU / OBD-II / immobilizer sections VOID** · PnP to factory ECU case; quote AS-0001 |
 | ✅ | Engine harness | Subaru 2005 STi | 04 GG body harness | **FSM: WI diagrams do not describe this car** · Merged by iWire |
 | ✅ | Gauge cluster | Subaru 07 STi | 04 WRX cluster | **FSM: Print IDI from 2007 manual not 2004** |
 | ⚠️ | Gauges | Prosport boost/fuel/oil/volt |  |  |
 | ✅ | Harness merge | iWire |  | Includes DCCD Spiider and VSS Pro |
+| ✅ | Ignition coils | NGK | OEM coils | Brand-matched to ILTR7L8R plugs |
 | ✅ | MAP sensor | Omni Power MAP-STI-4BR | OEM 2.5-bar Denso | 4-bar; cal 11.97 psia/V +0.506 offset |
+| ✅ | Oil pressure sensor | Prosport 0-100 PSI 1/8in NPT 0.5-4.5V | OEM switch | 24in hose w/ M18x1.5 galley adapter - confirms galley + header bung thread |
+| ✅ | Spark plugs | NGK ILTR7L8R | OEM plugs | One heat range colder for E85 at 500whp |
 | ✅ | VSS | iWire VSS Pro |  | Speedo correction for 6MT |
 | ✅ | Wideband | Link CAN Lambda | OEM front O2 | *[to-buy]* Post-turbo bung |
 
@@ -94,6 +106,7 @@
 | ⚠️ | Driveshaft | Hybrid 07 STi + wagon | OEM | Assembled from forum research; length and splines verified |
 | ✅ | Engine mounts | Torque Solution | OEM | **FSM: TS torque spec governs over FSM** |
 | ✅ | Flywheel | Subaru Conventional 6MT | 5MT flexible flywheel | Not interchangeable with 5MT |
+| ✅ | Pitch stop mount | Perrin Red N2 polyurethane | OEM pitch stop | Billet body; 90a + 70a bushings |
 | ✅ | Rear differential | Subaru R180 | R160 | Came with trans - ratios match |
 | ✅ | Transmission | Subaru 2011 STi 6MT DCCD | 04 WRX 5MT | **FSM: Trans fluid = 2011 spec NOT 2004** · 97k miles at install; bundle |
 
@@ -149,7 +162,6 @@
 ## Open items — needs confirmation
 
 - [ ] ❓ **Valves** (engine-heads) — PN not recorded
-- [ ] ❓ **Injectors** (fuel) — Installed - brand and size not recorded
 - [ ] ❓ **Blow-off valve** (induction) — Kit shipped w Turbosmart Race Port VTA - presence unconfirmed; see Linear CPU-36
 - [ ] ⚠️ **Clutch** (drivetrain) — Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
 - [ ] ⚠️ **Clutch release fork** (drivetrain) — Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
@@ -159,7 +171,7 @@
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **Harmonic damper** (engine-lower) — Supersedes Perrin lightweight pulley; internally balanced
 - [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
-- [ ] ⚠️ **Intake** (induction) — unverified
+- [ ] ⚠️ **AVCS oil feed lines** (oiling) — Driver side ordered; passenger side TBD - OEM or HEL braided
 - [ ] ⚠️ **Coilovers** (suspension) — PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R
 - [ ] ⚠️ **Front ball joint** (suspension) — Generic GD-era - verify taper seats in STi housing
 

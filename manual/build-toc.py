@@ -60,8 +60,12 @@ VOID=["OEM ECU, OBD-II diagnostics, immobilizer — car runs a Link G4X standalo
  "OEM alternator output specs — Singer 200A/220A with a 14.8V regulator",
  "OEM fluid table and maintenance intervals — all fluids re-specced for track use"]
 
-import sys; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
-from build_manual import TRAPS as _T   # single source of truth, shared with the tab covers
+# build-manual.py is hyphenated, so it cannot be a plain import - load it by path.
+import importlib.util
+_spec = importlib.util.spec_from_file_location(
+    "build_manual", os.path.join(os.path.dirname(os.path.abspath(__file__)), "build-manual.py"))
+_bm = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_bm)
+_T = _bm.TRAPS   # single source of truth, shared with the tab covers
 TRAPS=[t.strip() for tabs,t in _T if not t.startswith("   ")][:9]
 
 c=canvas.Canvas(os.path.join(OUT,"TAB0_CONTENTS.pdf"),pagesize=letter)

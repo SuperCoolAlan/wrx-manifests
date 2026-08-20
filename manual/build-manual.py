@@ -49,7 +49,8 @@ TRAPS = [
 ]
 def traps_for(tab): return [t for tabs,t in TRAPS if tab in tabs]
 
-SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "manuals")
+# FSM sources are large and gitignored; point WRX_FSM_SRC at wherever they live.
+SRC = os.environ.get("WRX_FSM_SRC") or os.path.expanduser("~/Downloads")
 OUT = "/Users/alan/Documents/WRX/manual/print"
 Y4 = "2004 Service Manual/2004 Service Manual/"
 Y5 = "2005 Service Manual/2005 Service Manual/"
@@ -154,30 +155,44 @@ def cover(tabno, title, subtitle, warnings, items, counts):
     c.showPage(); c.save(); buf.seek(0)
     return PdfReader(buf)
 
-os.makedirs(OUT, exist_ok=True)
-grand=0; built=[]
-for tabno,title,subtitle,warnings,items in TABS:
-    readers=[]; counts=[]
-    for label,src,rel in items:
-        path=os.path.join(SRC,rel)
-        if not os.path.exists(path):
-            print(f"  !! MISSING {rel}"); continue
-        r=PdfReader(path); readers.append((label,src,r)); counts.append(len(r.pages))
-    w=PdfWriter()
-    cv=cover(tabno,title,subtitle,traps_for(tabno),[(l,s,None) for l,s,_ in readers],counts)
-    w.append(cv, import_outline=False)
-    w.add_outline_item(f"TAB {tabno} — {title}", 0)
-    pos=1
-    for (label,src,r),n in zip(readers,counts):
-        w.append(r, import_outline=False)
-        w.add_outline_item(f"{label}  ({src})", pos)
-        pos+=n
-        if n % 2 == 1:            # pad so next section starts right-hand when duplexed
-            w.add_blank_page(); pos+=1
-    slug=title.replace(" / ","-").replace("/","-").replace(" — ","-").replace(" ","-").replace("+","").replace("--","-").strip("-")
-    fn=os.path.join(OUT,f"TAB{tabno}_{slug}.pdf")
-    with open(fn,"wb") as f: w.write(f)
-    total=len(PdfReader(fn).pages); grand+=total
-    built.append((fn,total,os.path.getsize(fn)))
-    print(f"  TAB {tabno}  {total:4} pp  {os.path.getsize(fn)/1e6:6.1f} MB  {os.path.basename(fn)}")
-print(f"\nTOTAL {grand} pages across {len(built)} files")
+def main():
+    os.makedirs(OUT, exist_ok=True)
+
+    # Preflight: a missing year root silently drops whole tabs, so say so up front.
+    _want = sorted({rel.split("/")[0] for _,_,_,_,items in TABS for _,_,rel in items})
+    _missing = [d for d in _want if not os.path.isdir(os.path.join(SRC, d))]
+    if _missing:
+        print(f"FSM source root: {SRC}")
+        for d in _missing: print(f"  !! MISSING SOURCE ROOT: {d}")
+        print("  Tabs drawing on these will be incomplete. Set WRX_FSM_SRC to the folder holding them.\n")
+
+    grand=0; built=[]
+    for tabno,title,subtitle,warnings,items in TABS:
+        readers=[]; counts=[]
+        for label,src,rel in items:
+            path=os.path.join(SRC,rel)
+            if not os.path.exists(path):
+                print(f"  !! MISSING {rel}"); continue
+            r=PdfReader(path); readers.append((label,src,r)); counts.append(len(r.pages))
+        w=PdfWriter()
+        cv=cover(tabno,title,subtitle,traps_for(tabno),[(l,s,None) for l,s,_ in readers],counts)
+        w.append(cv, import_outline=False)
+        w.add_outline_item(f"TAB {tabno} — {title}", 0)
+        pos=1
+        for (label,src,r),n in zip(readers,counts):
+            w.append(r, import_outline=False)
+            w.add_outline_item(f"{label}  ({src})", pos)
+            pos+=n
+            if n % 2 == 1:            # pad so next section starts right-hand when duplexed
+                w.add_blank_page(); pos+=1
+        slug=title.replace(" / ","-").replace("/","-").replace(" — ","-").replace(" ","-").replace("+","").replace("--","-").strip("-")
+        fn=os.path.join(OUT,f"TAB{tabno}_{slug}.pdf")
+        with open(fn,"wb") as f: w.write(f)
+        total=len(PdfReader(fn).pages); grand+=total
+        built.append((fn,total,os.path.getsize(fn)))
+        print(f"  TAB {tabno}  {total:4} pp  {os.path.getsize(fn)/1e6:6.1f} MB  {os.path.basename(fn)}")
+    print(f"\nTOTAL {grand} pages across {len(built)} files")
+
+
+if __name__ == "__main__":
+    main()

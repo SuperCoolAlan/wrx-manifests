@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**185 parts** — 143 installed · 19 to-buy · 10 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**186 parts** — 144 installed · 19 to-buy · 10 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -209,6 +209,7 @@
 |:-:|---|---|---|---|
 | ✅ | Brake cover disk (dust shield) | Subaru OEM 26290FE020 |  | FE prefix = GD-era |
 | ✅ | Brake lines | StopTech Stainless | OEM rubber | Front 59.66 rear 65.55 |
+| ⚠️ | Brake pads | Hawk Performance compound TBD |  | Compound NOT yet identified - PN is printed on the pad backing plate and the box. Fronts are 4-pot, rears 2-pot (2007 WRX Limited) |
 | ✅ | Brembo upgrade | Brembo 04-07 STI | 4/2-pot calipers | *[planned]* GD-era NOT 08-14 - knuckles are 05-07 STi |
 | ✅ | Front calipers | Subaru 2007 WRX Limited 4-pot | 02-05 single-pot slider | **FSM: Print BR from 2007 manual** · Included pads and hardware |
 | ✅ | Front rotors | KNS / DBA KNS4651 | OEM rotors | Std WRX size; enlarged centre bore; dual-drilled 5x100/5x114.3 |
@@ -260,6 +261,7 @@
 | Front calipers (Subaru) | Piston/boot check | brakes |
 | Front rotors (KNS / DBA) | Thickness per event | brakes |
 | Rear rotors (KNS / DBA) | Thickness per event | brakes |
+| Brake pads (Hawk Performance) | Track: inspect every event | brakes |
 | Wideband (Link Engine Management) | Sensor service life | ecu-electrical |
 | Wideband O2 sensor (Bosch) | Sensor service life | ecu-electrical |
 | Oil filters (Wix) | Every oil change | engine-lower |
@@ -286,6 +288,7 @@
 - [ ] ❓ **BOV adapter** (induction) — Sheet says not needed if going bung-to-hose direct - depends on final BOV choice
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
 - [ ] ❓ **Wheel clearance for Brembo upgrade** (suspension) — OPEN: do these wheels clear 326mm 04-07 STi Brembos? Clearing the current ~294mm setup does NOT confirm it. 32mm larger rotor and barrel shape matters as much as diameter - many 17in OEM wheels foul a Brembo caliper. VERIFY BEFORE BUYING CALIPERS
+- [ ] ⚠️ **Brake pads** (brakes) — Compound NOT yet identified - PN is printed on the pad backing plate and the box. Fronts are 4-pot, rears 2-pot (2007 WRX Limited)
 - [ ] ⚠️ **Radiator hoses** (cooling) — Already owned
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
 - [ ] ⚠️ **Front CV axle (new)** (drivetrain) — Mixed new/used/refurb axle set across 2011 trans + R180 + 05-07 STi hubs. Fitment reported OK

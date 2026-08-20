@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**111 parts** — 81 installed · 19 to-buy · 2 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
+**114 parts** — 84 installed · 19 to-buy · 2 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
 
 ---
 
@@ -39,12 +39,15 @@
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | Camshafts | Subaru OEM |  | Stage 2 considered not fitted |
-| ✅ | Cylinder heads | Cosworth | OEM heads | **FSM: Head/valvetrain FSM section governed by casting - STILL UNRESOLVED** · COSWORTH HEADS. Ported and polished; flows matched between banks; milled to allow larger cams |
+| ❓ | Combustion chamber cc matching |  |  | OPEN QUESTION: were chambers cc'd and equalised between the Cosworth head and the ported OEM head? Flow matched does NOT imply chamber matched. Unequal chamber volume = different compression ratio bank to bank = uneven knock threshold. TELL BEN before tuning |
+| ✅ | Cylinder head - one side | Cosworth | OEM head | **FSM: Head/valvetrain FSM section governed by casting - STILL UNRESOLVED** · GENUINE COSWORTH head. Which side (LH/RH) NOT RECORDED |
+| ✅ | Cylinder head - other side | OEM ported to match | OEM head | OEM head PORTED TO MATCH the Cosworth side. This is why flows were matched - it was a matching exercise not a matched pair |
 | ✅ | Head gaskets | Subaru OEM | OEM | OEM head gaskets. Sound pairing with ARP studs - factory multi-layer gaskets are well regarded and the studs provide the clamp |
 | ✅ | Head machining - valve spring seats |  | OEM seats | VALVE SPRING SEATS MODIFIED (deeper) to accept taller Manley springs and allow more lift. DECK SURFACE NOT MILLED - so compression stays at the 8.5:1 from the Manley dish pistons and cam timing geometry is unchanged |
 | ✅ | Head porting | Cosworth Port + polish + flow matched | OEM ports | Flows matched between banks. Shop/who performed NOT RECORDED |
 | ✅ | Head studs | ARP | OEM TTY head bolts | ARP STUDS CONFIRMED 2026-08-20. Resolves the main reliability concern at 500whp on E85 - OEM TTY bolts are the known weak point for head lift. Exact ARP kit PN not recorded |
-| ✅ | Valve springs + retainers | Manley 22180-16 | OEM springs | Titanium retainers |
+| ✅ | Valve retainers | Cosworth PR7561 | OEM retainers | Titanium. Note: mixed with Manley springs - confirm they were fitted as a matched combination |
+| ✅ | Valve springs | Manley 22180-16 | OEM springs | Spring seats machined deeper to accept them |
 | ❓ | Valve stem seals | UNKNOWN | OEM | Replaced during build? Not recorded |
 | ⚠️ | Valves | Oversized - brand TBD | OEM valves | OVERSIZED. Intake/exhaust sizes and material NOT RECORDED |
 
@@ -198,6 +201,7 @@
 
 ## Open items — needs confirmation
 
+- [ ] ❓ **Combustion chamber cc matching** (engine-heads) — OPEN QUESTION: were chambers cc'd and equalised between the Cosworth head and the ported OEM head? Flow matched does NOT imply chamber matched. Unequal chamber volume = different compression ratio bank to bank = uneven knock threshold. TELL BEN before tuning
 - [ ] ❓ **Valve stem seals** (engine-heads) — Replaced during build? Not recorded
 - [ ] ❓ **Coolant hose kit** (engine-lower) — Covers Modine + turbo coolant hoses - confirm whether owned
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36

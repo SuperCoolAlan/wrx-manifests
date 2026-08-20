@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**128 parts** — 96 installed · 20 to-buy · 3 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
+**137 parts** — 106 installed · 18 to-buy · 3 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock · 1 not-fitted
 
 ---
 
@@ -127,24 +127,33 @@
 | ✅ | Belt - A/C | Bando or Mitsuboshi 4PK895 (352K4) | OEM belt | *[to-buy]* REAR belt (crank > A/C > idler). 4 ribs 895mm. Subaru OEM equiv 73323AC000. Tension 350-450 N |
 | ✅ | Belt - alternator + power steering | Bando or Mitsuboshi 5PK875 (344K5) | OEM belt | *[to-buy]* FRONT belt. 5 ribs 875mm. Gates equiv K050345. Tension 490-640 N. Alternator is its own tensioner |
 | ✅ | Big 3 wiring upgrade | Knukonceptz / Stinger / Sky High 1/0 AWG OFC 3-cable kit | OEM charging cables | *[to-buy]*  |
+| ✅ | CRUISE CONTROL | NOT FITTED | OEM cruise control | *[not-fitted]* **FSM: CC sections VOID** · iWire invoice line reads NO CRUISE - deliberately not wired during the harness merge |
 | ✅ | DBW pedal | Subaru 36010FE020 |  | 05 STi drive-by-wire |
-| ✅ | DCCD controller | DCCDPro | OEM DCCD control | **FSM: CS Control Systems describes the FACTORY controller - not this** · DCCDPro aftermarket standalone controller (build sheet called it 'iWire DCCD Spiider' - supplied via iWire with the harness merge). Functional test needed at commissioning |
-| ✅ | ECU | Link Engine Management G4X Fury SubaruLink / WRXLink WRX104X 224-4000 | OEM ECU 22611AJ242 | **FSM: ALL OEM ECU / OBD-II / immobilizer sections VOID** · PnP to factory ECU case; quote AS-0001 |
+| ✅ | DBW pedal adapter plate | iWire |  | Needed to fit the 05 STi DBW pedal to the 04 chassis |
+| ✅ | DCCD G sensor mount | DCCDPro |  | Accelerometer mount for DCCDPro automatic modes - no charge |
+| ✅ | DCCD Spiider PnP kit | iWire w/ STi cluster |  | THE HARNESS KIT connecting the DCCDPro - a separate part from the controller. Source of the 'Spiider' name |
+| ✅ | DCCD cluster jumper | iWire |  | Feeds the factory cluster DCCD display |
+| ✅ | DCCD controller | DCCDPro with cluster output | OEM DCCD control electronics | **FSM: CS Control Systems describes factory control logic - superseded. Mechanical centre diff content still applies** · THE CONTROLLER. RETAINS THE FACTORY DCCD KNOB AND CLUSTER DISPLAY - 'with cluster output' plus the cluster jumper drive the factory readout. Adds automatic G-sensor modes on top. Functional test at commissioning |
+| ✅ | ECU | Link Engine Management WRXLink WRX104X (224-4000) | OEM ECU 22611AJ242 | **FSM: ALL OEM ECU / OBD-II / immobilizer sections VOID** · Per invoice AS-0003 (2026-05-29). Installed INTO THE FACTORY ECU ENCLOSURE. Bench-activated with base map loaded READY TO RUN |
 | ✅ | Engine harness | Subaru 2005 STi | 04 GG body harness | **FSM: WI diagrams do not describe this car** · Merged by iWire |
 | ✅ | Flex fuel QD adapters | Russell / Earl's 3/8in QD to -6AN x2 | n/a new | *[to-buy]*  |
 | ✅ | Flex fuel sensor | Continental PPA-IGF35 / GM 13577429 | n/a new | *[to-buy]* Both labels; ethanol content sensor |
 | ✅ | Flex sensor bracket | DIY 3D-printed ASA black | n/a new | *[fabricate]* M6 brass heat-set inserts |
-| ⚠️ | Fuel pressure sensor | TBD per Ben 0-150 PSI 1/8in NPT 0.5-4.5V | n/a new | *[to-buy]* Single-function NOT Bosch combined |
-| ✅ | Gauge cluster | Subaru 07 STi | 04 WRX cluster | **FSM: Print IDI from 2007 manual not 2004** |
+| ✅ | Gauge cluster | Subaru 07 STi with OAT | 04 WRX cluster | **FSM: Print IDI from 2007 manual not 2004** · 07 STi cluster WITH outside air temp. iWire performed the swap (inv 5304) |
 | ⚠️ | Gauges | Prosport boost/fuel/oil/volt |  |  |
 | ✅ | Harness merge | iWire |  | Includes the DCCD controller and VSS Pro |
 | ✅ | Ignition coils | NGK | OEM coils | Brand-matched to ILTR7L8R plugs |
+| ✅ | Link CAN cable | Link Engine Management CANJST 5-pin 101-0197 |  |  |
+| ✅ | Link XSL expansion loom | Link Engine Management 101-0106 |  | Terminated with a DTM06-8S connector by BW Tuning |
 | ⚠️ | MAF sensor | Hitachi OE / Subaru OEM 22680AA380 / 22680AA38A |  | *[to-buy]* RETAINED for IAT element in speed density mode - verify exact PN |
 | ✅ | MAP sensor | Omni Power MAP-STI-4BR | OEM 2.5-bar Denso | 4-bar; cal 11.97 psia/V +0.506 offset |
 | ✅ | Oil pressure sensor | Prosport 0-100 PSI 1/8in NPT 0.5-4.5V | OEM switch | 24in hose w/ M18x1.5 galley adapter - confirms galley + header bung thread |
+| ✅ | Pressure sensors (x2) | LDM 8990150-0-150 - 0-150 psi standard | n/a new | TWO supplied on invoice AS-0003 - resolves the 'TBD per Ben' entries for BOTH fuel and oil pressure |
 | ✅ | Spark plugs | NGK ILTR7L8R | OEM plugs | One heat range colder for E85 at 500whp |
+| ✅ | TGV-to-pressure-sensor harness (x2) | BW Tuning custom expansion harness |  | Uses the vacated TGV locations for the pressure sensors |
+| ✅ | Turbo-trans to DCCD-trans adapter | iWire |  | No charge |
 | ✅ | VSS | iWire VSS Pro |  | Speedo correction for 6MT |
-| ✅ | Wideband | Link CAN Lambda | OEM front O2 | *[to-buy]* Post-turbo bung |
+| ✅ | Wideband | Link Engine Management CAN Lambda 125-1000 | OEM front O2 | Post-turbo bung |
 | ✅ | Wideband O2 sensor | Bosch LSU 4.9 | OEM front O2 | *[to-buy]* For Link CAN Lambda |
 
 ## Drivetrain · Binder TAB 4
@@ -198,7 +207,7 @@
 | Front calipers (Subaru) | Piston/boot check | brakes |
 | Front rotors (KNS / DBA) | Thickness per event | brakes |
 | Rear rotors (KNS / DBA) | Thickness per event | brakes |
-| Wideband (Link) | Sensor service life | ecu-electrical |
+| Wideband (Link Engine Management) | Sensor service life | ecu-electrical |
 | Wideband O2 sensor (Bosch) | Sensor service life | ecu-electrical |
 | Oil filters (Wix) | Every oil change | engine-lower |
 | Drain plug crush washers (Subaru OEM) | Every oil change | engine-lower |
@@ -231,7 +240,6 @@
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
 - [ ] ⚠️ **Gauges** (ecu-electrical) — unverified
 - [ ] ⚠️ **AFR gauge** (ecu-electrical) — Separate from CAN Lambda
-- [ ] ⚠️ **Fuel pressure sensor** (ecu-electrical) — Single-function NOT Bosch combined
 - [ ] ⚠️ **MAF sensor** (ecu-electrical) — RETAINED for IAT element in speed density mode - verify exact PN
 - [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (recollection
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted

@@ -38,7 +38,7 @@ reference them by basename, and basenames are still unique.
 | `parts.csv` | **Source of truth** for the parts list — 64 rows, 13 columns. Edit here. |
 | `parts-register.md` | **Generated** from `parts.csv`. Every aftermarket part keyed to what it supersedes; doubles as the OEM deviations map. Do not hand-edit. |
 | `as-built-engine-specs.md` | Measured bearing clearances, machining notes, rotating assembly |
-| `hardware-reference.md` | Seal / bushing / axle / fastener / connector part numbers |
+| `hardware-reference.md` | **Merged into `parts.csv`** — stub kept for the historical cost totals |
 
 ### `procedures/` — work to do, in sequence
 | File | Contents |

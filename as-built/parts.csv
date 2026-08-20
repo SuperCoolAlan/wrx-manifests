@@ -32,7 +32,7 @@ induction,3,TGV deletes,IAG,,OEM TGVs,IN TGV content void,installed,confirmed,,1
 induction,3,Cold air intake,AEM,21-474,OEM airbox,,installed,confirmed,,,,PN CORRECTED 2026-08-20 (sheet said 21-477). Listed for 02-05 WRX not STI but TEST FITTED OK. Filter relocates outside engine bay. Mates to FP 84mm inlet via silicone reducing coupler
 induction,3,Turbo inlet,Forced Performance,FP 8005010A 84mm,OEM inlet,,installed,confirmed,,120.00,,84mm silicone; fits FP 84mm FAP cover; has recirc return bung + Mishimoto BPV recirc hose
 fuel,4,Fuel pump,DeatschWerks,DW400 9-401-1041,OEM pump,FU pump content void; FPCM bypassed,installed,confirmed,,,,415 LPH BRUSHED motor (not brushless); see fuel-pump-isolator-notes.md
-fuel,4,Fuel rails,Aeromotive,,OEM rails,,installed,unverified,,,,CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
+fuel,4,Fuel rails,Aeromotive,,OEM rails,,installed,unverified,,,,"CONFLICT: the 20-21 wagon sheet lists an ""Early IAG fuel rail"" but the build otherwise records Aeromotive. ORB-to-AN adapter requirement differs. Confirm by eye at the car BEFORE ordering fittings"
 fuel,4,Fuel pressure regulator,Aeromotive,15633,OEM FPR,,installed,confirmed,,60.00,,Plus Aeromotive gauge 40.90
 fuel,4,Fuel lines,Red Horse,235 series -6AN 15ft,OEM hard/soft lines,,to-buy,confirmed,,,,ECO+FKM E85-safe liner; SS under-braid + nylon jacket
 fuel,4,Injectors,DeatschWerks,DW1500 16M-07-1500-4,OEM injectors,,installed,confirmed,,,,Set of 4; sized per tuner for 500whp E85
@@ -141,9 +141,39 @@ ecu-electrical,7,Coolant temp sensor (ECT),,,,,installed,unverified,,,,NEW. Bran
 engine-heads,2,AVCS solenoids,Subaru OEM (used),,,"SINGLE AVCS - intake only, one per head",installed,unverified,,,,Came with the used V25B heads. UNTESTED - verify cam angle response on first start
 induction,3,Boost control solenoid (EBCS),GrimmSpeed (believed),3-port,,Factory 2-port EBCS content VOID,installed,unverified,,,,3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner
 induction,3,Wastegate spring stack,TiAL,Black + Blue = 1.2 bar / 17.4 psi,,Sets MINIMUM boost - cannot run below this,in-stock,confirmed,,,,QUEUED to install. This is the boost FLOOR. See BOOST FLOOR note - reconsider for break-in
-induction,3,Exhaust manifold studs,Subaru OEM,,,STI exploded view EX(H4DOTC)-4,in-stock,confirmed,Subaru dealership,,,Head-side studs for the Perrin EL header
-induction,3,Exhaust manifold nuts (x6),Subaru OEM,,,T3 = 35 N.m (26 ft-lb) per EX(H4DOTC)-4 STI model,in-stock,confirmed,Subaru dealership,,,Perrin instructions govern if they differ from OEM 35 N.m
+induction,3,Exhaust manifold studs (EXISTING REUSED),Subaru OEM,800910550 (10x41) or 800910680 if ever needed,,STI exploded view EX(H4DOTC)-4,installed,confirmed,Subaru dealership,,,"Existing studs REUSED - none purchased. Two PNs seen for replacements, MEASURE before ordering"
+induction,3,Exhaust manifold nuts (x6),Subaru OEM,902370029,,T3 = 35 N.m (26 ft-lb) per EX(H4DOTC)-4 STI model,in-stock,confirmed,Subaru dealership,,,"Set of 6, acquired 2026-08-20 from dealer. Fits 1997-2025 EJ+FA. Perrin spec governs if it differs from OEM 35 N.m"
 oiling,2,Y breather fitting,Subaru OEM,,,,in-stock,confirmed,Subaru dealership,,,For the IAG AOS install. Fit AFTER the turbo is in - it is in the way otherwise
 ecu-electrical,7,MEGA fuse holders (x2),Blue Sea 5001-style,,,n/a new capability,in-stock,unverified,,,,"Mount on the 3D-printed battery tray fuse platform (108x82mm cantilever, M8 studs). Fuse 1 alternator/Big 3, Fuse 2 audio amp"
 ecu-electrical,7,Fuse - alternator / Big 3 charge cable,,250A,,Protects the 1/0 B+ run - MANDATORY,to-buy,unverified,,,,"NOT in stock. FORM FACTOR CONFLICT: grounding notes say 250-300A ANL, tray was designed for MEGA holders. Tray wins - buy MEGA"
 ecu-electrical,7,Fuse - audio amp power cable,,amperage TBD,,,to-buy,unverified,,,,NOT in stock. Size to the Boss R1100M + RF P400-4 power run. MEGA form factor to match holder
+drivetrain,4,Front CV axle (new),,667360,,,installed,unverified,20-21 wagon sheet,56.79,,Mixed new/used/refurb axle set across 2011 trans + R180 + 05-07 STi hubs. Fitment reported OK
+drivetrain,4,Rear CV axle (new),,667373,,,installed,unverified,20-21 wagon sheet,84.79,,Mixed axle set - fitment reported OK
+drivetrain,4,Front CV axle (refurbished),,PN not recorded,,,installed,unverified,20-21 wagon sheet,,,Refurb unit - brand/PN unknown
+drivetrain,4,Rear CV axle (used),,PN not recorded,,,installed,unverified,20-21 wagon sheet,,,Used unit - brand/PN unknown
+drivetrain,4,Differential CV axle seal,Subaru OEM,806732200,,,installed,confirmed,20-21 wagon sheet,8.96,,Purchased x2
+drivetrain,4,Transmission CV axle seal (A),Subaru OEM,806735300,,,installed,unverified,20-21 wagon sheet,9.50,,TWO different trans CV seal PNs on this build - confirm which side takes which
+drivetrain,4,Transmission CV axle seal (B),Subaru OEM,806735290,,,installed,unverified,20-21 wagon sheet,10.00,,TWO different trans CV seal PNs on this build - confirm which side takes which
+drivetrain,4,Gasket kit,,,,,installed,unverified,20-21 wagon sheet,324.00,,Contents not itemised in the source sheet
+suspension,6,Lateral link bushing,Subaru OEM,20251AA000,,Re-torque at RIDE HEIGHT,installed,confirmed,20-21 wagon sheet,12.58,,
+suspension,6,Steering column bushing,Subaru OEM,34361FC000,,,installed,confirmed,20-21 wagon sheet,7.74,,
+suspension,6,Left rear hub large bolt,Subaru OEM,PN not recorded,,,installed,unverified,20-21 wagon sheet,18.00,,
+suspension,6,Rear hub LH,Subaru,05-07 STi,,,installed,confirmed,eBay,184.32,,
+suspension,6,Rear hub RH,Subaru,05-07 STi,,,installed,confirmed,eBay,233.32,,
+suspension,6,Rear wheel bearing (LH replacement),Duralast,DL516003,,,installed,confirmed,AutoZone,43.00,,
+suspension,6,Rear hub gaskets,,,,,installed,unverified,eBay,21.64,,
+suspension,6,DO NOT ORDER - hub gasket,Subaru,28015AA1108A,,,not-fitted,confirmed,,12.33,,DID NOT FIT. Recorded so it is not reordered
+brakes,5,Brake cover disk (dust shield),Subaru OEM,26290FE020,,,installed,confirmed,20-21 wagon sheet,21.67,,FE prefix = GD-era
+ecu-electrical,7,Gauge harness - header 10pos R/A dual row,TE / Mouser,1-770971-0,,,installed,confirmed,Mouser,9.36,,Custom gauge harness BOM - qty 2
+ecu-electrical,7,Gauge harness - 10P Mini UMNL2 plug,TE / Mouser,794196-1,,,installed,confirmed,Mouser,3.36,,qty 2
+ecu-electrical,7,Gauge harness - pin contact 20-16 AWG,TE / Mouser,794230-1,,,installed,confirmed,Mouser,17.61,,qty 35
+ecu-electrical,7,Gauge harness - socket contact 20-16 AWG,TE / Mouser,794231-1,,,installed,confirmed,Mouser,14.53,,qty 35
+ecu-electrical,7,Gauge harness - micro MNL header single row,TE / Mouser,2-1445055-5,,,installed,confirmed,Mouser,1.67,,qty 1
+ecu-electrical,7,Gauge harness - receptacle single row 5P,TE / Mouser,1445022-5,,,installed,confirmed,Mouser,0.55,,qty 1
+ecu-electrical,7,Gauge harness - header assy 4pos R/A,TE / Mouser,2-1445055-4,,,installed,confirmed,Mouser,1.40,,qty 1
+ecu-electrical,7,Gauge harness - 4pos micro MNL top latch,TE / Mouser,2008571-4,,,installed,confirmed,Mouser,0.30,,"qty 1, black"
+ecu-electrical,7,Gauge harness - wire + PCBs,,16 AWG + XLPE,,,installed,confirmed,,,,"Also used: gauge harness PCBs, driver-side wheel well clips"
+tools,-,Plastigage PL-X 0.018-0.045mm white,,,,,in-stock,confirmed,eBay,15.27,,Bearing clearance check
+tools,-,Piston ring compressor,Company 23,,,,in-stock,confirmed,Defined Performance,49.95,,
+tools,-,Seal puller,,,,,in-stock,confirmed,Harbor Freight,8.50,,
+tools,-,Clutch alignment tool,3D printed,Subaru Clutch Alignment Tool - 267427,,,in-stock,confirmed,Printables,,,In 3D Prints/

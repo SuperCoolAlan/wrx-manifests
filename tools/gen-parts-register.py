@@ -22,12 +22,18 @@ SYSTEMS = [
     ("drivetrain",     "Drivetrain", 4),
     ("brakes",         "Brakes", 5),
     ("suspension",     "Suspension · Chassis", 6),
+    ("tools",          "Assembly Tools (not on the car)", "-"),
 ]
 MARK = {"confirmed": "✅", "unverified": "⚠️", "unknown": "❓"}
 
 def money(v):
     try: return f"${float(v):,.2f}"
     except (ValueError, TypeError): return ""
+
+def num(v):
+    """Costs are sometimes ranges ('80-130') or blank; those don't roll up."""
+    try: return float(v)
+    except (ValueError, TypeError): return 0.0
 
 rows = list(csv.DictReader(open(CSV, encoding="utf-8")))
 by_sys = defaultdict(list)
@@ -59,7 +65,10 @@ w("")
 for key, title, tab in SYSTEMS:
     items = by_sys.get(key, [])
     if not items: continue
-    w(f"## {title} · Binder TAB {tab}")
+    spent = sum(num(r["cost"]) for r in items)
+    head = f"## {title}" + (f" · Binder TAB {tab}" if tab != "-" else "")
+    if spent: head += f" · recorded spend {money(spent)}"
+    w(head)
     w("")
     w("| ✓ | Part | Brand / Model / PN | Supersedes | Notes |")
     w("|:-:|---|---|---|---|")

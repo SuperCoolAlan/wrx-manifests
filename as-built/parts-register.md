@@ -9,11 +9,11 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**148 parts** — 110 installed · 19 to-buy · 7 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 not-fitted
+**178 parts** — 136 installed · 19 to-buy · 10 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
-## Engine — Lower Internals · Binder TAB 2
+## Engine — Lower Internals · Binder TAB 2 · recorded spend $1,953.03
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
@@ -31,7 +31,7 @@
 | ✅ | Rods | Manley 15024-4 H-Tuff | OEM rods |  |
 | ✅ | Timing belt kit | Cosworth / RCM High Grip tensioner + Cosworth belt | OEM timing kit | Kevlar belt 300pct stronger than OE |
 
-## Engine — Heads & Valvetrain · Binder TAB 2
+## Engine — Heads & Valvetrain · Binder TAB 2 · recorded spend $277.18
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
@@ -49,7 +49,7 @@
 | ✅ | Valve stem seals | NEW - brand not recorded | OEM seals | NEW SEALS FITTED FOR THIS BUILD - confirmed 2026-08-20. Brand/PN not recorded (teardown-gated) but the fact they are new is the part that matters |
 | ⚠️ | Valves | Oversized - brand TBD | OEM valves | OVERSIZED - believed +1mm (recollection |
 
-## Oiling · Binder TAB 2
+## Oiling · Binder TAB 2 · recorded spend $98.40
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
@@ -83,7 +83,7 @@
 | ✅ | Upper pipe assembly (Pipe-Water Tank) | Subaru OEM 21141AA131 | OEM 21141AA122 | 06-14 era - matches V25 head PCV port layout. PCV portions to be CAPPED (IAG AOS replaces OEM PCV); only the ECFT-to-bypass coolant passage is used |
 | ✅ | Water pump + thermostat | Roger Clark Motorsport Black Series 3-Port | OEM water pump/thermostat | Cast impeller + 70C low-temp thermostat; 3-Port USDM manual |
 
-## Turbo · Induction · Exhaust · Binder TAB 3
+## Turbo · Induction · Exhaust · Binder TAB 3 · recorded spend $2,301.00
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
@@ -94,8 +94,8 @@
 | ✅ | Cold air intake | AEM 21-474 | OEM airbox | PN CORRECTED 2026-08-20 (sheet said 21-477). Listed for 02-05 WRX not STI but TEST FITTED OK. Filter relocates outside engine bay. Mates to FP 84mm inlet via silicone reducing coupler |
 | ⚠️ | Downpipe | UNKNOWN brand | OEM downpipe | **FSM: EX + EC sections void aft of turbo; no rear O2 / no cat monitoring** · CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection |
 | ✅ | Exhaust gaskets - most joints | Subaru OEM / aftermarket | OEM gaskets | *[in-stock]* IN STOCK 2026-08-20: header-to-head / header-to-uppipe / uppipe-to-turbo / downpipe-to-midpipe |
-| ✅ | Exhaust manifold nuts (x6) | Subaru OEM |  | *[in-stock]* **FSM: T3 = 35 N.m (26 ft-lb) per EX(H4DOTC)-4 STI model** · Perrin instructions govern if they differ from OEM 35 N.m |
-| ✅ | Exhaust manifold studs | Subaru OEM |  | *[in-stock]* **FSM: STI exploded view EX(H4DOTC)-4** · Head-side studs for the Perrin EL header |
+| ✅ | Exhaust manifold nuts (x6) | Subaru OEM 902370029 |  | *[in-stock]* **FSM: T3 = 35 N.m (26 ft-lb) per EX(H4DOTC)-4 STI model** · Set of 6, acquired 2026-08-20 from dealer. Fits 1997-2025 EJ+FA. Perrin spec governs if it differs from OEM 35 N.m |
+| ✅ | Exhaust manifold studs (EXISTING REUSED) | Subaru OEM 800910550 (10x41) or 800910680 if ever needed |  | **FSM: STI exploded view EX(H4DOTC)-4** · Existing studs REUSED - none purchased. Two PNs seen for replacements, MEASURE before ordering |
 | ❓ | Gasket - turbo to downpipe | TBD | OEM gasket | *[verify-existing]* NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing |
 | ✅ | Header | Perrin Equal Length | OEM manifold | 304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons |
 | ✅ | Intercooler | APS D/R 725 FMIC | OEM TMIC | **FSM: IN TMIC content void; hood scoop freed** · Core 28x9.5x4.5 bar-and-plate |
@@ -107,7 +107,7 @@
 | ✅ | Wastegate | TiAL MVS 38mm | OEM internal WG | Spring pressure UNKNOWN - record when fitted |
 | ✅ | Wastegate spring stack | TiAL Black + Blue = 1.2 bar / 17.4 psi |  | *[in-stock]* **FSM: Sets MINIMUM boost - cannot run below this** · QUEUED to install. This is the boost FLOOR. See BOOST FLOOR note - reconsider for break-in |
 
-## Fuel System · Binder TAB 4
+## Fuel System · Binder TAB 4 · recorded spend $60.00
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
@@ -117,10 +117,10 @@
 | ✅ | Fuel pressure regulator | Aeromotive 15633 | OEM FPR | Plus Aeromotive gauge 40.90 |
 | ✅ | Fuel pump | DeatschWerks DW400 9-401-1041 | OEM pump | **FSM: FU pump content void; FPCM bypassed** · 415 LPH BRUSHED motor (not brushless); see fuel-pump-isolator-notes.md |
 | ✅ | Fuel pump hardwire kit | DeatschWerks FPHWK-10-HD | OEM pump wiring | High-current 10 AWG heavy duty relay kit battery-direct |
-| ⚠️ | Fuel rails | Aeromotive | OEM rails | CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters |
+| ⚠️ | Fuel rails | Aeromotive | OEM rails | CONFLICT: the 20-21 wagon sheet lists an "Early IAG fuel rail" but the build otherwise records Aeromotive. ORB-to-AN adapter requirement differs. Confirm by eye at the car BEFORE ordering fittings |
 | ✅ | Injectors | DeatschWerks DW1500 16M-07-1500-4 | OEM injectors | Set of 4; sized per tuner for 500whp E85 |
 
-## Engine Management · Electrical · Binder TAB 7
+## Engine Management · Electrical · Binder TAB 7 · recorded spend $7,840.62
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
@@ -149,6 +149,15 @@
 | ⚠️ | Fuse - alternator / Big 3 charge cable | 250A |  | *[to-buy]* **FSM: Protects the 1/0 B+ run - MANDATORY** · NOT in stock. FORM FACTOR CONFLICT: grounding notes say 250-300A ANL, tray was designed for MEGA holders. Tray wins - buy MEGA |
 | ⚠️ | Fuse - audio amp power cable | amperage TBD |  | *[to-buy]* NOT in stock. Size to the Boss R1100M + RF P400-4 power run. MEGA form factor to match holder |
 | ✅ | Gauge cluster | Subaru 07 STi with OAT | 04 WRX cluster | **FSM: Print IDI from 2007 manual not 2004** · 07 STi cluster WITH outside air temp. iWire performed the swap (inv 5304) |
+| ✅ | Gauge harness - 10P Mini UMNL2 plug | TE / Mouser 794196-1 |  | qty 2 |
+| ✅ | Gauge harness - 4pos micro MNL top latch | TE / Mouser 2008571-4 |  | qty 1, black |
+| ✅ | Gauge harness - header 10pos R/A dual row | TE / Mouser 1-770971-0 |  | Custom gauge harness BOM - qty 2 |
+| ✅ | Gauge harness - header assy 4pos R/A | TE / Mouser 2-1445055-4 |  | qty 1 |
+| ✅ | Gauge harness - micro MNL header single row | TE / Mouser 2-1445055-5 |  | qty 1 |
+| ✅ | Gauge harness - pin contact 20-16 AWG | TE / Mouser 794230-1 |  | qty 35 |
+| ✅ | Gauge harness - receptacle single row 5P | TE / Mouser 1445022-5 |  | qty 1 |
+| ✅ | Gauge harness - socket contact 20-16 AWG | TE / Mouser 794231-1 |  | qty 35 |
+| ✅ | Gauge harness - wire + PCBs | 16 AWG + XLPE |  | Also used: gauge harness PCBs, driver-side wheel well clips |
 | ⚠️ | Gauges | Prosport boost/fuel/oil/volt |  |  |
 | ✅ | Harness merge | iWire |  | Includes the DCCD controller and VSS Pro |
 | ✅ | Ignition coils | NGK | OEM coils | Brand-matched to ILTR7L8R plugs |
@@ -167,24 +176,33 @@
 | ✅ | Wideband | Link Engine Management CAN Lambda 125-1000 | OEM front O2 | Post-turbo bung |
 | ✅ | Wideband O2 sensor | Bosch LSU 4.9 | OEM front O2 | *[to-buy]* For Link CAN Lambda |
 
-## Drivetrain · Binder TAB 4
+## Drivetrain · Binder TAB 4 · recorded spend $4,068.03
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | Clutch | ACT Heavy Duty Performance Street | OEM | Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm |
 | ✅ | Clutch actuation | Subaru 2004 pedal/MC/hard pipe/slave |  | Both pull type 1.7 ratio 130-135mm; fork came with the 2011 6MT so is 6MT spec |
 | ⚠️ | Clutch release fork | Subaru 2011 6MT OEM | 5MT fork | Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job |
+| ✅ | Differential CV axle seal | Subaru OEM 806732200 |  | Purchased x2 |
 | ⚠️ | Driveshaft | Hybrid 07 STi + wagon | OEM | Assembled from forum research; length and splines verified |
 | ✅ | Engine mounts | Torque Solution | OEM | **FSM: TS torque spec governs over FSM** |
 | ✅ | Flywheel | Subaru Conventional 6MT donor | 5MT flexible flywheel | INSTALLED AND COMPLETE confirmed 2026-08-20. OEM 6MT conventional - NOT the ACT/Fidanza/Exedy options still listed on the build sheet. Not interchangeable with 5MT flexible type |
+| ⚠️ | Front CV axle (new) | 667360 |  | Mixed new/used/refurb axle set across 2011 trans + R180 + 05-07 STi hubs. Fitment reported OK |
+| ⚠️ | Front CV axle (refurbished) | PN not recorded |  | Refurb unit - brand/PN unknown |
+| ⚠️ | Gasket kit |  |  | Contents not itemised in the source sheet |
 | ✅ | Pitch stop mount | Perrin Red N2 polyurethane | OEM pitch stop | Billet body; 90a + 70a bushings |
+| ⚠️ | Rear CV axle (new) | 667373 |  | Mixed axle set - fitment reported OK |
+| ⚠️ | Rear CV axle (used) | PN not recorded |  | Used unit - brand/PN unknown |
 | ✅ | Rear differential | Subaru R180 | R160 | Came with trans - ratios match |
 | ✅ | Transmission | Subaru 2011 STi 6MT DCCD | 04 WRX 5MT | **FSM: Trans fluid = 2011 spec NOT 2004** · 97k miles at install; bundle |
+| ⚠️ | Transmission CV axle seal (A) | Subaru OEM 806735300 |  | TWO different trans CV seal PNs on this build - confirm which side takes which |
+| ⚠️ | Transmission CV axle seal (B) | Subaru OEM 806735290 |  | TWO different trans CV seal PNs on this build - confirm which side takes which |
 
-## Brakes · Binder TAB 5
+## Brakes · Binder TAB 5 · recorded spend $526.88
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
+| ✅ | Brake cover disk (dust shield) | Subaru OEM 26290FE020 |  | FE prefix = GD-era |
 | ✅ | Brake lines | StopTech Stainless | OEM rubber | Front 59.66 rear 65.55 |
 | ✅ | Brembo upgrade | Brembo 04-07 STI | 4/2-pot calipers | *[planned]* GD-era NOT 08-14 - knuckles are 05-07 STi |
 | ✅ | Front calipers | Subaru 2007 WRX Limited 4-pot | 02-05 single-pot slider | **FSM: Print BR from 2007 manual** · Included pads and hardware |
@@ -192,22 +210,39 @@
 | ✅ | Rear calipers | Subaru 2007 WRX Limited 2-pot | 02-05 single-pot |  |
 | ✅ | Rear rotors | KNS / DBA KNS4656 | OEM rotors | 06-07 WRX OD with R180 STi parking brake drum |
 
-## Suspension · Chassis · Binder TAB 6
+## Suspension · Chassis · Binder TAB 6 · recorded spend $1,308.13
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | Coilovers | BC Racing BR series | OEM struts/springs | **FSM: OEM strut/spring FSM pages void** · PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R |
+| ✅ | DO NOT ORDER - hub gasket | Subaru 28015AA1108A |  | *[not-fitted]* DID NOT FIT. Recorded so it is not reordered |
 | ⚠️ | Front ball joint | Subaru 20206AJ000 | OEM | Generic GD-era - verify taper seats in STi housing |
 | ✅ | Front knuckles | Subaru 28313FE060 | 04 WRX knuckles | **FSM: Print FS from 2005/2007 not 2004** · 05-07 STi; chosen to preserve GD geometry; gives 5x114.3 |
 | ✅ | Front wheel bearing | Subaru 28373FE000 | OEM |  |
+| ✅ | Lateral link bushing | Subaru OEM 20251AA000 |  | **FSM: Re-torque at RIDE HEIGHT** |
 | ✅ | Lateral links | Subaru Wagon non-STi RETAINED |  | **FSM: Use Wagon/Except-STi torque values** · STi knuckles on wagon links - rear camber NOT factory adjustable |
+| ⚠️ | Left rear hub large bolt | Subaru OEM PN not recorded |  |  |
 | ⚠️ | PS pump rebuild kit | Nelson Seals / Gates FKM Viton kit or Gates 348827 |  | *[to-buy]* Likely needed |
 | ⚠️ | Power steering pump | Subaru OEM 34430-FE040 |  | Multiple pumps on hand - inspect to pick best; same PN across 04-07 turbo EJ |
+| ✅ | Rear hub LH | Subaru 05-07 STi |  |  |
+| ✅ | Rear hub RH | Subaru 05-07 STi |  |  |
+| ⚠️ | Rear hub gaskets |  |  |  |
 | ✅ | Rear knuckles | Subaru 05-07 STi both sides | 04 GG wagon knuckles | L 184.32 R 233.32 |
+| ✅ | Rear wheel bearing (LH replacement) | Duralast DL516003 |  |  |
 | ✅ | Stabilizer bars | Subaru Wagon |  | **FSM: Use Wagon/Except-STi torque values** · Wagon bars confirmed 2026-08-20; front 20mm rear 17mm vs STi 19/20 |
+| ✅ | Steering column bushing | Subaru OEM 34361FC000 |  |  |
 | ⚠️ | Tires | PLACEHOLDER |  | Temporary - Alan: BS tires for now. Size not recorded. NOTE: rolling diameter feeds speedo calibration - recheck VSS/cluster (CPU-71) if tire size changes |
 | ❓ | Wheel clearance for Brembo upgrade |  |  | *[undecided]* OPEN: do these wheels clear 326mm 04-07 STi Brembos? Clearing the current ~294mm setup does NOT confirm it. 32mm larger rotor and barrel shape matters as much as diameter - many 17in OEM wheels foul a Brembo caliper. VERIFY BEFORE BUYING CALIPERS |
 | ⚠️ | Wheels | Subaru OEM (believed) year/model UNKNOWN | OEM wheels | Black. Believed OEM Subaru from a WRX. Bought cheap. CONFIRMED: clear the current hub + brake config (4/2-pot + ~294mm KNS rotors). UNKNOWN: diameter / width / offset / source year. 5x114.3 so likely 05-07 STi or 08+ WRX/STi. ID METHOD: spec is stamped or cast on the inner barrel or behind a spoke - look for 17x7 JJ + ET offset + Subaru PN |
+
+## Assembly Tools (not on the car) · recorded spend $73.72
+
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ✅ | Clutch alignment tool | 3D printed Subaru Clutch Alignment Tool - 267427 |  | *[in-stock]* In 3D Prints/ |
+| ✅ | Piston ring compressor | Company 23 |  | *[in-stock]*  |
+| ✅ | Plastigage PL-X 0.018-0.045mm white |  |  | *[in-stock]* Bearing clearance check |
+| ✅ | Seal puller |  |  | *[in-stock]*  |
 
 ---
 
@@ -248,6 +283,13 @@
 - [ ] ⚠️ **Clutch** (drivetrain) — Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
 - [ ] ⚠️ **Clutch release fork** (drivetrain) — Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
+- [ ] ⚠️ **Front CV axle (new)** (drivetrain) — Mixed new/used/refurb axle set across 2011 trans + R180 + 05-07 STi hubs. Fitment reported OK
+- [ ] ⚠️ **Rear CV axle (new)** (drivetrain) — Mixed axle set - fitment reported OK
+- [ ] ⚠️ **Front CV axle (refurbished)** (drivetrain) — Refurb unit - brand/PN unknown
+- [ ] ⚠️ **Rear CV axle (used)** (drivetrain) — Used unit - brand/PN unknown
+- [ ] ⚠️ **Transmission CV axle seal (A)** (drivetrain) — TWO different trans CV seal PNs on this build - confirm which side takes which
+- [ ] ⚠️ **Transmission CV axle seal (B)** (drivetrain) — TWO different trans CV seal PNs on this build - confirm which side takes which
+- [ ] ⚠️ **Gasket kit** (drivetrain) — Contents not itemised in the source sheet
 - [ ] ⚠️ **Gauges** (ecu-electrical) — unverified
 - [ ] ⚠️ **AFR gauge** (ecu-electrical) — Separate from CAN Lambda
 - [ ] ⚠️ **MAF sensor** (ecu-electrical) — RETAINED for IAT element in speed density mode - verify exact PN
@@ -260,7 +302,7 @@
 - [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (recollection
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **AVCS solenoids** (engine-heads) — Came with the used V25B heads. UNTESTED - verify cam angle response on first start
-- [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
+- [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT: the 20-21 wagon sheet lists an "Early IAG fuel rail" but the build otherwise records Aeromotive. ORB-to-AN adapter requirement differs. Confirm by eye at the car BEFORE ordering fittings
 - [ ] ⚠️ **Downpipe** (induction) — CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection
 - [ ] ⚠️ **Boost control solenoid (EBCS)** (induction) — 3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner
 - [ ] ⚠️ **Coilovers** (suspension) — PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R
@@ -269,6 +311,8 @@
 - [ ] ⚠️ **PS pump rebuild kit** (suspension) — Likely needed
 - [ ] ⚠️ **Wheels** (suspension) — Black. Believed OEM Subaru from a WRX. Bought cheap. CONFIRMED: clear the current hub + brake config (4/2-pot + ~294mm KNS rotors). UNKNOWN: diameter / width / offset / source year. 5x114.3 so likely 05-07 STi or 08+ WRX/STi. ID METHOD: spec is stamped or cast on the inner barrel or behind a spoke - look for 17x7 JJ + ET offset + Subaru PN
 - [ ] ⚠️ **Tires** (suspension) — Temporary - Alan: BS tires for now. Size not recorded. NOTE: rolling diameter feeds speedo calibration - recheck VSS/cluster (CPU-71) if tire size changes
+- [ ] ⚠️ **Left rear hub large bolt** (suspension) — unverified
+- [ ] ⚠️ **Rear hub gaskets** (suspension) — unverified
 
 ---
 

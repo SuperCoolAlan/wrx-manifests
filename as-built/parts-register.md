@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**117 parts** — 87 installed · 19 to-buy · 2 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
+**124 parts** — 93 installed · 20 to-buy · 2 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
 
 ---
 
@@ -17,7 +17,6 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
-| ❓ | Coolant hose kit | Roger Clark Motorsport / Samco V8 12-hose kit 02-05 WRX/STI | OEM hoses | *[verify-existing]* Covers Modine + turbo coolant hoses - confirm whether owned |
 | ✅ | Crank + cam seals | Subaru OEM | OEM | Crank seal + 4 cam seals |
 | ✅ | Crank pulley | Perrin Lightweight | OEM crank pulley | DECISION REVERSED 2026-08-20: running the Perrin already installed rather than buying the Fluidampr. Mitigated by conventional OEM flywheel (avoids lightweight-pulley + lightweight-flywheel combo). Reversible - front-of-engine job |
 | ✅ | Crank pulley bolt | Subaru OEM 12369AA011 | OEM bolt | NEW BOLT INSTALLED 2026-08-20. Angle-tightened spec: 44 Nm then 65-75 deg. Confirm it was tightened to the angle spec not just the 44 Nm preload |
@@ -28,11 +27,9 @@
 | ✅ | Oil filters | Wix 57712XP | OEM filter | *[to-buy]* x5 for break-in schedule. IAG specifies OEM or Wix XP. 23 psi bypass. PRE-FILL before install |
 | ✅ | Oil pump | Subaru 15010AA360 | 10mm OEM pump | 11mm high-volume |
 | ✅ | Pistons | Manley 612000C-4 | OEM pistons | EJ257 99.75mm std stroke std bore 8.5:1 dish |
-| ⚠️ | Radiator hoses | Mishimoto Silicone upper + lower | OEM hoses | Already owned |
 | ✅ | Rod bearings | King STD | OEM | Ran STD rod bearings |
 | ✅ | Rods | Manley 15024-4 H-Tuff | OEM rods |  |
 | ✅ | Timing belt kit | Cosworth / RCM High Grip tensioner + Cosworth belt | OEM timing kit | Kevlar belt 300pct stronger than OE |
-| ✅ | Water pump + thermostat | Roger Clark Motorsport Black Series 3-Port | OEM water pump/thermostat | Cast impeller + 70C low-temp thermostat; 3-Port USDM manual |
 
 ## Engine — Heads & Valvetrain · Binder TAB 2
 
@@ -68,6 +65,21 @@
 | ✅ | Oil pressure sender | remote | OEM switch location | Firewall mounted 2026-08-20; torque 25 Nm; THREE BOND 1324 |
 | ✅ | Turbo oil DRAIN line | IAG Stainless braided -10AN | OEM drain | *[to-buy]*  |
 | ✅ | Turbo oil supply line | Forced Performance FP Turbo Oil Supply Line - EJ | OEM feed line | Stainless braided; brand-matched to FP Red |
+
+## Cooling · Binder TAB 3
+
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ✅ | Coolant | Asian-formula - local store GREEN preferred (matches OEM era) |  | *[to-buy]* PLAN 2026-08-20: Asian-class from a local store |
+| ✅ | Coolant bypass pipe | Subaru OEM 14065AA250 | OEM | 04 WRX / 04-05 STi. Runs under/behind the intake manifold to the water pump inlet |
+| ✅ | Coolant crossover pipe (front) | Subaru OEM 14050AA451 | OEM | 04 WRX pipe - supersedes AA450. Physically verified to fit EJ257 + STi manifold |
+| ❓ | Coolant hose kit | Roger Clark Motorsport / Samco V8 12-hose kit 02-05 WRX/STI | OEM hoses | *[verify-existing]* Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM |
+| ✅ | Cooling fans | Subaru OEM | OEM fans | OEM fans retained. Fan control to be wired to the Link |
+| ❓ | Engine coolant filler tank (ECFT) | UNKNOWN |  | OEM or Killer B UTCRv2? Not recorded. System high point - where filling and bleeding happen |
+| ⚠️ | Radiator | Mishimoto model TBD | OEM radiator | MISHIMOTO. Exact model not recorded |
+| ⚠️ | Radiator hoses | Mishimoto Silicone upper + lower | OEM hoses | Already owned |
+| ✅ | Upper pipe assembly (Pipe-Water Tank) | Subaru OEM 21141AA131 | OEM 21141AA122 | 06-14 era - matches V25 head PCV port layout. PCV portions to be CAPPED (IAG AOS replaces OEM PCV); only the ECFT-to-bypass coolant passage is used |
+| ✅ | Water pump + thermostat | Roger Clark Motorsport Black Series 3-Port | OEM water pump/thermostat | Cast impeller + 70C low-temp thermostat; 3-Port USDM manual |
 
 ## Turbo · Induction · Exhaust · Binder TAB 3
 
@@ -204,11 +216,14 @@
 
 ## Open items — needs confirmation
 
+- [ ] ❓ **Coolant hose kit** (cooling) — Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM
+- [ ] ❓ **Engine coolant filler tank (ECFT)** (cooling) — OEM or Killer B UTCRv2? Not recorded. System high point - where filling and bleeding happen
 - [ ] ❓ **Valve stem seals** (engine-heads) — Replaced during build? Not recorded
-- [ ] ❓ **Coolant hose kit** (engine-lower) — Covers Modine + turbo coolant hoses - confirm whether owned
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
 - [ ] ❓ **BOV adapter** (induction) — Sheet says not needed if going bung-to-hose direct - depends on final BOV choice
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
+- [ ] ⚠️ **Radiator hoses** (cooling) — Already owned
+- [ ] ⚠️ **Radiator** (cooling) — MISHIMOTO. Exact model not recorded
 - [ ] ⚠️ **Clutch** (drivetrain) — Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
 - [ ] ⚠️ **Clutch release fork** (drivetrain) — Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
@@ -218,7 +233,6 @@
 - [ ] ⚠️ **MAF sensor** (ecu-electrical) — RETAINED for IAT element in speed density mode - verify exact PN
 - [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (Alan 2026-08-20 - RECOLLECTION NOT CONFIRMED). +1mm is a common EJ oversize so plausible. Intake/exhaust split and material not recorded. Sources to confirm: the heads for-sale thread / Cosworth published spec for V25 heads / calipers if a head comes apart
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
-- [ ] ⚠️ **Radiator hoses** (engine-lower) — Already owned
 - [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
 - [ ] ⚠️ **Downpipe** (induction) — CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection
 - [ ] ⚠️ **Air-oil separator** (oiling) — USED great condition w/ all lines; PN verification pending

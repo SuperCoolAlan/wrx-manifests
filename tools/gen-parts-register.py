@@ -15,6 +15,7 @@ SYSTEMS = [
     ("engine-lower",   "Engine — Lower Internals", 2),
     ("engine-heads",   "Engine — Heads & Valvetrain", 2),
     ("oiling",         "Oiling", 2),
+    ("cooling",        "Cooling", 3),
     ("induction",      "Turbo · Induction · Exhaust", 3),
     ("fuel",           "Fuel System", 4),
     ("ecu-electrical", "Engine Management · Electrical", 7),

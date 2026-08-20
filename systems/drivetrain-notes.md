@@ -15,7 +15,7 @@
 | Shifter linkage | ✅ CLOSED | Connected and working |
 | Axles | ✅ CLOSED | Alan reports correct fitment |
 | Driveshaft | ✅ CLOSED | Hybrid of 07 STi + wagon (possibly 2011) parts, assembled from forum research; length and splines verified correct |
-| **Clutch actuation** | ⚠ **SEE BELOW** | Pedal/MC/hard pipe **and slave** carry over. **Fork + throwout bearing must be 6MT** to match the 6MT flywheel/clutch stack |
+| **Clutch actuation** | ✅ **CLOSED 2026-08-20** | Fork = 2011 6MT OEM, bearing = ACT Stage 2 kit. Release stack is fully 6MT; 2004 pedal/MC/line/slave carry over |
 | DCCD function | ⚠ OPEN | DCCDPro controller — needs *functional* verification at commissioning, not just continuity |
 | Speedo / VSS | ⚠ OPEN | iWire VSS Pro — same; verify against 07 STi cluster |
 
@@ -84,7 +84,7 @@ Add to TAB 4: `2007 Transmission/CL Clutch System.pdf` (38 pp) — already liste
 | Part | Reuse 5MT? | Basis |
 |---|---|---|
 | **Operating cylinder (slave)** | ✅ **YES** | Two independent NASIOC reports: 02 WRX slave on 05 STi box, and 04 WRX slave on JDM V8 6MT — both worked |
-| **Release fork** | ⚠ **UNRESOLVED** | Forums say transmission-specific (all successful swaps used the STi fork). **But the FSM does NOT distinguish them** — see below. |
+| **Release fork** | ✅ **MOOT — 6MT fork is installed** | Confirmed 2026-08-20: the fork came off the 2011 6MT. The 5MT fork stays a spare. |
 | **Throwout bearing** | ❌ Use 6MT | Mixing a WRX bearing with an STi fork is implicated in the thread's failure case |
 
 ### ⚠ The real lesson: stack consistency, not individual parts
@@ -101,6 +101,23 @@ Alan's flywheel is **6MT conventional** and the clutch is a **6MT-bundle ACT Hea
 **→ Keep the release system 6MT-spec to match the 6MT flywheel/clutch stack: 6MT fork + 6MT throwout bearing.** With that consistent, the slave is a free choice and the 5MT unit should work.
 
 **Do not mix across stacks** — that is precisely what produced the thread's non-disengaging clutch.
+
+### ✅ RESOLVED 2026-08-20 — the build already meets this
+
+| Component | Source | Stack |
+|---|---|---|
+| Flywheel | 6MT donor, conventional | 6MT |
+| Clutch | ACT Stage 2 (HD Performance Street) | 6MT |
+| **Release fork** | **2011 6MT OEM** | **6MT** |
+| **Throwout bearing** | **supplied in the ACT Stage 2 kit** | **6MT** |
+| Operating cylinder (slave) | 2004 WRX | free choice per NASIOC |
+| Pedal / master cylinder / hard line | 2004 WRX | carries over |
+
+**The release stack is internally consistent and 6MT throughout.** This is the configuration the analysis above recommended, and it is the opposite of the mixed WRX/STi stack that failed in NASIOC 1881656.
+
+The 2004 5MT fork + throwout bearing remain as spares — see the register.
+
+⚠ Still unverified: **master and slave bore sizes** were never in the CL spec tables. Lever ratio matching does not guarantee hydraulic ratio matching. Confirm pedal feel and full disengagement at the clutch bleed.
 
 ### Superseded reasoning (kept for the record)
 

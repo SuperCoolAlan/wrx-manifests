@@ -183,7 +183,7 @@
 | ✅ | Clutch | ACT Stage 2 - HD Performance Street | OEM | Stage 2 kit; supplied the throwout bearing |
 | ✅ | Clutch actuation | Subaru 2004 pedal/MC/hard pipe/slave |  | Both pull type 1.7 ratio 130-135mm; fork came with the 2011 6MT so is 6MT spec |
 | ✅ | Clutch line | Subaru 2004 WRX STOCK |  | Stock rubber line retained. Part of the 2004 5MT actuation set feeding the 6MT |
-| ⚠️ | Clutch release fork | Subaru 2011 6MT OEM | 5MT fork | Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job |
+| ✅ | Clutch release fork | Subaru 2011 STi 6MT OEM | 5MT fork | CONFIRMED 2026-08-20: came off the 2011 6MT swap. Completes an internally-consistent 6MT release stack - 6MT flywheel + 6MT clutch + 6MT fork + 6MT bearing |
 | ✅ | Differential CV axle seal | Subaru OEM 806732200 |  | Purchased x2 |
 | ⚠️ | Driveshaft | Hybrid 07 STi + wagon | OEM | Assembled from forum research; length and splines verified |
 | ✅ | Engine mounts | Torque Solution | OEM | **FSM: TS torque spec governs over FSM** |
@@ -287,7 +287,6 @@
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
 - [ ] ❓ **Wheel clearance for Brembo upgrade** (suspension) — OPEN: do these wheels clear 326mm 04-07 STi Brembos? Clearing the current ~294mm setup does NOT confirm it. 32mm larger rotor and barrel shape matters as much as diameter - many 17in OEM wheels foul a Brembo caliper. VERIFY BEFORE BUYING CALIPERS
 - [ ] ⚠️ **Radiator hoses** (cooling) — Already owned
-- [ ] ⚠️ **Clutch release fork** (drivetrain) — Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
 - [ ] ⚠️ **Front CV axle (new)** (drivetrain) — Mixed new/used/refurb axle set across 2011 trans + R180 + 05-07 STi hubs. Fitment reported OK
 - [ ] ⚠️ **Rear CV axle (new)** (drivetrain) — Mixed axle set - fitment reported OK

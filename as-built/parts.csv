@@ -59,7 +59,7 @@ drivetrain,4,Rear differential,Subaru,R180,R160,,installed,confirmed,,,,Came wit
 drivetrain,4,Clutch,ACT,Stage 2 - HD Performance Street,OEM,,installed,confirmed,,,,Stage 2 kit; supplied the throwout bearing
 drivetrain,4,Flywheel,Subaru,Conventional 6MT donor,5MT flexible flywheel,,installed,confirmed,,,,INSTALLED AND COMPLETE confirmed 2026-08-20. OEM 6MT conventional - NOT the ACT/Fidanza/Exedy options still listed on the build sheet. Not interchangeable with 5MT flexible type
 drivetrain,4,Clutch actuation,Subaru,2004 pedal/MC/hard pipe/slave,,,installed,confirmed,,,,Both pull type 1.7 ratio 130-135mm; fork came with the 2011 6MT so is 6MT spec
-drivetrain,4,Clutch release fork,Subaru,2011 6MT OEM,5MT fork,,installed,unverified,,,,Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
+drivetrain,4,Clutch release fork,Subaru,2011 STi 6MT OEM,5MT fork,,installed,confirmed,,,,CONFIRMED 2026-08-20: came off the 2011 6MT swap. Completes an internally-consistent 6MT release stack - 6MT flywheel + 6MT clutch + 6MT fork + 6MT bearing
 drivetrain,4,Driveshaft,Hybrid,07 STi + wagon,OEM,,installed,unverified,,50.00,,Assembled from forum research; length and splines verified
 drivetrain,4,Engine mounts,Torque Solution,,OEM,TS torque spec governs over FSM,installed,confirmed,,123.99,,
 brakes,5,Front calipers,Subaru,2007 WRX Limited 4-pot,02-05 single-pot slider,Print BR from 2007 manual,installed,confirmed,,,Piston/boot check,Included pads and hardware

@@ -25,6 +25,10 @@ Source archive: Dropbox `WRX.zip` → `2004 / 2005 / 2007 Service Manual` (modul
 
 ## TAB 2 — ENGINE (2005 STi = EJ257)
 
+> ⚠ **HEAD + VALVETRAIN WORK IS THE EXCEPTION — use the 2007 manual.**
+> Heads are confirmed **V25 STi Cosworth** (2007-era casting, corroborated by the casting mark in `cooling-system-notes.md`). So head and valvetrain procedures follow the **2007** FSM, not 2005.
+> **Wrinkle:** the 2007 `STi Engine` folder has no `ME` Mechanical section — 2007 STI mechanical content is folded into **`ME(H4DOTC)`**. Print that for head work; the rest of the engine still comes from 2005 STi below.
+
 *Use (STi) sections. NOT (H4DOTC) — that is the WRX EJ255.*
 
 | ✓ | Pages | Section | Source | File |

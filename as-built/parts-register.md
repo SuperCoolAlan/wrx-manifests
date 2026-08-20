@@ -39,8 +39,8 @@
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | Camshafts | Subaru OEM |  | Stage 2 considered not fitted |
-| ❓ | Combustion chamber cc matching |  |  | OPEN QUESTION: were chambers cc'd and equalised between the Cosworth head and the ported OEM head? Flow matched does NOT imply chamber matched. Unequal chamber volume = different compression ratio bank to bank = uneven knock threshold. TELL BEN before tuning |
-| ✅ | Cylinder head - one side | Cosworth | OEM head | **FSM: Head/valvetrain FSM section governed by casting - STILL UNRESOLVED** · GENUINE COSWORTH head. Which side (LH/RH) NOT RECORDED |
+| ✅ | Combustion chamber cc matching |  |  | CHAMBERS EQUALISED - confirmed 2026-08-20. Compression is even bank to bank; no asymmetric knock threshold to warn Ben about. Measured cc figures not recorded |
+| ✅ | Cylinder head - one side | Cosworth V25 STi | OEM head | **FSM: HEAD/VALVETRAIN WORK FOLLOWS THE 2007 FSM - and 2007 STi has no ME section so use ME(H4DOTC)** · GENUINE COSWORTH V25 STi head. Casting question RESOLVED 2026-08-20 - corroborates cooling-system-notes.md V25B casting mark. Which side (LH/RH) not recorded |
 | ✅ | Cylinder head - other side | OEM ported to match | OEM head | OEM head PORTED TO MATCH the Cosworth side. This is why flows were matched - it was a matching exercise not a matched pair |
 | ✅ | Head gaskets | Subaru OEM | OEM | OEM head gaskets. Sound pairing with ARP studs - factory multi-layer gaskets are well regarded and the studs provide the clamp |
 | ✅ | Head machining - valve spring seats |  | OEM seats | VALVE SPRING SEATS MODIFIED (deeper) to accept taller Manley springs and allow more lift. DECK SURFACE NOT MILLED - so compression stays at the 8.5:1 from the Manley dish pistons and cam timing geometry is unchanged |
@@ -201,7 +201,6 @@
 
 ## Open items — needs confirmation
 
-- [ ] ❓ **Combustion chamber cc matching** (engine-heads) — OPEN QUESTION: were chambers cc'd and equalised between the Cosworth head and the ported OEM head? Flow matched does NOT imply chamber matched. Unequal chamber volume = different compression ratio bank to bank = uneven knock threshold. TELL BEN before tuning
 - [ ] ❓ **Valve stem seals** (engine-heads) — Replaced during build? Not recorded
 - [ ] ❓ **Coolant hose kit** (engine-lower) — Covers Modine + turbo coolant hoses - confirm whether owned
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36

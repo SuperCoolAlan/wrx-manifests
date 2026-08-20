@@ -1,6 +1,6 @@
 # Alternator Sizing Decision — ✅ RESOLVED 2026-08-20
 
-> ## ✅ FINAL: 200A / 220A peak, custom builder, $449
+> ## ✅ FINAL: **Michael Singer** 200A / 220A peak, $449
 >
 > | Spec | Value |
 > |---|---|
@@ -15,8 +15,8 @@
 >
 > ### Open verifications
 > - [ ] **Pulley diameter + groove count** — ask the builder. Sole variable deciding whether OEM belt sizing works. Factory location means OEM mounting geometry, and the alternator is its own tensioner on the front belt, so a matching pulley means OEM belt length with adjuster range to spare.
-> - [ ] **Battery max charge voltage vs 14.8V.** AGMs typically want 14.4-14.7V absorb; sustained overvoltage accelerates aging, and flooded types gas and lose water. Battery is relocated to the cargo area where symptoms are less visible.
-> - [ ] **Fusing.** Going from a 90A OEM core to 200A/220A peak. Big 3 upgrade now mandatory rather than advisory, and **the charge wire needs a fuse at the battery end** — a long unprotected high-current run through the cabin is the main fire risk in a relocated-battery setup. Confirm existing fusing is not still sized for the stock 90A alternator.
+> - [ ] **Battery max charge voltage vs 14.8V** — sanity check only. Singer was asked directly (question 5 of the spec request) which setpoint he recommends *for an AGM battery and Link G4X*, and answered 14.8V. That is a considered spec from the builder, not an oversight. Glance at Interstate's published max charge voltage for the MTX-35 and move on.
+> - [x] ~~Fusing~~ — **already specced.** Singer spec request records *"Big 3 wiring planned in 1/0 OFC with 250A ANL fuse"*, and the custom battery tray carries an integrated platform for 2× Blue Sea 5001 MEGA fuse holders. Battery is **engine bay, OEM location** — not relocated, so there is no long cabin run to protect.
 >
 > ---
 >

@@ -1,4 +1,13 @@
-# Singer Alternators — Spec Request
+# Singer Alternators — ✅ ORDERED
+
+> **OUTCOME 2026-08-20: went with Singer's 200A (220A peak), $449.**
+> Denso case, direct replacement for stock PN **23700AA430**. **150A idle output.** Ships with a **14.8V regulator** — Singer's answer to question 5 below, specced knowing the battery is an Interstate MTX-35 AGM.
+>
+> Recorded in `as-built/parts.csv`. Supersedes both options in `alternator-decision-notes.md`.
+>
+> Remaining check: confirm **pulley diameter + groove count** with Singer for belt sizing.
+
+## Original spec request
 
 **Purpose:** Provide Mike Singer with the full electrical load picture so he can confirm the 200A unit is the right pick (vs 180A or stepping up to 220A).
 

@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**98 parts** — 72 installed · 17 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing
+**99 parts** — 73 installed · 17 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing
 
 ---
 
@@ -91,8 +91,9 @@
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | AFR gauge | Innovate MTX-L |  | Separate from CAN Lambda |
-| ✅ | Alternator | Custom builder 200A / 220A peak - 128.5mm Denso hairpin 6-phase | OEM 90A 23700AA430 | *[to-buy]* DECIDED 2026-08-20. Factory-location replacement. 150A IDLE output. Includes 14.8V regulator. Supersedes both DC Power 180A and JS Alternators 250A. VERIFY pulley diameter + groove count with builder for belt sizing. VERIFY battery max charge voltage suits 14.8V |
-| ✅ | Battery relocation | Custom 3D-printed tray | Stock location | Cavity 236x182mm |
+| ✅ | Alternator | Michael Singer 200A / 220A peak - 128.5mm Denso hairpin 6-phase | OEM 90A 23700AA430 | *[to-buy]* DECIDED 2026-08-20. Denso case direct replacement for 23700AA430. 150A IDLE output. 14.8V regulator - specced by Singer knowing battery is Interstate MTX-35 AGM. Supersedes DC Power 180A and JS 250A. Confirm pulley with builder for belt sizing |
+| ✅ | Battery | Interstate MTX-35 AGM Group 35 | OEM battery | ENGINE BAY - OEM LOCATION (corrected 2026-08-20; was wrongly recorded as relocated to rear) |
+| ✅ | Battery tray | Custom 3D print ASA | OEM tray 82122AA031/032 | Engine bay. Cavity 236x182mm. Integrated platform for 2x Blue Sea 5001 MEGA fuse holders. Retains stock J-hook strap clamp |
 | ✅ | Big 3 wiring upgrade | Knukonceptz / Stinger / Sky High 1/0 AWG OFC 3-cable kit | OEM charging cables | *[to-buy]*  |
 | ✅ | DBW pedal | Subaru 36010FE020 |  | 05 STi drive-by-wire |
 | ✅ | DCCD controller | iWire Spiider | OEM DCCD control | Functional test needed at commissioning |

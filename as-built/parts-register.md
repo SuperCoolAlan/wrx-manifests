@@ -117,7 +117,7 @@
 | ✅ | Fuel pressure regulator | Aeromotive 15633 | OEM FPR | Plus Aeromotive gauge 40.90 |
 | ✅ | Fuel pump | DeatschWerks DW400 9-401-1041 | OEM pump | **FSM: FU pump content void; FPCM bypassed** · 415 LPH BRUSHED motor (not brushless); see fuel-pump-isolator-notes.md |
 | ✅ | Fuel pump hardwire kit | DeatschWerks FPHWK-10-HD | OEM pump wiring | High-current 10 AWG heavy duty relay kit battery-direct |
-| ⚠️ | Fuel rails | Aeromotive | OEM rails | CONFLICT: the 20-21 wagon sheet lists an "Early IAG fuel rail" but the build otherwise records Aeromotive. ORB-to-AN adapter requirement differs. Confirm by eye at the car BEFORE ordering fittings |
+| ✅ | Fuel rails | Aeromotive AER14134 | OEM rails | CONFLICT RESOLVED 2026-08-20: the 20-21 wagon sheet listed an "Early IAG fuel rail" - that is WRONG, it is Aeromotive. Confirm port thread (ORB size) before ordering -6AN adapters |
 | ✅ | Injectors | DeatschWerks DW1500 16M-07-1500-4 | OEM injectors | Set of 4; sized per tuner for 500whp E85 |
 
 ## Engine Management · Electrical · Binder TAB 7 · recorded spend $7,840.62
@@ -302,7 +302,6 @@
 - [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (recollection
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **AVCS solenoids** (engine-heads) — Came with the used V25B heads. UNTESTED - verify cam angle response on first start
-- [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT: the 20-21 wagon sheet lists an "Early IAG fuel rail" but the build otherwise records Aeromotive. ORB-to-AN adapter requirement differs. Confirm by eye at the car BEFORE ordering fittings
 - [ ] ⚠️ **Downpipe** (induction) — CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection
 - [ ] ⚠️ **Boost control solenoid (EBCS)** (induction) — 3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner
 - [ ] ⚠️ **Coilovers** (suspension) — PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R

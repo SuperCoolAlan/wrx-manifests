@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**178 parts** — 136 installed · 19 to-buy · 10 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**185 parts** — 143 installed · 19 to-buy · 10 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -180,8 +180,9 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
-| ⚠️ | Clutch | ACT Heavy Duty Performance Street | OEM | Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm |
+| ✅ | Clutch | ACT Stage 2 - HD Performance Street | OEM | Stage 2 kit; supplied the throwout bearing |
 | ✅ | Clutch actuation | Subaru 2004 pedal/MC/hard pipe/slave |  | Both pull type 1.7 ratio 130-135mm; fork came with the 2011 6MT so is 6MT spec |
+| ✅ | Clutch line | Subaru 2004 WRX STOCK |  | Stock rubber line retained. Part of the 2004 5MT actuation set feeding the 6MT |
 | ⚠️ | Clutch release fork | Subaru 2011 6MT OEM | 5MT fork | Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job |
 | ✅ | Differential CV axle seal | Subaru OEM 806732200 |  | Purchased x2 |
 | ⚠️ | Driveshaft | Hybrid 07 STi + wagon | OEM | Assembled from forum research; length and splines verified |
@@ -194,9 +195,13 @@
 | ⚠️ | Rear CV axle (new) | 667373 |  | Mixed axle set - fitment reported OK |
 | ⚠️ | Rear CV axle (used) | PN not recorded |  | Used unit - brand/PN unknown |
 | ✅ | Rear differential | Subaru R180 | R160 | Came with trans - ratios match |
+| ✅ | Shifter + linkage | Subaru 2004 WRX STOCK |  | **FSM: 2004 shifter operates the 2011 6MT** · Connected and working |
+| ✅ | Throwout bearing | ACT supplied in the Stage 2 clutch kit |  | 6MT-spec, came with the ACT kit. NOTE: the release FORK origin is still unknown - see clutch fork row |
 | ✅ | Transmission | Subaru 2011 STi 6MT DCCD | 04 WRX 5MT | **FSM: Trans fluid = 2011 spec NOT 2004** · 97k miles at install; bundle |
 | ⚠️ | Transmission CV axle seal (A) | Subaru OEM 806735300 |  | TWO different trans CV seal PNs on this build - confirm which side takes which |
 | ⚠️ | Transmission CV axle seal (B) | Subaru OEM 806735290 |  | TWO different trans CV seal PNs on this build - confirm which side takes which |
+| ✅ | Transmission crossmember | Subaru 2004 WRX - ORIGINAL CHASSIS |  | **FSM: 2004 crossmember carries the 2011 6MT** · Chassis crossmember RETAINED with the 6MT mount |
+| ✅ | Transmission mount | Subaru 2011 STi 6MT |  | Came with the 6MT |
 
 ## Brakes · Binder TAB 5 · recorded spend $526.88
 
@@ -207,6 +212,7 @@
 | ✅ | Brembo upgrade | Brembo 04-07 STI | 4/2-pot calipers | *[planned]* GD-era NOT 08-14 - knuckles are 05-07 STi |
 | ✅ | Front calipers | Subaru 2007 WRX Limited 4-pot | 02-05 single-pot slider | **FSM: Print BR from 2007 manual** · Included pads and hardware |
 | ✅ | Front rotors | KNS / DBA KNS4651 | OEM rotors | Std WRX size; enlarged centre bore; dual-drilled 5x100/5x114.3 |
+| ✅ | Parking brake cables | Subaru 2004 WRX - ORIGINAL CHASSIS CABLES |  | **FSM: 2004 cables work with 05-07 STi rear knuckles - no swap needed** · VERIFIED HOLDING on the KNS rear discs. Despite the STi knuckle swap the chassis cables fit and function |
 | ✅ | Rear calipers | Subaru 2007 WRX Limited 2-pot | 02-05 single-pot |  |
 | ✅ | Rear rotors | KNS / DBA KNS4656 | OEM rotors | 06-07 WRX OD with R180 STi parking brake drum |
 
@@ -231,6 +237,7 @@
 | ✅ | Rear wheel bearing (LH replacement) | Duralast DL516003 |  |  |
 | ✅ | Stabilizer bars | Subaru Wagon |  | **FSM: Use Wagon/Except-STi torque values** · Wagon bars confirmed 2026-08-20; front 20mm rear 17mm vs STi 19/20 |
 | ✅ | Steering column bushing | Subaru OEM 34361FC000 |  |  |
+| ✅ | Steering rack | Subaru 2004 WRX STOCK |  | Original chassis rack retained |
 | ⚠️ | Tires | PLACEHOLDER |  | Temporary - Alan: BS tires for now. Size not recorded. NOTE: rolling diameter feeds speedo calibration - recheck VSS/cluster (CPU-71) if tire size changes |
 | ❓ | Wheel clearance for Brembo upgrade |  |  | *[undecided]* OPEN: do these wheels clear 326mm 04-07 STi Brembos? Clearing the current ~294mm setup does NOT confirm it. 32mm larger rotor and barrel shape matters as much as diameter - many 17in OEM wheels foul a Brembo caliper. VERIFY BEFORE BUYING CALIPERS |
 | ⚠️ | Wheels | Subaru OEM (believed) year/model UNKNOWN | OEM wheels | Black. Believed OEM Subaru from a WRX. Bought cheap. CONFIRMED: clear the current hub + brake config (4/2-pot + ~294mm KNS rotors). UNKNOWN: diameter / width / offset / source year. 5x114.3 so likely 05-07 STi or 08+ WRX/STi. ID METHOD: spec is stamped or cast on the inner barrel or behind a spoke - look for 17x7 JJ + ET offset + Subaru PN |
@@ -280,7 +287,6 @@
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
 - [ ] ❓ **Wheel clearance for Brembo upgrade** (suspension) — OPEN: do these wheels clear 326mm 04-07 STi Brembos? Clearing the current ~294mm setup does NOT confirm it. 32mm larger rotor and barrel shape matters as much as diameter - many 17in OEM wheels foul a Brembo caliper. VERIFY BEFORE BUYING CALIPERS
 - [ ] ⚠️ **Radiator hoses** (cooling) — Already owned
-- [ ] ⚠️ **Clutch** (drivetrain) — Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
 - [ ] ⚠️ **Clutch release fork** (drivetrain) — Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
 - [ ] ⚠️ **Front CV axle (new)** (drivetrain) — Mixed new/used/refurb axle set across 2011 trans + R180 + 05-07 STi hubs. Fitment reported OK

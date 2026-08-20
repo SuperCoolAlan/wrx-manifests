@@ -56,7 +56,7 @@ ecu-electrical,7,Battery tray,Custom 3D print,ASA,OEM tray 82122AA031/032,,insta
 ecu-electrical,7,DBW pedal,Subaru,36010FE020,,,installed,confirmed,eBay,114.85,,05 STi drive-by-wire
 drivetrain,4,Transmission,Subaru,2011 STi 6MT DCCD,04 WRX 5MT,Trans fluid = 2011 spec NOT 2004,installed,confirmed,Philip Kolosha,3400.00,,97k miles at install; bundle
 drivetrain,4,Rear differential,Subaru,R180,R160,,installed,confirmed,,,,Came with trans - ratios match
-drivetrain,4,Clutch,ACT,Heavy Duty Performance Street,OEM,,installed,unverified,,,,Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
+drivetrain,4,Clutch,ACT,Stage 2 - HD Performance Street,OEM,,installed,confirmed,,,,Stage 2 kit; supplied the throwout bearing
 drivetrain,4,Flywheel,Subaru,Conventional 6MT donor,5MT flexible flywheel,,installed,confirmed,,,,INSTALLED AND COMPLETE confirmed 2026-08-20. OEM 6MT conventional - NOT the ACT/Fidanza/Exedy options still listed on the build sheet. Not interchangeable with 5MT flexible type
 drivetrain,4,Clutch actuation,Subaru,2004 pedal/MC/hard pipe/slave,,,installed,confirmed,,,,Both pull type 1.7 ratio 130-135mm; fork came with the 2011 6MT so is 6MT spec
 drivetrain,4,Clutch release fork,Subaru,2011 6MT OEM,5MT fork,,installed,unverified,,,,Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
@@ -177,3 +177,10 @@ tools,-,Plastigage PL-X 0.018-0.045mm white,,,,,in-stock,confirmed,eBay,15.27,,B
 tools,-,Piston ring compressor,Company 23,,,,in-stock,confirmed,Defined Performance,49.95,,
 tools,-,Seal puller,,,,,in-stock,confirmed,Harbor Freight,8.50,,
 tools,-,Clutch alignment tool,3D printed,Subaru Clutch Alignment Tool - 267427,,,in-stock,confirmed,Printables,,,In 3D Prints/
+brakes,5,Parking brake cables,Subaru,2004 WRX - ORIGINAL CHASSIS CABLES,,2004 cables work with 05-07 STi rear knuckles - no swap needed,installed,confirmed,,,,VERIFIED HOLDING on the KNS rear discs. Despite the STi knuckle swap the chassis cables fit and function
+drivetrain,4,Transmission mount,Subaru,2011 STi 6MT,,,installed,confirmed,,,,Came with the 6MT
+drivetrain,4,Transmission crossmember,Subaru,2004 WRX - ORIGINAL CHASSIS,,2004 crossmember carries the 2011 6MT,installed,confirmed,,,,Chassis crossmember RETAINED with the 6MT mount
+drivetrain,4,Throwout bearing,ACT,supplied in the Stage 2 clutch kit,,,installed,confirmed,,,,"6MT-spec, came with the ACT kit. NOTE: the release FORK origin is still unknown - see clutch fork row"
+drivetrain,4,Clutch line,Subaru,2004 WRX STOCK,,,installed,confirmed,,,,Stock rubber line retained. Part of the 2004 5MT actuation set feeding the 6MT
+drivetrain,4,Shifter + linkage,Subaru,2004 WRX STOCK,,2004 shifter operates the 2011 6MT,installed,confirmed,,,,Connected and working
+suspension,6,Steering rack,Subaru,2004 WRX STOCK,,,installed,confirmed,,,,Original chassis rack retained

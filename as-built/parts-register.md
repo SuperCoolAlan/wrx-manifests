@@ -1,175 +1,181 @@
+<!-- GENERATED FROM parts.csv — DO NOT EDIT BY HAND. Run: python3 tools/gen-parts-register.py -->
+
 # Aftermarket Parts Register
 
-**Updated:** 2026-08-20
 **Car:** 2004 GG wagon · Alan-built 2005-era EJ257 single-AVCS · FP Red · E85 · Link ECU · 2011 6MT/DCCD · 05-07 STi knuckles all corners · 5x114.3 · 500whp target, mostly track
 
-> **This is the deviations map, not just an inventory.** Every row marks a place the OEM manual is now wrong. The **Supersedes** column is the point — it links each part to the FSM section it invalidates, so the binder and the car stay reconciled.
+> **This is the deviations map, not just an inventory.** Every row marks a place the OEM manual is now wrong. The **Supersedes** column links each part to the FSM section it invalidates, keeping the binder and the car reconciled.
 
-**Confidence key:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
+**Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
+**Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
+
+**64 parts** — 54 installed · 4 to-buy · 2 sell · 1 undecided · 1 fabricate · 1 planned · 1 spare
 
 ---
 
-## 1 · Engine — Lower Internals · Binder TAB 2
+## Engine — Lower Internals · Binder TAB 2
 
-| Part | Brand / Model | PN | Supersedes | Notes | ✓ |
-|---|---|---|---|---|:-:|
-| Crankshaft | Subaru OEM **nitride-treated STi** | 12200AA430 | OEM WRX crank | Flatirons Tuning | ✅ |
-| Pistons | **Manley** 612000C-4 | 612000C-4 | OEM pistons | EJ257, 99.75mm std stroke, std bore, **8.5:1 dish** | ✅ |
-| Rods | **Manley H-Tuff** | 15024-4 | OEM rods | | ✅ |
-| Rod bearings | **King STD** | — | OEM | | ✅ |
-| Main bearings | **King STDX** | — | OEM | Note: STD rods + STDX mains | ✅ |
-| Oil pump | **11mm** | 15010AA360 | 10mm OEM | Higher volume | ✅ |
-| Harmonic damper | **Fluidampr** | 531101 | OEM crank pulley | Chosen over Perrin lightweight — see §7 | ⚠️ |
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ✅ | Crankshaft | Subaru OEM 12200AA430 | OEM WRX crank | Nitride-treated STi |
+| ⚠️ | Harmonic damper | Fluidampr 531101 | OEM crank pulley | *[to-buy]* Supersedes Perrin lightweight pulley; internally balanced |
+| ✅ | Main bearings | King STDX | OEM | Mains fine-tuned by mixing shell halves; see as-built-engine-specs.md |
+| ✅ | Oil pump | Subaru 15010AA360 | 10mm OEM pump | 11mm high-volume |
+| ✅ | Pistons | Manley 612000C-4 | OEM pistons | EJ257 99.75mm std stroke std bore 8.5:1 dish |
+| ✅ | Rod bearings | King STD | OEM | Ran STD rod bearings |
+| ✅ | Rods | Manley 15024-4 H-Tuff | OEM rods |  |
 
-⚠ **Machine shop note:** *"Cylinder wall boring didn't match the pistons — just did them all to the same size."* **Record actual measured bore + clearances here.**
+## Engine — Heads & Valvetrain · Binder TAB 2
 
-## 2 · Engine — Heads & Valvetrain · TAB 2
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ⚠️ | Camshafts | Subaru OEM |  | Stage 2 considered not fitted |
+| ✅ | Valve springs + retainers | Manley 22180-16 | OEM springs | Titanium retainers |
+| ❓ | Valves | Cosworth UNKNOWN | OEM valves | PN not recorded |
 
-| Part | Brand / Model | PN | Supersedes | Notes | ✓ |
-|---|---|---|---|---|:-:|
-| Valve springs + retainers | **Manley**, titanium retainers | 22180-16 | OEM springs | | ✅ |
-| Valves | **Cosworth** | ❓ | OEM valves | PN not recorded | ❓ |
-| Cams | OEM | — | — | Stage 2 considered, not fitted | ⚠️ |
-| Head casting | ❓ **05-era vs V25B (2007)** | — | — | **Build notes record both — resolve. Decides which FSM head/valvetrain section governs.** | ❓ |
+## Oiling · Binder TAB 2
 
-## 3 · Oiling · TAB 2
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ✅ | Air-oil separator | IAG AOS | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · Cap PCV portions of 21141AA131 |
+| ✅ | Oil pan | IAG | OEM pan | **FSM: Changes oil capacity - measure and record** |
+| ✅ | Oil pressure sender | remote | OEM switch location | Firewall mounted 2026-08-20; torque 25 Nm; THREE BOND 1324 |
 
-| Part | Brand / Model | Supersedes | FSM impact | ✓ |
-|---|---|---|---|:-:|
-| Oil pan | **IAG** | OEM pan | **Changes oil capacity** — measure and record | ✅ |
-| Air-oil separator | **IAG AOS** | **Entire OEM PCV system** | `LU` PCV content void. All OEM PCV hoses removed. Cap PCV portions of 21141AA131. | ✅ |
-| Oil pressure sender | Remote, firewall-mounted | OEM switch location | Installed 2026-08-20. Torque 25 N·m, THREE BOND 1324 | ✅ |
+## Turbo · Induction · Exhaust · Binder TAB 3
 
-## 4 · Turbo · Induction · Exhaust · TAB 3
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ❓ | Blow-off valve | UNDECIDED | OEM BPV | *[undecided]* Kit shipped w Turbosmart Race Port VTA - presence unconfirmed; see Linear CPU-36 |
+| ✅ | Header | Perrin Equal Length | OEM manifold | 304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons |
+| ⚠️ | Intake | AEM Fender intake | OEM airbox |  |
+| ✅ | Intercooler | APS D/R 725 FMIC | OEM TMIC | **FSM: IN TMIC content void; hood scoop freed** · Core 28x9.5x4.5 bar-and-plate |
+| ✅ | TGV | DELETED | OEM TGVs | **FSM: IN TGV content void** · Used |
+| ✅ | Turbo inlet | Oversized | OEM inlet | Has recirc return bung |
+| ✅ | Turbocharger | Forced Performance FP Red | OEM VF-series | Journal vs ball bearing UNKNOWN - affects oil restrictor sizing |
+| ✅ | Uppipe | PLM 38mm EWG | OEM uppipe | Bundle price with wastegate; 2-bolt flange matches Perrin collector |
+| ✅ | Wastegate | TiAL MVS 38mm | OEM internal WG | Spring pressure UNKNOWN - record when fitted |
 
-| Part | Brand / Model | Supersedes | Notes | ✓ |
-|---|---|---|---|:-:|
-| Turbocharger | **FP Red** | OEM VF-series | Journal vs BB bearing ❓ — affects oil restrictor sizing | ✅ |
-| Header | **Perrin EL** (equal length) | OEM manifold | 304 SS, welded merge, 4-2-1, 14% larger primaries. $300 used. **Annual collector inspection; 2-4 track seasons expected** | ✅ |
-| Uppipe | **PLM 38mm EWG** | OEM uppipe | 2-bolt header flange matches Perrin collector | ✅ |
-| Wastegate | **TiAL MVS 38mm** | OEM internal WG | Spring pressure ❓ — record when fitted | ✅ |
-| Intercooler | **APS D/R 725 FMIC** | OEM TMIC | Core 28"×9.5"×4.5" bar-and-plate. **TMIC deleted → hood scoop free** | ✅ |
-| BOV | ❓ **undecided** | OEM BPV | Kit shipped w/ Turbosmart Race Port (VTA) — presence unconfirmed. See Linear CPU-36 | ❓ |
-| TGV | **Deleted** | OEM TGVs | `IN` TGV content void | ✅ |
-| Intake | **AEM fender intake** | OEM airbox | | ⚠️ |
-| Turbo inlet | Oversized, w/ recirc bung | OEM inlet | | ✅ |
+## Fuel System · Binder TAB 4
 
-## 5 · Fuel System · TAB 4
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ✅ | FPR / flex bracket | Custom | Washer bottle location | *[fabricate]* Washer system deleted |
+| ✅ | Flex fuel sensor |  | n/a new capability | *[to-buy]* Bench-tested; mounts on new FPR bracket |
+| ✅ | Fuel lines | Red Horse 235 series -6AN 15ft | OEM hard/soft lines | *[to-buy]* ECO+FKM E85-safe liner; SS under-braid + nylon jacket |
+| ✅ | Fuel pressure regulator | Aeromotive 15633 | OEM FPR | Plus Aeromotive gauge 40.90 |
+| ✅ | Fuel pump | DeatschWerks | OEM pump | **FSM: FU pump content void; FPCM bypassed** · See fuel-pump-isolator-notes.md |
+| ⚠️ | Fuel rails | Aeromotive | OEM rails | CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters |
+| ❓ | Injectors | UNKNOWN | OEM injectors | Installed - brand and size not recorded |
 
-| Part | Brand / Model | Supersedes | Notes | ✓ |
-|---|---|---|---|:-:|
-| Fuel pump | **DeatschWerks** | OEM pump | **FPCM bypassed** — see `fuel-pump-isolator-notes.md` | ✅ |
-| Fuel rails | **Aeromotive** | OEM rails | Need 2× ORB-to-AN adapters | ✅ |
-| FPR | **Aeromotive 15633** | OEM FPR | + Aeromotive gauge | ✅ |
-| Fuel lines | **Red Horse 235**, -6AN, 15 ft | OEM hard/soft lines | ECO+FKM E85-safe liner, SS under-braid + nylon jacket | ✅ |
-| Flex fuel sensor | — | n/a (new capability) | Bench-tested. Mounts on new FPR bracket | ✅ |
-| Injectors | ❓ | OEM injectors | **Installed — brand/size not recorded** | ❓ |
-| FPR / flex bracket | **Custom, fabricated** | Washer bottle location | Washer system deleted | ⏳ |
+## Engine Management · Electrical · Binder TAB 7
 
-## 6 · Engine Management · Electrical · TAB 7
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ⚠️ | AFR gauge | Innovate MTX-L |  | Separate from CAN Lambda |
+| ✅ | Battery relocation | Custom 3D-printed tray | Stock location | Cavity 236x182mm |
+| ✅ | DBW pedal | Subaru 36010FE020 |  | 05 STi drive-by-wire |
+| ✅ | DCCD controller | iWire Spiider | OEM DCCD control | Functional test needed at commissioning |
+| ✅ | ECU | Link | OEM ECU 22611AJ242 | **FSM: ALL OEM ECU / OBD-II / immobilizer sections VOID** |
+| ✅ | Engine harness | Subaru 2005 STi | 04 GG body harness | **FSM: WI diagrams do not describe this car** · Merged by iWire |
+| ✅ | Gauge cluster | Subaru 07 STi | 04 WRX cluster | **FSM: Print IDI from 2007 manual not 2004** |
+| ⚠️ | Gauges | Prosport boost/fuel/oil/volt |  |  |
+| ✅ | Harness merge | iWire |  | Includes DCCD Spiider and VSS Pro |
+| ✅ | MAP sensor | Omni Power MAP-STI-4BR | OEM 2.5-bar Denso | 4-bar; cal 11.97 psia/V +0.506 offset |
+| ✅ | VSS | iWire VSS Pro |  | Speedo correction for 6MT |
+| ✅ | Wideband | Link CAN Lambda | OEM front O2 | *[to-buy]* Post-turbo bung |
 
-| Part | Brand / Model | Supersedes | FSM impact | ✓ |
-|---|---|---|---|:-:|
-| ECU | **Link** standalone | OEM ECU (04 STi 22611AJ242) | **All OEM ECU / OBD-II / immobilizer sections VOID** | ✅ |
-| Wideband | **Link CAN Lambda** | OEM front O2 | Post-turbo bung | ✅ |
-| MAP sensor | **Omni MAP-STI-4BR** 4-bar | OEM 2.5-bar Denso | Cal: **11.97 psia/V, +0.506 offset** | ✅ |
-| Harness | **2005 STi**, merged to 04 GG body | — | **`WI` diagrams do not describe this car.** iWire merge, $2,134.97 | ✅ |
-| DCCD controller | **iWire DCCD Spiider** | OEM DCCD control | | ✅ |
-| VSS | **iWire VSS Pro** | — | Speedo correction for 6MT | ✅ |
-| Gauge cluster | **07 STi** | 04 WRX cluster | **Print `IDI` from 2007 manual, not 2004** | ✅ |
-| Gauges | **Prosport** boost / fuel press / oil press / volt | — | | ⚠️ |
-| AFR gauge | **Innovate MTX-L** | — | Separate from CAN Lambda | ⚠️ |
-| Battery | **Relocated to rear cargo**, 3D-printed tray | Stock location | Cavity 236×182mm | ✅ |
+## Drivetrain · Binder TAB 4
 
-## 7 · Drivetrain · TAB 4
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ⚠️ | Clutch | ACT Heavy Duty Performance Street | OEM | Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm |
+| ✅ | Clutch actuation | Subaru 2004 pedal/MC/hard pipe/slave |  | Both pull type 1.7 ratio 130-135mm; fork+throwout must be 6MT |
+| ⚠️ | Driveshaft | Hybrid 07 STi + wagon | OEM | Assembled from forum research; length and splines verified |
+| ✅ | Engine mounts | Torque Solution | OEM | **FSM: TS torque spec governs over FSM** |
+| ✅ | Flywheel | Subaru Conventional 6MT | 5MT flexible flywheel | Not interchangeable with 5MT |
+| ✅ | Rear differential | Subaru R180 | R160 | Came with trans - ratios match |
+| ✅ | Transmission | Subaru 2011 STi 6MT DCCD | 04 WRX 5MT | **FSM: Trans fluid = 2011 spec NOT 2004** · 97k miles at install; bundle |
 
-| Part | Brand / Model | Supersedes | Notes | ✓ |
-|---|---|---|---|:-:|
-| Transmission | **2011 STi 6MT w/ DCCD** | 04 WRX 5MT | $3,400 bundle, 97k mi at install. **Fluid = 2011 spec** | ✅ |
-| Rear diff | **R180** (came with trans) | R160 | **Ratios match — same donor set** | ✅ |
-| Clutch | **ACT Heavy Duty Performance Street** | OEM | <5k mi at install ⚠️ vs "disc is low" — reconcile. **Verify 240mm not 230mm** | ⚠️ |
-| Flywheel | **Conventional**, 6MT donor | 5MT flexible | Not interchangeable | ✅ |
-| Clutch actuation | **2004 pedal/MC/hard pipe + slave retained** | — | Both pull type, 1.7 ratio, 130-135mm stroke. **Fork + throwout must be 6MT** | ✅ |
-| Driveshaft | **Hybrid** 07 STi + wagon/2011 | OEM | Assembled from forum research; length + splines verified | ⚠️ |
-| Engine mounts | **Torque Solution** | OEM | $123.99. **TS torque spec governs over FSM** | ✅ |
+## Brakes · Binder TAB 5
 
-## 8 · Brakes · TAB 5
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ✅ | Brake lines | StopTech Stainless | OEM rubber | Front 59.66 rear 65.55 |
+| ✅ | Brembo upgrade | Brembo 04-07 STI | 4/2-pot calipers | *[planned]* GD-era NOT 08-14 - knuckles are 05-07 STi |
+| ✅ | Front calipers | Subaru 2007 WRX Limited 4-pot | 02-05 single-pot slider | **FSM: Print BR from 2007 manual** · Included pads and hardware |
+| ✅ | Front rotors | KNS / DBA KNS4651 | OEM rotors | Std WRX size; enlarged centre bore; dual-drilled 5x100/5x114.3 |
+| ✅ | Rear calipers | Subaru 2007 WRX Limited 2-pot | 02-05 single-pot |  |
+| ✅ | Rear rotors | KNS / DBA KNS4656 | OEM rotors | 06-07 WRX OD with R180 STi parking brake drum |
 
-| Part | Brand / Model | PN | Supersedes | Notes | ✓ |
-|---|---|---|---|---|:-:|
-| Front calipers | **2007 WRX Limited 4-pot** | — | 02-05 single-pot slider | Included pads + hardware | ✅ |
-| Rear calipers | **2007 WRX Limited 2-pot** | — | 02-05 single-pot | | ✅ |
-| Front rotors | **KNS / DBA gravel spec** | **KNS4651** | OEM | Std WRX size, **enlarged centre bore, dual-drilled 5x100/5x114.3** — the part that bridges 4-pot calipers to STi hubs. $200 | ✅ |
-| Rear rotors | **KNS / DBA gravel spec** | **KNS4656** | OEM | 06-07 WRX OD + **R180 STi parking brake drum**. $180 | ✅ |
-| Brake lines | **StopTech stainless** | OEM rubber | F $59.66 / R $65.55 | ✅ |
+## Suspension · Chassis · Binder TAB 6
 
-**Planned:** 04-07 STI Brembos (GD-era — **not** 08-14, because knuckles are 05-07 STi). See `brake-notes.md`.
-
-## 9 · Suspension · Chassis · TAB 6
-
-| Part | Brand / Model | PN | Supersedes | Notes | ✓ |
-|---|---|---|---|---|:-:|
-| Coilovers | **BC Racing BR series**, camber plates | ❓ F-02-BR vs F-03-BR | OEM struts/springs | **OEM strut/spring FSM pages void.** Stock rates 8kg/mm F, 6kg/mm R ⚠️ | ⚠️ |
-| Front knuckles | **05-07 STi** | 28313FE060 | 04 WRX knuckles | Chosen to preserve GD geometry. **→ 5x114.3** | ✅ |
-| Front hub/bearing | **05-07 STi** | 28373FE000 | OEM | | ✅ |
-| Rear knuckles | **05-07 STi**, both sides | — | 04 GG wagon | eBay, L $184.32 / R $233.32 | ✅ |
-| Lateral links | **Wagon (non-STi) retained** | — | — | ⚠️ **STi knuckles on wagon links — rear camber not factory adjustable** | ✅ |
-| Ball joint | Generic GD-era | 20206AJ000 | OEM | ❓ Verify taper seats in STi housing | ⚠️ |
-| Stabilizer bars | ❓ | — | — | **Wagon, STi, or aftermarket — unknown** | ❓ |
+| ✓ | Part | Brand / Model / PN | Supersedes | Notes |
+|:-:|---|---|---|---|
+| ⚠️ | Coilovers | BC Racing BR series | OEM struts/springs | **FSM: OEM strut/spring FSM pages void** · PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R |
+| ⚠️ | Front ball joint | Subaru 20206AJ000 | OEM | Generic GD-era - verify taper seats in STi housing |
+| ✅ | Front knuckles | Subaru 28313FE060 | 04 WRX knuckles | **FSM: Print FS from 2005/2007 not 2004** · 05-07 STi; chosen to preserve GD geometry; gives 5x114.3 |
+| ✅ | Front wheel bearing | Subaru 28373FE000 | OEM |  |
+| ✅ | Lateral links | Subaru Wagon non-STi RETAINED |  | **FSM: Use Wagon/Except-STi torque values** · STi knuckles on wagon links - rear camber NOT factory adjustable |
+| ✅ | Rear knuckles | Subaru 05-07 STi both sides | 04 GG wagon knuckles | L 184.32 R 233.32 |
+| ❓ | Stabilizer bars | UNKNOWN |  | Wagon STi or aftermarket - unknown |
 
 ---
 
 ## Wear & consumable items — track maintenance view
 
-*Same data, cut for what needs periodic attention.*
-
-| Item | Interval | Source |
+| Item | Interval | System |
 |---|---|---|
-| **Perrin header collector** | Annual inspection; 2-4 season life | §4 |
-| **IAG AOS** | Drain per interval | §3 |
-| **Brake fluid** | Flush **before every event** | §8 |
-| **Brake pads / rotors** | Per-event thickness + taper check | §8 |
-| **Turbo shaft play** | Periodic | §4 |
-| **Engine oil** | Early change after break-in, then per interval | §3 |
-| **Exhaust fasteners** | Re-torque after heat cycles, then per event | §4 |
-| **Suspension bushings** | ★ Re-torque at ride height before first drive | §9 |
-| **Fuel filter** | After initial line flush, then per interval | §5 |
+| Front calipers (Subaru) | Piston/boot check | brakes |
+| Front rotors (KNS / DBA) | Thickness per event | brakes |
+| Rear rotors (KNS / DBA) | Thickness per event | brakes |
+| Wideband (Link) | Sensor service life | ecu-electrical |
+| Turbocharger (Forced Performance) | Shaft play periodic | induction |
+| Header (Perrin) | Annual collector inspection | induction |
+| Air-oil separator (IAG) | Drain per interval | oiling |
 
 ---
 
 ## Not installed — spares / sell
 
-| Part | Status |
-|---|---|
-| **Perrin lightweight crank pulley** | Superseded by Fluidampr. Sell or spare. $75 FB bundle |
-| **2004 STi ECU** 22611AJ242 | Superseded by Link. $180 |
-| **Valve shims** | eBay listing in progress |
-| **5MT clutch fork / throwout** | Must NOT be used with 6MT |
+| Part | Brand / Model | Status | Notes |
+|---|---|---|---|
+| Crank pulley | Perrin Lightweight | sell | Superseded by Fluidampr |
+| ECU | Subaru 22611AJ242 | sell | 04 STi - superseded by Link |
+| Clutch fork + throwout | Subaru 5MT | spare | MUST NOT be used with 6MT |
 
 ---
 
 ## Open items — needs confirmation
 
-- [ ] **Head casting** — 05-era vs V25B (2007)? Decides FSM section for head work
-- [ ] **Injector brand + size**
-- [ ] **BC coilover PN** — F-02-BR vs F-03-BR
-- [ ] **Cosworth valve PN**
-- [ ] **Stabilizer bars** — wagon / STi / aftermarket
-- [ ] **FP Red bearing type** — journal vs ball bearing (oil restrictor sizing)
-- [ ] **ACT disc diameter** — 240mm vs 230mm
-- [ ] **Wastegate spring pressure**
-- [ ] **Intake manifold year** — 05 vs 06 STi
-- [ ] Actual measured bore + bearing clearances
+- [ ] ❓ **Valves** (engine-heads) — PN not recorded
+- [ ] ❓ **Injectors** (fuel) — Installed - brand and size not recorded
+- [ ] ❓ **Blow-off valve** (induction) — Kit shipped w Turbosmart Race Port VTA - presence unconfirmed; see Linear CPU-36
+- [ ] ❓ **Stabilizer bars** (suspension) — Wagon STi or aftermarket - unknown
+- [ ] ⚠️ **Clutch** (drivetrain) — Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
+- [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
+- [ ] ⚠️ **Gauges** (ecu-electrical) — unverified
+- [ ] ⚠️ **AFR gauge** (ecu-electrical) — Separate from CAN Lambda
+- [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
+- [ ] ⚠️ **Harmonic damper** (engine-lower) — Supersedes Perrin lightweight pulley; internally balanced
+- [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
+- [ ] ⚠️ **Intake** (induction) — unverified
+- [ ] ⚠️ **Coilovers** (suspension) — PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R
+- [ ] ⚠️ **Front ball joint** (suspension) — Generic GD-era - verify taper seats in STi housing
 
 ---
 
-## ⚠ Sources of truth — avoid drift
+## Querying
 
-Build data currently lives in **five** places:
-1. This register ← **make this authoritative for what's ON the car**
-2. Google Sheets master build spreadsheet (purchasing/status)
-3. `20-21 2004 Wagon Build.xlsx` in Dropbox (historical, 2020-21 purchases)
-4. Individual `.md` notes files (deep detail per system)
-5. Linear project CPU (work tracking)
+```sh
+# everything still to buy
+awk -F, 'NR==1||$8=="to-buy"' as-built/parts.csv | column -t -s,
 
-**Suggested split:** Linear = *what to do*. This register = *what is on the car*. The `.md` files = *why, and the detail*. Spreadsheets = *historical purchasing record*.
+# anything unconfirmed
+grep -E 'unknown|unverified' as-built/parts.csv
+
+# one system
+grep '^brakes,' as-built/parts.csv
+
+# find a part number
+grep -i 'KNS4651' as-built/parts.csv
+```

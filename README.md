@@ -30,7 +30,8 @@ reference them by basename, and basenames are still unique.
 ### `as-built/` — current state of the car
 | File | Contents |
 |---|---|
-| `parts-register.md` | **Every aftermarket part, keyed to what it supersedes.** Doubles as the OEM deviations map |
+| `parts.csv` | **Source of truth** for the parts list — 64 rows, 13 columns. Edit here. |
+| `parts-register.md` | **Generated** from `parts.csv`. Every aftermarket part keyed to what it supersedes; doubles as the OEM deviations map. Do not hand-edit. |
 | `as-built-engine-specs.md` | Measured bearing clearances, machining notes, rotating assembly |
 | `hardware-reference.md` | Seal / bushing / axle / fastener / connector part numbers |
 
@@ -46,6 +47,30 @@ reference them by basename, and basenames are still unique.
 **Fuel:** `fuel-pump-isolator-notes.md` · `e85_fuel_line_check.md` · `flex-fuel-sensor-bench-test.md`
 **Electrical:** `electrical-grounding-notes.md` · `alternator-decision-notes.md` · `singer-alternator-spec-request.md`
 **Chassis:** `brake-notes.md` · `suspension-notes.md` · `drivetrain-notes.md`
+
+### Parts list — CSV as the data store
+
+`as-built/parts.csv` holds the parts data; `as-built/parts-register.md` is generated from it.
+
+```sh
+python3 tools/gen-parts-register.py    # regenerate after editing the CSV
+```
+
+CSV rather than markdown tables for the data because git diffs it one part per
+line — change a part number and the diff shows exactly that, instead of a
+realigned table. It also opens directly in Sheets and greps cleanly.
+
+The generated markdown derives three views automatically, so they can't drift:
+wear/consumable schedule, spares & sell pile, and open items needing confirmation.
+
+**Columns:** `system, tab, part, brand, model_pn, supersedes, fsm_impact, status, confidence, source, cost, wear_interval, notes`
+
+```sh
+grep '^brakes,' as-built/parts.csv                 # one system
+grep -E 'unknown|unverified' as-built/parts.csv    # anything unconfirmed
+grep -i 'KNS4651' as-built/parts.csv               # find a part number
+awk -F, 'NR==1||$8=="to-buy"' as-built/parts.csv | column -t -s,
+```
 
 ### `manual/` — service manual binder project
 | File | Contents |

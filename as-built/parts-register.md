@@ -75,7 +75,7 @@
 | ✅ | Coolant crossover pipe (front) | Subaru OEM 14050AA451 | OEM | 04 WRX pipe - supersedes AA450. Physically verified to fit EJ257 + STi manifold |
 | ❓ | Coolant hose kit | Roger Clark Motorsport / Samco V8 12-hose kit 02-05 WRX/STI | OEM hoses | *[verify-existing]* Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM |
 | ✅ | Cooling fans | Subaru OEM | OEM fans | OEM fans retained. Fan control to be wired to the Link |
-| ❓ | Engine coolant filler tank (ECFT) | UNKNOWN |  | OEM plastic tank or aftermarket (Killer B UTCRv2)? Not recorded. The ECFT is the small high-mounted reservoir that serves as the system HIGH POINT - the turbo sits above the radiator filler neck so filling and bleeding both happen here |
+| ✅ | Engine coolant filler tank (ECFT) | Mishimoto | OEM plastic ECFT | MISHIMOTO ECFT - confirmed 2026-08-20. Aluminium; replaces the OEM plastic tank (a known age/heat failure point). The ECFT is the small high-mounted reservoir serving as the system HIGH POINT - the turbo sits above the radiator filler neck so filling and bleeding both happen here. Pairs with the Mishimoto radiator |
 | ⚠️ | Radiator | Mishimoto model TBD | OEM radiator | MISHIMOTO. Exact model not recorded |
 | ⚠️ | Radiator hoses | Mishimoto Silicone upper + lower | OEM hoses | Already owned |
 | ✅ | Upper pipe assembly (Pipe-Water Tank) | Subaru OEM 21141AA131 | OEM 21141AA122 | 06-14 era - matches V25 head PCV port layout. PCV portions to be CAPPED (IAG AOS replaces OEM PCV); only the ECFT-to-bypass coolant passage is used |
@@ -220,7 +220,6 @@
 ## Open items — needs confirmation
 
 - [ ] ❓ **Coolant hose kit** (cooling) — Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM
-- [ ] ❓ **Engine coolant filler tank (ECFT)** (cooling) — OEM plastic tank or aftermarket (Killer B UTCRv2)? Not recorded. The ECFT is the small high-mounted reservoir that serves as the system HIGH POINT - the turbo sits above the radiator filler neck so filling and bleeding both happen here
 - [ ] ❓ **Valve stem seals** (engine-heads) — TEARDOWN-GATED. Replaced during build? Not recorded and not discoverable with the engine assembled
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
 - [ ] ❓ **BOV adapter** (induction) — Sheet says not needed if going bung-to-hose direct - depends on final BOV choice

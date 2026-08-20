@@ -43,7 +43,7 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
-| ⚠️ | AVCS oil feed lines | Subaru OEM | OEM | *[to-buy]* Driver side ordered; passenger side TBD - OEM or HEL braided |
+| ✅ | AVCS oil feed lines | HEL HEL-OF34 stainless braided | OEM oil pipes LH+RH | *[to-buy]* Fitment 06-14 WRX / 04-21 STI / 05-09 LGT / 04-08 FXT - spans both head generations so unaffected by the open head-casting question. FSM items 27+29 Oil pipe LH/RH; item 28 Gasket - use fresh crush washers. Use HEL torque not FSM. Clamp to prevent braid abrasion |
 | ✅ | Air-oil separator | IAG AOS | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · Cap PCV portions of 21141AA131 |
 | ⚠️ | Air-oil separator | IAG Street Series V2 | OEM PCV | USED great condition w/ all lines; PN verification pending |
 | ✅ | Heat sleeve | DEI Reflective 5/8in ID 3ft | n/a new | *[to-buy]* For IAG AOS lines; share purchase with fuel lines |
@@ -196,7 +196,6 @@
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **Radiator hoses** (engine-lower) — Already owned
 - [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
-- [ ] ⚠️ **AVCS oil feed lines** (oiling) — Driver side ordered; passenger side TBD - OEM or HEL braided
 - [ ] ⚠️ **Air-oil separator** (oiling) — USED great condition w/ all lines; PN verification pending
 - [ ] ⚠️ **Coilovers** (suspension) — PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R
 - [ ] ⚠️ **Front ball joint** (suspension) — Generic GD-era - verify taper seats in STi housing

@@ -74,7 +74,7 @@
 | ✅ | Coolant bypass pipe | Subaru OEM 14065AA250 | OEM | 04 WRX / 04-05 STi. Runs under/behind the intake manifold to the water pump inlet |
 | ✅ | Coolant crossover pipe (front) | Subaru OEM 14050AA451 | OEM | 04 WRX pipe - supersedes AA450. Physically verified to fit EJ257 + STi manifold |
 | ❓ | Coolant hose kit | Roger Clark Motorsport / Samco V8 12-hose kit 02-05 WRX/STI | OEM hoses | *[verify-existing]* Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM |
-| ⚠️ | Cooling fans | Subaru OEM | OEM fans | OEM fans retained; fan control to be wired to the Link. VERIFY the OEM fan shrouds mount to the Mishimoto MMRAD-WRX-01 - direct-fit radiators normally accept factory fans but the listing does not state it |
+| ✅ | Cooling fans + shrouds | Subaru OEM | OEM fans | OEM fans and shrouds retained. CONFIRMED 2026-08-20: OEM shroud mounts directly to the Mishimoto MMRAD-WRX-01. Fan control still to be wired to the Link (CPU-46) |
 | ✅ | Engine coolant filler tank (ECFT) | Mishimoto | OEM plastic ECFT | MISHIMOTO ECFT - confirmed 2026-08-20. Aluminium; replaces the OEM plastic tank (a known age/heat failure point). The ECFT is the small high-mounted reservoir serving as the system HIGH POINT - the turbo sits above the radiator filler neck so filling and bleeding both happen here. Pairs with the Mishimoto radiator |
 | ✅ | Radiator | Mishimoto MMRAD-WRX-01 Performance Aluminum | OEM radiator | 2-row 1.65in thick full aluminium brazed core. Fits 01-07 WRX/STi MANUAL. Inlet/outlet 1.5in. INCLUDES TWO 1.3 BAR CAPS - one-way for the radiator and two-way for the ECFT; NOT interchangeable. 1.3 bar is well above OEM ~0.9 bar - fine here because the ECFT is the aluminium Mishimoto not the OEM plastic tank |
 | ✅ | Radiator caps (x2) | Mishimoto 1.3 bar - supplied with MMRAD-WRX-01 | OEM caps | ONE-WAY cap on the radiator / TWO-WAY cap on the ECFT. Fitting them backwards stops the system drawing coolant back on cooldown or relieving properly |
@@ -227,7 +227,6 @@
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
 - [ ] ❓ **Wheel clearance for Brembo upgrade** (suspension) — OPEN: do these wheels clear 326mm 04-07 STi Brembos? Clearing the current ~294mm setup does NOT confirm it. 32mm larger rotor and barrel shape matters as much as diameter - many 17in OEM wheels foul a Brembo caliper. VERIFY BEFORE BUYING CALIPERS
 - [ ] ⚠️ **Radiator hoses** (cooling) — Already owned
-- [ ] ⚠️ **Cooling fans** (cooling) — OEM fans retained; fan control to be wired to the Link. VERIFY the OEM fan shrouds mount to the Mishimoto MMRAD-WRX-01 - direct-fit radiators normally accept factory fans but the listing does not state it
 - [ ] ⚠️ **Clutch** (drivetrain) — Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
 - [ ] ⚠️ **Clutch release fork** (drivetrain) — Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified

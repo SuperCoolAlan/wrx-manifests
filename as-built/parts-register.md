@@ -36,7 +36,7 @@
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | Camshafts | Subaru OEM |  | Stage 2 considered not fitted |
-| ✅ | Combustion chamber cc matching |  |  | CHAMBERS EQUALISED - confirmed 2026-08-20. Compression is even bank to bank; no asymmetric knock threshold to warn Ben about. Measured cc figures not recorded |
+| ✅ | Combustion chamber cc matching |  |  | CHAMBERS EQUALISED - confirmed 2026-08-20. Compression is even bank to bank; nothing asymmetric to warn Ben about. Measured cc figures TEARDOWN-GATED |
 | ✅ | Cylinder head - one side | Cosworth V25 STi | OEM head | **FSM: HEAD/VALVETRAIN WORK FOLLOWS THE 2007 FSM - and 2007 STi has no ME section so use ME(H4DOTC)** · GENUINE COSWORTH V25 STi head. Casting question RESOLVED 2026-08-20 - corroborates cooling-system-notes.md V25B casting mark. Which side (LH/RH) not recorded |
 | ✅ | Cylinder head - other side | OEM ported to match | OEM head | OEM head PORTED TO MATCH the Cosworth side. This is why flows were matched - it was a matching exercise not a matched pair |
 | ✅ | Head gaskets | Subaru OEM | OEM | OEM head gaskets. Sound pairing with ARP studs - factory multi-layer gaskets are well regarded and the studs provide the clamp |
@@ -45,8 +45,8 @@
 | ✅ | Head studs | ARP | OEM TTY head bolts | ARP STUDS CONFIRMED 2026-08-20. Resolves the main reliability concern at 500whp on E85 - OEM TTY bolts are the known weak point for head lift. Exact ARP kit PN not recorded |
 | ✅ | Valve retainers | Cosworth PR7561 | OEM retainers | Titanium. Note: mixed with Manley springs - confirm they were fitted as a matched combination |
 | ✅ | Valve springs | Manley 22180-16 | OEM springs | Spring seats machined deeper to accept them |
-| ❓ | Valve stem seals | UNKNOWN | OEM | Replaced during build? Not recorded |
-| ⚠️ | Valves | Oversized - brand TBD | OEM valves | OVERSIZED - believed +1mm (Alan 2026-08-20 - RECOLLECTION NOT CONFIRMED). +1mm is a common EJ oversize so plausible. Intake/exhaust split and material not recorded. Sources to confirm: the heads for-sale thread / Cosworth published spec for V25 heads / calipers if a head comes apart |
+| ❓ | Valve stem seals | UNKNOWN | OEM | TEARDOWN-GATED. Replaced during build? Not recorded and not discoverable with the engine assembled |
+| ⚠️ | Valves | Oversized - brand TBD | OEM valves | OVERSIZED - believed +1mm (recollection |
 
 ## Oiling · Binder TAB 2
 
@@ -75,7 +75,7 @@
 | ✅ | Coolant crossover pipe (front) | Subaru OEM 14050AA451 | OEM | 04 WRX pipe - supersedes AA450. Physically verified to fit EJ257 + STi manifold |
 | ❓ | Coolant hose kit | Roger Clark Motorsport / Samco V8 12-hose kit 02-05 WRX/STI | OEM hoses | *[verify-existing]* Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM |
 | ✅ | Cooling fans | Subaru OEM | OEM fans | OEM fans retained. Fan control to be wired to the Link |
-| ❓ | Engine coolant filler tank (ECFT) | UNKNOWN |  | OEM or Killer B UTCRv2? Not recorded. System high point - where filling and bleeding happen |
+| ❓ | Engine coolant filler tank (ECFT) | UNKNOWN |  | OEM plastic tank or aftermarket (Killer B UTCRv2)? Not recorded. The ECFT is the small high-mounted reservoir that serves as the system HIGH POINT - the turbo sits above the radiator filler neck so filling and bleeding both happen here |
 | ⚠️ | Radiator | Mishimoto model TBD | OEM radiator | MISHIMOTO. Exact model not recorded |
 | ⚠️ | Radiator hoses | Mishimoto Silicone upper + lower | OEM hoses | Already owned |
 | ✅ | Upper pipe assembly (Pipe-Water Tank) | Subaru OEM 21141AA131 | OEM 21141AA122 | 06-14 era - matches V25 head PCV port layout. PCV portions to be CAPPED (IAG AOS replaces OEM PCV); only the ECFT-to-bypass coolant passage is used |
@@ -220,8 +220,8 @@
 ## Open items — needs confirmation
 
 - [ ] ❓ **Coolant hose kit** (cooling) — Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM
-- [ ] ❓ **Engine coolant filler tank (ECFT)** (cooling) — OEM or Killer B UTCRv2? Not recorded. System high point - where filling and bleeding happen
-- [ ] ❓ **Valve stem seals** (engine-heads) — Replaced during build? Not recorded
+- [ ] ❓ **Engine coolant filler tank (ECFT)** (cooling) — OEM plastic tank or aftermarket (Killer B UTCRv2)? Not recorded. The ECFT is the small high-mounted reservoir that serves as the system HIGH POINT - the turbo sits above the radiator filler neck so filling and bleeding both happen here
+- [ ] ❓ **Valve stem seals** (engine-heads) — TEARDOWN-GATED. Replaced during build? Not recorded and not discoverable with the engine assembled
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
 - [ ] ❓ **BOV adapter** (induction) — Sheet says not needed if going bung-to-hose direct - depends on final BOV choice
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
@@ -235,7 +235,7 @@
 - [ ] ⚠️ **AFR gauge** (ecu-electrical) — Separate from CAN Lambda
 - [ ] ⚠️ **Fuel pressure sensor** (ecu-electrical) — Single-function NOT Bosch combined
 - [ ] ⚠️ **MAF sensor** (ecu-electrical) — RETAINED for IAT element in speed density mode - verify exact PN
-- [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (Alan 2026-08-20 - RECOLLECTION NOT CONFIRMED). +1mm is a common EJ oversize so plausible. Intake/exhaust split and material not recorded. Sources to confirm: the heads for-sale thread / Cosworth published spec for V25 heads / calipers if a head comes apart
+- [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (recollection
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
 - [ ] ⚠️ **Downpipe** (induction) — CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection

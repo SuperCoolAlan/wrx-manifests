@@ -45,7 +45,7 @@
 | ✅ | Head studs | ARP | OEM TTY head bolts | ARP STUDS CONFIRMED 2026-08-20. Resolves the main reliability concern at 500whp on E85 - OEM TTY bolts are the known weak point for head lift. Exact ARP kit PN not recorded |
 | ✅ | Valve retainers | Cosworth PR7561 | OEM retainers | Titanium. Note: mixed with Manley springs - confirm they were fitted as a matched combination |
 | ✅ | Valve springs | Manley 22180-16 | OEM springs | Spring seats machined deeper to accept them |
-| ❓ | Valve stem seals | UNKNOWN | OEM | TEARDOWN-GATED. Replaced during build? Not recorded and not discoverable with the engine assembled |
+| ✅ | Valve stem seals | NEW - brand not recorded | OEM seals | NEW SEALS FITTED FOR THIS BUILD - confirmed 2026-08-20. Brand/PN not recorded (teardown-gated) but the fact they are new is the part that matters |
 | ⚠️ | Valves | Oversized - brand TBD | OEM valves | OVERSIZED - believed +1mm (recollection |
 
 ## Oiling · Binder TAB 2
@@ -221,7 +221,6 @@
 ## Open items — needs confirmation
 
 - [ ] ❓ **Coolant hose kit** (cooling) — Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM
-- [ ] ❓ **Valve stem seals** (engine-heads) — TEARDOWN-GATED. Replaced during build? Not recorded and not discoverable with the engine assembled
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
 - [ ] ❓ **BOV adapter** (induction) — Sheet says not needed if going bung-to-hose direct - depends on final BOV choice
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing

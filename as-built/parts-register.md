@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**104 parts** — 73 installed · 21 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing · 1 in-stock
+**105 parts** — 73 installed · 21 to-buy · 2 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
 
 ---
 
@@ -67,7 +67,8 @@
 | ❓ | BOV adapter | TBD |  | *[undecided]* Sheet says not needed if going bung-to-hose direct - depends on final BOV choice |
 | ❓ | Blow-off valve | TBD | OEM BPV | *[undecided]* NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36 |
 | ✅ | Cold air intake | AEM 21-474 | OEM airbox | PN CORRECTED 2026-08-20 (sheet said 21-477). Listed for 02-05 WRX not STI but TEST FITTED OK. Filter relocates outside engine bay. Mates to FP 84mm inlet via silicone reducing coupler |
-| ✅ | Exhaust gaskets - all joints | Subaru OEM / aftermarket | OEM gaskets | *[in-stock]* IN STOCK 2026-08-20. Covers header-to-head / header-to-uppipe / uppipe-to-turbo / turbo-to-downpipe / downpipe-to-midpipe. FSM: replace with new ones |
+| ✅ | Exhaust gaskets - most joints | Subaru OEM / aftermarket | OEM gaskets | *[in-stock]* IN STOCK 2026-08-20: header-to-head / header-to-uppipe / uppipe-to-turbo / downpipe-to-midpipe |
+| ❓ | Gasket - turbo to downpipe | TBD | OEM gasket | *[verify-existing]* NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing |
 | ✅ | Header | Perrin Equal Length | OEM manifold | 304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons |
 | ✅ | Intercooler | APS D/R 725 FMIC | OEM TMIC | **FSM: IN TMIC content void; hood scoop freed** · Core 28x9.5x4.5 bar-and-plate |
 | ✅ | TGV | DELETED | OEM TGVs | **FSM: IN TGV content void** · Used |
@@ -195,6 +196,7 @@
 - [ ] ❓ **Coolant hose kit** (engine-lower) — Covers Modine + turbo coolant hoses - confirm whether owned
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
 - [ ] ❓ **BOV adapter** (induction) — Sheet says not needed if going bung-to-hose direct - depends on final BOV choice
+- [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
 - [ ] ⚠️ **Clutch** (drivetrain) — Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
 - [ ] ⚠️ **Clutch release fork** (drivetrain) — Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified

@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**105 parts** — 73 installed · 21 to-buy · 2 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
+**105 parts** — 75 installed · 19 to-buy · 2 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock
 
 ---
 
@@ -20,7 +20,7 @@
 | ❓ | Coolant hose kit | Roger Clark Motorsport / Samco V8 12-hose kit 02-05 WRX/STI | OEM hoses | *[verify-existing]* Covers Modine + turbo coolant hoses - confirm whether owned |
 | ✅ | Crank + cam seals | Subaru OEM | OEM | Crank seal + 4 cam seals |
 | ✅ | Crank pulley | Perrin Lightweight | OEM crank pulley | DECISION REVERSED 2026-08-20: running the Perrin already installed rather than buying the Fluidampr. Mitigated by conventional OEM flywheel (avoids lightweight-pulley + lightweight-flywheel combo). Reversible - front-of-engine job |
-| ✅ | Crank pulley bolt | Subaru OEM 12369AA011 | OEM bolt | *[to-buy]* REPLACE do not reuse - angle-tightened (44 Nm + 65-75 deg). Likely dealer rather than RockAuto |
+| ✅ | Crank pulley bolt | Subaru OEM 12369AA011 | OEM bolt | NEW BOLT INSTALLED 2026-08-20. Angle-tightened spec: 44 Nm then 65-75 deg. Confirm it was tightened to the angle spec not just the 44 Nm preload |
 | ✅ | Crankshaft | Subaru OEM 12200AA430 | OEM WRX crank | Nitride-treated STi |
 | ✅ | Drain plug crush washers | Subaru OEM 803916010 |  | *[to-buy]* 10-pack. New washer every change per IAG |
 | ✅ | Harmonic damper | Fluidampr 531101 | Perrin lightweight pulley | *[deferred]* NOT BUYING for now - see crank pulley row. Original 2026-07-02 rationale: torsional harmonics at 500whp threaten rod/main bearings |
@@ -46,7 +46,7 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
-| ✅ | AVCS oil feed line LH (driver) | Subaru OEM | OEM oil pipe LH | *[to-buy]* ORDERED. FSM item 27 Oil pipe LH. OEM gasket/crush washers - item 28. Use FSM torque |
+| ✅ | AVCS oil feed line LH (driver) | Subaru OEM | OEM oil pipe LH | INSTALLED 2026-08-20. FSM item 27 Oil pipe LH |
 | ✅ | AVCS oil feed line RH (passenger) | HEL HEL-OF34 stainless braided | OEM oil pipe RH | *[to-buy]* FSM item 29 Oil pipe RH. Fitment 06-14 WRX / 04-21 STI / 05-09 LGT / 04-08 FXT - spans both head generations so unaffected by the open head-casting question. Use HEL sealing washers + HEL torque NOT the FSM figure. Clamp to prevent braid abrasion against wiring/coolant hoses |
 | ✅ | Air-oil separator | IAG AOS | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · Cap PCV portions of 21141AA131 |
 | ⚠️ | Air-oil separator | IAG Street Series V2 | OEM PCV | USED great condition w/ all lines; PN verification pending |

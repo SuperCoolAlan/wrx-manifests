@@ -1,0 +1,143 @@
+system,tab,part,brand,model_pn,supersedes,fsm_impact,status,confidence,source,cost,wear_interval,notes
+engine-lower,2,Crankshaft,Subaru OEM,12200AA430,OEM WRX crank,,installed,confirmed,Flatirons Tuning,322.47,,Nitride-treated STi
+engine-lower,2,Pistons,Manley,612000C-4,OEM pistons,,installed,confirmed,Defined Performance,479.99,,EJ257 99.75mm std stroke std bore 8.5:1 dish
+engine-lower,2,Rods,Manley,15024-4 H-Tuff,OEM rods,,installed,confirmed,Defined Performance,379.99,,
+engine-lower,2,Rod bearings,King,STD,OEM,,installed,confirmed,Defined Performance,95.99,,Ran STD rod bearings
+engine-lower,2,Main bearings,King,STDX,OEM,,installed,confirmed,Defined Performance,65.49,,Mains fine-tuned by mixing shell halves; see as-built-engine-specs.md
+engine-lower,2,Oil pump,Subaru,15010AA360,10mm OEM pump,,installed,confirmed,eBay,89.10,,11mm high-volume
+engine-lower,2,Crank pulley,Perrin,Lightweight,OEM crank pulley,,installed,confirmed,FB bundle,75.00,,DECISION REVERSED 2026-08-20: running the Perrin already installed rather than buying the Fluidampr. Mitigated by conventional OEM flywheel (avoids lightweight-pulley + lightweight-flywheel combo). Reversible - front-of-engine job
+engine-lower,2,Harmonic damper,Fluidampr,531101,Perrin lightweight pulley,,deferred,confirmed,,400.00,,NOT BUYING for now - see crank pulley row. Original 2026-07-02 rationale: torsional harmonics at 500whp threaten rod/main bearings, timing sprocket, oil pump drive
+engine-heads,2,Valve springs,Manley,22180-16,OEM springs,,installed,confirmed,Defined Performance,277.18,,Spring seats machined deeper to accept them
+engine-heads,2,Valve retainers,Cosworth,PR7561,OEM retainers,,installed,confirmed,,,,Titanium. Note: mixed with Manley springs - confirm they were fitted as a matched combination
+engine-heads,2,Cylinder head - one side,Cosworth,V25B STi,OEM head,HEAD/VALVETRAIN WORK FOLLOWS THE 2007 FSM - and 2007 STi has no ME section so use ME(H4DOTC),installed,confirmed,,,,GENUINE COSWORTH V25B STi head. Casting RESOLVED 2026-08-20 - V25B specifically - corroborates cooling-system-notes.md V25B casting mark. Which side (LH/RH) not recorded
+engine-heads,2,Cylinder head - other side,OEM ported to match,,OEM head,,installed,confirmed,,,,OEM head PORTED TO MATCH the Cosworth side. This is why flows were matched - it was a matching exercise not a matched pair
+engine-heads,2,Combustion chamber cc matching,,,,,installed,confirmed,,,,CHAMBERS EQUALISED - confirmed 2026-08-20. Compression is even bank to bank; nothing asymmetric to warn Ben about. Measured cc figures TEARDOWN-GATED
+engine-heads,2,Valves,Oversized - brand TBD,,OEM valves,,installed,unverified,,,,OVERSIZED - believed +1mm (recollection, not confirmed). TEARDOWN-GATED: engine is sealed so not measurable. Only realistic sources before then are the heads for-sale thread or Cosworth published spec for the V25 heads
+engine-heads,2,Head porting,Cosworth,Port + polish + flow matched,OEM ports,,installed,confirmed,,,,Flows matched between banks. Shop/who performed NOT RECORDED
+engine-heads,2,Head machining - valve spring seats,,,OEM seats,,installed,confirmed,,,,VALVE SPRING SEATS MODIFIED (deeper) to accept taller Manley springs and allow more lift. DECK SURFACE NOT MILLED - so compression stays at the 8.5:1 from the Manley dish pistons and cam timing geometry is unchanged
+engine-heads,2,Head gaskets,Subaru OEM,,OEM,,installed,confirmed,,,,OEM head gaskets. Sound pairing with ARP studs - factory multi-layer gaskets are well regarded and the studs provide the clamp
+engine-heads,2,Head studs,ARP,,OEM TTY head bolts,,installed,confirmed,,,,ARP STUDS CONFIRMED 2026-08-20. Resolves the main reliability concern at 500whp on E85 - OEM TTY bolts are the known weak point for head lift. Exact ARP kit PN not recorded
+engine-heads,2,Valve stem seals,NEW - brand not recorded,,OEM seals,,installed,confirmed,,,,NEW SEALS FITTED FOR THIS BUILD - confirmed 2026-08-20. Brand/PN not recorded (teardown-gated) but the fact they are new is the part that matters
+engine-heads,2,Camshafts,Subaru OEM,,,,installed,unverified,,,,Stage 2 considered not fitted
+oiling,2,Oil pan,IAG,,OEM pan,Changes oil capacity - measure and record,installed,confirmed,,,,
+oiling,2,Air-oil separator,IAG,Street Series V2,Entire OEM PCV system,LU PCV content void; all OEM PCV hoses removed,installed,confirmed,,,Drain per interval,USED great condition w/ all lines; drain per interval; cap PCV portions of 21141AA131
+oiling,2,Oil pressure sender,,remote,OEM switch location,,installed,confirmed,,,,Firewall mounted 2026-08-20; torque 25 Nm; THREE BOND 1324
+induction,3,Turbocharger,Forced Performance,FP STi Red HTZ R690701874,OEM VF-series,,installed,confirmed,,1000.00,Shaft play periodic,USED. HTZ variant - older proven design w/ journal-bearing option; CONFIRM bearing type for oil restrictor sizing
+induction,3,Header,Perrin,Equal Length,OEM manifold,,installed,confirmed,Jacob Ham FB,300.00,Annual collector inspection,304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons
+induction,3,Uppipe,PLM,38mm EWG,OEM uppipe,,installed,confirmed,,450.00,,Bundle price with wastegate; 2-bolt flange matches Perrin collector
+induction,3,Wastegate,TiAL,MVS 38mm,OEM internal WG,,installed,confirmed,,,,Spring pressure UNKNOWN - record when fitted
+induction,3,Intercooler,APS,D/R 725 FMIC,OEM TMIC,IN TMIC content void; hood scoop freed,installed,confirmed,Bryce Skelton,300.00,,Core 28x9.5x4.5 bar-and-plate
+induction,3,Blow-off valve,TBD,,OEM BPV,,undecided,unknown,,100-220,,NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
+induction,3,TGV deletes,IAG,,OEM TGVs,IN TGV content void,installed,confirmed,,131.00,,IAG TGV deletes. Bought used. Holes drilled slightly to bolt to the intake manifold
+induction,3,Cold air intake,AEM,21-474,OEM airbox,,installed,confirmed,,,,PN CORRECTED 2026-08-20 (sheet said 21-477). Listed for 02-05 WRX not STI but TEST FITTED OK. Filter relocates outside engine bay. Mates to FP 84mm inlet via silicone reducing coupler
+induction,3,Turbo inlet,Forced Performance,FP 8005010A 84mm,OEM inlet,,installed,confirmed,,120.00,,84mm silicone; fits FP 84mm FAP cover; has recirc return bung + Mishimoto BPV recirc hose
+fuel,4,Fuel pump,DeatschWerks,DW400 9-401-1041,OEM pump,FU pump content void; FPCM bypassed,installed,confirmed,,,,415 LPH BRUSHED motor (not brushless); see fuel-pump-isolator-notes.md
+fuel,4,Fuel rails,Aeromotive,,OEM rails,,installed,unverified,,,,CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
+fuel,4,Fuel pressure regulator,Aeromotive,15633,OEM FPR,,installed,confirmed,,60.00,,Plus Aeromotive gauge 40.90
+fuel,4,Fuel lines,Red Horse,235 series -6AN 15ft,OEM hard/soft lines,,to-buy,confirmed,,,,ECO+FKM E85-safe liner; SS under-braid + nylon jacket
+fuel,4,Injectors,DeatschWerks,DW1500 16M-07-1500-4,OEM injectors,,installed,confirmed,,,,Set of 4; sized per tuner for 500whp E85
+fuel,4,FPR / flex bracket,Custom,,Washer bottle location,,fabricate,confirmed,,,,Washer system deleted
+ecu-electrical,7,ECU,Link Engine Management,WRXLink WRX104X (224-4000),OEM ECU 22611AJ242,ALL OEM ECU / OBD-II / immobilizer sections VOID,installed,confirmed,BW Tuning inv AS-0003,1957.50,,Per invoice AS-0003 (2026-05-29). Installed INTO THE FACTORY ECU ENCLOSURE. Bench-activated with base map loaded READY TO RUN
+ecu-electrical,7,Wideband,Link Engine Management,CAN Lambda 125-1000,OEM front O2,,installed,confirmed,BW Tuning inv AS-0003,373.50,Sensor service life,Post-turbo bung
+ecu-electrical,7,MAP sensor,Omni Power,MAP-STI-4BR,OEM 2.5-bar Denso,,installed,confirmed,eBay,75.00,,4-bar; cal 11.97 psia/V +0.506 offset
+ecu-electrical,7,Engine harness,Subaru,2005 STi,04 GG body harness,WI diagrams do not describe this car,installed,confirmed,Jonathan Hall,800.00,,Merged by iWire
+ecu-electrical,7,Harness merge,iWire,,,,installed,confirmed,iWire,2134.97,,Includes the DCCD controller and VSS Pro
+ecu-electrical,7,DCCD controller,DCCDPro,with cluster output,OEM DCCD control electronics,CS Control Systems describes factory control logic - superseded. Mechanical centre diff content still applies,installed,confirmed,iWire inv 5304,490.00,,THE CONTROLLER. RETAINS THE FACTORY DCCD KNOB AND CLUSTER DISPLAY - 'with cluster output' plus the cluster jumper drive the factory readout. Adds automatic G-sensor modes on top. Functional test at commissioning
+ecu-electrical,7,DCCD Spiider PnP kit,iWire,w/ STi cluster,,,installed,confirmed,iWire inv 5304,154.99,,THE HARNESS KIT connecting the DCCDPro - a separate part from the controller. Source of the 'Spiider' name
+ecu-electrical,7,DCCD cluster jumper,iWire,,,,installed,confirmed,iWire inv 5304,29.99,,Feeds the factory cluster DCCD display
+ecu-electrical,7,DCCD G sensor mount,DCCDPro,,,,installed,confirmed,iWire inv 5304,0,,Accelerometer mount for DCCDPro automatic modes - no charge
+ecu-electrical,7,Turbo-trans to DCCD-trans adapter,iWire,,,,installed,confirmed,iWire inv 5304,0,,No charge
+ecu-electrical,7,VSS,iWire,VSS Pro,,,installed,confirmed,,,,Speedo correction for 6MT
+ecu-electrical,7,Gauge cluster,Subaru,07 STi with OAT,04 WRX cluster,Print IDI from 2007 manual not 2004,installed,confirmed,Pandaru + iWire swap,360.00,,07 STi cluster WITH outside air temp. iWire performed the swap (inv 5304)
+ecu-electrical,7,Gauges,Prosport,boost/fuel/oil/volt,,,installed,unverified,,,,
+ecu-electrical,7,AFR gauge,Innovate,MTX-L,,,installed,unverified,,220.00,,Separate from CAN Lambda
+ecu-electrical,7,Battery,Interstate,MTX-35 AGM Group 35,OEM battery,,installed,confirmed,,,,ENGINE BAY - OEM LOCATION (corrected 2026-08-20; was wrongly recorded as relocated to rear)
+ecu-electrical,7,Battery tray,Custom 3D print,ASA,OEM tray 82122AA031/032,,installed,confirmed,,,,Engine bay. Cavity 236x182mm. Integrated platform for 2x Blue Sea 5001 MEGA fuse holders. Retains stock J-hook strap clamp
+ecu-electrical,7,DBW pedal,Subaru,36010FE020,,,installed,confirmed,eBay,114.85,,05 STi drive-by-wire
+drivetrain,4,Transmission,Subaru,2011 STi 6MT DCCD,04 WRX 5MT,Trans fluid = 2011 spec NOT 2004,installed,confirmed,Philip Kolosha,3400.00,,97k miles at install; bundle
+drivetrain,4,Rear differential,Subaru,R180,R160,,installed,confirmed,,,,Came with trans - ratios match
+drivetrain,4,Clutch,ACT,Heavy Duty Performance Street,OEM,,installed,unverified,,,,Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
+drivetrain,4,Flywheel,Subaru,Conventional 6MT donor,5MT flexible flywheel,,installed,confirmed,,,,INSTALLED AND COMPLETE confirmed 2026-08-20. OEM 6MT conventional - NOT the ACT/Fidanza/Exedy options still listed on the build sheet. Not interchangeable with 5MT flexible type
+drivetrain,4,Clutch actuation,Subaru,2004 pedal/MC/hard pipe/slave,,,installed,confirmed,,,,Both pull type 1.7 ratio 130-135mm; fork came with the 2011 6MT so is 6MT spec
+drivetrain,4,Clutch release fork,Subaru,2011 6MT OEM,5MT fork,,installed,unverified,,,,Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
+drivetrain,4,Driveshaft,Hybrid,07 STi + wagon,OEM,,installed,unverified,,50.00,,Assembled from forum research; length and splines verified
+drivetrain,4,Engine mounts,Torque Solution,,OEM,TS torque spec governs over FSM,installed,confirmed,,123.99,,
+brakes,5,Front calipers,Subaru,2007 WRX Limited 4-pot,02-05 single-pot slider,Print BR from 2007 manual,installed,confirmed,,,Piston/boot check,Included pads and hardware
+brakes,5,Rear calipers,Subaru,2007 WRX Limited 2-pot,02-05 single-pot,,installed,confirmed,,,,
+brakes,5,Front rotors,KNS / DBA,KNS4651,OEM rotors,,installed,confirmed,,200.00,Thickness per event,Std WRX size; enlarged centre bore; dual-drilled 5x100/5x114.3
+brakes,5,Rear rotors,KNS / DBA,KNS4656,OEM rotors,,installed,confirmed,,180.00,Thickness per event,06-07 WRX OD with R180 STi parking brake drum
+brakes,5,Brake lines,StopTech,Stainless,OEM rubber,,installed,confirmed,,125.21,,Front 59.66 rear 65.55
+brakes,5,Brembo upgrade,Brembo,04-07 STI,4/2-pot calipers,,planned,confirmed,,,,GD-era NOT 08-14 - knuckles are 05-07 STi
+suspension,6,Coilovers,BC Racing,BR series,OEM struts/springs,OEM strut/spring FSM pages void,installed,unverified,,,,PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R
+suspension,6,Front knuckles,Subaru,28313FE060,04 WRX knuckles,Print FS from 2005/2007 not 2004,installed,confirmed,,147.15,,05-07 STi; chosen to preserve GD geometry; gives 5x114.3
+suspension,6,Front wheel bearing,Subaru,28373FE000,OEM,,installed,confirmed,,210.41,,
+suspension,6,Rear knuckles,Subaru,05-07 STi both sides,04 GG wagon knuckles,,installed,confirmed,eBay,417.64,,L 184.32 R 233.32
+suspension,6,Lateral links,Subaru,Wagon non-STi RETAINED,,Use Wagon/Except-STi torque values,installed,confirmed,,,,STi knuckles on wagon links - rear camber NOT factory adjustable
+suspension,6,Front ball joint,Subaru,20206AJ000,OEM,,installed,unverified,,,,Generic GD-era - verify taper seats in STi housing
+suspension,6,Stabilizer bars,Subaru,Wagon,,Use Wagon/Except-STi torque values,installed,confirmed,,,,Wagon bars confirmed 2026-08-20; front 20mm rear 17mm vs STi 19/20
+spare,,ECU,Subaru,22611AJ242,,,sell,confirmed,eBay merkin_77,180.31,,04 STi - superseded by Link
+spare,,Clutch fork + throwout,Subaru,5MT,,,spare,confirmed,,,,MUST NOT be used with 6MT
+engine-lower,2,Timing belt kit,Cosworth / RCM,High Grip tensioner + Cosworth belt,OEM timing kit,,installed,confirmed,,,,Kevlar belt 300pct stronger than OE
+cooling,3,Water pump + thermostat,Roger Clark Motorsport,Black Series 3-Port,OEM water pump/thermostat,,installed,confirmed,,,,Cast impeller + 70C low-temp thermostat; 3-Port USDM manual
+engine-lower,2,Crank + cam seals,Subaru OEM,,OEM,,installed,confirmed,,,,Crank seal + 4 cam seals
+oiling,2,Oil pickup tube,IAG,,Moroso unit,,installed,confirmed,,,,Moroso didn't fit the IAG pan
+oiling,2,Turbo oil supply line,Forced Performance,FP Turbo Oil Supply Line - EJ,OEM feed line,,installed,confirmed,,,,Stainless braided; brand-matched to FP Red
+oiling,2,AVCS oil feed line LH (driver),Subaru OEM,,OEM oil pipe LH,,installed,confirmed,,60.00,,INSTALLED 2026-08-20. FSM item 27 Oil pipe LH
+oiling,2,AVCS oil feed line RH (passenger),HEL,HEL-OF34 stainless braided,OEM oil pipe RH,,to-buy,confirmed,,,,FSM item 29 Oil pipe RH. Fitment 06-14 WRX / 04-21 STI / 05-09 LGT / 04-08 FXT - spans both head generations so unaffected by the open head-casting question. Use HEL sealing washers + HEL torque NOT the FSM figure. Clamp to prevent braid abrasion against wiring/coolant hoses
+oiling,2,Oil dipstick tube,Subaru OEM,STI/J3,,,installed,confirmed,,,,Tube only - verify dipstick rod separately
+fuel,4,Fuel pump hardwire kit,DeatschWerks,FPHWK-10-HD,OEM pump wiring,,installed,confirmed,,,,High-current 10 AWG heavy duty relay kit battery-direct
+fuel,4,Fuel filter,DeatschWerks,8-03-110-010K-6,OEM filter,,installed,confirmed,,,,10 micron; -6AN ports (NOT -010K-8)
+ecu-electrical,7,Spark plugs,NGK,ILTR7L8R,OEM plugs,,installed,confirmed,,,,One heat range colder for E85 at 500whp
+ecu-electrical,7,Ignition coils,NGK,,OEM coils,,installed,confirmed,,,,Brand-matched to ILTR7L8R plugs
+ecu-electrical,7,Oil pressure sensor,Prosport,0-100 PSI 1/8in NPT 0.5-4.5V,OEM switch,,installed,confirmed,,,,24in hose w/ M18x1.5 galley adapter - confirms galley + header bung thread
+drivetrain,4,Pitch stop mount,Perrin,Red N2 polyurethane,OEM pitch stop,,installed,confirmed,,,,Billet body; 90a + 70a bushings
+induction,3,BOV adapter,TBD,,,,undecided,unknown,,0,,Sheet says not needed if going bung-to-hose direct - depends on final BOV choice
+oiling,2,Turbo oil DRAIN line,IAG,Stainless braided -10AN,OEM drain,,to-buy,confirmed,,80-130,,
+oiling,2,Oil drain T-fitting,TBD,,n/a new,,to-buy,confirmed,,15-60,,Merges turbo oil drain + IAG AOS drain into one return
+oiling,2,Oil filler neck,Subaru OEM,J3,OEM,,installed,confirmed,,38.40,,02-07 WRX/STI
+oiling,2,Heat sleeve,DEI,Reflective 5/8in ID 3ft,n/a new,,to-buy,confirmed,,15-40,,For IAG AOS lines; share purchase with fuel lines
+ecu-electrical,7,Alternator,Michael Singer,200A / 220A peak - 128.5mm Denso hairpin 6-phase,OEM 90A 23700AA430,,to-buy,confirmed,msingeralternator@gmail.com,449.00,,DECIDED 2026-08-20. Denso case direct replacement for 23700AA430. 150A IDLE output. 14.8V regulator - specced by Singer knowing battery is Interstate MTX-35 AGM. Supersedes DC Power 180A and JS 250A. Confirm pulley with builder for belt sizing
+ecu-electrical,7,Big 3 wiring upgrade,Knukonceptz / Stinger / Sky High,1/0 AWG OFC 3-cable kit,OEM charging cables,,to-buy,confirmed,,80-120,,
+ecu-electrical,7,Belt - alternator + power steering,Bando or Mitsuboshi,5PK875 (344K5),OEM belt,,to-buy,confirmed,,,,FRONT belt. 5 ribs 875mm. Gates equiv K050345. Tension 490-640 N. Alternator is its own tensioner
+ecu-electrical,7,Belt - A/C,Bando or Mitsuboshi,4PK895 (352K4),OEM belt,,to-buy,confirmed,,,,REAR belt (crank > A/C > idler). 4 ribs 895mm. Subaru OEM equiv 73323AC000. Tension 350-450 N
+ecu-electrical,7,Flex fuel sensor,Continental,PPA-IGF35 / GM 13577429,n/a new,,to-buy,confirmed,,75.00,,Ethanol content sensor; bench-tested; mounts on new FPR bracket
+ecu-electrical,7,Flex fuel QD adapters,Russell / Earl's,3/8in QD to -6AN x2,n/a new,,to-buy,confirmed,,60-100,,
+ecu-electrical,7,Flex sensor bracket,DIY,3D-printed ASA black,n/a new,,fabricate,confirmed,,0-30,,M6 brass heat-set inserts
+ecu-electrical,7,Pressure sensors (x2),LDM,8990150-0-150 - 0-150 psi standard,n/a new,,installed,confirmed,BW Tuning inv AS-0003,158.00,,TWO supplied on invoice AS-0003 - resolves the 'TBD per Ben' entries for BOTH fuel and oil pressure
+ecu-electrical,7,Wideband O2 sensor,Bosch,LSU 4.9,OEM front O2,,to-buy,confirmed,,80.00,Sensor service life,For Link CAN Lambda
+ecu-electrical,7,MAF sensor,Hitachi OE / Subaru OEM,22680AA380 / 22680AA38A,,,to-buy,unverified,,200-300,,RETAINED for IAT element in speed density mode - verify exact PN
+suspension,6,Power steering pump,Subaru OEM,34430-FE040,,,installed,unverified,,,,Multiple pumps on hand - inspect to pick best; same PN across 04-07 turbo EJ
+suspension,6,PS pump rebuild kit,Nelson Seals / Gates,FKM Viton kit or Gates 348827,,,to-buy,unverified,,25-80,,Likely needed
+cooling,3,Radiator hoses,Mishimoto,Silicone upper + lower,OEM hoses,,installed,unverified,,0,,Already owned
+cooling,3,Coolant hose kit,Roger Clark Motorsport / Samco,V8 12-hose kit 02-05 WRX/STI,OEM hoses,,verify-existing,unknown,,300-400,,Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM
+induction,3,Exhaust gaskets - most joints,Subaru OEM / aftermarket,,OEM gaskets,,in-stock,confirmed,,,,IN STOCK 2026-08-20: header-to-head / header-to-uppipe / uppipe-to-turbo / downpipe-to-midpipe
+induction,3,Gasket - turbo to downpipe,TBD,,OEM gasket,,verify-existing,unknown,,,,NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
+engine-lower,2,Crank pulley bolt,Subaru OEM,12369AA011,OEM bolt,,installed,confirmed,,,,NEW BOLT INSTALLED 2026-08-20. Angle-tightened spec: 44 Nm then 65-75 deg. Confirm it was tightened to the angle spec not just the 44 Nm preload
+engine-lower,2,Oil filters,Wix,57712XP,OEM filter,,to-buy,confirmed,,45.00,Every oil change,x5 for break-in schedule. IAG specifies OEM or Wix XP. 23 psi bypass. PRE-FILL before install
+engine-lower,2,Drain plug crush washers,Subaru OEM,803916010,,,to-buy,confirmed,,,Every oil change,10-pack. New washer every change per IAG
+induction,3,Cat-back exhaust,XForce,E4-SW05-MP01-CBS,OEM cat-back,EX section largely void aft of the turbo,installed,confirmed,,,,3in diameter throughout - ALL EXHAUST JOINTS ARE 3in so no reducers needed. Includes the midpipe. RAW 409 STAINLESS - will surface-rust cosmetically (not 304). Centre hot-dog resonator + oval rear muffler. Twin 80mm tips. WRX/STI MANUAL ONLY. XForce note: some setups need an E4-SW05-C1 connecting pipe when running a standalone cat
+induction,3,Downpipe,UNKNOWN brand,,OEM downpipe,EX + EC sections void aft of turbo; no rear O2 / no cat monitoring,installed,unverified,,,,CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection
+induction,3,Midpipe,XForce,part of E4-SW05-MP01-CBS,OEM midpipe,,installed,confirmed,,,,INCLUDED IN THE XFORCE CAT-BACK - not a separate part. The downpipe-to-midpipe joint is therefore downpipe-to-catback
+cooling,3,Radiator,Mishimoto,MMRAD-WRX-01 Performance Aluminum,OEM radiator,,installed,confirmed,,,,2-row 1.65in thick full aluminium brazed core. Fits 01-07 WRX/STi MANUAL. Inlet/outlet 1.5in. INCLUDES TWO 1.3 BAR CAPS - one-way for the radiator and two-way for the ECFT; NOT interchangeable. 1.3 bar is well above OEM ~0.9 bar - fine here because the ECFT is the aluminium Mishimoto not the OEM plastic tank
+cooling,3,Radiator caps (x2),Mishimoto,1.3 bar - supplied with MMRAD-WRX-01,OEM caps,,installed,confirmed,,0,,ONE-WAY cap on the radiator / TWO-WAY cap on the ECFT. Fitting them backwards stops the system drawing coolant back on cooldown or relieving properly
+cooling,3,Cooling fans + shrouds,Subaru OEM,,OEM fans,,installed,confirmed,,,,OEM fans and shrouds retained. CONFIRMED 2026-08-20: OEM shroud mounts directly to the Mishimoto MMRAD-WRX-01. Fan control still to be wired to the Link (CPU-46)
+cooling,3,Coolant crossover pipe (front),Subaru OEM,14050AA451,OEM,,installed,confirmed,,,,04 WRX pipe - supersedes AA450. Physically verified to fit EJ257 + STi manifold
+cooling,3,Coolant bypass pipe,Subaru OEM,14065AA250,OEM,,installed,confirmed,,,,04 WRX / 04-05 STi. Runs under/behind the intake manifold to the water pump inlet
+cooling,3,Upper pipe assembly (Pipe-Water Tank),Subaru OEM,21141AA131,OEM 21141AA122,,installed,confirmed,,,,06-14 era - matches V25 head PCV port layout. PCV portions to be CAPPED (IAG AOS replaces OEM PCV); only the ECFT-to-bypass coolant passage is used
+cooling,3,Engine coolant filler tank (ECFT),Mishimoto,,OEM plastic ECFT,,installed,confirmed,,,,MISHIMOTO ECFT - confirmed 2026-08-20. Aluminium; replaces the OEM plastic tank (a known age/heat failure point). The ECFT is the small high-mounted reservoir serving as the system HIGH POINT - the turbo sits above the radiator filler neck so filling and bleeding both happen here. Pairs with the Mishimoto radiator
+cooling,3,Coolant,Asian-formula - local store,GREEN preferred (matches OEM era),,,to-buy,confirmed,,45-50,,PLAN 2026-08-20: Asian-class from a local store, green preferred - historically correct for an 04 (Subaru moved to blue Super Coolant later). CHEMISTRY NOT COLOUR: label must say Asian vehicles + phosphate-based + silicate-FREE + amine-FREE. Green is also the traditional colour of CONVENTIONAL IAT coolant which is on the avoid list - read the label. 2 gal concentrate + 2 gal DISTILLED 50/50. System 7.8 qt. RECORD the brand and colour actually bought for future leak identification
+suspension,6,Wheels,Subaru OEM (believed),year/model UNKNOWN,OEM wheels,,installed,unverified,,,,Black. Believed OEM Subaru from a WRX. Bought cheap. CONFIRMED: clear the current hub + brake config (4/2-pot + ~294mm KNS rotors). UNKNOWN: diameter / width / offset / source year. 5x114.3 so likely 05-07 STi or 08+ WRX/STi. ID METHOD: spec is stamped or cast on the inner barrel or behind a spoke - look for 17x7 JJ + ET offset + Subaru PN
+suspension,6,Wheel clearance for Brembo upgrade,,,,,undecided,unknown,,,,OPEN: do these wheels clear 326mm 04-07 STi Brembos? Clearing the current ~294mm setup does NOT confirm it. 32mm larger rotor and barrel shape matters as much as diameter - many 17in OEM wheels foul a Brembo caliper. VERIFY BEFORE BUYING CALIPERS
+suspension,6,Tires,PLACEHOLDER,,,,installed,unverified,,,,Temporary - Alan: BS tires for now. Size not recorded. NOTE: rolling diameter feeds speedo calibration - recheck VSS/cluster (CPU-71) if tire size changes
+ecu-electrical,7,Link XSL expansion loom,Link Engine Management,101-0106,,,installed,confirmed,BW Tuning inv AS-0003,49.50,,Terminated with a DTM06-8S connector by BW Tuning
+ecu-electrical,7,Link CAN cable,Link Engine Management,CANJST 5-pin 101-0197,,,installed,confirmed,BW Tuning inv AS-0003,44.55,,
+ecu-electrical,7,TGV-to-pressure-sensor harness (x2),BW Tuning,custom expansion harness,,,installed,confirmed,BW Tuning inv AS-0003,135.00,,Uses the vacated TGV locations for the pressure sensors
+ecu-electrical,7,DBW pedal adapter plate,iWire,,,,installed,confirmed,iWire inv 5304,89.99,,Needed to fit the 05 STi DBW pedal to the 04 chassis
+ecu-electrical,7,CRUISE CONTROL,NOT FITTED,,OEM cruise control,CC sections VOID,not-fitted,confirmed,iWire inv 5304,0,,iWire invoice line reads NO CRUISE - deliberately not wired during the harness merge
+ecu-electrical,7,Knock sensor,Subaru OEM,,,"FU(H4DOTC)-34: 24 N.m, cord exit 60 deg to engine rear",in-stock,confirmed,,,,"NEW, on hand, NOT yet installed. Install before intake manifold goes on. CPU-82"
+ecu-electrical,7,Crank position sensor,Aftermarket - brand TBD,,,T1 6.4 N.m per FU(H4DOTC)-7,installed,unverified,,,,NEW but NOT OEM. Brand/PN not recorded - confirm
+ecu-electrical,7,Cam position sensor,Aftermarket - brand TBD,,,T1 6.4 N.m per FU(H4DOTC)-7,installed,unverified,,,,NEW but NOT OEM. SINGLE AVCS - confirm sensor count vs FSM dual-AVCS figures
+ecu-electrical,7,Coolant temp sensor (ECT),,,,,installed,unverified,,,,NEW. Brand/PN not recorded
+engine-heads,2,AVCS solenoids,Subaru OEM (used),,,"SINGLE AVCS - intake only, one per head",installed,unverified,,,,Came with the used V25B heads. UNTESTED - verify cam angle response on first start
+induction,3,Boost control solenoid (EBCS),GrimmSpeed (believed),3-port,,Factory 2-port EBCS content VOID,installed,unverified,,,,3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner
+induction,3,Wastegate spring stack,TiAL,Black + Blue = 1.2 bar / 17.4 psi,,Sets MINIMUM boost - cannot run below this,in-stock,confirmed,,,,QUEUED to install. This is the boost FLOOR. See BOOST FLOOR note - reconsider for break-in

@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**137 parts** — 106 installed · 18 to-buy · 3 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-stock · 1 not-fitted
+**142 parts** — 110 installed · 17 to-buy · 3 undecided · 3 in-stock · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 not-fitted
 
 ---
 
@@ -35,6 +35,7 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
+| ⚠️ | AVCS solenoids | Subaru OEM (used) |  | **FSM: SINGLE AVCS - intake only, one per head** · Came with the used V25B heads. UNTESTED - verify cam angle response on first start |
 | ⚠️ | Camshafts | Subaru OEM |  | Stage 2 considered not fitted |
 | ✅ | Combustion chamber cc matching |  |  | CHAMBERS EQUALISED - confirmed 2026-08-20. Compression is even bank to bank; nothing asymmetric to warn Ben about. Measured cc figures TEARDOWN-GATED |
 | ✅ | Cylinder head - one side | Cosworth V25B STi | OEM head | **FSM: HEAD/VALVETRAIN WORK FOLLOWS THE 2007 FSM - and 2007 STi has no ME section so use ME(H4DOTC)** · GENUINE COSWORTH V25B STi head. Casting RESOLVED 2026-08-20 - V25B specifically - corroborates cooling-system-notes.md V25B casting mark. Which side (LH/RH) not recorded |
@@ -54,8 +55,7 @@
 |:-:|---|---|---|---|
 | ✅ | AVCS oil feed line LH (driver) | Subaru OEM | OEM oil pipe LH | INSTALLED 2026-08-20. FSM item 27 Oil pipe LH |
 | ✅ | AVCS oil feed line RH (passenger) | HEL HEL-OF34 stainless braided | OEM oil pipe RH | *[to-buy]* FSM item 29 Oil pipe RH. Fitment 06-14 WRX / 04-21 STI / 05-09 LGT / 04-08 FXT - spans both head generations so unaffected by the open head-casting question. Use HEL sealing washers + HEL torque NOT the FSM figure. Clamp to prevent braid abrasion against wiring/coolant hoses |
-| ✅ | Air-oil separator | IAG AOS | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · Cap PCV portions of 21141AA131 |
-| ⚠️ | Air-oil separator | IAG Street Series V2 | OEM PCV | USED great condition w/ all lines; PN verification pending |
+| ✅ | Air-oil separator | IAG Street Series V2 | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · USED great condition w/ all lines; drain per interval; cap PCV portions of 21141AA131 |
 | ✅ | Heat sleeve | DEI Reflective 5/8in ID 3ft | n/a new | *[to-buy]* For IAG AOS lines; share purchase with fuel lines |
 | ✅ | Oil dipstick tube | Subaru OEM STI/J3 |  | Tube only - verify dipstick rod separately |
 | ✅ | Oil drain T-fitting | TBD | n/a new | *[to-buy]* Merges turbo oil drain + IAG AOS drain into one return |
@@ -88,6 +88,7 @@
 |:-:|---|---|---|---|
 | ❓ | BOV adapter | TBD |  | *[undecided]* Sheet says not needed if going bung-to-hose direct - depends on final BOV choice |
 | ❓ | Blow-off valve | TBD | OEM BPV | *[undecided]* NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36 |
+| ⚠️ | Boost control solenoid (EBCS) | GrimmSpeed (believed) 3-port |  | **FSM: Factory 2-port EBCS content VOID** · 3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner |
 | ✅ | Cat-back exhaust | XForce E4-SW05-MP01-CBS | OEM cat-back | **FSM: EX section largely void aft of the turbo** · 3in diameter throughout - ALL EXHAUST JOINTS ARE 3in so no reducers needed. Includes the midpipe. RAW 409 STAINLESS - will surface-rust cosmetically (not 304). Centre hot-dog resonator + oval rear muffler. Twin 80mm tips. WRX/STI MANUAL ONLY. XForce note: some setups need an E4-SW05-C1 connecting pipe when running a standalone cat |
 | ✅ | Cold air intake | AEM 21-474 | OEM airbox | PN CORRECTED 2026-08-20 (sheet said 21-477). Listed for 02-05 WRX not STI but TEST FITTED OK. Filter relocates outside engine bay. Mates to FP 84mm inlet via silicone reducing coupler |
 | ⚠️ | Downpipe | UNKNOWN brand | OEM downpipe | **FSM: EX + EC sections void aft of turbo; no rear O2 / no cat monitoring** · CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection |
@@ -101,13 +102,13 @@
 | ✅ | Turbocharger | Forced Performance FP STi Red HTZ R690701874 | OEM VF-series | USED. HTZ variant - older proven design w/ journal-bearing option; CONFIRM bearing type for oil restrictor sizing |
 | ✅ | Uppipe | PLM 38mm EWG | OEM uppipe | Bundle price with wastegate; 2-bolt flange matches Perrin collector |
 | ✅ | Wastegate | TiAL MVS 38mm | OEM internal WG | Spring pressure UNKNOWN - record when fitted |
+| ✅ | Wastegate spring stack | TiAL Black + Blue = 1.2 bar / 17.4 psi |  | *[in-stock]* **FSM: Sets MINIMUM boost - cannot run below this** · QUEUED to install. This is the boost FLOOR. See BOOST FLOOR note - reconsider for break-in |
 
 ## Fuel System · Binder TAB 4
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ✅ | FPR / flex bracket | Custom | Washer bottle location | *[fabricate]* Washer system deleted |
-| ✅ | Flex fuel sensor |  | n/a new capability | *[to-buy]* Bench-tested; mounts on new FPR bracket |
 | ✅ | Fuel filter | DeatschWerks 8-03-110-010K-6 | OEM filter | 10 micron; -6AN ports (NOT -010K-8) |
 | ✅ | Fuel lines | Red Horse 235 series -6AN 15ft | OEM hard/soft lines | *[to-buy]* ECO+FKM E85-safe liner; SS under-braid + nylon jacket |
 | ✅ | Fuel pressure regulator | Aeromotive 15633 | OEM FPR | Plus Aeromotive gauge 40.90 |
@@ -128,6 +129,9 @@
 | ✅ | Belt - alternator + power steering | Bando or Mitsuboshi 5PK875 (344K5) | OEM belt | *[to-buy]* FRONT belt. 5 ribs 875mm. Gates equiv K050345. Tension 490-640 N. Alternator is its own tensioner |
 | ✅ | Big 3 wiring upgrade | Knukonceptz / Stinger / Sky High 1/0 AWG OFC 3-cable kit | OEM charging cables | *[to-buy]*  |
 | ✅ | CRUISE CONTROL | NOT FITTED | OEM cruise control | *[not-fitted]* **FSM: CC sections VOID** · iWire invoice line reads NO CRUISE - deliberately not wired during the harness merge |
+| ⚠️ | Cam position sensor | Aftermarket - brand TBD |  | **FSM: T1 6.4 N.m per FU(H4DOTC)-7** · NEW but NOT OEM. SINGLE AVCS - confirm sensor count vs FSM dual-AVCS figures |
+| ⚠️ | Coolant temp sensor (ECT) |  |  | NEW. Brand/PN not recorded |
+| ⚠️ | Crank position sensor | Aftermarket - brand TBD |  | **FSM: T1 6.4 N.m per FU(H4DOTC)-7** · NEW but NOT OEM. Brand/PN not recorded - confirm |
 | ✅ | DBW pedal | Subaru 36010FE020 |  | 05 STi drive-by-wire |
 | ✅ | DBW pedal adapter plate | iWire |  | Needed to fit the 05 STi DBW pedal to the 04 chassis |
 | ✅ | DCCD G sensor mount | DCCDPro |  | Accelerometer mount for DCCDPro automatic modes - no charge |
@@ -137,12 +141,13 @@
 | ✅ | ECU | Link Engine Management WRXLink WRX104X (224-4000) | OEM ECU 22611AJ242 | **FSM: ALL OEM ECU / OBD-II / immobilizer sections VOID** · Per invoice AS-0003 (2026-05-29). Installed INTO THE FACTORY ECU ENCLOSURE. Bench-activated with base map loaded READY TO RUN |
 | ✅ | Engine harness | Subaru 2005 STi | 04 GG body harness | **FSM: WI diagrams do not describe this car** · Merged by iWire |
 | ✅ | Flex fuel QD adapters | Russell / Earl's 3/8in QD to -6AN x2 | n/a new | *[to-buy]*  |
-| ✅ | Flex fuel sensor | Continental PPA-IGF35 / GM 13577429 | n/a new | *[to-buy]* Both labels; ethanol content sensor |
+| ✅ | Flex fuel sensor | Continental PPA-IGF35 / GM 13577429 | n/a new | *[to-buy]* Ethanol content sensor; bench-tested; mounts on new FPR bracket |
 | ✅ | Flex sensor bracket | DIY 3D-printed ASA black | n/a new | *[fabricate]* M6 brass heat-set inserts |
 | ✅ | Gauge cluster | Subaru 07 STi with OAT | 04 WRX cluster | **FSM: Print IDI from 2007 manual not 2004** · 07 STi cluster WITH outside air temp. iWire performed the swap (inv 5304) |
 | ⚠️ | Gauges | Prosport boost/fuel/oil/volt |  |  |
 | ✅ | Harness merge | iWire |  | Includes the DCCD controller and VSS Pro |
 | ✅ | Ignition coils | NGK | OEM coils | Brand-matched to ILTR7L8R plugs |
+| ✅ | Knock sensor | Subaru OEM |  | *[in-stock]* **FSM: FU(H4DOTC)-34: 24 N.m, cord exit 60 deg to engine rear** · NEW, on hand, NOT yet installed. Install before intake manifold goes on. CPU-82 |
 | ✅ | Link CAN cable | Link Engine Management CANJST 5-pin 101-0197 |  |  |
 | ✅ | Link XSL expansion loom | Link Engine Management 101-0106 |  | Terminated with a DTM06-8S connector by BW Tuning |
 | ⚠️ | MAF sensor | Hitachi OE / Subaru OEM 22680AA380 / 22680AA38A |  | *[to-buy]* RETAINED for IAT element in speed density mode - verify exact PN |
@@ -214,7 +219,6 @@
 | Turbocharger (Forced Performance) | Shaft play periodic | induction |
 | Header (Perrin) | Annual collector inspection | induction |
 | Air-oil separator (IAG) | Drain per interval | oiling |
-| Air-oil separator (IAG) | Drain per interval | oiling |
 
 ---
 
@@ -241,11 +245,15 @@
 - [ ] ⚠️ **Gauges** (ecu-electrical) — unverified
 - [ ] ⚠️ **AFR gauge** (ecu-electrical) — Separate from CAN Lambda
 - [ ] ⚠️ **MAF sensor** (ecu-electrical) — RETAINED for IAT element in speed density mode - verify exact PN
+- [ ] ⚠️ **Crank position sensor** (ecu-electrical) — NEW but NOT OEM. Brand/PN not recorded - confirm
+- [ ] ⚠️ **Cam position sensor** (ecu-electrical) — NEW but NOT OEM. SINGLE AVCS - confirm sensor count vs FSM dual-AVCS figures
+- [ ] ⚠️ **Coolant temp sensor (ECT)** (ecu-electrical) — NEW. Brand/PN not recorded
 - [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (recollection
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
+- [ ] ⚠️ **AVCS solenoids** (engine-heads) — Came with the used V25B heads. UNTESTED - verify cam angle response on first start
 - [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
 - [ ] ⚠️ **Downpipe** (induction) — CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection
-- [ ] ⚠️ **Air-oil separator** (oiling) — USED great condition w/ all lines; PN verification pending
+- [ ] ⚠️ **Boost control solenoid (EBCS)** (induction) — 3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner
 - [ ] ⚠️ **Coilovers** (suspension) — PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R
 - [ ] ⚠️ **Front ball joint** (suspension) — Generic GD-era - verify taper seats in STi housing
 - [ ] ⚠️ **Power steering pump** (suspension) — Multiple pumps on hand - inspect to pick best; same PN across 04-07 turbo EJ

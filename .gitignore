@@ -32,6 +32,9 @@ Receipts/
 *.xls
 *.csv
 
+# parts.csv is the SOURCE for parts-register.md - losing it loses the build record
+!as-built/parts.csv
+
 # ── Bulk asset folders ──────────────────────────────────────
 eBay/
 3D Prints/

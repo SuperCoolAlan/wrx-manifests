@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**97 parts** — 72 installed · 16 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing
+**98 parts** — 72 installed · 17 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing
 
 ---
 
@@ -43,7 +43,8 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
-| ✅ | AVCS oil feed lines | HEL HEL-OF34 stainless braided | OEM oil pipes LH+RH | *[to-buy]* Fitment 06-14 WRX / 04-21 STI / 05-09 LGT / 04-08 FXT - spans both head generations so unaffected by the open head-casting question. FSM items 27+29 Oil pipe LH/RH; item 28 Gasket - use fresh crush washers. Use HEL torque not FSM. Clamp to prevent braid abrasion |
+| ✅ | AVCS oil feed line LH (driver) | Subaru OEM | OEM oil pipe LH | *[to-buy]* ORDERED. FSM item 27 Oil pipe LH. OEM gasket/crush washers - item 28. Use FSM torque |
+| ✅ | AVCS oil feed line RH (passenger) | HEL HEL-OF34 stainless braided | OEM oil pipe RH | *[to-buy]* FSM item 29 Oil pipe RH. Fitment 06-14 WRX / 04-21 STI / 05-09 LGT / 04-08 FXT - spans both head generations so unaffected by the open head-casting question. Use HEL sealing washers + HEL torque NOT the FSM figure. Clamp to prevent braid abrasion against wiring/coolant hoses |
 | ✅ | Air-oil separator | IAG AOS | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · Cap PCV portions of 21141AA131 |
 | ⚠️ | Air-oil separator | IAG Street Series V2 | OEM PCV | USED great condition w/ all lines; PN verification pending |
 | ✅ | Heat sleeve | DEI Reflective 5/8in ID 3ft | n/a new | *[to-buy]* For IAG AOS lines; share purchase with fuel lines |

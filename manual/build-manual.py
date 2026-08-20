@@ -17,6 +17,9 @@ from reportlab.lib.units import inch
 TRAPS = [
  ((2,),   "HEADS come from the 2007 manual (ME(H4DOTC)). Everything below them"),
  ((2,),   "   from 2005 STi. V25B STi Cosworth heads = 2007-era casting."),
+ ((2,),   "THIS ENGINE IS SINGLE AVCS - intake only, one solenoid per head. The 2007"),
+ ((2,),   "   H4DOTC manual documents DUAL AVCS. Every exhaust-side AVCS sprocket,"),
+ ((2,),   "   solenoid and oil path in those figures DOES NOT EXIST on this car."),
  ((3,),   "WHY IS H4SO HERE? Subaru filed ONE starting/charging system for the whole"),
  ((3,),   "   engine range in the H4SO file - it contains sections for NON-TURBO,"),
  ((3,),   "   TURBO and STi MODEL. SC(STi) and SC(H4DOTC) are 2-page pointers to it."),
@@ -24,27 +27,45 @@ TRAPS = [
  ((3,),   "CO / EX / SC under (STi) are ALL stubs pointing at H4DOTC or H4SO."),
  ((3,),   "Charging specs superseded: Singer 200A/220A, 14.8V reg, not the 90A OEM."),
  ((3,),   "EX is REFERENCE ONLY - exhaust is aftermarket end to end, catless."),
+ ((3,),   "BOOST CONTROL IS FULLY SUPERSEDED. External TiAL MVS 38mm wastegate on a"),
+ ((3,),   "   PLM EWG uppipe, run by a 3-port solenoid. All factory 2-port EBCS and"),
+ ((3,),   "   internal-wastegate content is VOID. The WASTEGATE SPRING sets the"),
+ ((3,),   "   MINIMUM boost - no tune can go below it. Check which spring is fitted."),
  ((4,),   "DCCD: the FACTORY KNOB AND CLUSTER DISPLAY WORK. A DCCDPro controller sits"),
  ((4,),   "   behind them adding automatic G-sensor modes. CS Control Systems describes the"),
  ((4,),   "   factory control electronics - superseded. Its centre diff content still applies."),
  ((4,),   "Unit is a 2011 6MT. The 2011 manual has no bookmarks, so 2007 files serve"),
  ((4,),   "   as the readable proxy - same DCCD 6MT family. Verify torques against 2011."),
- ((4,),   "Clutch: 2004 pedal/master/pipe/slave carry over. Fork + throwout must be 6MT."),
+ ((4,),   "Clutch release stack is 6MT THROUGHOUT: 6MT flywheel, ACT Stage 2 clutch,"),
+ ((4,),   "   2011 6MT fork, ACT-supplied bearing. The 2004 pedal, master cylinder,"),
+ ((4,),   "   hard pipe and SLAVE carry over and work. Do not mix WRX and STi parts"),
+ ((4,),   "   across this stack - that is what causes a clutch that will not release."),
+ ((4,),   "MUCH OF THE 2004 CHASSIS CARRIED OVER: the 2011 6MT sits in the 2004"),
+ ((4,),   "   CROSSMEMBER on a 6MT mount, worked by the 2004 SHIFTER and 2004 CLUTCH"),
+ ((4,),   "   LINE. Do not order STi parts for these - measure against the 2004 book."),
  ((6,),   "Suspension LINK fasteners use the Wagon / Except-STi torque: 30 N.m, NOT 45."),
  ((6,),   "STi knuckles on WAGON links and WAGON sway bars - you straddle both branches."),
  ((6,),   "BC coilovers supersede all OEM strut and spring service pages -"),
  ((6,),   "   whichever BC application they are. That is a fitment question, not a"),
  ((6,),   "   manual question."),
+ ((6,),   "Steering rack is the ORIGINAL 2004 unit - use the 2004 pages for it."),
  ((6,),   "THREE YEARS HERE, each doing a different job: 2004 = WAGON chassis side"),
  ((6,),   "   (subframe, link mounting, wagon torques). 2007/2005 = STi knuckle,"),
  ((6,),   "   hub and bearing procedures."),
  ((7,),   "These diagrams do NOT describe this car - 2005 STi engine harness was"),
- ((7,),   "   merged to the 2004 GG body harness by iWire. See splice map in TAB 9."),
- ((7,),   "All OEM ECU / OBD-II / immobilizer content is VOID - car runs a Link G4X."),
+ ((7,),   "   merged to the 2004 GG body harness by iWire."),
+ ((7,),   "All OEM ECU / OBD-II / immobilizer content is VOID - car runs a Link WRX104X."),
+ ((7,),   "CRUISE CONTROL IS NOT FITTED - deliberately left unwired at harness build."),
+ ((7,),   "   It is not broken. Do not diagnose it. SP Speed Control is VOID."),
+ ((7,),   "Knock sensor: 24 N.m, and the cord must exit at 60 degrees to engine rear."),
  ((1,),   "Recommended Materials + Periodic Maintenance are REFERENCE ONLY."),
  ((1,),   "   All fluids are re-specced; PM is rewritten for track use."),
  ((5,),   "Rotors are KNS gravel-spec aftermarket: KNS4651 front / KNS4656 rear."),
  ((5,),   "Rear rotor carries the R180 STi parking brake drum - see PB section."),
+ ((5,),   "PARKING BRAKE CABLES ARE THE ORIGINAL 2004 CHASSIS CABLES and are verified"),
+ ((5,),   "   holding on these discs, despite the 05-07 STi rear knuckles. Use the"),
+ ((5,),   "   2004 cable routing and adjustment procedure, not the STi one."),
+ ((5,),   "Pads are Hawk Performance - compound is printed on the backing plate."),
  ((8,),   "Wagon-specific. Sedan pages will mislead."),
 ]
 def traps_for(tab): return [t for tabs,t in TRAPS if tab in tabs]
@@ -52,8 +73,8 @@ def traps_for(tab): return [t for tabs,t in TRAPS if tab in tabs]
 # FSM sources are large and gitignored; point WRX_FSM_SRC at wherever they live.
 SRC = os.environ.get("WRX_FSM_SRC") or os.path.expanduser("~/Downloads")
 OUT = "/Users/alan/Documents/WRX/manual/print"
-Y4 = "2004 Service Manual/2004 Service Manual/"
-Y5 = "2005 Service Manual/2005 Service Manual/"
+Y4 = "2004 Service Manual/"
+Y5 = "2005 Service Manual/"
 Y7 = "2007 Service Manual/"
 
 TABS = [
@@ -150,7 +171,7 @@ def cover(tabno, title, subtitle, warnings, items, counts):
         c.setFont("Helvetica",9); c.setFillColorRGB(.25,.20,.12)
         for w in warnings: c.drawString(m,y,w); y-=13
     c.setFont("Helvetica",7.5); c.setFillColorRGB(.55,.56,.58)
-    c.drawString(m,0.65*inch,"2004 WRX wagon · V25B STi Cosworth heads on 2005-era EJ257 · FP Red · E85 · Link G4X · 2011 6MT/DCCD · 05-07 STi knuckles")
+    c.drawString(m,0.65*inch,"2004 WRX wagon · V25B STi Cosworth heads on 2005-era EJ257 · FP Red · E85 · Link WRX104X · 2011 6MT/DCCD · 05-07 STi knuckles")
     c.drawString(m,0.5*inch,"Assembled from 2004 / 2005 / 2007 Subaru FSMs. Section sources are per-row above — they are NOT all the same year.")
     c.showPage(); c.save(); buf.seek(0)
     return PdfReader(buf)

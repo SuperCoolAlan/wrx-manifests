@@ -164,6 +164,13 @@ Alan is **not pulling the bellhousing now**. Disc reportedly low and due for a c
 
 ⚠ **Records discrepancy to reconcile:** `20-21 2004 Wagon Build.xlsx` records the ACT Heavy Duty as *"less than 5k miles on it when installed."* That conflicts with a "disc is low" assessment. Determine which is accurate — it decides whether this is a soon job or a someday job.
 
+### ✅ SUBSTANTIALLY RESOLVED 2026-08-20
+**Alan: "clutch fork was from 2011 6 speed swap i got, probably OEM."**
+
+The fork came with the transmission, so it is the 6MT fork — which was the low-risk assumption. The forum-vs-FSM evidence split is now moot for this car: whatever the general answer is, the part in this bellhousing arrived with this gearbox.
+
+Residual risk is only that a previous owner swapped it before Alan got the trans. Confirm the PN at the next clutch job (batched with the disc-diameter check), but treat this as settled for planning.
+
 ### Risk assessment: LOW
 The 6MT arrived as a complete transmission in a bundle, so absent a deliberate prior swap the installed fork is the one that came in it. Combined with the FSM showing a single shared turbo procedure, this is low priority.
 

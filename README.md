@@ -12,7 +12,7 @@
 |---|---|---|
 | **This repo** | All build documentation | **Source of truth for what is on the car** |
 | **Linear** — project `Subaru WRX` (team CPU) | Work tracking, todos, decisions in progress | Source of truth for **what to do next** |
-| Google Sheets master build sheet | Purchasing status, shopping | Historical / procurement |
+| [Google Sheets master build sheet](https://docs.google.com/spreadsheets/d/1KrntpsHHwKKx_W9Vn28aLq9sGWfUYiJAk4-rHiAo67w/edit) | Purchasing status, shopping, costs | **Active** — procurement. Alan maintains. |
 | ~~`20-21 2004 Wagon Build.xlsx`~~ (Dropbox) | — | **SUPERSEDED** — absorbed into this repo 2026-08-20 |
 
 ## Layout

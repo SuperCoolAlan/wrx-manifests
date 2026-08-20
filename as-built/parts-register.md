@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**64 parts** — 54 installed · 4 to-buy · 2 sell · 1 undecided · 1 fabricate · 1 planned · 1 spare
+**65 parts** — 55 installed · 4 to-buy · 2 sell · 1 undecided · 1 fabricate · 1 planned · 1 spare
 
 ---
 
@@ -89,7 +89,8 @@
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | Clutch | ACT Heavy Duty Performance Street | OEM | Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm |
-| ✅ | Clutch actuation | Subaru 2004 pedal/MC/hard pipe/slave |  | Both pull type 1.7 ratio 130-135mm; fork+throwout must be 6MT |
+| ✅ | Clutch actuation | Subaru 2004 pedal/MC/hard pipe/slave |  | Both pull type 1.7 ratio 130-135mm; fork came with the 2011 6MT so is 6MT spec |
+| ⚠️ | Clutch release fork | Subaru 2011 6MT OEM | 5MT fork | Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job |
 | ⚠️ | Driveshaft | Hybrid 07 STi + wagon | OEM | Assembled from forum research; length and splines verified |
 | ✅ | Engine mounts | Torque Solution | OEM | **FSM: TS torque spec governs over FSM** |
 | ✅ | Flywheel | Subaru Conventional 6MT | 5MT flexible flywheel | Not interchangeable with 5MT |
@@ -117,7 +118,7 @@
 | ✅ | Front wheel bearing | Subaru 28373FE000 | OEM |  |
 | ✅ | Lateral links | Subaru Wagon non-STi RETAINED |  | **FSM: Use Wagon/Except-STi torque values** · STi knuckles on wagon links - rear camber NOT factory adjustable |
 | ✅ | Rear knuckles | Subaru 05-07 STi both sides | 04 GG wagon knuckles | L 184.32 R 233.32 |
-| ❓ | Stabilizer bars | UNKNOWN |  | Wagon STi or aftermarket - unknown |
+| ✅ | Stabilizer bars | Subaru Wagon |  | **FSM: Use Wagon/Except-STi torque values** · Wagon bars confirmed 2026-08-20; front 20mm rear 17mm vs STi 19/20 |
 
 ---
 
@@ -150,8 +151,8 @@
 - [ ] ❓ **Valves** (engine-heads) — PN not recorded
 - [ ] ❓ **Injectors** (fuel) — Installed - brand and size not recorded
 - [ ] ❓ **Blow-off valve** (induction) — Kit shipped w Turbosmart Race Port VTA - presence unconfirmed; see Linear CPU-36
-- [ ] ❓ **Stabilizer bars** (suspension) — Wagon STi or aftermarket - unknown
 - [ ] ⚠️ **Clutch** (drivetrain) — Under 5k mi at install - CONFLICTS with disc is low; verify 240mm not 230mm
+- [ ] ⚠️ **Clutch release fork** (drivetrain) — Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
 - [ ] ⚠️ **Gauges** (ecu-electrical) — unverified
 - [ ] ⚠️ **AFR gauge** (ecu-electrical) — Separate from CAN Lambda

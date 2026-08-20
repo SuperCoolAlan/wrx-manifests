@@ -211,7 +211,10 @@ The lower mounts accepted the bolts, which is reasonable evidence the applicatio
 4. ~~Rear knuckle identity~~ — **RESOLVED: 05-07 STi both sides.**
 5. ~~Which rear lateral links~~ — **RESOLVED 2026-08-19: wagon links retained.** So: STi rear knuckles on wagon lateral links. Rear camber is NOT factory-adjustable — get a reading.
 6. **Rear camber reading from an alignment rack** — determines whether adjustable rear lateral links are needed.
-7. **Which stabilizer bars are fitted** — wagon, STi, or aftermarket.
+7. ~~Which stabilizer bars are fitted~~ — ✅ **RESOLVED 2026-08-20: WAGON bars fitted.**
+   - Wagon spec: **front 20mm / rear 17mm** (vs STi 19mm / 20mm)
+   - Confirms the **Wagon / Except-STi** torque branch is correct throughout — stabilizer link at **30 N·m**, not 45
+   - Balance note: the wagon's relatively softer rear bar (17mm vs STi 20mm) is worth knowing when setting up for track. If the car understeers on turn-in after alignment, the rear bar is a cheap lever before touching spring rates.
 4. Front/rear spring rates, and whether camber plates are fitted.
 
 ---

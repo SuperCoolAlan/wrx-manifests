@@ -62,8 +62,8 @@
 |:-:|---|---|---|---|
 | ❓ | BOV adapter | TBD |  | *[undecided]* Sheet says not needed if going bung-to-hose direct - depends on final BOV choice |
 | ❓ | Blow-off valve | TBD | OEM BPV | *[undecided]* NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36 |
+| ✅ | Cold air intake | AEM 21-474 | OEM airbox | PN CORRECTED 2026-08-20 (sheet said 21-477). Listed for 02-05 WRX not STI but TEST FITTED OK. Filter relocates outside engine bay. Mates to FP 84mm inlet via silicone reducing coupler |
 | ✅ | Header | Perrin Equal Length | OEM manifold | 304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons |
-| ✅ | Intake | AEM 21-477 / 21-477C | OEM airbox | Cold air intake 02-07 WRX/STI - verify exact PN |
 | ✅ | Intercooler | APS D/R 725 FMIC | OEM TMIC | **FSM: IN TMIC content void; hood scoop freed** · Core 28x9.5x4.5 bar-and-plate |
 | ✅ | TGV | DELETED | OEM TGVs | **FSM: IN TGV content void** · Used |
 | ✅ | Turbo inlet | Forced Performance FP 8005010A 84mm | OEM inlet | 84mm silicone; fits FP 84mm FAP cover; has recirc return bung + Mishimoto BPV recirc hose |

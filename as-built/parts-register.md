@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**142 parts** — 110 installed · 17 to-buy · 3 undecided · 3 in-stock · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 not-fitted
+**145 parts** — 110 installed · 17 to-buy · 6 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 not-fitted
 
 ---
 
@@ -65,6 +65,7 @@
 | ✅ | Oil pressure sender | remote | OEM switch location | Firewall mounted 2026-08-20; torque 25 Nm; THREE BOND 1324 |
 | ✅ | Turbo oil DRAIN line | IAG Stainless braided -10AN | OEM drain | *[to-buy]*  |
 | ✅ | Turbo oil supply line | Forced Performance FP Turbo Oil Supply Line - EJ | OEM feed line | Stainless braided; brand-matched to FP Red |
+| ✅ | Y breather fitting | Subaru OEM |  | *[in-stock]* For the IAG AOS install. Fit AFTER the turbo is in - it is in the way otherwise |
 
 ## Cooling · Binder TAB 3
 
@@ -93,6 +94,8 @@
 | ✅ | Cold air intake | AEM 21-474 | OEM airbox | PN CORRECTED 2026-08-20 (sheet said 21-477). Listed for 02-05 WRX not STI but TEST FITTED OK. Filter relocates outside engine bay. Mates to FP 84mm inlet via silicone reducing coupler |
 | ⚠️ | Downpipe | UNKNOWN brand | OEM downpipe | **FSM: EX + EC sections void aft of turbo; no rear O2 / no cat monitoring** · CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection |
 | ✅ | Exhaust gaskets - most joints | Subaru OEM / aftermarket | OEM gaskets | *[in-stock]* IN STOCK 2026-08-20: header-to-head / header-to-uppipe / uppipe-to-turbo / downpipe-to-midpipe |
+| ✅ | Exhaust manifold nuts (x6) | Subaru OEM |  | *[in-stock]* **FSM: T3 = 35 N.m (26 ft-lb) per EX(H4DOTC)-4 STI model** · Perrin instructions govern if they differ from OEM 35 N.m |
+| ✅ | Exhaust manifold studs | Subaru OEM |  | *[in-stock]* **FSM: STI exploded view EX(H4DOTC)-4** · Head-side studs for the Perrin EL header |
 | ❓ | Gasket - turbo to downpipe | TBD | OEM gasket | *[verify-existing]* NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing |
 | ✅ | Header | Perrin Equal Length | OEM manifold | 304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons |
 | ✅ | Intercooler | APS D/R 725 FMIC | OEM TMIC | **FSM: IN TMIC content void; hood scoop freed** · Core 28x9.5x4.5 bar-and-plate |

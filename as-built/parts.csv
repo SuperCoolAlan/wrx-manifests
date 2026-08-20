@@ -141,3 +141,6 @@ ecu-electrical,7,Coolant temp sensor (ECT),,,,,installed,unverified,,,,NEW. Bran
 engine-heads,2,AVCS solenoids,Subaru OEM (used),,,"SINGLE AVCS - intake only, one per head",installed,unverified,,,,Came with the used V25B heads. UNTESTED - verify cam angle response on first start
 induction,3,Boost control solenoid (EBCS),GrimmSpeed (believed),3-port,,Factory 2-port EBCS content VOID,installed,unverified,,,,3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner
 induction,3,Wastegate spring stack,TiAL,Black + Blue = 1.2 bar / 17.4 psi,,Sets MINIMUM boost - cannot run below this,in-stock,confirmed,,,,QUEUED to install. This is the boost FLOOR. See BOOST FLOOR note - reconsider for break-in
+induction,3,Exhaust manifold studs,Subaru OEM,,,STI exploded view EX(H4DOTC)-4,in-stock,confirmed,Subaru dealership,,,Head-side studs for the Perrin EL header
+induction,3,Exhaust manifold nuts (x6),Subaru OEM,,,T3 = 35 N.m (26 ft-lb) per EX(H4DOTC)-4 STI model,in-stock,confirmed,Subaru dealership,,,Perrin instructions govern if they differ from OEM 35 N.m
+oiling,2,Y breather fitting,Subaru OEM,,,,in-stock,confirmed,Subaru dealership,,,For the IAG AOS install. Fit AFTER the turbo is in - it is in the way otherwise

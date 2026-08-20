@@ -6,7 +6,7 @@
 
 Source archive: Dropbox `WRX.zip` → `2004 / 2005 / 2007 Service Manual` (modular) + `2011 Service Manual` (monolith).
 
-**Config this manual documents:** 2004 GG wagon · **V25 STi Cosworth heads** on a 2005-era EJ257 single-AVCS (Alan-built) · FP Red · E85 · Link G4X · **Singer 200A alternator** · 2011 6MT + DCCD · **05-07 STi knuckles all four corners** · wagon lateral links + wagon sway bars · BC coilovers · 06-07 WRX 4/2-pot calipers + KNS rotors · 5x114.3 · catless downpipe + XForce 3in cat-back
+**Config this manual documents:** 2004 GG wagon · **V25B STi Cosworth heads** on a 2005-era EJ257 single-AVCS (Alan-built) · FP Red · E85 · Link G4X · **Singer 200A alternator** · 2011 6MT + DCCD · **05-07 STi knuckles all four corners** · wagon lateral links + wagon sway bars · BC coilovers · 06-07 WRX 4/2-pot calipers + KNS rotors · 5x114.3 · catless downpipe + XForce 3in cat-back
 
 Full component detail: [`../as-built/parts-register.md`](../as-built/parts-register.md) (128 parts)
 
@@ -34,7 +34,7 @@ Full component detail: [`../as-built/parts-register.md`](../as-built/parts-regis
 ## TAB 2 — ENGINE (2005 STi = EJ257)
 
 > ⚠ **HEAD + VALVETRAIN WORK IS THE EXCEPTION — use the 2007 manual.**
-> Heads are confirmed **V25 STi Cosworth** (2007-era casting, corroborated by the casting mark in `cooling-system-notes.md`). So head and valvetrain procedures follow the **2007** FSM, not 2005.
+> Heads are confirmed **V25B STi Cosworth** (2007-era casting, corroborated by the casting mark in `cooling-system-notes.md`). So head and valvetrain procedures follow the **2007** FSM, not 2005.
 > **Wrinkle:** the 2007 `STi Engine` folder has no `ME` Mechanical section — 2007 STI mechanical content is folded into **`ME(H4DOTC)`**. Print that for head work; the rest of the engine still comes from 2005 STi below.
 
 *For the **short block and everything below the heads**, use (STi) sections — NOT (H4DOTC), which is the WRX EJ255. **The head sections are the documented exception above.***

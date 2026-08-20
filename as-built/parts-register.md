@@ -37,7 +37,7 @@
 |:-:|---|---|---|---|
 | ⚠️ | Camshafts | Subaru OEM |  | Stage 2 considered not fitted |
 | ✅ | Combustion chamber cc matching |  |  | CHAMBERS EQUALISED - confirmed 2026-08-20. Compression is even bank to bank; nothing asymmetric to warn Ben about. Measured cc figures TEARDOWN-GATED |
-| ✅ | Cylinder head - one side | Cosworth V25 STi | OEM head | **FSM: HEAD/VALVETRAIN WORK FOLLOWS THE 2007 FSM - and 2007 STi has no ME section so use ME(H4DOTC)** · GENUINE COSWORTH V25 STi head. Casting question RESOLVED 2026-08-20 - corroborates cooling-system-notes.md V25B casting mark. Which side (LH/RH) not recorded |
+| ✅ | Cylinder head - one side | Cosworth V25B STi | OEM head | **FSM: HEAD/VALVETRAIN WORK FOLLOWS THE 2007 FSM - and 2007 STi has no ME section so use ME(H4DOTC)** · GENUINE COSWORTH V25B STi head. Casting RESOLVED 2026-08-20 - V25B specifically - corroborates cooling-system-notes.md V25B casting mark. Which side (LH/RH) not recorded |
 | ✅ | Cylinder head - other side | OEM ported to match | OEM head | OEM head PORTED TO MATCH the Cosworth side. This is why flows were matched - it was a matching exercise not a matched pair |
 | ✅ | Head gaskets | Subaru OEM | OEM | OEM head gaskets. Sound pairing with ARP studs - factory multi-layer gaskets are well regarded and the studs provide the clamp |
 | ✅ | Head machining - valve spring seats |  | OEM seats | VALVE SPRING SEATS MODIFIED (deeper) to accept taller Manley springs and allow more lift. DECK SURFACE NOT MILLED - so compression stays at the 8.5:1 from the Manley dish pistons and cam timing geometry is unchanged |

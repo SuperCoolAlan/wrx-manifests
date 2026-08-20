@@ -93,7 +93,7 @@
 | ☐ | **Four-wheel alignment** | Ask for **SAI / included angle side-to-side** — detects a bent used knuckle. Read rear camber (not factory-adjustable). |
 | ☐ | **Corner balance** | Coilovers, at running weight with driver. |
 | ☐ | **Clutch disengagement check** | 1st/reverse at idle without grinding — settles the fork/disc question. See `drivetrain-notes.md`. |
-| ☐ | **DCCD functional test** | iWire Spiider through its range, not just continuity. |
+| ☐ | **DCCD functional test** | DCCDPro controller through its range, not just continuity. |
 | ☐ | **Speedo / VSS verification** | iWire VSS Pro vs the 07 STi cluster. |
 | ☐ | **Break-in protocol** | Per `break-in-protocol.md`. |
 | ☐ | **Brake bedding** | After break-in, before any track use. |

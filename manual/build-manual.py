@@ -25,7 +25,7 @@ TRAPS = [
  ((3,),   "Charging specs superseded: Singer 200A/220A, 14.8V reg, not the 90A OEM."),
  ((3,),   "EX is REFERENCE ONLY - exhaust is aftermarket end to end, catless."),
  ((4,),   "CS Control Systems covers the FACTORY DCCD controller and switches,"),
- ((4,),   "   NOT the iWire DCCD Spiider fitted here. Use CS for the centre diff only."),
+ ((4,),   "   NOT the DCCDPro aftermarket controller fitted here. Use CS for the diff only."),
  ((4,),   "Unit is a 2011 6MT. The 2011 manual has no bookmarks, so 2007 files serve"),
  ((4,),   "   as the readable proxy - same DCCD 6MT family. Verify torques against 2011."),
  ((4,),   "Clutch: 2004 pedal/master/pipe/slave carry over. Fork + throwout must be 6MT."),

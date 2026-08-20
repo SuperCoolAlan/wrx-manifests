@@ -152,7 +152,7 @@ Full component detail: [`../as-built/parts-register.md`](../as-built/parts-regis
 | ☐ | **Merged torque spec table** | ⏳ **to write** — collect from each governing section |
 | ☐ | Harness splice map | ⏳ **to write** — photoset `Sandoval_Harness Merge Pictures.zip` (20 shots) + iWire docs |
 | ☐ | Link ECU docs | already printed — insert here |
-| ☐ | iWire DCCD Spiider / VSS Pro docs | request from iWire if not on hand |
+| ☐ | DCCDPro controller / iWire VSS Pro docs | request from iWire if not on hand |
 | ☐ | Track-event checklist + service log | ⏳ blank pages, bound in |
 
 > **10 of 18 already exist** in the repo. The binder's custom section is mostly a printing job now, not a writing job.

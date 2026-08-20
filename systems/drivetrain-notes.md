@@ -1,7 +1,7 @@
 # Drivetrain Notes — 2011 6MT + DCCD + R180 in a 2004 GG Wagon
 
 **Date:** 2026-08-19
-**Config:** 2011 STi 6MT w/ DCCD · R180 rear diff (came with the transmission) · 05-07 STi hubs/knuckles all corners · hybrid driveshaft · iWire DCCD Spiider + VSS Pro · ACT Heavy Duty clutch
+**Config:** 2011 STi 6MT w/ DCCD · R180 rear diff (came with the transmission) · 05-07 STi hubs/knuckles all corners · hybrid driveshaft · DCCDPro controller + iWire VSS Pro · ACT Heavy Duty clutch
 **Status:** Assembled, never driven. Pre-commissioning.
 
 ---
@@ -16,7 +16,7 @@
 | Axles | ✅ CLOSED | Alan reports correct fitment |
 | Driveshaft | ✅ CLOSED | Hybrid of 07 STi + wagon (possibly 2011) parts, assembled from forum research; length and splines verified correct |
 | **Clutch actuation** | ⚠ **SEE BELOW** | Pedal/MC/hard pipe **and slave** carry over. **Fork + throwout bearing must be 6MT** to match the 6MT flywheel/clutch stack |
-| DCCD function | ⚠ OPEN | iWire Spiider — needs *functional* verification at commissioning, not just continuity |
+| DCCD function | ⚠ OPEN | DCCDPro controller — needs *functional* verification at commissioning, not just continuity |
 | Speedo / VSS | ⚠ OPEN | iWire VSS Pro — same; verify against 07 STi cluster |
 
 ---

@@ -38,7 +38,7 @@ SECTIONS=[
   "covers the same DCCD 6-speed family and is used as the readable proxy - but VERIFY",
   "torque figures and fluid capacities against a 2011 manual before relying on them.",
   "",
-  "DCCD is controlled by an aftermarket iWire DCCD Spiider, not the factory controller.",
+  "DCCD is controlled by an aftermarket DCCDPro controller, not the factory unit.",
   "Do not look for factory DCCD switches - the manual's Control Systems section",
   "describes hardware this car does not have. Use it for the centre differential only.",
   "",

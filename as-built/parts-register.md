@@ -128,7 +128,7 @@
 | ✅ | Belt - alternator + power steering | Bando or Mitsuboshi 5PK875 (344K5) | OEM belt | *[to-buy]* FRONT belt. 5 ribs 875mm. Gates equiv K050345. Tension 490-640 N. Alternator is its own tensioner |
 | ✅ | Big 3 wiring upgrade | Knukonceptz / Stinger / Sky High 1/0 AWG OFC 3-cable kit | OEM charging cables | *[to-buy]*  |
 | ✅ | DBW pedal | Subaru 36010FE020 |  | 05 STi drive-by-wire |
-| ✅ | DCCD controller | iWire Spiider | OEM DCCD control | Functional test needed at commissioning |
+| ✅ | DCCD controller | DCCDPro | OEM DCCD control | **FSM: CS Control Systems describes the FACTORY controller - not this** · DCCDPro aftermarket standalone controller (build sheet called it 'iWire DCCD Spiider' - supplied via iWire with the harness merge). Functional test needed at commissioning |
 | ✅ | ECU | Link Engine Management G4X Fury SubaruLink / WRXLink WRX104X 224-4000 | OEM ECU 22611AJ242 | **FSM: ALL OEM ECU / OBD-II / immobilizer sections VOID** · PnP to factory ECU case; quote AS-0001 |
 | ✅ | Engine harness | Subaru 2005 STi | 04 GG body harness | **FSM: WI diagrams do not describe this car** · Merged by iWire |
 | ✅ | Flex fuel QD adapters | Russell / Earl's 3/8in QD to -6AN x2 | n/a new | *[to-buy]*  |
@@ -137,7 +137,7 @@
 | ⚠️ | Fuel pressure sensor | TBD per Ben 0-150 PSI 1/8in NPT 0.5-4.5V | n/a new | *[to-buy]* Single-function NOT Bosch combined |
 | ✅ | Gauge cluster | Subaru 07 STi | 04 WRX cluster | **FSM: Print IDI from 2007 manual not 2004** |
 | ⚠️ | Gauges | Prosport boost/fuel/oil/volt |  |  |
-| ✅ | Harness merge | iWire |  | Includes DCCD Spiider and VSS Pro |
+| ✅ | Harness merge | iWire |  | Includes the DCCD controller and VSS Pro |
 | ✅ | Ignition coils | NGK | OEM coils | Brand-matched to ILTR7L8R plugs |
 | ⚠️ | MAF sensor | Hitachi OE / Subaru OEM 22680AA380 / 22680AA38A |  | *[to-buy]* RETAINED for IAT element in speed density mode - verify exact PN |
 | ✅ | MAP sensor | Omni Power MAP-STI-4BR | OEM 2.5-bar Denso | 4-bar; cal 11.97 psia/V +0.506 offset |

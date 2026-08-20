@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**97 parts** — 71 installed · 17 to-buy · 2 undecided · 2 fabricate · 2 sell · 1 planned · 1 spare · 1 verify-existing
+**97 parts** — 72 installed · 16 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing
 
 ---
 
@@ -19,8 +19,9 @@
 |:-:|---|---|---|---|
 | ❓ | Coolant hose kit | Roger Clark Motorsport / Samco V8 12-hose kit 02-05 WRX/STI | OEM hoses | *[verify-existing]* Covers Modine + turbo coolant hoses - confirm whether owned |
 | ✅ | Crank + cam seals | Subaru OEM | OEM | Crank seal + 4 cam seals |
+| ✅ | Crank pulley | Perrin Lightweight | OEM crank pulley | DECISION REVERSED 2026-08-20: running the Perrin already installed rather than buying the Fluidampr. Mitigated by conventional OEM flywheel (avoids lightweight-pulley + lightweight-flywheel combo). Reversible - front-of-engine job |
 | ✅ | Crankshaft | Subaru OEM 12200AA430 | OEM WRX crank | Nitride-treated STi |
-| ⚠️ | Harmonic damper | Fluidampr 531101 | OEM crank pulley | *[to-buy]* Supersedes Perrin lightweight pulley; internally balanced |
+| ✅ | Harmonic damper | Fluidampr 531101 | Perrin lightweight pulley | *[deferred]* NOT BUYING for now - see crank pulley row. Original 2026-07-02 rationale: torsional harmonics at 500whp threaten rod/main bearings |
 | ✅ | Main bearings | King STDX | OEM | Mains fine-tuned by mixing shell halves; see as-built-engine-specs.md |
 | ✅ | Oil pump | Subaru 15010AA360 | 10mm OEM pump | 11mm high-volume |
 | ✅ | Pistons | Manley 612000C-4 | OEM pistons | EJ257 99.75mm std stroke std bore 8.5:1 dish |
@@ -174,7 +175,6 @@
 
 | Part | Brand / Model | Status | Notes |
 |---|---|---|---|
-| Crank pulley | Perrin Lightweight | sell | Superseded by Fluidampr |
 | ECU | Subaru 22611AJ242 | sell | 04 STi - superseded by Link |
 | Clutch fork + throwout | Subaru 5MT | spare | MUST NOT be used with 6MT |
 
@@ -194,7 +194,6 @@
 - [ ] ⚠️ **Fuel pressure sensor** (ecu-electrical) — Single-function NOT Bosch combined
 - [ ] ⚠️ **MAF sensor** (ecu-electrical) — RETAINED for IAT element in speed density mode - verify exact PN
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
-- [ ] ⚠️ **Harmonic damper** (engine-lower) — Supersedes Perrin lightweight pulley; internally balanced
 - [ ] ⚠️ **Radiator hoses** (engine-lower) — Already owned
 - [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
 - [ ] ⚠️ **AVCS oil feed lines** (oiling) — Driver side ordered; passenger side TBD - OEM or HEL braided

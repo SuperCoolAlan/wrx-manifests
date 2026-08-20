@@ -77,7 +77,7 @@
 | ❓ | Blow-off valve | TBD | OEM BPV | *[undecided]* NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36 |
 | ✅ | Cat-back exhaust | XForce E4-SW05-MP01-CBS | OEM cat-back | **FSM: EX section largely void aft of the turbo** · 3in diameter throughout - ALL EXHAUST JOINTS ARE 3in so no reducers needed. Includes the midpipe. RAW 409 STAINLESS - will surface-rust cosmetically (not 304). Centre hot-dog resonator + oval rear muffler. Twin 80mm tips. WRX/STI MANUAL ONLY. XForce note: some setups need an E4-SW05-C1 connecting pipe when running a standalone cat |
 | ✅ | Cold air intake | AEM 21-474 | OEM airbox | PN CORRECTED 2026-08-20 (sheet said 21-477). Listed for 02-05 WRX not STI but TEST FITTED OK. Filter relocates outside engine bay. Mates to FP 84mm inlet via silicone reducing coupler |
-| ⚠️ | Downpipe | UNKNOWN brand | OEM downpipe | 3in - matches the cat-back. Catted or catless NOT RECORDED. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock |
+| ⚠️ | Downpipe | UNKNOWN brand | OEM downpipe | **FSM: EX + EC sections void aft of turbo; no rear O2 / no cat monitoring** · CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection |
 | ✅ | Exhaust gaskets - most joints | Subaru OEM / aftermarket | OEM gaskets | *[in-stock]* IN STOCK 2026-08-20: header-to-head / header-to-uppipe / uppipe-to-turbo / downpipe-to-midpipe |
 | ❓ | Gasket - turbo to downpipe | TBD | OEM gasket | *[verify-existing]* NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing |
 | ✅ | Header | Perrin Equal Length | OEM manifold | 304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons |
@@ -220,7 +220,7 @@
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **Radiator hoses** (engine-lower) — Already owned
 - [ ] ⚠️ **Fuel rails** (fuel) — CONFLICT - 2020-21 sheet says Early IAG fuel rail; needs 2x ORB-to-AN adapters
-- [ ] ⚠️ **Downpipe** (induction) — 3in - matches the cat-back. Catted or catless NOT RECORDED. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock
+- [ ] ⚠️ **Downpipe** (induction) — CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection
 - [ ] ⚠️ **Air-oil separator** (oiling) — USED great condition w/ all lines; PN verification pending
 - [ ] ⚠️ **Coilovers** (suspension) — PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R
 - [ ] ⚠️ **Front ball joint** (suspension) — Generic GD-era - verify taper seats in STi housing

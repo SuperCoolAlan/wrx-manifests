@@ -7,9 +7,9 @@
 > supersedes those diagrams for every circuit listed. Where a circuit is *not* listed,
 > the FSM diagram still applies.
 
-**19 recorded deviations** · ✅ confirmed · ⚠️ needs verification
+**17 recorded deviations** · ✅ confirmed · ⚠️ needs verification
 
-**Pin-level detail recorded for 0 of 19 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
+**Pin-level detail recorded for 0 of 17 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
 
 ---
 
@@ -31,12 +31,8 @@
 | ✅ | Wideband | — | **added** | Link CAN Lambda 125-1000 in the POST-TURBO bung | Replaces both factory O2 circuits |
 | | | | | Rear O2 deleted; catless | |
 | ✅ | DBW pedal | — | **added** | Subaru 36010FE020 pedal on an iWire DBW pedal adapter plate | 2004 chassis did not have drive-by-wire |
-| ⚠️ | Knock sensor | — | **to-install** | New OEM knock sensor on hand |  |
-| | | | | 24 N.m; cord exits at 60 deg to engine rear - see CPU-82 | |
 | ⚠️ | Crank position sensor | — | **replaced** | New non-OEM sensor |  |
 | | | | | Brand/PN not recorded | |
-| ⚠️ | Cam position sensor | — | **replaced** | New non-OEM sensor |  |
-| | | | | SINGLE AVCS - brand/PN not recorded | |
 
 ## Fuel system
 
@@ -87,8 +83,6 @@
 
 - [ ] **Flex fuel sensor** — Not yet installed - see CPU-57
 - [ ] **VSS** — Verify against the cluster at commissioning
-- [ ] **Knock sensor** — 24 N.m; cord exits at 60 deg to engine rear - see CPU-82
 - [ ] **Crank position sensor** — Brand/PN not recorded
-- [ ] **Cam position sensor** — SINGLE AVCS - brand/PN not recorded
 - [ ] **Boost control** — Confirm Link output frequency with the tuner
 

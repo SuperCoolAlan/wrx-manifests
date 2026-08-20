@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**100 parts** — 73 installed · 18 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing
+**104 parts** — 73 installed · 21 to-buy · 2 undecided · 2 fabricate · 1 deferred · 1 planned · 1 sell · 1 spare · 1 verify-existing · 1 in-stock
 
 ---
 
@@ -20,9 +20,12 @@
 | ❓ | Coolant hose kit | Roger Clark Motorsport / Samco V8 12-hose kit 02-05 WRX/STI | OEM hoses | *[verify-existing]* Covers Modine + turbo coolant hoses - confirm whether owned |
 | ✅ | Crank + cam seals | Subaru OEM | OEM | Crank seal + 4 cam seals |
 | ✅ | Crank pulley | Perrin Lightweight | OEM crank pulley | DECISION REVERSED 2026-08-20: running the Perrin already installed rather than buying the Fluidampr. Mitigated by conventional OEM flywheel (avoids lightweight-pulley + lightweight-flywheel combo). Reversible - front-of-engine job |
+| ✅ | Crank pulley bolt | Subaru OEM 12369AA011 | OEM bolt | *[to-buy]* REPLACE do not reuse - angle-tightened (44 Nm + 65-75 deg). Likely dealer rather than RockAuto |
 | ✅ | Crankshaft | Subaru OEM 12200AA430 | OEM WRX crank | Nitride-treated STi |
+| ✅ | Drain plug crush washers | Subaru OEM 803916010 |  | *[to-buy]* 10-pack. New washer every change per IAG |
 | ✅ | Harmonic damper | Fluidampr 531101 | Perrin lightweight pulley | *[deferred]* NOT BUYING for now - see crank pulley row. Original 2026-07-02 rationale: torsional harmonics at 500whp threaten rod/main bearings |
 | ✅ | Main bearings | King STDX | OEM | Mains fine-tuned by mixing shell halves; see as-built-engine-specs.md |
+| ✅ | Oil filters | Wix 57712XP | OEM filter | *[to-buy]* x5 for break-in schedule. IAG specifies OEM or Wix XP. 23 psi bypass. PRE-FILL before install |
 | ✅ | Oil pump | Subaru 15010AA360 | 10mm OEM pump | 11mm high-volume |
 | ✅ | Pistons | Manley 612000C-4 | OEM pistons | EJ257 99.75mm std stroke std bore 8.5:1 dish |
 | ⚠️ | Radiator hoses | Mishimoto Silicone upper + lower | OEM hoses | Already owned |
@@ -64,6 +67,7 @@
 | ❓ | BOV adapter | TBD |  | *[undecided]* Sheet says not needed if going bung-to-hose direct - depends on final BOV choice |
 | ❓ | Blow-off valve | TBD | OEM BPV | *[undecided]* NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36 |
 | ✅ | Cold air intake | AEM 21-474 | OEM airbox | PN CORRECTED 2026-08-20 (sheet said 21-477). Listed for 02-05 WRX not STI but TEST FITTED OK. Filter relocates outside engine bay. Mates to FP 84mm inlet via silicone reducing coupler |
+| ✅ | Exhaust gaskets - all joints | Subaru OEM / aftermarket | OEM gaskets | *[in-stock]* IN STOCK 2026-08-20. Covers header-to-head / header-to-uppipe / uppipe-to-turbo / turbo-to-downpipe / downpipe-to-midpipe. FSM: replace with new ones |
 | ✅ | Header | Perrin Equal Length | OEM manifold | 304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons |
 | ✅ | Intercooler | APS D/R 725 FMIC | OEM TMIC | **FSM: IN TMIC content void; hood scoop freed** · Core 28x9.5x4.5 bar-and-plate |
 | ✅ | TGV | DELETED | OEM TGVs | **FSM: IN TGV content void** · Used |
@@ -167,6 +171,8 @@
 | Rear rotors (KNS / DBA) | Thickness per event | brakes |
 | Wideband (Link) | Sensor service life | ecu-electrical |
 | Wideband O2 sensor (Bosch) | Sensor service life | ecu-electrical |
+| Oil filters (Wix) | Every oil change | engine-lower |
+| Drain plug crush washers (Subaru OEM) | Every oil change | engine-lower |
 | Turbocharger (Forced Performance) | Shaft play periodic | induction |
 | Header (Perrin) | Annual collector inspection | induction |
 | Air-oil separator (IAG) | Drain per interval | oiling |

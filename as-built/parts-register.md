@@ -105,7 +105,7 @@
 | ⚠️ | Clutch release fork | Subaru 2011 6MT OEM | 5MT fork | Came with the 2011 6MT swap - almost certainly correct; confirm PN at next clutch job |
 | ⚠️ | Driveshaft | Hybrid 07 STi + wagon | OEM | Assembled from forum research; length and splines verified |
 | ✅ | Engine mounts | Torque Solution | OEM | **FSM: TS torque spec governs over FSM** |
-| ✅ | Flywheel | Subaru Conventional 6MT | 5MT flexible flywheel | Not interchangeable with 5MT |
+| ✅ | Flywheel | Subaru Conventional 6MT donor | 5MT flexible flywheel | INSTALLED AND COMPLETE confirmed 2026-08-20. OEM 6MT conventional - NOT the ACT/Fidanza/Exedy options still listed on the build sheet. Not interchangeable with 5MT flexible type |
 | ✅ | Pitch stop mount | Perrin Red N2 polyurethane | OEM pitch stop | Billet body; 90a + 70a bushings |
 | ✅ | Rear differential | Subaru R180 | R160 | Came with trans - ratios match |
 | ✅ | Transmission | Subaru 2011 STi 6MT DCCD | 04 WRX 5MT | **FSM: Trans fluid = 2011 spec NOT 2004** · 97k miles at install; bundle |

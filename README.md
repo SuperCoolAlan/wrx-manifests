@@ -12,7 +12,12 @@
 |---|---|---|
 | **This repo** | All build documentation | **Source of truth for what is on the car** |
 | **Linear** — project `Subaru WRX` (team CPU) | Work tracking, todos, decisions in progress | Source of truth for **what to do next** |
-| [Google Sheets master build sheet](https://docs.google.com/spreadsheets/d/1KrntpsHHwKKx_W9Vn28aLq9sGWfUYiJAk4-rHiAo67w/edit) | Purchasing status, shopping, costs | **Active** — procurement. Alan maintains. |
+| [Google Sheets master build sheet](https://docs.google.com/spreadsheets/d/1KrntpsHHwKKx_W9Vn28aLq9sGWfUYiJAk4-rHiAo67w/edit) | Purchasing, costs, fluid specs. Tabs: `Sheet1`, `Fluids` | **Active** — procurement. Alan maintains. |
+
+> ⚠ **The sheet's `Status` column tracks decisions and procurement, not physical installation.**
+> Rows read "Installed" for things that are only decided or delivered — the Mainline dyno tune is
+> marked Installed and the car has never run. **Do not sync task completion from that column.**
+> `parts.csv` is the authority for what is physically on the car.
 | ~~`20-21 2004 Wagon Build.xlsx`~~ (Dropbox) | — | **SUPERSEDED** — absorbed into this repo 2026-08-20 |
 
 ## Layout

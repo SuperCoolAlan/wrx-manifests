@@ -144,3 +144,6 @@ induction,3,Wastegate spring stack,TiAL,Black + Blue = 1.2 bar / 17.4 psi,,Sets 
 induction,3,Exhaust manifold studs,Subaru OEM,,,STI exploded view EX(H4DOTC)-4,in-stock,confirmed,Subaru dealership,,,Head-side studs for the Perrin EL header
 induction,3,Exhaust manifold nuts (x6),Subaru OEM,,,T3 = 35 N.m (26 ft-lb) per EX(H4DOTC)-4 STI model,in-stock,confirmed,Subaru dealership,,,Perrin instructions govern if they differ from OEM 35 N.m
 oiling,2,Y breather fitting,Subaru OEM,,,,in-stock,confirmed,Subaru dealership,,,For the IAG AOS install. Fit AFTER the turbo is in - it is in the way otherwise
+ecu-electrical,7,MEGA fuse holders (x2),Blue Sea 5001-style,,,n/a new capability,in-stock,unverified,,,,"Mount on the 3D-printed battery tray fuse platform (108x82mm cantilever, M8 studs). Fuse 1 alternator/Big 3, Fuse 2 audio amp"
+ecu-electrical,7,Fuse - alternator / Big 3 charge cable,,250A,,Protects the 1/0 B+ run - MANDATORY,to-buy,unverified,,,,"NOT in stock. FORM FACTOR CONFLICT: grounding notes say 250-300A ANL, tray was designed for MEGA holders. Tray wins - buy MEGA"
+ecu-electrical,7,Fuse - audio amp power cable,,amperage TBD,,,to-buy,unverified,,,,NOT in stock. Size to the Boss R1100M + RF P400-4 power run. MEGA form factor to match holder

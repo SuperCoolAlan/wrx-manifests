@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**145 parts** — 110 installed · 17 to-buy · 6 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 not-fitted
+**148 parts** — 110 installed · 19 to-buy · 7 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 1 deferred · 1 planned · 1 sell · 1 spare · 1 not-fitted
 
 ---
 
@@ -146,6 +146,8 @@
 | ✅ | Flex fuel QD adapters | Russell / Earl's 3/8in QD to -6AN x2 | n/a new | *[to-buy]*  |
 | ✅ | Flex fuel sensor | Continental PPA-IGF35 / GM 13577429 | n/a new | *[to-buy]* Ethanol content sensor; bench-tested; mounts on new FPR bracket |
 | ✅ | Flex sensor bracket | DIY 3D-printed ASA black | n/a new | *[fabricate]* M6 brass heat-set inserts |
+| ⚠️ | Fuse - alternator / Big 3 charge cable | 250A |  | *[to-buy]* **FSM: Protects the 1/0 B+ run - MANDATORY** · NOT in stock. FORM FACTOR CONFLICT: grounding notes say 250-300A ANL, tray was designed for MEGA holders. Tray wins - buy MEGA |
+| ⚠️ | Fuse - audio amp power cable | amperage TBD |  | *[to-buy]* NOT in stock. Size to the Boss R1100M + RF P400-4 power run. MEGA form factor to match holder |
 | ✅ | Gauge cluster | Subaru 07 STi with OAT | 04 WRX cluster | **FSM: Print IDI from 2007 manual not 2004** · 07 STi cluster WITH outside air temp. iWire performed the swap (inv 5304) |
 | ⚠️ | Gauges | Prosport boost/fuel/oil/volt |  |  |
 | ✅ | Harness merge | iWire |  | Includes the DCCD controller and VSS Pro |
@@ -155,6 +157,7 @@
 | ✅ | Link XSL expansion loom | Link Engine Management 101-0106 |  | Terminated with a DTM06-8S connector by BW Tuning |
 | ⚠️ | MAF sensor | Hitachi OE / Subaru OEM 22680AA380 / 22680AA38A |  | *[to-buy]* RETAINED for IAT element in speed density mode - verify exact PN |
 | ✅ | MAP sensor | Omni Power MAP-STI-4BR | OEM 2.5-bar Denso | 4-bar; cal 11.97 psia/V +0.506 offset |
+| ⚠️ | MEGA fuse holders (x2) | Blue Sea 5001-style |  | *[in-stock]* **FSM: n/a new capability** · Mount on the 3D-printed battery tray fuse platform (108x82mm cantilever, M8 studs). Fuse 1 alternator/Big 3, Fuse 2 audio amp |
 | ✅ | Oil pressure sensor | Prosport 0-100 PSI 1/8in NPT 0.5-4.5V | OEM switch | 24in hose w/ M18x1.5 galley adapter - confirms galley + header bung thread |
 | ✅ | Pressure sensors (x2) | LDM 8990150-0-150 - 0-150 psi standard | n/a new | TWO supplied on invoice AS-0003 - resolves the 'TBD per Ben' entries for BOTH fuel and oil pressure |
 | ✅ | Spark plugs | NGK ILTR7L8R | OEM plugs | One heat range colder for E85 at 500whp |
@@ -251,6 +254,9 @@
 - [ ] ⚠️ **Crank position sensor** (ecu-electrical) — NEW but NOT OEM. Brand/PN not recorded - confirm
 - [ ] ⚠️ **Cam position sensor** (ecu-electrical) — NEW but NOT OEM. SINGLE AVCS - confirm sensor count vs FSM dual-AVCS figures
 - [ ] ⚠️ **Coolant temp sensor (ECT)** (ecu-electrical) — NEW. Brand/PN not recorded
+- [ ] ⚠️ **MEGA fuse holders (x2)** (ecu-electrical) — Mount on the 3D-printed battery tray fuse platform (108x82mm cantilever, M8 studs). Fuse 1 alternator/Big 3, Fuse 2 audio amp
+- [ ] ⚠️ **Fuse - alternator / Big 3 charge cable** (ecu-electrical) — NOT in stock. FORM FACTOR CONFLICT: grounding notes say 250-300A ANL, tray was designed for MEGA holders. Tray wins - buy MEGA
+- [ ] ⚠️ **Fuse - audio amp power cable** (ecu-electrical) — NOT in stock. Size to the Boss R1100M + RF P400-4 power run. MEGA form factor to match holder
 - [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (recollection
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **AVCS solenoids** (engine-heads) — Came with the used V25B heads. UNTESTED - verify cam angle response on first start

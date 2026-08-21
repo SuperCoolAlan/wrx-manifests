@@ -58,14 +58,14 @@
 | ✅ | AVCS oil feed line RH (passenger) | HEL HEL-OF34 stainless braided | OEM oil pipe RH | PURCHASED - kit is a pair, one used. Line fitted; BANJO BOLT STILL NEEDS SHORTENING 4mm because the HEL fitting is 4mm shorter than OEM. See CPU-84 |
 | ✅ | Air-oil separator | IAG Street Series V2 | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · USED great condition w/ all lines; drain per interval; cap PCV portions of 21141AA131 |
 | ✅ | Breather hose - crank port to Y fitting | 3/4in ID |  | *[to-buy]* Crank breather port -> OEM plastic Y fitting -> IAG AOS. MUST be oil-resistant: NBR/nitrile or fluorosilicone-lined. NOT plain silicone - it swells in oil vapour. Measure the run AFTER the turbo is mounted. CPU-38 |
-| ✅ | Heat sleeve | DEI Reflective 5/8in ID 3ft | n/a new | *[to-buy]* For IAG AOS lines; share purchase with fuel lines |
+| ⚠️ | Heat sleeve | DEI Reflective 5/8in ID 3ft | n/a new | *[to-buy]* DEI reflective, 5/8in ID, 3ft. SIZE LOOKS WRONG: sleeve ID must clear the hose OUTSIDE diameter. A 5/8in ID hose has a larger OD than 5/8in, and the breather hose is 3/4in ID. Measure both ODs before ordering more |
 | ✅ | Oil dipstick tube | Subaru OEM STI/J3 |  | Tube only - verify dipstick rod separately |
 | ✅ | Oil drain T-fitting | TBD | n/a new | *[to-buy]* Merges turbo oil drain + IAG AOS drain into one return |
 | ✅ | Oil filler neck | Subaru OEM J3 | OEM | 02-07 WRX/STI |
 | ✅ | Oil pan | IAG | OEM pan | **FSM: Changes oil capacity - measure and record** |
 | ✅ | Oil pickup tube | IAG | Moroso unit | Moroso didn't fit the IAG pan |
 | ✅ | Oil pressure sender | remote | OEM switch location | Firewall mounted 2026-08-20; torque 25 Nm; THREE BOND 1324 |
-| ✅ | Turbo oil DRAIN line | IAG Stainless braided -10AN | OEM drain | *[to-buy]*  |
+| ✅ | Turbo oil DRAIN line | IAG 5/8in ID - IAG stainless braided -10AN | OEM drain | *[to-buy]* 5/8in ID confirmed 2026-08-21. -10AN is the matching AN size. Needs continuous fall to the pan - CPU-32 |
 | ✅ | Turbo oil supply line | Forced Performance FP Turbo Oil Supply Line - EJ | OEM feed line | Stainless braided; brand-matched to FP Red |
 | ✅ | Y breather fitting | Subaru OEM |  | *[in-stock]* For the IAG AOS install. Fit AFTER the turbo is in - it is in the way otherwise |
 
@@ -319,6 +319,7 @@
 - [ ] ⚠️ **AVCS solenoids** (engine-heads) — Came with the used V25B heads. UNTESTED - verify cam angle response on first start
 - [ ] ⚠️ **Downpipe** (induction) — CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection
 - [ ] ⚠️ **Boost control solenoid (EBCS)** (induction) — 3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner
+- [ ] ⚠️ **Heat sleeve** (oiling) — DEI reflective, 5/8in ID, 3ft. SIZE LOOKS WRONG: sleeve ID must clear the hose OUTSIDE diameter. A 5/8in ID hose has a larger OD than 5/8in, and the breather hose is 3/4in ID. Measure both ODs before ordering more
 - [ ] ⚠️ **Coilovers** (suspension) — PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R
 - [ ] ⚠️ **Front ball joint** (suspension) — Generic GD-era - verify taper seats in STi housing
 - [ ] ⚠️ **Power steering pump** (suspension) — Multiple pumps on hand - inspect to pick best; same PN across 04-07 turbo EJ

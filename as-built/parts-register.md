@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**201 parts** — 148 installed · 22 to-buy · 15 in-stock · 4 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**201 parts** — 148 installed · 22 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-transit
 
 ---
 
@@ -222,7 +222,7 @@
 | ✅ | Parking brake cables | Subaru 2004 WRX - ORIGINAL CHASSIS CABLES |  | **FSM: 2004 cables work with 05-07 STi rear knuckles - no swap needed** · VERIFIED HOLDING on the KNS rear discs. Despite the STi knuckle swap the chassis cables fit and function |
 | ✅ | Rear calipers | Subaru 2007 WRX Limited 2-pot | 02-05 single-pot |  |
 | ✅ | Rear rotors | KNS / DBA KNS4656 | OEM rotors | 06-07 WRX OD with R180 STi parking brake drum |
-| ❓ | Speed bleeders - THREAD NOT YET MEASURED | Speed Bleeder SB7100 (M7x1.0) or SB1010 (M10x1.0) |  | *[undecided]* DO NOT ORDER YET. Speed bleeders are chosen by THREAD, not hex. Fitting an M10 bleeder into an M7 port ruins the caliper. Hex measured 8mm front / 10mm rear, but hex and thread are independent. Vendor emailed SB1010; forums say OEM 4-pots take SB7100. RESOLVE by pulling one bleeder from each caliper type and measuring the THREADED BODY diameter |
+| ⚠️ | Speed bleeders | Speed Bleeder SB7100 (M7x1.0) or SB1010 (M10x1.0) |  | *[in-transit]* BOTH SB7100 (M7x1.0) and SB1010 (M10x1.0) ordered 2026-08-21; the wrong set goes back. Identify by comparing against a REMOVED OEM bleeder on the bench - NEVER test-fit in the caliper, an M10 started into an M7 port ruins both. Hex measured 8mm front / 10mm rear, but hex is not thread |
 
 ## Suspension · Chassis · Binder TAB 6 · recorded spend $1,308.13
 
@@ -306,7 +306,6 @@
 
 ## Open items — needs confirmation
 
-- [ ] ❓ **Speed bleeders - THREAD NOT YET MEASURED** (brakes) — DO NOT ORDER YET. Speed bleeders are chosen by THREAD, not hex. Fitting an M10 bleeder into an M7 port ruins the caliper. Hex measured 8mm front / 10mm rear, but hex and thread are independent. Vendor emailed SB1010; forums say OEM 4-pots take SB7100. RESOLVE by pulling one bleeder from each caliper type and measuring the THREADED BODY diameter
 - [ ] ❓ **Coolant hose kit** (cooling) — Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM
 - [ ] ❓ **Alternator mounting bolts** (ecu-electrical) — NOT YET LOCATED 2026-08-21. Singer unit is a Denso-case direct replacement for 23700AA430, so OEM bolts should suit - CONFIRM boss thickness matches before torquing
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
@@ -314,6 +313,7 @@
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
 - [ ] ❓ **Wheel clearance for Brembo upgrade** (suspension) — OPEN: do these wheels clear 326mm 04-07 STi Brembos? Clearing the current ~294mm setup does NOT confirm it. 32mm larger rotor and barrel shape matters as much as diameter - many 17in OEM wheels foul a Brembo caliper. VERIFY BEFORE BUYING CALIPERS
 - [ ] ⚠️ **Brake pads** (brakes) — Compound NOT yet identified - PN is printed on the pad backing plate and the box. Fronts are 4-pot, rears 2-pot (2007 WRX Limited)
+- [ ] ⚠️ **Speed bleeders** (brakes) — BOTH SB7100 (M7x1.0) and SB1010 (M10x1.0) ordered 2026-08-21; the wrong set goes back. Identify by comparing against a REMOVED OEM bleeder on the bench - NEVER test-fit in the caliper, an M10 started into an M7 port ruins both. Hex measured 8mm front / 10mm rear, but hex is not thread
 - [ ] ⚠️ **Radiator hoses** (cooling) — Already owned
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
 - [ ] ⚠️ **Front CV axle (new)** (drivetrain) — Mixed new/used/refurb axle set across 2011 trans + R180 + 05-07 STi hubs. Fitment reported OK

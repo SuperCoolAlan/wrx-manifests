@@ -7,9 +7,9 @@
 > supersedes those diagrams for every circuit listed. Where a circuit is *not* listed,
 > the FSM diagram still applies.
 
-**26 recorded deviations** · ✅ confirmed · ⚠️ needs verification
+**27 recorded deviations** · ✅ confirmed · ⚠️ needs verification
 
-**Pin-level detail recorded for 9 of 26 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
+**Pin-level detail recorded for 10 of 27 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
 
 ---
 
@@ -59,9 +59,11 @@
 | ✅ | WHICH FUEL PUMP DIAGRAM APPLIES | — | **reference** | Use E/G(ST)-01 (WI-108, STi), NOT E/G(TB)-01 (WI-82, turbo). The STi routing inserts the R166/R167 FPCM harness pair between R1 and R122; the turbo routing runs R1 straight to R122 | 2005 STi engine harness on a 2004 chassis |
 | | | | | The two diagrams are otherwise near-identical, which makes picking the wrong one easy and the extra connector pair invisible | |
 | ✅ | Fuel pump - ground (local) | tap on the B wire spanning R58 pin 4 <-> R57 pin 16 · 4 (R58) <-> 16 (R57) · B (black) | **tapped and re-grounded** | Pump ground leaves the pump on the OEM path at R58 pin 4. The black wire running from there to R57 pin 16 is tapped between the two connectors and grounded straight to CHASSIS UNDER THE REAR SEAT | Gives the DW400 a short, local high-current return instead of the long factory run |
-| | | | | Third modification to the R57-R58 segment. Whether the original long ground wire was also CUT or left in parallel is NOT recorded - check before assuming a single return path | |
+| | | | | Factory wire toward R57 pin 16 is CUT, not paralleled - deliberate. GND-04 also carries the seat heaters, room/spot lights, door switches, rear accessory socket, fan control amp and compass mirror; DW400 current on that shared node would inject noise and shift the fuel level sender reference. TRADEOFF: the local chassis ground is now a SINGLE POINT OF FAILURE - clean bare metal, star washer, dielectric grease | |
 | ✅ | Fuel pump - factory ground path | R57 pin 16 / R15 pin 16 · 16 · B (black) | **abandoned** | Factory pump ground per FSM GND-04 (WI-26) runs pump -> R58 pin 4 -> R57 pin 16 -> R15 pin 16 -> forward to the GND-04 ground point at the front of the car | Superseded by the local chassis ground under the rear seat |
-| | | | | That run was sized for the stock pump. At DW400 current its length would cost real voltage at the pump, which is the point of the local ground | |
+| | | | | That run was sized for the stock pump. At DW400 current its length would cost real voltage at the pump, which is the point of the local ground. CUT at the tap - this path is open, not a parallel return | |
+| ⚠️ | Fuel level sender ground | R58 pin 4 · 4 · B (black) | **follows the pump ground** | Per FSM the black wire at R58 pin 4 is the common ground for the whole FUEL PUMP ASSEMBLY, which includes the fuel level sender | Not a separate change - it rides on the pump ground tap |
+| | | | | So the sender now grounds locally under the rear seat too. SANITY CHECK: confirm the fuel gauge reads correctly at first start - a wrong or dead gauge would point here, not at the sender | |
 
 ## Oiling
 
@@ -102,4 +104,5 @@
 - [ ] **Flex fuel sensor** — Not yet installed - see CPU-57
 - [ ] **VSS** — Verify against the cluster at commissioning
 - [ ] **Boost control** — Confirm Link output frequency with the tuner
+- [ ] **Fuel level sender ground** — So the sender now grounds locally under the rear seat too. SANITY CHECK: confirm the fuel gauge reads correctly at first start - a wrong or dead gauge would point here, not at the sender
 

@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**190 parts** — 148 installed · 19 to-buy · 9 in-stock · 3 undecided · 3 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**191 parts** — 148 installed · 18 to-buy · 10 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -128,7 +128,8 @@
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
 | ⚠️ | AFR gauge | Innovate MTX-L |  | Separate from CAN Lambda |
-| ✅ | Alternator | Michael Singer 200A / 220A peak - 128.5mm Denso hairpin 6-phase | OEM 90A 23700AA430 | *[to-buy]* ORDERED 2026-08-20 per systems/singer-alternator-spec-request.md - ARRIVAL NOT CONFIRMED. Register said only "to-buy", which understated it. 150A at idle, 14.8V regulator |
+| ✅ | Alternator | Michael Singer 200A / 220A peak - 128.5mm Denso hairpin 6-phase | OEM 90A 23700AA430 | *[in-stock]* **FSM: OEM 90A charging specs VOID - 150A at idle, 14.8V regulator** · IN HAND 2026-08-21, not yet mounted. Denso case, direct replacement for OEM 23700AA430. Mounting bolts NOT YET LOCATED - FSM spec 25 N.m per SC(H4SO)-15 |
+| ❓ | Alternator mounting bolts | Subaru OEM PN not recorded |  | *[verify-existing]* **FSM: Generator install torque 25 N.m per SC(H4SO)-15** · NOT YET LOCATED 2026-08-21. Singer unit is a Denso-case direct replacement for 23700AA430, so OEM bolts should suit - CONFIRM boss thickness matches before torquing |
 | ✅ | Battery | Interstate MTX-35 AGM Group 35 | OEM battery | ENGINE BAY - OEM LOCATION (corrected 2026-08-20; was wrongly recorded as relocated to rear) |
 | ✅ | Battery tray | Custom 3D print ASA | OEM tray 82122AA031/032 | Engine bay. Cavity 236x182mm. Integrated platform for 2x Blue Sea 5001 MEGA fuse holders. Retains stock J-hook strap clamp |
 | ✅ | Belt - A/C | Bando or Mitsuboshi 4PK895 (352K4) | OEM belt | *[to-buy]* REAR belt (crank > A/C > idler). 4 ribs 895mm. Subaru OEM equiv 73323AC000. Tension 350-450 N |
@@ -288,6 +289,7 @@
 ## Open items — needs confirmation
 
 - [ ] ❓ **Coolant hose kit** (cooling) — Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM
+- [ ] ❓ **Alternator mounting bolts** (ecu-electrical) — NOT YET LOCATED 2026-08-21. Singer unit is a Denso-case direct replacement for 23700AA430, so OEM bolts should suit - CONFIRM boss thickness matches before torquing
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
 - [ ] ❓ **BOV adapter** (induction) — Sheet says not needed if going bung-to-hose direct - depends on final BOV choice
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing

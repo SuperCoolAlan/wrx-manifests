@@ -81,7 +81,7 @@ SECTIONS=[
   "Tumble generator valves  -  deleted",
   "Fuel pump control module  -  UNPLUGGED; pump is hardwired through a relay",
   "Strut and spring service  -  coilovers fitted",
-  "Oxygen sensor metering  -  wideband post-turbo, rear sensor deleted",
+  "Oxygen sensor metering  -  wideband post-turbo; REAR O2 DELETED and its plug reused",
   "Alternator output specs  -  high-output unit with a 14.8V regulator",
   "Boost control  -  external wastegate on a 3-port solenoid, not the factory EBCS",
   "Speed control / cruise  -  NOT FITTED, deliberately unwired",

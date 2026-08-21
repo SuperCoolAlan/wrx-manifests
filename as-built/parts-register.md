@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**186 parts** — 144 installed · 19 to-buy · 10 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**187 parts** — 145 installed · 19 to-buy · 10 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -145,6 +145,7 @@
 | ✅ | Engine harness | Subaru 2005 STi | 04 GG body harness | **FSM: WI diagrams do not describe this car** · Merged by iWire |
 | ✅ | Flex fuel QD adapters | Russell / Earl's 3/8in QD to -6AN x2 | n/a new | *[to-buy]*  |
 | ✅ | Flex fuel sensor | Continental PPA-IGF35 / GM 13577429 | n/a new | *[to-buy]* Ethanol content sensor; bench-tested; mounts on new FPR bracket |
+| ✅ | Flex fuel sensor adapter | iWire rear O2 plug to Continental fuel sensor plug | OEM rear O2 sensor | **FSM: Rear O2 circuit repurposed for flex fuel** · Lets the flex sensor use the existing rear O2 circuit. B19 4-pin gray |
 | ✅ | Flex sensor bracket | DIY 3D-printed ASA black | n/a new | *[fabricate]* M6 brass heat-set inserts |
 | ⚠️ | Fuse - alternator / Big 3 charge cable | 250A |  | *[to-buy]* **FSM: Protects the 1/0 B+ run - MANDATORY** · NOT in stock. FORM FACTOR CONFLICT: grounding notes say 250-300A ANL, tray was designed for MEGA holders. Tray wins - buy MEGA |
 | ⚠️ | Fuse - audio amp power cable | amperage TBD |  | *[to-buy]* NOT in stock. Size to the Boss R1100M + RF P400-4 power run. MEGA form factor to match holder |

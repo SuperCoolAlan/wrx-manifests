@@ -185,3 +185,4 @@ drivetrain,4,Clutch line,Subaru,2004 WRX STOCK,,,installed,confirmed,,,,Stock ru
 drivetrain,4,Shifter + linkage,Subaru,2004 WRX STOCK,,2004 shifter operates the 2011 6MT,installed,confirmed,,,,Connected and working
 suspension,6,Steering rack,Subaru,2004 WRX STOCK,,,installed,confirmed,,,,Original chassis rack retained
 brakes,5,Brake pads,Hawk Performance,compound TBD,,,installed,unverified,,,Track: inspect every event,"Compound NOT yet identified - PN is printed on the pad backing plate and the box. Fronts are 4-pot, rears 2-pot (2007 WRX Limited)"
+ecu-electrical,7,Flex fuel sensor adapter,iWire,rear O2 plug to Continental fuel sensor plug,OEM rear O2 sensor,Rear O2 circuit repurposed for flex fuel,installed,confirmed,iWire,,,Lets the flex sensor use the existing rear O2 circuit. B19 4-pin gray

@@ -7,9 +7,9 @@
 > supersedes those diagrams for every circuit listed. Where a circuit is *not* listed,
 > the FSM diagram still applies.
 
-**28 recorded deviations** · ✅ confirmed · ⚠️ needs verification
+**29 recorded deviations** · ✅ confirmed · ⚠️ needs verification
 
-**Pin-level detail recorded for 12 of 28 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
+**Pin-level detail recorded for 13 of 29 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
 
 ---
 
@@ -33,6 +33,8 @@
 | ✅ | DBW pedal | — | **added** | Subaru 36010FE020 pedal on an iWire DBW pedal adapter plate | 2004 chassis did not have drive-by-wire |
 | ✅ | Rear O2 circuit | B19 / T5 | **repurposed** | No rear O2 sensor on this car. The circuit now carries the flex fuel sensor signal instead | Catless downpipe; rear O2 has nothing to measure |
 | | | | | All FSM rear oxygen sensor diagnostics and diagrams are VOID. Do not fit an O2 sensor to B19 | |
+| ⚠️ | ECU pin swap - rear O2 signal | ECU connector - pins TBD · TBD <-> TBD | **repinned** | The rear O2 signal pin was SWAPPED with another ECU pin so the Link could use the signals at both ends | Link input capability differs from the factory ECU; the factory pin could not serve this signal |
+| | | | | SPECIFICS ARE ONLY IN THE HANDWRITTEN LINK ECU NOTES and have NOT been transcribed. This change is INVISIBLE - the connector looks factory and nothing on the car indicates it. If those notes are lost it can only be recovered by probing the loom pin by pin. HIGHEST PRIORITY to capture | |
 
 ## Fuel system
 
@@ -107,4 +109,5 @@
 - [ ] **VSS** — Verify against the cluster at commissioning
 - [ ] **Boost control** — Confirm Link output frequency with the tuner
 - [ ] **Fuel level sender ground** — So the sender now grounds locally under the rear seat too. SANITY CHECK: confirm the fuel gauge reads correctly at first start - a wrong or dead gauge would point here, not at the sender
+- [ ] **ECU pin swap - rear O2 signal** — SPECIFICS ARE ONLY IN THE HANDWRITTEN LINK ECU NOTES and have NOT been transcribed. This change is INVISIBLE - the connector looks factory and nothing on the car indicates it. If those notes are lost it can only be recovered by probing the loom pin by pin. HIGHEST PRIORITY to capture
 

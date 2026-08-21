@@ -77,6 +77,7 @@ SECTIONS=[
   "any procedure. The System to Source Year matrix on the following page explains why."]),
  ("SECTIONS OF THE FACTORY MANUAL THAT DO NOT APPLY", INK, [
   "Factory ECU, OBD-II diagnostics and immobilizer  -  Link WRXLink WRX104X standalone",
+  "ECU PINOUT ITSELF  -  at least one pin swapped; see the handwritten Link notes",
   "PCV system  -  replaced entirely by an air-oil separator",
   "Tumble generator valves  -  deleted",
   "Fuel pump control module  -  UNPLUGGED; pump is hardwired through a relay",

@@ -32,8 +32,13 @@ Receipts/
 *.xls
 *.csv
 
-# parts.csv is the SOURCE for parts-register.md - losing it loses the build record
-!as-built/parts.csv
+# ...but everything in as-built/ is a SOURCE that its .md is generated FROM.
+# Ignoring these loses the build record and keeps only the derived output.
+!as-built/*.csv
+
+# ── Python build artifacts ──
+__pycache__/
+*.pyc
 
 # ── Bulk asset folders ──────────────────────────────────────
 eBay/

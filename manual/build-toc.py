@@ -76,38 +76,36 @@ y=H-1.92*inch
 c.setFillColorRGB(*INK); c.setFont("Helvetica-Bold",8); c.drawString(M,y,"CONTENTS")
 y-=5; c.setStrokeColorRGB(*RULE); c.setLineWidth(.7); c.line(M,y,W-M,y); y-=13
 c.setFillColorRGB(*MUTE); c.setFont("Helvetica-Bold",7.2)
-c.drawRightString(W-M-1.62*inch,y,"SOURCE")
-c.drawRightString(W-M-0.92*inch,y,"PAGE")
-c.drawRightString(W-M-0.34*inch,y,"BINDER")
-c.drawRightString(W-M,y,"PP")
+c.drawRightString(W-M-1.55*inch,y,"SOURCE YEAR")
+c.drawRightString(W-M-0.62*inch,y,"START PAGE")
+c.drawRightString(W-M,y,"PDF PAGE")
 
 grand=0
 for tn,title,secs in TABS:
     tot=sum(p for _,_,_,p in secs); grand+=tot
     c.setFillColorRGB(*INK); c.setFont("Helvetica-Bold",10.5)
     c.drawString(M,y,f"TAB {tn}   {title}")
-    c.setFont("Helvetica-Bold",9); c.drawRightString(W-M,y,str(tot)); y-=12.5
+    y-=12.5
     for lab,src,start,pp in secs:
         c.setFillColorRGB(.28,.29,.32); c.setFont("Helvetica",9.5)
         c.drawString(M+0.26*inch,y,lab)
         bold = ("2007 H4DOTC" in src) or ("H4SO" in src)
         c.setFont("Helvetica-Bold" if bold else "Helvetica",8.5)
         c.setFillColorRGB(*(WARNINK if bold else MUTE))
-        c.drawRightString(W-M-1.62*inch,y,src)
+        c.drawRightString(W-M-1.55*inch,y,src)
         # tab page number, matching the footer stamped on every printed page
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica-Bold",9)
-        c.drawRightString(W-M-0.92*inch,y,f"{tn}-{start}")
+        c.drawRightString(W-M-0.62*inch,y,f"{tn}-{start}")
         # absolute page in WRX-BINDER.pdf - type this into a PDF viewer
         a=ABS.get((tn,lab))
         c.setFillColorRGB(.42,.43,.46); c.setFont("Helvetica",8.5)
-        c.drawRightString(W-M-0.34*inch,y,str(a) if a else "")
-        c.setFillColorRGB(.45,.46,.49); c.setFont("Helvetica",8.5)
-        c.drawRightString(W-M,y,str(pp)); y-=10.8
+        c.drawRightString(W-M,y,str(a) if a else "")
+        y-=10.8
     y-=3.5
 c.setStrokeColorRGB(*RULE); c.line(M,y+4,W-M,y+4); y-=10
-c.setFont("Helvetica-Bold",10.5); c.drawString(M,y,f"TOTAL FSM PAGES"); c.drawRightString(W-M,y,str(grand))
+c.setFont("Helvetica-Bold",10.5); c.drawString(M,y,"TOTAL PAGES"); c.drawRightString(W-M,y,f"{grand} pages")
 c.setFont("Helvetica",7.5); c.setFillColorRGB(*MUTE)
-c.drawString(M,0.42*inch,"PAGE = number printed on the page in the binder.  BINDER = page number to type into a PDF viewer for WRX-BINDER.pdf.")
+c.drawString(M,0.42*inch,"START PAGE = the number printed on the page in your binder.   PDF PAGE = the page to jump to in WRX-BINDER.pdf on a screen.")
 c.showPage()
 
 # ---------- page 2 : matrix ----------

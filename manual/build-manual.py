@@ -183,17 +183,18 @@ def cover(tabno, title, subtitle, warnings, items, counts, starts):
     c.drawString(m+1.17*inch,H-1.85*inch,subtitle)
     y = H-3.0*inch
     c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica-Bold",8.5)
-    c.drawString(m,y,"CONTENTS"); y-=4
+    c.drawString(m,y,"CONTENTS")
+    c.drawRightString(W-m-0.62*inch,y,"SOURCE YEAR")
+    c.drawRightString(W-m,y,"START PAGE"); y-=4
     c.setStrokeColorRGB(.80,.80,.82); c.setLineWidth(.6); c.line(m,y,W-m,y); y-=20
     for ((label,src,_),n,st) in zip(items,counts,starts):
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica",11); c.drawString(m,y,label)
         c.setFillColorRGB(.42,.43,.46); c.setFont("Helvetica",9)
-        c.drawRightString(W-m-0.85*inch,y,src)
+        c.drawRightString(W-m-0.62*inch,y,src)
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica",10)
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica-Bold",9)
-        c.drawRightString(W-m-0.30*inch,y,f"{tabno}-{st}")
-        c.setFillColorRGB(.45,.46,.49); c.setFont("Helvetica",8.5)
-        c.drawRightString(W-m,y,f"{n} pp")
+        c.drawRightString(W-m,y,f"{tabno}-{st}")
+
         y-=19
     y-=10
     c.setStrokeColorRGB(.80,.80,.82); c.line(m,y,W-m,y); y-=16

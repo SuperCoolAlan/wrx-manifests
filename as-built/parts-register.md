@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**198 parts** — 148 installed · 24 to-buy · 11 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**198 parts** — 148 installed · 20 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -253,11 +253,11 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
-| ⚠️ | Brake + clutch fluid | ATE Typ 200 DOT 4 |  | *[to-buy]* Brake system 500 mL, clutch 70 mL - SEPARATE circuits, each needs its own bleed. 1 L covers both with margin. CPU-53 + CPU-78 |
-| ⚠️ | Engine oil - break-in | Motul Break-In 10W-40 (108080) |  | *[to-buy]* Capacity is NOT the OEM figure - the IAG pan changes it. Fill to the dipstick and MEASURE. CPU-49 |
+| ✅ | Brake + clutch fluid | ATE Typ 200 DOT 4 |  | *[in-stock]* Brake system 500 mL, clutch 70 mL - SEPARATE circuits, each needs its own bleed. 1 L covers both with margin. CPU-53 + CPU-78 | IN HAND 2026-08-21, FCP Euro | FCP Euro lifetime replacement guarantee may cover refills - KEEP THE ORDER RECORDS |
+| ✅ | Engine oil - break-in | Motul Break-In 10W-40 (108080) |  | *[in-stock]* Capacity is NOT the OEM figure - the IAG pan changes it. Fill to the dipstick and MEASURE. CPU-49 | IN HAND 2026-08-21, FCP Euro | FCP Euro lifetime replacement guarantee may cover refills - KEEP THE ORDER RECORDS |
 | ⚠️ | Engine oil - synthetic | Motul 300V Competition 5W-40 (110817) |  | *[to-buy]* From 750 mi. HTHS 4.0. CPU-49 |
-| ⚠️ | Gear oil - rear diff R180 | Motul Gear 300 75W-90 (105777) |  | *[to-buy]* 1.0 L / 1.1 qt - STi column. NOT 0.8 L, that is the R160. Torsen: NO friction modifier. CPU-51 |
-| ⚠️ | Gear oil - trans + centre diff + DCCD | Motul Gear 300 75W-90 (105777) |  | *[to-buy]* 4.1 L / 4.3 qt. ONE fill serves transmission + FRONT diff + DCCD - shared sump. CPU-50 |
+| ✅ | Gear oil - rear diff R180 | Motul Gear 300 75W-90 (105777) |  | *[in-stock]* 1.0 L / 1.1 qt - STi column. NOT 0.8 L, that is the R160. Torsen: NO friction modifier. CPU-51 | IN HAND 2026-08-21, FCP Euro | FCP Euro lifetime replacement guarantee may cover refills - KEEP THE ORDER RECORDS |
+| ✅ | Gear oil - trans + centre diff + DCCD | Motul Gear 300 75W-90 (105777) |  | *[in-stock]* 4.1 L / 4.3 qt. ONE fill serves transmission + FRONT diff + DCCD - shared sump. CPU-50 | IN HAND 2026-08-21, FCP Euro | FCP Euro lifetime replacement guarantee may cover refills - KEEP THE ORDER RECORDS |
 | ⚠️ | Power steering fluid | Dexron III ATF |  | *[to-buy]* 0.7 L / 0.7 qt. Subaru PS spec is Dexron ATF. CPU-54 |
 
 ## Assembly Tools (not on the car) · recorded spend $73.72
@@ -331,10 +331,6 @@
 - [ ] ⚠️ **Valves** (engine-heads) — OVERSIZED - believed +1mm (recollection
 - [ ] ⚠️ **Camshafts** (engine-heads) — Stage 2 considered not fitted
 - [ ] ⚠️ **AVCS solenoids** (engine-heads) — Came with the used V25B heads. UNTESTED - verify cam angle response on first start
-- [ ] ⚠️ **Gear oil - trans + centre diff + DCCD** (fluids) — 4.1 L / 4.3 qt. ONE fill serves transmission + FRONT diff + DCCD - shared sump. CPU-50
-- [ ] ⚠️ **Gear oil - rear diff R180** (fluids) — 1.0 L / 1.1 qt - STi column. NOT 0.8 L, that is the R160. Torsen: NO friction modifier. CPU-51
-- [ ] ⚠️ **Brake + clutch fluid** (fluids) — Brake system 500 mL, clutch 70 mL - SEPARATE circuits, each needs its own bleed. 1 L covers both with margin. CPU-53 + CPU-78
-- [ ] ⚠️ **Engine oil - break-in** (fluids) — Capacity is NOT the OEM figure - the IAG pan changes it. Fill to the dipstick and MEASURE. CPU-49
 - [ ] ⚠️ **Engine oil - synthetic** (fluids) — From 750 mi. HTHS 4.0. CPU-49
 - [ ] ⚠️ **Power steering fluid** (fluids) — 0.7 L / 0.7 qt. Subaru PS spec is Dexron ATF. CPU-54
 - [ ] ⚠️ **Downpipe** (induction) — CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection

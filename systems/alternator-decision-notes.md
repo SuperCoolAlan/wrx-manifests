@@ -45,9 +45,6 @@ Having the 23700AA430 in hand means All American can rewind the user's own core 
 ## All American — The Local Lead
 
 **All American Electrical Rebuilders** — Sapulpa, OK (~25 min from Tulsa)
-- **Phone:** [redacted]
-- **Email:** [redacted]
-- **Address:** [redacted]
 - **Reviews:** 4.8 stars / 28 reviews (Birdeye); family-owned since 1986
 - **Site explicitly says:** *"Stators can be custom wound to produce higher amps for custom applications"* and *"When an alternator comes into our shop, we automatically replace three things: the regulator, the brushes, and the bearings."*
 
@@ -67,7 +64,7 @@ Having the 23700AA430 in hand means All American can rewind the user's own core 
 
 ### Tuesday 2026-05-26 — Outcome
 
-- Called All American [redacted], no answer, voicemail left
+- Called All American, no answer, voicemail left
 - No callback as of 2026-05-27
 - JS Memorial Day sale expired 5 PM CDT 5/26 unused
 - Moved on; will revisit alternator decision when build timeline requires
@@ -82,11 +79,11 @@ Having the 23700AA430 in hand means All American can rewind the user's own core 
 
 ### Other Tulsa shops (phone-vet only if needed)
 
-| Shop | Phone | Notes |
-|---|---|---|
-| Shorty's Auto Electric | [redacted] | 4.4/98 reviews, ~$100 OEM-spec rebuild, no HO advertised |
-| Auto Battery & Electric | [redacted] | Long-established, heavy-duty/industrial |
-| Advanced Electrical Rebuilders | [redacted] | 38 yrs, minimal online presence |
+| Shop | Notes |
+|---|---|
+| Shorty's Auto Electric | 4.4/98 reviews, ~$100 OEM-spec rebuild, no HO advertised |
+| Auto Battery & Electric | Long-established, heavy-duty/industrial |
+| Advanced Electrical Rebuilders | 38 yrs, minimal online presence |
 
 ## Why Reopened (was previously resolved to DC Power 180A HP)
 

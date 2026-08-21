@@ -7,9 +7,9 @@
 > supersedes those diagrams for every circuit listed. Where a circuit is *not* listed,
 > the FSM diagram still applies.
 
-**25 recorded deviations** · ✅ confirmed · ⚠️ needs verification
+**26 recorded deviations** · ✅ confirmed · ⚠️ needs verification
 
-**Pin-level detail recorded for 8 of 25 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
+**Pin-level detail recorded for 9 of 26 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
 
 ---
 
@@ -46,7 +46,6 @@
 | | | | | Relay and its ground are both under the rear seat - first place to look for a no-start on the fuel side | |
 | ✅ | Fuel pump - relay ground | chassis, under rear seat · 6ft 10AWG black | **added** | Relay ground to CHASSIS under the rear seat |  |
 | | | | | FPHWK-10-HD ground leg | |
-| ✅ | Fuel pump - pump ground | chassis | **added** | Pump ground run to chassis | Dedicated return for the higher pump current |
 | ✅ | Fuel pump - FPCM bypassed | R122 (10-pin black, area C-4) | **UNPLUGGED** | The factory fuel pump control module is UNPLUGGED and out of the circuit entirely. It is still physically in the car | Pump is hardwired; factory pump control is not used |
 | | | | | It is NOT in the signal path and NOT required. It is present only because it was never removed | |
 | ✅ | Fuel pump - motor feed | R58 pin 1 · 1 · yellow from relay; factory BY cut | **cut and replaced** | The BY line between R57 and R58 was CUT, disconnecting R57 from the pump circuit. R58 pin 1 now takes the high-current motor feed straight from the relay output | Full-current hardwired feed to the DW400 |
@@ -59,6 +58,10 @@
 | | | | | Chain is INTACT up to R1 pin 7. Past the cut it feeds the new relay coil. R166/R167 and R122 carry nothing | |
 | ✅ | WHICH FUEL PUMP DIAGRAM APPLIES | — | **reference** | Use E/G(ST)-01 (WI-108, STi), NOT E/G(TB)-01 (WI-82, turbo). The STi routing inserts the R166/R167 FPCM harness pair between R1 and R122; the turbo routing runs R1 straight to R122 | 2005 STi engine harness on a 2004 chassis |
 | | | | | The two diagrams are otherwise near-identical, which makes picking the wrong one easy and the extra connector pair invisible | |
+| ✅ | Fuel pump - ground (local) | R58 pin 4 -> tap between R57 and R58 · 4 (R58) · B (black) | **tapped and re-grounded** | Pump ground still leaves the pump on the OEM path through R58 pin 4, then is tapped between R57 and R58 and grounded straight to CHASSIS UNDER THE REAR SEAT | Gives the DW400 a short, local high-current return instead of the long factory run |
+| | | | | Third modification to the R57-R58 segment. Whether the original long ground wire was also CUT or left in parallel is NOT recorded - check before assuming a single return path | |
+| ✅ | Fuel pump - factory ground path | R57 pin 16 / R15 pin 16 · 16 · B (black) | **abandoned** | Factory pump ground per FSM GND-04 (WI-26) runs pump -> R58 pin 4 -> R57 pin 16 -> R15 pin 16 -> forward to the GND-04 ground point at the front of the car | Superseded by the local chassis ground under the rear seat |
+| | | | | That run was sized for the stock pump. At DW400 current its length would cost real voltage at the pump, which is the point of the local ground | |
 
 ## Oiling
 

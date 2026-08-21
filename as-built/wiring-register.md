@@ -40,8 +40,6 @@
 | | | | | One of two identical sensors | |
 | ⚠️ | Flex fuel sensor | — | **added** | Continental PPA-IGF35 ethanol content sensor | Flex fuel capability |
 | | | | | Not yet installed - see CPU-57 | |
-| ⚠️ | Fuel pump - relay trigger | OEM fuel pump control module (FPCM) · pin TBD · colour TBD | **splice** | The 12V feed that used to power the FPCM is spliced off to trigger the new 40A Bosch relay instead | Hardwires the DW400 around the FPCM without removing it |
-| | | | | CONSEQUENCE: the FPCM now receives NO 12V. It is still bolted in and still PLUGGED IN, but it is DEAD and does nothing. Do not diagnose it. Connector ID, pin and wire colour still to be recorded | |
 | ✅ | Fuel pump - B+ feed | 15ft 10AWG red + 30A blade fuse | **added** | Battery positive, through the DRIVER side firewall, along the driver side of the car, crossing under the REAR SEAT to the passenger-side chassis harness | DW400 draws far more than the factory circuit passes |
 | | | | | DeatschWerks FPHWK-10-HD kit. 30A fuse is on this leg | |
 | ✅ | Fuel pump - relay | under the rear seat | **added** | 40A Bosch automotive relay, mounted UNDER THE REAR SEAT alongside the harness crossing | Switching element for the hardwired pump feed |
@@ -51,6 +49,8 @@
 | ✅ | Fuel pump - relay output | chassis harness · yellow | **added** | Relay output lands on the CHASSIS HARNESS rather than running straight to the pump | Deliberate: keeps the pump harness disconnectable for tank or pump service |
 | | | | | Do not bypass this - it is what lets the pump be unplugged normally | |
 | ✅ | Fuel pump - pump ground | chassis | **added** | Pump ground run to chassis | Dedicated return for the higher pump current |
+| ⚠️ | Fuel pump - relay trigger | R57 pin 8 / R58 pin 1 · 8 (R15/R57) -> 1 (R58) · BOr chassis side, becomes BY on the fuel tank cord | **cut and redirected** | The wire that originally landed on R58 pin 1 (the fuel pump feed, carrying the OEM FPCM output) was CUT and redirected to trigger the 40A relay instead. The pump is now fed from the relay output via the chassis harness | Hardwires the DW400 while leaving the factory control path intact upstream |
+| | | | | THE FPCM IS STILL IN THE SIGNAL PATH - it is NOT decorative. Its output is what triggers the relay, so if the FPCM fails the relay never closes and the pump never runs. Verify with a meter at the relay coil. Splice method not yet recorded | |
 
 ## Oiling
 
@@ -91,5 +91,5 @@
 - [ ] **Flex fuel sensor** — Not yet installed - see CPU-57
 - [ ] **VSS** — Verify against the cluster at commissioning
 - [ ] **Boost control** — Confirm Link output frequency with the tuner
-- [ ] **Fuel pump - relay trigger** — CONSEQUENCE: the FPCM now receives NO 12V. It is still bolted in and still PLUGGED IN, but it is DEAD and does nothing. Do not diagnose it. Connector ID, pin and wire colour still to be recorded
+- [ ] **Fuel pump - relay trigger** — THE FPCM IS STILL IN THE SIGNAL PATH - it is NOT decorative. Its output is what triggers the relay, so if the FPCM fails the relay never closes and the pump never runs. Verify with a meter at the relay coil. Splice method not yet recorded
 

@@ -79,7 +79,7 @@ SECTIONS=[
   "Factory ECU, OBD-II diagnostics and immobilizer  -  Link WRXLink WRX104X standalone",
   "PCV system  -  replaced entirely by an air-oil separator",
   "Tumble generator valves  -  deleted",
-  "Fuel pump control module  -  STILL FITTED AND PLUGGED IN, but dead by design",
+  "Fuel pump control module  -  still fitted AND STILL REQUIRED; it now triggers a relay",
   "Strut and spring service  -  coilovers fitted",
   "Oxygen sensor metering  -  wideband post-turbo, rear sensor deleted",
   "Alternator output specs  -  high-output unit with a 14.8V regulator",

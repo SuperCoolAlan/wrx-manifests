@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**200 parts** — 148 installed · 22 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**201 parts** — 148 installed · 22 to-buy · 15 in-stock · 4 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -222,6 +222,7 @@
 | ✅ | Parking brake cables | Subaru 2004 WRX - ORIGINAL CHASSIS CABLES |  | **FSM: 2004 cables work with 05-07 STi rear knuckles - no swap needed** · VERIFIED HOLDING on the KNS rear discs. Despite the STi knuckle swap the chassis cables fit and function |
 | ✅ | Rear calipers | Subaru 2007 WRX Limited 2-pot | 02-05 single-pot |  |
 | ✅ | Rear rotors | KNS / DBA KNS4656 | OEM rotors | 06-07 WRX OD with R180 STi parking brake drum |
+| ❓ | Speed bleeders - THREAD NOT YET MEASURED | Speed Bleeder SB7100 (M7x1.0) or SB1010 (M10x1.0) |  | *[undecided]* DO NOT ORDER YET. Speed bleeders are chosen by THREAD, not hex. Fitting an M10 bleeder into an M7 port ruins the caliper. Hex measured 8mm front / 10mm rear, but hex and thread are independent. Vendor emailed SB1010; forums say OEM 4-pots take SB7100. RESOLVE by pulling one bleeder from each caliper type and measuring the THREADED BODY diameter |
 
 ## Suspension · Chassis · Binder TAB 6 · recorded spend $1,308.13
 
@@ -266,7 +267,7 @@
 |:-:|---|---|---|---|
 | ✅ | Bleeder hose - clear vinyl | 3/16in ID, ~3ft |  | *[to-buy]* Snug on the nipple. 1/4in is loose and lets air back past - the classic phantom-bubble cause |
 | ✅ | Clutch alignment tool | 3D printed Subaru Clutch Alignment Tool - 267427 |  | *[in-stock]* In 3D Prints/ |
-| ⚠️ | Flare/line wrench - bleeders | 8mm (likely) + 10mm |  | *[to-buy]* 02-07 WRX brake bleeders are M7x1.0 = 8mm hex (Speed Bleeder SB7100 covers 2002-2007 WRX). Clutch slave also reported 8mm. 08+ WRX went M10x1.0 = 10mm. VERIFY ON THE CAR - calipers are 2007 WRX Limited 4/2-pot |
+| ✅ | Flare/line wrench - bleeders | 8mm AND 10mm both needed |  | *[to-buy]* MEASURED ON THE CAR 2026-08-21: 4-pot fronts take an 8mm hex, 2-pot rears take a 10mm hex. Buy both sizes. HEX SIZE IS NOT THREAD SIZE - see the speed bleeder row |
 | ✅ | Piston ring compressor | Company 23 |  | *[in-stock]*  |
 | ✅ | Plastigage PL-X 0.018-0.045mm white |  |  | *[in-stock]* Bearing clearance check |
 | ✅ | Seal puller |  |  | *[in-stock]*  |
@@ -305,6 +306,7 @@
 
 ## Open items — needs confirmation
 
+- [ ] ❓ **Speed bleeders - THREAD NOT YET MEASURED** (brakes) — DO NOT ORDER YET. Speed bleeders are chosen by THREAD, not hex. Fitting an M10 bleeder into an M7 port ruins the caliper. Hex measured 8mm front / 10mm rear, but hex and thread are independent. Vendor emailed SB1010; forums say OEM 4-pots take SB7100. RESOLVE by pulling one bleeder from each caliper type and measuring the THREADED BODY diameter
 - [ ] ❓ **Coolant hose kit** (cooling) — Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM
 - [ ] ❓ **Alternator mounting bolts** (ecu-electrical) — NOT YET LOCATED 2026-08-21. Singer unit is a Denso-case direct replacement for 23700AA430, so OEM bolts should suit - CONFIRM boss thickness matches before torquing
 - [ ] ❓ **Blow-off valve** (induction) — NOT DECIDED. Build sheet records a leaning toward pure-recirc hose-mount (Turbosmart/GFB/Forge) but Alan confirms not final. Must hold 30+ psi. See CPU-36
@@ -345,7 +347,6 @@
 - [ ] ⚠️ **Tires** (suspension) — Temporary - Alan: BS tires for now. Size not recorded. NOTE: rolling diameter feeds speedo calibration - recheck VSS/cluster (CPU-71) if tire size changes
 - [ ] ⚠️ **Left rear hub large bolt** (suspension) — unverified
 - [ ] ⚠️ **Rear hub gaskets** (suspension) — unverified
-- [ ] ⚠️ **Flare/line wrench - bleeders** (tools) — 02-07 WRX brake bleeders are M7x1.0 = 8mm hex (Speed Bleeder SB7100 covers 2002-2007 WRX). Clutch slave also reported 8mm. 08+ WRX went M10x1.0 = 10mm. VERIFY ON THE CAR - calipers are 2007 WRX Limited 4/2-pot
 
 ---
 

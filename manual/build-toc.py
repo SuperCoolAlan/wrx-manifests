@@ -11,29 +11,13 @@ W,H=letter; M=0.75*inch
 INK=(.10,.11,.13); MUTE=(.45,.46,.49); RULE=(.82,.82,.84)
 WARNBG=(.99,.96,.90); WARNINK=(.55,.33,.05)
 
-TABS=[(1,"FRONT MATTER",[("Identification (VIN/chassis)","2004",5),("Notes & symbols","2004",7),
-        ("Precautions","2004",1),("Specifications — WRX baseline","2004",7),
-        ("Specifications — STi figures","2005",16),("Recommended Materials (fluids)","2004  ref only",7),
-        ("Periodic Maintenance","2004  ref only",42)]),
-      (2,"ENGINE",[("Mechanical — SHORT BLOCK","2005 STi",93),
-        ("Mechanical — HEADS / VALVETRAIN","2007 H4DOTC",102),("General Description","2005 STi",270),
-        ("Lubrication","2005 STi",22),("Intake","2005 STi",17),("Ignition","2005 STi",7),
-        ("Fuel Injection","2005 STi  ref",64),("Emission Control","2005 STi",20)]),
-      (3,"COOLING / EXHAUST / CHARGING",[("Cooling","2005 H4DOTC",34),
-        ("Exhaust","2005 H4DOTC  ref only",14),("Starting / Charging","2005 H4SO",22)]),
-      (4,"DRIVETRAIN — 6MT + DCCD",[("6MT Transmission & Differential","2007",126),
-        ("Control Systems — DCCD (mech only)","2007",50),("Clutch — 6MT side","2007",38),
-        ("Clutch — 2004 actuation specs","2004",34),("Differentials (R180)","2007",58),
-        ("Drive Shaft / axles","2007",46)]),
-      (5,"BRAKES",[("Brakes","2007",58),("Parking Brake","2007",10),("ABS","2007",22)]),
-      (6,"SUSPENSION / CHASSIS",[("Front Susp — STi knuckle/hub","2007",26),("Front Susp — cross-ref","2005",28),
-        ("Front Susp — WAGON chassis","2004 GG",28),("Rear Susp — STi knuckle/hub","2007",18),
-        ("Rear Susp — cross-ref","2005",20),("Rear Susp — WAGON chassis","2004 GG",20),
-        ("Power Steering","2004",60),("Wheel & Tire","2007",10)]),
-      (7,"ELECTRICAL / WIRING",[("Body harness","2004 GG",198),("Engine harness","2005 STi",220),
-        ("Instrument cluster","2007 STi",20),("Lighting","2004",30)]),
-      (8,"BODY / INTERIOR — wagon",[("Exterior / Interior Trim","2004",60),
-        ("Body Structure","2004",22),("Glass / Windows / Mirrors","2004",34)])]
+import json
+_mf=os.path.join(OUT,"manifest.json")
+if not os.path.exists(_mf):
+    raise SystemExit("manifest.json missing - run build-manual.py first; the contents page "
+                     "reports REAL page numbers and cannot be generated without it.")
+TABS=[(t["tab"],t["title"],[(s2["label"],s2["source"],s2["start"],s2["pages"]) for s2 in t["sections"]])
+      for t in json.load(open(_mf))]
 
 MATRIX=[("Body, interior, glass, trim","2004 GG wagon","Sedan pages mislead — this is a wagon"),
  ("Chassis wiring / body harness","2004 GG","Spliced to a 2005 STi engine harness by iWire"),
@@ -81,22 +65,29 @@ c.drawString(M,H-1.18*inch,"2004 GG wagon · V25B STi Cosworth heads on 2005-era
 c.drawString(M,H-1.34*inch,"Assembled from the 2004 / 2005 / 2007 FSMs \u2014 sections come from DIFFERENT YEARS. Check the source column.")
 y=H-1.92*inch
 c.setFillColorRGB(*INK); c.setFont("Helvetica-Bold",8); c.drawString(M,y,"CONTENTS")
-c.drawRightString(W-M-0.75*inch,y,"SOURCE"); c.drawRightString(W-M,y,"PP")
 y-=5; c.setStrokeColorRGB(*RULE); c.setLineWidth(.7); c.line(M,y,W-M,y); y-=13
+c.setFillColorRGB(*MUTE); c.setFont("Helvetica-Bold",7.2)
+c.drawRightString(W-M-1.28*inch,y,"SOURCE")
+c.drawRightString(W-M-0.42*inch,y,"PAGE")
+c.drawRightString(W-M,y,"PP")
+
 grand=0
 for tn,title,secs in TABS:
-    tot=sum(p for _,_,p in secs); grand+=tot
+    tot=sum(p for _,_,_,p in secs); grand+=tot
     c.setFillColorRGB(*INK); c.setFont("Helvetica-Bold",10.5)
     c.drawString(M,y,f"TAB {tn}   {title}")
     c.setFont("Helvetica-Bold",9); c.drawRightString(W-M,y,str(tot)); y-=12.5
-    for lab,src,pp in secs:
+    for lab,src,start,pp in secs:
         c.setFillColorRGB(.28,.29,.32); c.setFont("Helvetica",9.5)
         c.drawString(M+0.26*inch,y,lab)
         bold = ("2007 H4DOTC" in src) or ("H4SO" in src)
         c.setFont("Helvetica-Bold" if bold else "Helvetica",8.5)
         c.setFillColorRGB(*(WARNINK if bold else MUTE))
-        c.drawRightString(W-M-0.75*inch,y,src)
-        c.setFillColorRGB(.28,.29,.32); c.setFont("Helvetica",9)
+        c.drawRightString(W-M-1.28*inch,y,src)
+        # printed page number, matching the footer stamped on every page
+        c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica-Bold",9)
+        c.drawRightString(W-M-0.42*inch,y,f"{tn}-{start}")
+        c.setFillColorRGB(.45,.46,.49); c.setFont("Helvetica",8.5)
         c.drawRightString(W-M,y,str(pp)); y-=10.8
     y-=3.5
 c.setStrokeColorRGB(*RULE); c.line(M,y+4,W-M,y+4); y-=10

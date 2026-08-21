@@ -53,3 +53,6 @@ valve_shim_ebay_listing/
 .DS_Store
 ._*
 .claude/
+
+# Binder build outputs (regenerate with manual/build-*.py)
+manual/print/

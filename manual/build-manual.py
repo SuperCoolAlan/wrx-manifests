@@ -5,7 +5,8 @@ One PDF per binder tab. Each gets a generated cover page listing contents and
 source year, then the sections, bookmarked. Sections are padded to even page
 counts so every section starts on a right-hand page when duplexed.
 """
-import os, io, sys
+import os, io, sys, json
+from io import BytesIO
 from pypdf import PdfWriter, PdfReader
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
@@ -198,6 +199,41 @@ def cover(tabno, title, subtitle, warnings, items, counts):
     c.showPage(); c.save(); buf.seek(0)
     return PdfReader(buf)
 
+def stamp(writer, tabno, title, spans):
+    """Foot every page with tab, section, SOURCE YEAR and a printed page number.
+
+    The source year is the point: without it, sections from three different
+    manuals look identical once the binder is open.
+    """
+    owner={}
+    for sp in spans:
+        for k in range(sp["pages"]): owner[sp["start"]+k-1]=sp
+    buf=BytesIO(); cs=canvas.Canvas(buf)
+    for i,page in enumerate(writer.pages):
+        mb=page.mediabox
+        x0,y0=float(mb.left),float(mb.bottom)
+        pw,ph=float(mb.width),float(mb.height)
+        rot=(page.get("/Rotate") or 0)%360
+        cs.setPageSize((pw,ph) if rot in (0,180) else (ph,pw))
+        cs.saveState()
+        if rot: cs.translate(pw if rot==180 else 0, ph if rot in (90,180) else 0); cs.rotate(-rot)
+        sp=owner.get(i)
+        cs.setFillColorRGB(.99,.99,.99); cs.rect(0,0,pw,17,fill=1,stroke=0)
+        cs.setFillColorRGB(.42,.43,.46); cs.setFont("Helvetica",6.6)
+        cs.drawString(16,6,f"TAB {tabno}  {title}")
+        if sp:
+            cs.setFillColorRGB(.55,.33,.05); cs.setFont("Helvetica-Bold",6.6)
+            cs.drawCentredString(pw/2,6,f'{sp["label"]}   ·   SOURCE: {sp["source"]}')
+        cs.setFillColorRGB(.20,.21,.24); cs.setFont("Helvetica-Bold",7.4)
+        cs.drawRightString(pw-16,6,f"{tabno}-{i+1}")
+        cs.restoreState(); cs.showPage()
+    cs.save(); buf.seek(0)
+    ov=PdfReader(buf)
+    for i,page in enumerate(writer.pages):
+        try: page.merge_page(ov.pages[i])
+        except Exception as e: print(f"  !! stamp failed on page {i+1}: {e}")
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
 
@@ -209,7 +245,7 @@ def main():
         for d in _missing: print(f"  !! MISSING SOURCE ROOT: {d}")
         print("  Tabs drawing on these will be incomplete. Set WRX_FSM_SRC to the folder holding them.\n")
 
-    grand=0; built=[]
+    grand=0; built=[]; manifest=[]
     for tabno,title,subtitle,warnings,items in TABS:
         readers=[]; counts=[]
         for label,src,rel in items:
@@ -221,20 +257,25 @@ def main():
         cv=cover(tabno,title,subtitle,traps_for(tabno),[(l,s,None) for l,s,_ in readers],counts)
         w.append(cv, import_outline=False)
         w.add_outline_item(f"TAB {tabno} — {title}", 0)
-        pos=1
+        pos=1; spans=[]
         for (label,src,r),n in zip(readers,counts):
             w.append(r, import_outline=False)
             w.add_outline_item(f"{label}  ({src})", pos)
+            spans.append({"label":label,"source":src,"start":pos+1,"pages":n})  # start is 1-based printed no.
             pos+=n
             if n % 2 == 1:            # pad so next section starts right-hand when duplexed
                 w.add_blank_page(); pos+=1
+        stamp(w, tabno, title, spans)
+        manifest.append({"tab":tabno,"title":title,"sections":spans,"pages":len(w.pages)})
         slug=title.replace(" / ","-").replace("/","-").replace(" — ","-").replace(" ","-").replace("+","").replace("--","-").strip("-")
         fn=os.path.join(OUT,f"TAB{tabno}_{slug}.pdf")
         with open(fn,"wb") as f: w.write(f)
         total=len(PdfReader(fn).pages); grand+=total
         built.append((fn,total,os.path.getsize(fn)))
         print(f"  TAB {tabno}  {total:4} pp  {os.path.getsize(fn)/1e6:6.1f} MB  {os.path.basename(fn)}")
-    print(f"\nTOTAL {grand} pages across {len(built)} files")
+    with open(os.path.join(OUT,"manifest.json"),"w") as f:
+        json.dump(manifest,f,indent=1)
+    print(f"\nTOTAL {grand} pages across {len(built)} files  ->  manifest.json")
 
 
 if __name__ == "__main__":

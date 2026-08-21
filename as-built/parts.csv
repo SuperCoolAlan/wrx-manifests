@@ -110,7 +110,7 @@ suspension,6,Power steering pump,Subaru OEM,34430-FE040,,,installed,unverified,,
 suspension,6,PS pump rebuild kit,Nelson Seals / Gates,FKM Viton kit or Gates 348827,,,to-buy,unverified,,25-80,,Likely needed
 cooling,3,Radiator hoses,Mishimoto,Silicone upper + lower,OEM hoses,,installed,unverified,,0,,Already owned
 cooling,3,Coolant hose kit,Roger Clark Motorsport / Samco,V8 12-hose kit 02-05 WRX/STI,OEM hoses,,verify-existing,unknown,,300-400,,Covers Modine + turbo coolant hoses. Alan believes the silicone lines are all on hand - CONFIRM
-induction,3,Exhaust gaskets - most joints,Subaru OEM / aftermarket,,OEM gaskets,,in-stock,confirmed,,,,IN STOCK 2026-08-20: header-to-head / header-to-uppipe / uppipe-to-turbo / downpipe-to-midpipe
+induction,3,Exhaust gaskets - most joints,Subaru OEM / aftermarket,,OEM gaskets,,installed,confirmed,,,,NEW gaskets used at the header 2026-08-20
 induction,3,Gasket - turbo to downpipe,TBD,,OEM gasket,,verify-existing,unknown,,,,NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
 engine-lower,2,Crank pulley bolt,Subaru OEM,12369AA011,OEM bolt,,installed,confirmed,,,,NEW BOLT INSTALLED 2026-08-20. Angle-tightened spec: 44 Nm then 65-75 deg. Confirm it was tightened to the angle spec not just the 44 Nm preload
 engine-lower,2,Oil filters,Wix,57712XP,OEM filter,,to-buy,confirmed,,45.00,Every oil change,x5 for break-in schedule. IAG specifies OEM or Wix XP. 23 psi bypass. PRE-FILL before install
@@ -141,8 +141,8 @@ ecu-electrical,7,Coolant temp sensor (ECT),,,,,installed,unverified,,,,NEW. Bran
 engine-heads,2,AVCS solenoids,Subaru OEM (used),,,"SINGLE AVCS - intake only, one per head",installed,unverified,,,,Came with the used V25B heads. UNTESTED - verify cam angle response on first start
 induction,3,Boost control solenoid (EBCS),GrimmSpeed (believed),3-port,,Factory 2-port EBCS content VOID,installed,unverified,,,,3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner
 induction,3,Wastegate spring stack,TiAL,Black + Blue = 1.2 bar / 17.4 psi,,Sets MINIMUM boost - cannot run below this,in-stock,confirmed,,,,QUEUED to install. This is the boost FLOOR. See BOOST FLOOR note - reconsider for break-in
-induction,3,Exhaust manifold studs (EXISTING REUSED),Subaru OEM,800910550 (10x41) or 800910680 if ever needed,,STI exploded view EX(H4DOTC)-4,installed,confirmed,Subaru dealership,,,"Existing studs REUSED - none purchased. Two PNs seen for replacements, MEASURE before ordering"
-induction,3,Exhaust manifold nuts (x6),Subaru OEM,902370029,,T3 = 35 N.m (26 ft-lb) per EX(H4DOTC)-4 STI model,in-stock,confirmed,Subaru dealership,,,"Set of 6, acquired 2026-08-20 from dealer. Fits 1997-2025 EJ+FA. Perrin spec governs if it differs from OEM 35 N.m"
+induction,3,Exhaust manifold studs (EXISTING REUSED),Subaru OEM,800910550 (10x41) or 800910680 if ever needed,,STI exploded view EX(H4DOTC)-4,installed,confirmed,Subaru dealership,,,"OEM studs in the CYLINDER HEADS, reused - none purchased. Two PNs seen for replacements, MEASURE before ordering"
+induction,3,Exhaust manifold nuts (x6),Subaru OEM,902370029,,T3 = 35 N.m (26 ft-lb) per EX(H4DOTC)-4 STI model,installed,confirmed,Subaru dealership,,,"NEW, set of 6 from the dealer. Fitted 2026-08-20 with NICKEL anti-seize onto the reused OEM cylinder head studs. Perrin spec governs if it differs from OEM 35 N.m"
 oiling,2,Y breather fitting,Subaru OEM,,,,in-stock,confirmed,Subaru dealership,,,For the IAG AOS install. Fit AFTER the turbo is in - it is in the way otherwise
 ecu-electrical,7,MEGA fuse holders (x2),Blue Sea 5001-style,,,n/a new capability,in-stock,unverified,,,,"Mount on the 3D-printed battery tray fuse platform (108x82mm cantilever, M8 studs). Fuse 1 alternator/Big 3, Fuse 2 audio amp"
 ecu-electrical,7,Fuse - alternator / Big 3 charge cable,,250A,,Protects the 1/0 B+ run - MANDATORY,to-buy,unverified,,,,"NOT in stock. FORM FACTOR CONFLICT: grounding notes say 250-300A ANL, tray was designed for MEGA holders. Tray wins - buy MEGA"
@@ -186,3 +186,5 @@ drivetrain,4,Shifter + linkage,Subaru,2004 WRX STOCK,,2004 shifter operates the 
 suspension,6,Steering rack,Subaru,2004 WRX STOCK,,,installed,confirmed,,,,Original chassis rack retained
 brakes,5,Brake pads,Hawk Performance,compound TBD,,,installed,unverified,,,Track: inspect every event,"Compound NOT yet identified - PN is printed on the pad backing plate and the box. Fronts are 4-pot, rears 2-pot (2007 WRX Limited)"
 ecu-electrical,7,Flex fuel sensor adapter,iWire,rear O2 plug to Continental fuel sensor plug,OEM rear O2 sensor,Rear O2 circuit repurposed for flex fuel,installed,confirmed,iWire,,,Lets the flex sensor use the existing rear O2 circuit. B19 4-pin gray
+induction,3,Header bung plug + crush washer,,M18 x 1.5,,,to-buy,confirmed,,,,Crush washer IN TRANSIT 2026-08-21. Plug the Perrin ELH bung BEFORE the uppipe goes on - CPU-20
+induction,3,Anti-seize - exhaust,Nickel-based,,,,in-stock,confirmed,,,,Used on the header nuts. Nickel not copper - holds up past header flange temperatures

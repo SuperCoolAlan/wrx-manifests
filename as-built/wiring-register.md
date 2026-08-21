@@ -7,9 +7,9 @@
 > supersedes those diagrams for every circuit listed. Where a circuit is *not* listed,
 > the FSM diagram still applies.
 
-**16 recorded deviations** · ✅ confirmed · ⚠️ needs verification
+**21 recorded deviations** · ✅ confirmed · ⚠️ needs verification
 
-**Pin-level detail recorded for 0 of 16 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
+**Pin-level detail recorded for 5 of 21 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
 
 ---
 
@@ -36,12 +36,21 @@
 
 | ✓ | Circuit | Connector · Pin · Wire | Change | Detail | Why |
 |:-:|---|---|---|---|---|
-| ✅ | Fuel pump power | — | **rewired** | DW400 hardwired via DeatschWerks FPHWK-10-HD; factory fuel pump control module BYPASSED | DW400 draws far more than the factory FPCM can pass |
-| | | | | FPCM content in the FSM is VOID | |
 | ✅ | Fuel pressure sensor | — | **added** | LDM 8990150-0-150 0-150psi via BW Tuning TGV-to-pressure-sensor expansion harness | Fuel pressure input to the Link |
 | | | | | One of two identical sensors | |
 | ⚠️ | Flex fuel sensor | — | **added** | Continental PPA-IGF35 ethanol content sensor | Flex fuel capability |
 | | | | | Not yet installed - see CPU-57 | |
+| ⚠️ | Fuel pump - relay trigger | OEM fuel pump control module (FPCM) · pin TBD · colour TBD | **splice** | The 12V feed that used to power the FPCM is spliced off to trigger the new 40A Bosch relay instead | Hardwires the DW400 around the FPCM without removing it |
+| | | | | CONSEQUENCE: the FPCM now receives NO 12V. It is still bolted in and still PLUGGED IN, but it is DEAD and does nothing. Do not diagnose it. Connector ID, pin and wire colour still to be recorded | |
+| ✅ | Fuel pump - B+ feed | 15ft 10AWG red + 30A blade fuse | **added** | Battery positive, through the DRIVER side firewall, along the driver side of the car, crossing under the REAR SEAT to the passenger-side chassis harness | DW400 draws far more than the factory circuit passes |
+| | | | | DeatschWerks FPHWK-10-HD kit. 30A fuse is on this leg | |
+| ✅ | Fuel pump - relay | under the rear seat | **added** | 40A Bosch automotive relay, mounted UNDER THE REAR SEAT alongside the harness crossing | Switching element for the hardwired pump feed |
+| | | | | Relay and its ground are both under the rear seat - first place to look for a no-start on the fuel side | |
+| ✅ | Fuel pump - relay ground | chassis, under rear seat · 6ft 10AWG black | **added** | Relay ground to CHASSIS under the rear seat |  |
+| | | | | FPHWK-10-HD ground leg | |
+| ✅ | Fuel pump - relay output | chassis harness · yellow | **added** | Relay output lands on the CHASSIS HARNESS rather than running straight to the pump | Deliberate: keeps the pump harness disconnectable for tank or pump service |
+| | | | | Do not bypass this - it is what lets the pump be unplugged normally | |
+| ✅ | Fuel pump - pump ground | chassis | **added** | Pump ground run to chassis | Dedicated return for the higher pump current |
 
 ## Oiling
 
@@ -82,4 +91,5 @@
 - [ ] **Flex fuel sensor** — Not yet installed - see CPU-57
 - [ ] **VSS** — Verify against the cluster at commissioning
 - [ ] **Boost control** — Confirm Link output frequency with the tuner
+- [ ] **Fuel pump - relay trigger** — CONSEQUENCE: the FPCM now receives NO 12V. It is still bolted in and still PLUGGED IN, but it is DEAD and does nothing. Do not diagnose it. Connector ID, pin and wire colour still to be recorded
 

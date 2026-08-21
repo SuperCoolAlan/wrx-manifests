@@ -4,7 +4,6 @@ ecu,ECU,,,,superseded,Factory ECU removed; Link WRXLink WRX104X (224-4000) in th
 ecu,Expansion loom,,,,added,Link XSL Expansion Loom 101-0106,Adds inputs/outputs beyond the base loom,confirmed,
 ecu,CAN bus,,,,added,Link CANJST 5-pin cable 101-0197,Connects CAN Lambda to the ECU,confirmed,
 ecu,Wideband,,,,added,Link CAN Lambda 125-1000 in the POST-TURBO bung,Replaces both factory O2 circuits,confirmed,Rear O2 deleted; catless
-fuel,Fuel pump power,,,,rewired,DW400 hardwired via DeatschWerks FPHWK-10-HD; factory fuel pump control module BYPASSED,DW400 draws far more than the factory FPCM can pass,confirmed,FPCM content in the FSM is VOID
 fuel,Fuel pressure sensor,,,,added,LDM 8990150-0-150 0-150psi via BW Tuning TGV-to-pressure-sensor expansion harness,Fuel pressure input to the Link,confirmed,One of two identical sensors
 oiling,Oil pressure sensor,,,,added,LDM 8990150-0-150 0-150psi via BW Tuning TGV-to-pressure-sensor expansion harness,Oil pressure input to the Link,confirmed,Second of two identical sensors; sender is firewall-mounted
 fuel,Flex fuel sensor,,,,added,Continental PPA-IGF35 ethanol content sensor,Flex fuel capability,to-verify,Not yet installed - see CPU-57
@@ -15,3 +14,9 @@ ecu,DBW pedal,,,,added,Subaru 36010FE020 pedal on an iWire DBW pedal adapter pla
 body,Cluster,,,,superseded,2007 STi cluster with outside air temp,Matches the 6MT/DCCD drivetrain,confirmed,
 body,Cruise control,,,,NOT FITTED,Deliberately not wired during the iWire harness build,Not wanted,confirmed,SP Speed Control section is VOID. It is not broken - do not diagnose it
 induction,Boost control,,,,superseded,3-port EBCS (GrimmSpeed believed) driving an external TiAL MVS,Factory 2-port EBCS content is VOID,to-verify,Confirm Link output frequency with the tuner
+fuel,Fuel pump - relay trigger,OEM fuel pump control module (FPCM),pin TBD,colour TBD,splice,The 12V feed that used to power the FPCM is spliced off to trigger the new 40A Bosch relay instead,Hardwires the DW400 around the FPCM without removing it,to-verify,"CONSEQUENCE: the FPCM now receives NO 12V. It is still bolted in and still PLUGGED IN, but it is DEAD and does nothing. Do not diagnose it. Connector ID, pin and wire colour still to be recorded"
+fuel,Fuel pump - B+ feed,,,15ft 10AWG red + 30A blade fuse,added,"Battery positive, through the DRIVER side firewall, along the driver side of the car, crossing under the REAR SEAT to the passenger-side chassis harness",DW400 draws far more than the factory circuit passes,confirmed,DeatschWerks FPHWK-10-HD kit. 30A fuse is on this leg
+fuel,Fuel pump - relay,under the rear seat,,,added,"40A Bosch automotive relay, mounted UNDER THE REAR SEAT alongside the harness crossing",Switching element for the hardwired pump feed,confirmed,Relay and its ground are both under the rear seat - first place to look for a no-start on the fuel side
+fuel,Fuel pump - relay ground,"chassis, under rear seat",,6ft 10AWG black,added,Relay ground to CHASSIS under the rear seat,,confirmed,FPHWK-10-HD ground leg
+fuel,Fuel pump - relay output,chassis harness,,yellow,added,Relay output lands on the CHASSIS HARNESS rather than running straight to the pump,Deliberate: keeps the pump harness disconnectable for tank or pump service,confirmed,Do not bypass this - it is what lets the pump be unplugged normally
+fuel,Fuel pump - pump ground,chassis,,,added,Pump ground run to chassis,Dedicated return for the higher pump current,confirmed,

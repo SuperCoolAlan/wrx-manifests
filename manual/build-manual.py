@@ -17,8 +17,10 @@ from reportlab.lib.units import inch
 # ── TRAPS — single source of truth. Tagged by tab; the TOC imports this. ──────
 # Each entry: (tabs it applies to, text)
 TRAPS = [
- ((2,),   "HEADS come from the 2007 manual (ME(H4DOTC)). Everything below them"),
- ((2,),   "   from 2005 STi. V25B STi Cosworth heads = 2007-era casting."),
+ ((2,),   "USE THE 2005 STi SECTION. It covers this EJ257 short block AND its heads,"),
+ ((2,),   "   and it is what the engine was actually assembled to."),
+ ((2,),   "The 2007 H4DOTC section is included as a CROSS-CHECK ONLY. That is the"),
+ ((2,),   "   EJ255 WRX engine, NOT the EJ257. Where the two disagree, 2005 STi wins."),
  ((2,),   "THIS ENGINE IS SINGLE AVCS - intake only, one solenoid per head. So are"),
  ((2,),   "   the 2005 STi and 2007 H4DOTC sections printed here, so they match."),
  ((2,),   "   Dual AVCS arrived on the 2008 STi - do NOT use a 2008+ manual here."),
@@ -119,10 +121,10 @@ TABS = [
    ("Specifications — STi figures","2005",Y5+"General Information/SPC Specs.pdf"),
    ("Recommended Materials (fluids) — ref only","2004",Y4+"General Information/RM Recommended Mat.pdf"),
    ("Periodic Maintenance — ref only","2004",Y4+"General Information/PM Periodic Maint.pdf")]),
- (2,"ENGINE","Short block = 2005 STi. HEADS = 2007 H4DOTC.",
+ (2,"ENGINE","2005 STi EJ257 governs. The H4DOTC section is a cross-check.",
   [],
-  [("Mechanical — SHORT BLOCK","2005 STi",Y5+"STi Engine/ME(STi) 04 Mechanical.pdf"),
-   ("Mechanical — HEADS / VALVETRAIN","2007 H4DOTC",Y7+"H4DOTC Engine/ME(H4DOTC) Mechanical.pdf"),
+  [("Mechanical — WHOLE ENGINE, THE ONE TO USE","2005 STi EJ257",Y5+"STi Engine/ME(STi) 04 Mechanical.pdf"),
+   ("Mechanical — cross-check only, EJ255 not EJ257","2007 H4DOTC",Y7+"H4DOTC Engine/ME(H4DOTC) Mechanical.pdf"),
    ("General Description","2005 STi",Y5+"STi Engine/GD(STi) 12 General Desc.pdf"),
    ("Lubrication","2005 STi",Y5+"STi Engine/LU(STi) 07 Lubrication.pdf"),
    ("Intake","2005 STi",Y5+"STi Engine/IN(STi) 03 Intake.pdf"),

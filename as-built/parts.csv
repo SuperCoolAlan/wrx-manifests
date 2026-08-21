@@ -197,3 +197,5 @@ fluids,-,Brake + clutch fluid,ATE,Typ 200 DOT 4,,,in-stock,confirmed,FCP Euro,,F
 fluids,-,Engine oil - break-in,Motul,Break-In 10W-40 (108080),,,in-stock,confirmed,FCP Euro,,,"Capacity is NOT the OEM figure - the IAG pan changes it. Fill to the dipstick and MEASURE. CPU-49 | IN HAND 2026-08-21, FCP Euro | FCP Euro lifetime replacement guarantee may cover refills - KEEP THE ORDER RECORDS"
 fluids,-,Engine oil - synthetic,Motul,300V Competition 5W-40 (110817),,,to-buy,unverified,,,OCI 1200-1500 mi on E85,From 750 mi. HTHS 4.0. CPU-49
 fluids,-,Power steering fluid,,Dexron III ATF,,,to-buy,unverified,,,,0.7 L / 0.7 qt. Subaru PS spec is Dexron ATF. CPU-54
+tools,-,Flare/line wrench - bleeders,,8mm (likely) + 10mm,,,to-buy,unverified,,,,02-07 WRX brake bleeders are M7x1.0 = 8mm hex (Speed Bleeder SB7100 covers 2002-2007 WRX). Clutch slave also reported 8mm. 08+ WRX went M10x1.0 = 10mm. VERIFY ON THE CAR - calipers are 2007 WRX Limited 4/2-pot
+tools,-,Bleeder hose - clear vinyl,,"3/16in ID, ~3ft",,,to-buy,confirmed,,,,Snug on the nipple. 1/4in is loose and lets air back past - the classic phantom-bubble cause

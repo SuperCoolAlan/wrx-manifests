@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**198 parts** — 148 installed · 20 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**200 parts** — 148 installed · 22 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -264,7 +264,9 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
+| ✅ | Bleeder hose - clear vinyl | 3/16in ID, ~3ft |  | *[to-buy]* Snug on the nipple. 1/4in is loose and lets air back past - the classic phantom-bubble cause |
 | ✅ | Clutch alignment tool | 3D printed Subaru Clutch Alignment Tool - 267427 |  | *[in-stock]* In 3D Prints/ |
+| ⚠️ | Flare/line wrench - bleeders | 8mm (likely) + 10mm |  | *[to-buy]* 02-07 WRX brake bleeders are M7x1.0 = 8mm hex (Speed Bleeder SB7100 covers 2002-2007 WRX). Clutch slave also reported 8mm. 08+ WRX went M10x1.0 = 10mm. VERIFY ON THE CAR - calipers are 2007 WRX Limited 4/2-pot |
 | ✅ | Piston ring compressor | Company 23 |  | *[in-stock]*  |
 | ✅ | Plastigage PL-X 0.018-0.045mm white |  |  | *[in-stock]* Bearing clearance check |
 | ✅ | Seal puller |  |  | *[in-stock]*  |
@@ -343,6 +345,7 @@
 - [ ] ⚠️ **Tires** (suspension) — Temporary - Alan: BS tires for now. Size not recorded. NOTE: rolling diameter feeds speedo calibration - recheck VSS/cluster (CPU-71) if tire size changes
 - [ ] ⚠️ **Left rear hub large bolt** (suspension) — unverified
 - [ ] ⚠️ **Rear hub gaskets** (suspension) — unverified
+- [ ] ⚠️ **Flare/line wrench - bleeders** (tools) — 02-07 WRX brake bleeders are M7x1.0 = 8mm hex (Speed Bleeder SB7100 covers 2002-2007 WRX). Clutch slave also reported 8mm. 08+ WRX went M10x1.0 = 10mm. VERIFY ON THE CAR - calipers are 2007 WRX Limited 4/2-pot
 
 ---
 

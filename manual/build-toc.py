@@ -19,6 +19,15 @@ if not os.path.exists(_mf):
 TABS=[(t["tab"],t["title"],[(s2["label"],s2["source"],s2["start"],s2["pages"]) for s2 in t["sections"]])
       for t in json.load(open(_mf))]
 
+# Absolute page in WRX-BINDER.pdf, so a viewer's page number matches the page.
+# Written by build-binder.py; absent on a first run, in which case the column
+# is simply left blank rather than printing a wrong number.
+_bi=os.path.join(OUT,"binder-index.json")
+ABS={}
+if os.path.exists(_bi):
+    for e in json.load(open(_bi)):
+        if e["tab"] is not None: ABS[(e["tab"],e["label"])]=e["abs"]
+
 MATRIX=[("Body, interior, glass, trim","2004 GG wagon","Sedan pages mislead — this is a wagon"),
  ("Chassis wiring / body harness","2004 GG","Spliced to a 2005 STi engine harness by iWire"),
  ("Engine — short block","2005 STi",""),
@@ -67,8 +76,9 @@ y=H-1.92*inch
 c.setFillColorRGB(*INK); c.setFont("Helvetica-Bold",8); c.drawString(M,y,"CONTENTS")
 y-=5; c.setStrokeColorRGB(*RULE); c.setLineWidth(.7); c.line(M,y,W-M,y); y-=13
 c.setFillColorRGB(*MUTE); c.setFont("Helvetica-Bold",7.2)
-c.drawRightString(W-M-1.28*inch,y,"SOURCE")
-c.drawRightString(W-M-0.42*inch,y,"PAGE")
+c.drawRightString(W-M-1.62*inch,y,"SOURCE")
+c.drawRightString(W-M-0.92*inch,y,"PAGE")
+c.drawRightString(W-M-0.34*inch,y,"BINDER")
 c.drawRightString(W-M,y,"PP")
 
 grand=0
@@ -83,17 +93,21 @@ for tn,title,secs in TABS:
         bold = ("2007 H4DOTC" in src) or ("H4SO" in src)
         c.setFont("Helvetica-Bold" if bold else "Helvetica",8.5)
         c.setFillColorRGB(*(WARNINK if bold else MUTE))
-        c.drawRightString(W-M-1.28*inch,y,src)
-        # printed page number, matching the footer stamped on every page
+        c.drawRightString(W-M-1.62*inch,y,src)
+        # tab page number, matching the footer stamped on every printed page
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica-Bold",9)
-        c.drawRightString(W-M-0.42*inch,y,f"{tn}-{start}")
+        c.drawRightString(W-M-0.92*inch,y,f"{tn}-{start}")
+        # absolute page in WRX-BINDER.pdf - type this into a PDF viewer
+        a=ABS.get((tn,lab))
+        c.setFillColorRGB(.42,.43,.46); c.setFont("Helvetica",8.5)
+        c.drawRightString(W-M-0.34*inch,y,str(a) if a else "")
         c.setFillColorRGB(.45,.46,.49); c.setFont("Helvetica",8.5)
         c.drawRightString(W-M,y,str(pp)); y-=10.8
     y-=3.5
 c.setStrokeColorRGB(*RULE); c.line(M,y+4,W-M,y+4); y-=10
 c.setFont("Helvetica-Bold",10.5); c.drawString(M,y,f"TOTAL FSM PAGES"); c.drawRightString(W-M,y,str(grand))
 c.setFont("Helvetica",7.5); c.setFillColorRGB(*MUTE)
-c.drawString(M,0.42*inch,"Generated from manual/print-index.md · regenerate with manual/build-manual.py")
+c.drawString(M,0.42*inch,"PAGE = number printed on the page in the binder.  BINDER = page number to type into a PDF viewer for WRX-BINDER.pdf.")
 c.showPage()
 
 # ---------- page 2 : matrix ----------

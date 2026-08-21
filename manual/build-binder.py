@@ -8,6 +8,7 @@ number printed on the page. Section start pages are written to
 binder-index.json for the contents page to print.
 """
 import os, io, json
+import pypdf
 from pypdf import PdfWriter, PdfReader
 from reportlab.pdfgen import canvas
 
@@ -65,6 +66,18 @@ ov = PdfReader(buf)
 for i, page in enumerate(w.pages):
     try: page.merge_page(ov.pages[i])
     except Exception as e: print(f"  !! stamp failed on page {i+1}: {e}")
+
+nlink = 0
+for page in w.pages:
+    a = page.get("/Annots")
+    if not a: continue
+    keep = [x for x in a if x.get_object().get("/Subtype") != "/Link"]
+    nlink += len(a) - len(keep)
+    if keep: page[pypdf.generic.NameObject("/Annots")] = pypdf.generic.ArrayObject(keep)
+    else:
+        try: del page["/Annots"]
+        except KeyError: pass
+if nlink: print(f"  stripped {nlink} link annotations")
 
 json.dump(index, open(os.path.join(OUT, "binder-index.json"), "w"), indent=1)
 

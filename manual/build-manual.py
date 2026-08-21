@@ -7,6 +7,7 @@ counts so every section starts on a right-hand page when duplexed.
 """
 import os, io, sys, json
 from io import BytesIO
+import pypdf
 from pypdf import PdfWriter, PdfReader
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
@@ -169,7 +170,7 @@ TABS = [
    ("Glass / Windows / Mirrors","2004",Y4+"Body/GW Glass-Win-Mir.pdf")]),
 ]
 
-def cover(tabno, title, subtitle, warnings, items, counts):
+def cover(tabno, title, subtitle, warnings, items, counts, starts):
     buf = io.BytesIO()
     c = canvas.Canvas(buf, pagesize=letter)
     W,H = letter
@@ -184,11 +185,14 @@ def cover(tabno, title, subtitle, warnings, items, counts):
     c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica-Bold",8.5)
     c.drawString(m,y,"CONTENTS"); y-=4
     c.setStrokeColorRGB(.80,.80,.82); c.setLineWidth(.6); c.line(m,y,W-m,y); y-=20
-    for (label,src,_),n in zip(items,counts):
+    for ((label,src,_),n,st) in zip(items,counts,starts):
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica",11); c.drawString(m,y,label)
         c.setFillColorRGB(.42,.43,.46); c.setFont("Helvetica",9)
         c.drawRightString(W-m-0.85*inch,y,src)
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica",10)
+        c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica-Bold",9)
+        c.drawRightString(W-m-0.30*inch,y,f"{tabno}-{st}")
+        c.setFillColorRGB(.45,.46,.49); c.setFont("Helvetica",8.5)
         c.drawRightString(W-m,y,f"{n} pp")
         y-=19
     y-=10
@@ -242,6 +246,23 @@ def stamp(writer, tabno, title, spans):
         except Exception as e: print(f"  !! stamp failed on page {i+1}: {e}")
 
 
+def strip_links(writer):
+    """Remove every link annotation. Merging re-paginates the source FSMs, so
+    their internal cross-reference links point at the wrong pages - and none
+    of it works on paper anyway."""
+    n=0
+    for page in writer.pages:
+        a=page.get("/Annots")
+        if not a: continue
+        keep=[x for x in a if (x.get_object().get("/Subtype") != "/Link")]
+        n+=len(a)-len(keep)
+        if keep: page[pypdf.generic.NameObject("/Annots")]=pypdf.generic.ArrayObject(keep)
+        else: 
+            try: del page["/Annots"]
+            except KeyError: pass
+    return n
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
 
@@ -261,19 +282,22 @@ def main():
             if not os.path.exists(path):
                 print(f"  !! MISSING {rel}"); continue
             r=PdfReader(path); readers.append((label,src,r)); counts.append(len(r.pages))
-        w=PdfWriter()
-        cv=cover(tabno,title,subtitle,traps_for(tabno),[(l,s,None) for l,s,_ in readers],counts)
-        w.append(cv, import_outline=False)
-        w.add_outline_item(f"TAB {tabno} — {title}", 0)
+        # Work out start pages up front so the cover can print them.
         pos=1; spans=[]
+        for (label,src,_r),n in zip(readers,counts):
+            spans.append({"label":label,"source":src,"start":pos+1,"pages":n})  # 1-based printed no.
+            pos+=n
+            if n % 2 == 1: pos+=1     # duplex pad
+        w=PdfWriter()
+        cv=cover(tabno,title,subtitle,traps_for(tabno),[(l,s,None) for l,s,_ in readers],
+                 counts,[sp["start"] for sp in spans])
+        w.append(cv, import_outline=False)
         for (label,src,r),n in zip(readers,counts):
             w.append(r, import_outline=False)
-            w.add_outline_item(f"{label}  ({src})", pos)
-            spans.append({"label":label,"source":src,"start":pos+1,"pages":n})  # start is 1-based printed no.
-            pos+=n
             if n % 2 == 1:            # pad so next section starts right-hand when duplexed
-                w.add_blank_page(); pos+=1
+                w.add_blank_page()
         stamp(w, tabno, title, spans)
+        nlink=strip_links(w)
         manifest.append({"tab":tabno,"title":title,"sections":spans,"pages":len(w.pages)})
         slug=title.replace(" / ","-").replace("/","-").replace(" — ","-").replace(" ","-").replace("+","").replace("--","-").strip("-")
         fn=os.path.join(OUT,f"TAB{tabno}_{slug}.pdf")

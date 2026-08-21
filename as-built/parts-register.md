@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**191 parts** — 148 installed · 18 to-buy · 10 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**192 parts** — 148 installed · 19 to-buy · 10 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -57,6 +57,7 @@
 | ✅ | AVCS oil feed line LH (driver) | Subaru OEM | OEM oil pipe LH | OEM line retained. Mixed on purpose - OEM driver side, HEL braided passenger side |
 | ✅ | AVCS oil feed line RH (passenger) | HEL HEL-OF34 stainless braided | OEM oil pipe RH | PURCHASED - kit is a pair, one used. Line fitted; BANJO BOLT STILL NEEDS SHORTENING 4mm because the HEL fitting is 4mm shorter than OEM. See CPU-84 |
 | ✅ | Air-oil separator | IAG Street Series V2 | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · USED great condition w/ all lines; drain per interval; cap PCV portions of 21141AA131 |
+| ✅ | Breather hose - crank port to Y fitting | 3/4in ID |  | *[to-buy]* Crank breather port -> OEM plastic Y fitting -> IAG AOS. MUST be oil-resistant: NBR/nitrile or fluorosilicone-lined. NOT plain silicone - it swells in oil vapour. Measure the run AFTER the turbo is mounted. CPU-38 |
 | ✅ | Heat sleeve | DEI Reflective 5/8in ID 3ft | n/a new | *[to-buy]* For IAG AOS lines; share purchase with fuel lines |
 | ✅ | Oil dipstick tube | Subaru OEM STI/J3 |  | Tube only - verify dipstick rod separately |
 | ✅ | Oil drain T-fitting | TBD | n/a new | *[to-buy]* Merges turbo oil drain + IAG AOS drain into one return |

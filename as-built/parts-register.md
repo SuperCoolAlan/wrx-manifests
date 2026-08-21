@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**192 parts** — 148 installed · 19 to-buy · 10 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**192 parts** — 148 installed · 18 to-buy · 11 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -58,7 +58,7 @@
 | ✅ | AVCS oil feed line RH (passenger) | HEL HEL-OF34 stainless braided | OEM oil pipe RH | PURCHASED - kit is a pair, one used. Line fitted; BANJO BOLT STILL NEEDS SHORTENING 4mm because the HEL fitting is 4mm shorter than OEM. See CPU-84 |
 | ✅ | Air-oil separator | IAG Street Series V2 | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · USED great condition w/ all lines; drain per interval; cap PCV portions of 21141AA131 |
 | ✅ | Breather hose - crank port to Y fitting | 3/4in ID |  | *[to-buy]* Crank breather port -> OEM plastic Y fitting -> IAG AOS. MUST be oil-resistant: NBR/nitrile or fluorosilicone-lined. NOT plain silicone - it swells in oil vapour. Measure the run AFTER the turbo is mounted. CPU-38 |
-| ⚠️ | Heat sleeve | DEI Reflective 5/8in ID 3ft | n/a new | *[to-buy]* DEI reflective, 5/8in ID, 3ft. SIZE LOOKS WRONG: sleeve ID must clear the hose OUTSIDE diameter. A 5/8in ID hose has a larger OD than 5/8in, and the breather hose is 3/4in ID. Measure both ODs before ordering more |
+| ✅ | Heat sleeve | DEI 1in ID | n/a new | *[in-stock]* IN HAND 2026-08-21, 1in ID - supersedes the 5/8in figure previously recorded. Clears the 5/8in ID turbo oil drain comfortably. CHECK the 3/4in ID breather hose: its OD can reach 1in, which would be a marginal fit. For AOS and turbo lines near the header/uppipe |
 | ✅ | Oil dipstick tube | Subaru OEM STI/J3 |  | Tube only - verify dipstick rod separately |
 | ✅ | Oil drain T-fitting | TBD | n/a new | *[to-buy]* Merges turbo oil drain + IAG AOS drain into one return |
 | ✅ | Oil filler neck | Subaru OEM J3 | OEM | 02-07 WRX/STI |
@@ -319,7 +319,6 @@
 - [ ] ⚠️ **AVCS solenoids** (engine-heads) — Came with the used V25B heads. UNTESTED - verify cam angle response on first start
 - [ ] ⚠️ **Downpipe** (induction) — CATLESS - confirmed 2026-08-20. 3in matching the cat-back. BRAND NOT RECORDED - check the part itself. Turbo-to-downpipe hardware in stock. Relevant to CPU-74 registration/inspection
 - [ ] ⚠️ **Boost control solenoid (EBCS)** (induction) — 3-port on EXTERNAL gate. Confirm brand/PN and Link output frequency with tuner
-- [ ] ⚠️ **Heat sleeve** (oiling) — DEI reflective, 5/8in ID, 3ft. SIZE LOOKS WRONG: sleeve ID must clear the hose OUTSIDE diameter. A 5/8in ID hose has a larger OD than 5/8in, and the breather hose is 3/4in ID. Measure both ODs before ordering more
 - [ ] ⚠️ **Coilovers** (suspension) — PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R
 - [ ] ⚠️ **Front ball joint** (suspension) — Generic GD-era - verify taper seats in STi housing
 - [ ] ⚠️ **Power steering pump** (suspension) — Multiple pumps on hand - inspect to pick best; same PN across 04-07 turbo EJ

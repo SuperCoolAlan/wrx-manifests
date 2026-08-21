@@ -22,6 +22,7 @@ SYSTEMS = [
     ("drivetrain",     "Drivetrain", 4),
     ("brakes",         "Brakes", 5),
     ("suspension",     "Suspension · Chassis", 6),
+    ("fluids",         "Fluids & Capacities", "-"),
     ("tools",          "Assembly Tools (not on the car)", "-"),
 ]
 MARK = {"confirmed": "✅", "unverified": "⚠️", "unknown": "❓"}

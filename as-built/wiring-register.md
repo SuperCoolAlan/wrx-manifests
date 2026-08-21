@@ -7,9 +7,9 @@
 > supersedes those diagrams for every circuit listed. Where a circuit is *not* listed,
 > the FSM diagram still applies.
 
-**23 recorded deviations** · ✅ confirmed · ⚠️ needs verification
+**24 recorded deviations** · ✅ confirmed · ⚠️ needs verification
 
-**Pin-level detail recorded for 7 of 23 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
+**Pin-level detail recorded for 8 of 24 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
 
 ---
 
@@ -49,12 +49,14 @@
 | ✅ | Fuel pump - pump ground | chassis | **added** | Pump ground run to chassis | Dedicated return for the higher pump current |
 | ✅ | Fuel pump - FPCM bypassed | R122 (10-pin black, area C-4) | **UNPLUGGED** | The factory fuel pump control module is UNPLUGGED and out of the circuit entirely. It is still physically in the car | Pump is hardwired; factory pump control is not used |
 | | | | | It is NOT in the signal path and NOT required. It is present only because it was never removed | |
-| ⚠️ | Fuel pump - relay trigger | OEM fuel pump controller circuit · pin TBD · blue (kit side) | **splice** | 12V relay trigger spliced from the existing OEM fuel pump controller circuit - the feed that would otherwise power the FPCM | Gives the relay a switched signal that still follows factory pump-on logic |
-| | | | | Consequence: the FPCM receives no 12V. Source connector/pin and splice method still to be recorded | |
 | ✅ | Fuel pump - motor feed | R58 pin 1 · 1 · yellow from relay; factory BY cut | **cut and replaced** | The BY line between R57 and R58 was CUT, disconnecting R57 from the pump circuit. R58 pin 1 now takes the high-current motor feed straight from the relay output | Full-current hardwired feed to the DW400 |
 | | | | | The factory feed path (FPCM -> BOr -> R15 pin 8 -> R57 -> BY) is ABANDONED and carries nothing | |
 | ✅ | Fuel pump - factory feed path DEAD | R15 pin 8 / R57 · 8 · BOr chassis side, BY tank-cord side | **abandoned** | FSM diagram E/G(TB)-01 (WI-82) shows BOr at R15 pin 8 becoming BY across R57 into R58 pin 1. That path no longer feeds the pump | Superseded by the relay feed |
 | | | | | Tracing this circuit against the FSM will mislead - the wire is cut between R57 and R58 | |
+| ⚠️ | Fuel pump - relay trigger | R1 pin 7 -> R122 pin 1 · 7 (R1) -> 1 (R122) · BY | **cut and redirected** | The BY feed from the FUEL PUMP RELAY to the fuel pump controller was CUT between R1 pin 7 and R122 pin 1, and now drives the new 40A relay coil instead. Spliced UNDER THE REAR DRIVER SEAT | Relay still switches on factory pump-on logic, but the FPCM is left with no supply |
+| | | | | FSM shows this BY feed landing on a controller terminal that extracts as 10, not 1 - CONFIRM THE PIN VISUALLY before trusting either number. Splice method not yet recorded | |
+| ✅ | Fuel pump - factory control chain DEAD | ECM conn D (B137) pin 15 -> ... -> R122 · D15 · GR at the ECM, BY from the relay onward | **abandoned** | Factory chain per FSM E/G(ST)-01 (WI-108): ECM connector D pin 15 (GR) commands the FUEL PUMP RELAY; the relay output (BY) runs B46 -> B97/R1 bulkhead (8-pin, area B-2) -> R166/R167 (STi FPCM harness, area C-4) -> R122 fuel pump controller | Superseded by the hardwired relay |
+| | | | | The chain is INTACT up to the cut at R1 pin 7. Past that point it feeds the new relay coil, not the FPCM | |
 
 ## Oiling
 
@@ -95,5 +97,5 @@
 - [ ] **Flex fuel sensor** — Not yet installed - see CPU-57
 - [ ] **VSS** — Verify against the cluster at commissioning
 - [ ] **Boost control** — Confirm Link output frequency with the tuner
-- [ ] **Fuel pump - relay trigger** — Consequence: the FPCM receives no 12V. Source connector/pin and splice method still to be recorded
+- [ ] **Fuel pump - relay trigger** — FSM shows this BY feed landing on a controller terminal that extracts as 10, not 1 - CONFIRM THE PIN VISUALLY before trusting either number. Splice method not yet recorded
 

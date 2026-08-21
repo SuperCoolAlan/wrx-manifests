@@ -96,7 +96,7 @@ oiling,2,Turbo oil DRAIN line,IAG,Stainless braided -10AN,OEM drain,,to-buy,conf
 oiling,2,Oil drain T-fitting,TBD,,n/a new,,to-buy,confirmed,,15-60,,Merges turbo oil drain + IAG AOS drain into one return
 oiling,2,Oil filler neck,Subaru OEM,J3,OEM,,installed,confirmed,,38.40,,02-07 WRX/STI
 oiling,2,Heat sleeve,DEI,Reflective 5/8in ID 3ft,n/a new,,to-buy,confirmed,,15-40,,For IAG AOS lines; share purchase with fuel lines
-ecu-electrical,7,Alternator,Michael Singer,200A / 220A peak - 128.5mm Denso hairpin 6-phase,OEM 90A 23700AA430,,to-buy,confirmed,msingeralternator@gmail.com,449.00,,DECIDED 2026-08-20. Denso case direct replacement for 23700AA430. 150A IDLE output. 14.8V regulator - specced by Singer knowing battery is Interstate MTX-35 AGM. Supersedes DC Power 180A and JS 250A. Confirm pulley with builder for belt sizing
+ecu-electrical,7,Alternator,Michael Singer,200A / 220A peak - 128.5mm Denso hairpin 6-phase,OEM 90A 23700AA430,,to-buy,confirmed,msingeralternator@gmail.com,449.00,,"ORDERED 2026-08-20 per systems/singer-alternator-spec-request.md - ARRIVAL NOT CONFIRMED. Register said only ""to-buy"", which understated it. 150A at idle, 14.8V regulator"
 ecu-electrical,7,Big 3 wiring upgrade,Knukonceptz / Stinger / Sky High,1/0 AWG OFC 3-cable kit,OEM charging cables,,to-buy,confirmed,,80-120,,
 ecu-electrical,7,Belt - alternator + power steering,Bando or Mitsuboshi,5PK875 (344K5),OEM belt,,to-buy,confirmed,,,,FRONT belt. 5 ribs 875mm. Gates equiv K050345. Tension 490-640 N. Alternator is its own tensioner
 ecu-electrical,7,Belt - A/C,Bando or Mitsuboshi,4PK895 (352K4),OEM belt,,to-buy,confirmed,,,,REAR belt (crank > A/C > idler). 4 ribs 895mm. Subaru OEM equiv 73323AC000. Tension 350-450 N

@@ -22,9 +22,10 @@ SECTIONS=[
   "Wheel bolt pattern is 5x114.3, NOT the 5x100 a 2004 WRX left the factory with."]),
  ("THE ENGINE IS SINGLE AVCS", WINK, [
   "Variable valve timing acts on the INTAKE camshafts only - one solenoid per head.",
-  "The engine sections in this binder are drawn from a 2007 manual that documents a",
-  "DUAL AVCS engine. Every exhaust-side AVCS sprocket, solenoid and oil passage shown",
-  "in those figures DOES NOT EXIST on this engine. Ignore them.",
+  "The manual sections printed here are also single AVCS, so they match the engine.",
+  "The trap is elsewhere: DUAL AVCS arrived on the 2008 STi. A 2008-or-later manual",
+  "will show exhaust-side sprockets, solenoids and oil passages this engine does not",
+  "have. Do not substitute a newer manual for the engine sections.",
   "There are two AVCS oil feed lines, one per head: the driver side is the OEM line,",
   "the passenger side is a HEL stainless braided replacement."]),
  ("FUEL — READ BEFORE FILLING", WINK, [

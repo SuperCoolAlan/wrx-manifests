@@ -19,9 +19,9 @@ from reportlab.lib.units import inch
 TRAPS = [
  ((2,),   "HEADS come from the 2007 manual (ME(H4DOTC)). Everything below them"),
  ((2,),   "   from 2005 STi. V25B STi Cosworth heads = 2007-era casting."),
- ((2,),   "THIS ENGINE IS SINGLE AVCS - intake only, one solenoid per head. The 2007"),
- ((2,),   "   H4DOTC manual documents DUAL AVCS. Every exhaust-side AVCS sprocket,"),
- ((2,),   "   solenoid and oil path in those figures DOES NOT EXIST on this car."),
+ ((2,),   "THIS ENGINE IS SINGLE AVCS - intake only, one solenoid per head. So are"),
+ ((2,),   "   the 2005 STi and 2007 H4DOTC sections printed here, so they match."),
+ ((2,),   "   Dual AVCS arrived on the 2008 STi - do NOT use a 2008+ manual here."),
  ((3,),   "WHY IS H4SO HERE? Subaru filed ONE starting/charging system for the whole"),
  ((3,),   "   engine range in the H4SO file - it contains sections for NON-TURBO,"),
  ((3,),   "   TURBO and STi MODEL. SC(STi) and SC(H4DOTC) are 2-page pointers to it."),

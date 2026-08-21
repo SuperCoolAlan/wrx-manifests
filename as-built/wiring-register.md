@@ -7,9 +7,9 @@
 > supersedes those diagrams for every circuit listed. Where a circuit is *not* listed,
 > the FSM diagram still applies.
 
-**21 recorded deviations** · ✅ confirmed · ⚠️ needs verification
+**23 recorded deviations** · ✅ confirmed · ⚠️ needs verification
 
-**Pin-level detail recorded for 5 of 21 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
+**Pin-level detail recorded for 7 of 23 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
 
 ---
 
@@ -46,11 +46,15 @@
 | | | | | Relay and its ground are both under the rear seat - first place to look for a no-start on the fuel side | |
 | ✅ | Fuel pump - relay ground | chassis, under rear seat · 6ft 10AWG black | **added** | Relay ground to CHASSIS under the rear seat |  |
 | | | | | FPHWK-10-HD ground leg | |
-| ✅ | Fuel pump - relay output | chassis harness · yellow | **added** | Relay output lands on the CHASSIS HARNESS rather than running straight to the pump | Deliberate: keeps the pump harness disconnectable for tank or pump service |
-| | | | | Do not bypass this - it is what lets the pump be unplugged normally | |
 | ✅ | Fuel pump - pump ground | chassis | **added** | Pump ground run to chassis | Dedicated return for the higher pump current |
-| ⚠️ | Fuel pump - relay trigger | R57 pin 8 / R58 pin 1 · 8 (R15/R57) -> 1 (R58) · BOr chassis side, becomes BY on the fuel tank cord | **cut and redirected** | The wire that originally landed on R58 pin 1 (the fuel pump feed, carrying the OEM FPCM output) was CUT and redirected to trigger the 40A relay instead. The pump is now fed from the relay output via the chassis harness | Hardwires the DW400 while leaving the factory control path intact upstream |
-| | | | | THE FPCM IS STILL IN THE SIGNAL PATH - it is NOT decorative. Its output is what triggers the relay, so if the FPCM fails the relay never closes and the pump never runs. Verify with a meter at the relay coil. Splice method not yet recorded | |
+| ✅ | Fuel pump - FPCM bypassed | R122 (10-pin black, area C-4) | **UNPLUGGED** | The factory fuel pump control module is UNPLUGGED and out of the circuit entirely. It is still physically in the car | Pump is hardwired; factory pump control is not used |
+| | | | | It is NOT in the signal path and NOT required. It is present only because it was never removed | |
+| ⚠️ | Fuel pump - relay trigger | OEM fuel pump controller circuit · pin TBD · blue (kit side) | **splice** | 12V relay trigger spliced from the existing OEM fuel pump controller circuit - the feed that would otherwise power the FPCM | Gives the relay a switched signal that still follows factory pump-on logic |
+| | | | | Consequence: the FPCM receives no 12V. Source connector/pin and splice method still to be recorded | |
+| ✅ | Fuel pump - motor feed | R58 pin 1 · 1 · yellow from relay; factory BY cut | **cut and replaced** | The BY line between R57 and R58 was CUT, disconnecting R57 from the pump circuit. R58 pin 1 now takes the high-current motor feed straight from the relay output | Full-current hardwired feed to the DW400 |
+| | | | | The factory feed path (FPCM -> BOr -> R15 pin 8 -> R57 -> BY) is ABANDONED and carries nothing | |
+| ✅ | Fuel pump - factory feed path DEAD | R15 pin 8 / R57 · 8 · BOr chassis side, BY tank-cord side | **abandoned** | FSM diagram E/G(TB)-01 (WI-82) shows BOr at R15 pin 8 becoming BY across R57 into R58 pin 1. That path no longer feeds the pump | Superseded by the relay feed |
+| | | | | Tracing this circuit against the FSM will mislead - the wire is cut between R57 and R58 | |
 
 ## Oiling
 
@@ -91,5 +95,5 @@
 - [ ] **Flex fuel sensor** — Not yet installed - see CPU-57
 - [ ] **VSS** — Verify against the cluster at commissioning
 - [ ] **Boost control** — Confirm Link output frequency with the tuner
-- [ ] **Fuel pump - relay trigger** — THE FPCM IS STILL IN THE SIGNAL PATH - it is NOT decorative. Its output is what triggers the relay, so if the FPCM fails the relay never closes and the pump never runs. Verify with a meter at the relay coil. Splice method not yet recorded
+- [ ] **Fuel pump - relay trigger** — Consequence: the FPCM receives no 12V. Source connector/pin and splice method still to be recorded
 

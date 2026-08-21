@@ -14,4 +14,9 @@ for i, s in enumerate(STEPS, 1):
     print(f"[{i}/{len(STEPS)}] {s}")
     r = subprocess.run([sys.executable, os.path.join(HERE, s)])
     if r.returncode: sys.exit(f"FAILED: {s}")
+# A silently clipped trap is worse than no trap, so fail the build on overflow.
+chk = os.path.join(os.path.dirname(HERE), "tools", "check-overflow.py")
+print("[check] overflow")
+if subprocess.run([sys.executable, chk]).returncode:
+    sys.exit("FAILED: generated text runs off the page")
 print("\nbinder complete")

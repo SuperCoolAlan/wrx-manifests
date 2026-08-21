@@ -211,15 +211,33 @@ def cover(tabno, title, subtitle, warnings, items, counts, starts):
     c.setStrokeColorRGB(.80,.80,.82); c.line(m,y,W-m,y); y-=16
     c.setFont("Helvetica-Bold",10); c.setFillColorRGB(.10,.11,.13)
     c.drawRightString(W-m,y,f"{sum(counts)} pages"); y-=30
+    FLOOR = 0.95*inch   # keep clear of the two footer lines below
+
+    def footer():
+        c.setFont("Helvetica",7.5); c.setFillColorRGB(.55,.56,.58)
+        c.drawString(m,0.65*inch,"2004 WRX wagon · V25B STi Cosworth heads on 2005-era EJ257 · FP Red · E85 · Link WRX104X · 2011 6MT/DCCD · 05-07 STi knuckles")
+        c.drawString(m,0.5*inch,"Assembled from 2004 / 2005 / 2007 Subaru FSMs. Section sources are per-row above — they are NOT all the same year.")
+
     if warnings:
-        c.setFillColorRGB(.99,.96,.90); c.rect(m-10,y-len(warnings)*13-14,W-2*m+20,len(warnings)*13+22,fill=1,stroke=0)
-        c.setFillColorRGB(.55,.33,.05); c.setFont("Helvetica-Bold",8.5)
-        c.drawString(m,y,"BEFORE YOU USE THIS SECTION"); y-=15
-        c.setFont("Helvetica",9); c.setFillColorRGB(.25,.20,.12)
-        for w in warnings: c.drawString(m,y,w); y-=13
-    c.setFont("Helvetica",7.5); c.setFillColorRGB(.55,.56,.58)
-    c.drawString(m,0.65*inch,"2004 WRX wagon · V25B STi Cosworth heads on 2005-era EJ257 · FP Red · E85 · Link WRX104X · 2011 6MT/DCCD · 05-07 STi knuckles")
-    c.drawString(m,0.5*inch,"Assembled from 2004 / 2005 / 2007 Subaru FSMs. Section sources are per-row above — they are NOT all the same year.")
+        # Traps must never be silently clipped, so the box paginates.
+        i = 0
+        first = True
+        while i < len(warnings):
+            room = int((y - FLOOR - 22) // 13)
+            if room < 3:                       # not worth starting a box here
+                footer(); c.showPage(); y = H - 1.0*inch; first = False
+                room = int((y - FLOOR - 22) // 13)
+            chunk = warnings[i:i+room]
+            bh = len(chunk)*13 + 22
+            c.setFillColorRGB(.99,.96,.90); c.rect(m-10,y-bh+14,W-2*m+20,bh,fill=1,stroke=0)
+            c.setFillColorRGB(.55,.33,.05); c.setFont("Helvetica-Bold",8.5)
+            c.drawString(m,y,"BEFORE YOU USE THIS SECTION" + ("" if first else "  (cont.)")); y-=15
+            c.setFont("Helvetica",9); c.setFillColorRGB(.25,.20,.12)
+            for wl in chunk: c.drawString(m,y,wl); y-=13
+            i += len(chunk); first = False
+            if i < len(warnings):
+                footer(); c.showPage(); y = H - 1.0*inch
+    footer()
     c.showPage(); c.save(); buf.seek(0)
     return PdfReader(buf)
 
@@ -294,15 +312,21 @@ def main():
             if not os.path.exists(path):
                 print(f"  !! MISSING {rel}"); continue
             r=PdfReader(path); readers.append((label,src,r)); counts.append(len(r.pages))
-        # Work out start pages up front so the cover can print them.
-        pos=1; spans=[]
+        # The cover paginates when there are many traps, so measure it FIRST -
+        # section start pages depend on how many pages it takes.
+        meta=[(l,s,None) for l,s,_ in readers]
+        probe=cover(tabno,title,subtitle,traps_for(tabno),meta,counts,[0]*len(counts))
+        ncov=len(probe.pages)
+        pos=ncov; spans=[]
         for (label,src,_r),n in zip(readers,counts):
             spans.append({"label":label,"source":src,"start":pos+1,"pages":n})  # 1-based printed no.
             pos+=n
             if n % 2 == 1: pos+=1     # duplex pad
         w=PdfWriter()
-        cv=cover(tabno,title,subtitle,traps_for(tabno),[(l,s,None) for l,s,_ in readers],
-                 counts,[sp["start"] for sp in spans])
+        cv=cover(tabno,title,subtitle,traps_for(tabno),meta,counts,[sp["start"] for sp in spans])
+        if len(cv.pages)!=ncov:
+            print(f"  !! TAB {tabno}: cover changed length between passes "
+                  f"({ncov} -> {len(cv.pages)}); start pages would be wrong")
         w.append(cv, import_outline=False)
         for (label,src,r),n in zip(readers,counts):
             w.append(r, import_outline=False)

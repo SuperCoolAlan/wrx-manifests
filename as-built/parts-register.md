@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**201 parts** — 148 installed · 22 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare · 1 in-transit
+**200 parts** — 148 installed · 22 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -222,7 +222,6 @@
 | ✅ | Parking brake cables | Subaru 2004 WRX - ORIGINAL CHASSIS CABLES |  | **FSM: 2004 cables work with 05-07 STi rear knuckles - no swap needed** · VERIFIED HOLDING on the KNS rear discs. Despite the STi knuckle swap the chassis cables fit and function |
 | ✅ | Rear calipers | Subaru 2007 WRX Limited 2-pot | 02-05 single-pot |  |
 | ✅ | Rear rotors | KNS / DBA KNS4656 | OEM rotors | 06-07 WRX OD with R180 STi parking brake drum |
-| ⚠️ | Speed bleeders | Speed Bleeder SB7100 (M7x1.0) or SB1010 (M10x1.0) |  | *[in-transit]* BOTH SB7100 (M7x1.0) and SB1010 (M10x1.0) ordered 2026-08-21; the wrong set goes back. Identify by comparing against a REMOVED OEM bleeder on the bench - NEVER test-fit in the caliper, an M10 started into an M7 port ruins both. Hex measured 8mm front / 10mm rear, but hex is not thread |
 
 ## Suspension · Chassis · Binder TAB 6 · recorded spend $1,308.13
 
@@ -267,7 +266,7 @@
 |:-:|---|---|---|---|
 | ✅ | Bleeder hose - clear vinyl | 3/16in ID, ~3ft |  | *[to-buy]* Snug on the nipple. 1/4in is loose and lets air back past - the classic phantom-bubble cause |
 | ✅ | Clutch alignment tool | 3D printed Subaru Clutch Alignment Tool - 267427 |  | *[in-stock]* In 3D Prints/ |
-| ✅ | Flare/line wrench - bleeders | 8mm AND 10mm both needed |  | *[to-buy]* MEASURED ON THE CAR 2026-08-21: 4-pot fronts take an 8mm hex, 2-pot rears take a 10mm hex. Buy both sizes. HEX SIZE IS NOT THREAD SIZE - see the speed bleeder row |
+| ⚠️ | Flare/line wrench - bleeders | 8mm AND 10mm both needed |  | *[to-buy]* Reported 8mm hex on the 4-pot fronts, 10mm hex on the 2-pot rears - NASIOC-sourced, not measured on this car. Both sizes on hand, so it does not matter which is which. OEM nipples are being RETAINED; no speed bleeders |
 | ✅ | Piston ring compressor | Company 23 |  | *[in-stock]*  |
 | ✅ | Plastigage PL-X 0.018-0.045mm white |  |  | *[in-stock]* Bearing clearance check |
 | ✅ | Seal puller |  |  | *[in-stock]*  |
@@ -313,7 +312,6 @@
 - [ ] ❓ **Gasket - turbo to downpipe** (induction) — NOT CONFIRMED - check stock. Match to the actual FP Red turbine outlet flange before ordering; a stock-location turbo usually takes the OEM 02-07 WRX/STI gasket but verify against the housing
 - [ ] ❓ **Wheel clearance for Brembo upgrade** (suspension) — OPEN: do these wheels clear 326mm 04-07 STi Brembos? Clearing the current ~294mm setup does NOT confirm it. 32mm larger rotor and barrel shape matters as much as diameter - many 17in OEM wheels foul a Brembo caliper. VERIFY BEFORE BUYING CALIPERS
 - [ ] ⚠️ **Brake pads** (brakes) — Compound NOT yet identified - PN is printed on the pad backing plate and the box. Fronts are 4-pot, rears 2-pot (2007 WRX Limited)
-- [ ] ⚠️ **Speed bleeders** (brakes) — BOTH SB7100 (M7x1.0) and SB1010 (M10x1.0) ordered 2026-08-21; the wrong set goes back. Identify by comparing against a REMOVED OEM bleeder on the bench - NEVER test-fit in the caliper, an M10 started into an M7 port ruins both. Hex measured 8mm front / 10mm rear, but hex is not thread
 - [ ] ⚠️ **Radiator hoses** (cooling) — Already owned
 - [ ] ⚠️ **Driveshaft** (drivetrain) — Assembled from forum research; length and splines verified
 - [ ] ⚠️ **Front CV axle (new)** (drivetrain) — Mixed new/used/refurb axle set across 2011 trans + R180 + 05-07 STi hubs. Fitment reported OK
@@ -347,6 +345,7 @@
 - [ ] ⚠️ **Tires** (suspension) — Temporary - Alan: BS tires for now. Size not recorded. NOTE: rolling diameter feeds speedo calibration - recheck VSS/cluster (CPU-71) if tire size changes
 - [ ] ⚠️ **Left rear hub large bolt** (suspension) — unverified
 - [ ] ⚠️ **Rear hub gaskets** (suspension) — unverified
+- [ ] ⚠️ **Flare/line wrench - bleeders** (tools) — Reported 8mm hex on the 4-pot fronts, 10mm hex on the 2-pot rears - NASIOC-sourced, not measured on this car. Both sizes on hand, so it does not matter which is which. OEM nipples are being RETAINED; no speed bleeders
 
 ---
 

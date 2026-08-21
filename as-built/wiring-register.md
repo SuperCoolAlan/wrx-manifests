@@ -7,9 +7,9 @@
 > supersedes those diagrams for every circuit listed. Where a circuit is *not* listed,
 > the FSM diagram still applies.
 
-**24 recorded deviations** · ✅ confirmed · ⚠️ needs verification
+**25 recorded deviations** · ✅ confirmed · ⚠️ needs verification
 
-**Pin-level detail recorded for 8 of 24 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
+**Pin-level detail recorded for 8 of 25 rows.** Rows without a connector/pin are system-level notes, not wiring instructions.
 
 ---
 
@@ -53,10 +53,12 @@
 | | | | | The factory feed path (FPCM -> BOr -> R15 pin 8 -> R57 -> BY) is ABANDONED and carries nothing | |
 | ✅ | Fuel pump - factory feed path DEAD | R15 pin 8 / R57 · 8 · BOr chassis side, BY tank-cord side | **abandoned** | FSM diagram E/G(TB)-01 (WI-82) shows BOr at R15 pin 8 becoming BY across R57 into R58 pin 1. That path no longer feeds the pump | Superseded by the relay feed |
 | | | | | Tracing this circuit against the FSM will mislead - the wire is cut between R57 and R58 | |
-| ⚠️ | Fuel pump - relay trigger | R1 pin 7 -> R122 pin 1 · 7 (R1) -> 1 (R122) · BY | **cut and redirected** | The BY feed from the FUEL PUMP RELAY to the fuel pump controller was CUT between R1 pin 7 and R122 pin 1, and now drives the new 40A relay coil instead. Spliced UNDER THE REAR DRIVER SEAT | Relay still switches on factory pump-on logic, but the FPCM is left with no supply |
-| | | | | FSM shows this BY feed landing on a controller terminal that extracts as 10, not 1 - CONFIRM THE PIN VISUALLY before trusting either number. Splice method not yet recorded | |
+| ⚠️ | Fuel pump - relay trigger | R1 pin 7 -> R166 · 7 (R1) · BY | **cut and redirected** | The BY feed from the FUEL PUMP RELAY was CUT between R1 pin 7 and R166, and now drives the new 40A relay coil instead. Spliced UNDER THE REAR DRIVER SEAT | Relay still switches on factory pump-on logic, but the FPCM is left with no supply |
+| | | | | STi routing: the cut is BEFORE the R166/R167 pair, so R166, R167 and R122 downstream of it are all dead. The non-STi turbo diagram runs R1 straight to R122 with no R166/R167 - do not use that one. Splice method not yet recorded | |
 | ✅ | Fuel pump - factory control chain DEAD | ECM conn D (B137) pin 15 -> ... -> R122 · D15 · GR at the ECM, BY from the relay onward | **abandoned** | Factory chain per FSM E/G(ST)-01 (WI-108): ECM connector D pin 15 (GR) commands the FUEL PUMP RELAY; the relay output (BY) runs B46 -> B97/R1 bulkhead (8-pin, area B-2) -> R166/R167 (STi FPCM harness, area C-4) -> R122 fuel pump controller | Superseded by the hardwired relay |
-| | | | | The chain is INTACT up to the cut at R1 pin 7. Past that point it feeds the new relay coil, not the FPCM | |
+| | | | | Chain is INTACT up to R1 pin 7. Past the cut it feeds the new relay coil. R166/R167 and R122 carry nothing | |
+| ✅ | WHICH FUEL PUMP DIAGRAM APPLIES | — | **reference** | Use E/G(ST)-01 (WI-108, STi), NOT E/G(TB)-01 (WI-82, turbo). The STi routing inserts the R166/R167 FPCM harness pair between R1 and R122; the turbo routing runs R1 straight to R122 | 2005 STi engine harness on a 2004 chassis |
+| | | | | The two diagrams are otherwise near-identical, which makes picking the wrong one easy and the extra connector pair invisible | |
 
 ## Oiling
 
@@ -97,5 +99,5 @@
 - [ ] **Flex fuel sensor** — Not yet installed - see CPU-57
 - [ ] **VSS** — Verify against the cluster at commissioning
 - [ ] **Boost control** — Confirm Link output frequency with the tuner
-- [ ] **Fuel pump - relay trigger** — FSM shows this BY feed landing on a controller terminal that extracts as 10, not 1 - CONFIRM THE PIN VISUALLY before trusting either number. Splice method not yet recorded
+- [ ] **Fuel pump - relay trigger** — STi routing: the cut is BEFORE the R166/R167 pair, so R166, R167 and R122 downstream of it are all dead. The non-STi turbo diagram runs R1 straight to R122 with no R166/R167 - do not use that one. Splice method not yet recorded
 

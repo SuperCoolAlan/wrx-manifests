@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**189 parts** — 147 installed · 20 to-buy · 9 in-stock · 3 undecided · 2 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**190 parts** — 148 installed · 19 to-buy · 9 in-stock · 3 undecided · 3 fabricate · 2 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -53,8 +53,9 @@
 
 | ✓ | Part | Brand / Model / PN | Supersedes | Notes |
 |:-:|---|---|---|---|
-| ✅ | AVCS oil feed line LH (driver) | Subaru OEM | OEM oil pipe LH | INSTALLED 2026-08-20. FSM item 27 Oil pipe LH |
-| ✅ | AVCS oil feed line RH (passenger) | HEL HEL-OF34 stainless braided | OEM oil pipe RH | *[to-buy]* FSM item 29 Oil pipe RH. Fitment 06-14 WRX / 04-21 STI / 05-09 LGT / 04-08 FXT - spans both head generations so unaffected by the open head-casting question. Use HEL sealing washers + HEL torque NOT the FSM figure. Clamp to prevent braid abrasion against wiring/coolant hoses |
+| ✅ | AVCS banjo bolt RH - SHORTENED 4mm | Subaru OEM, modified |  | *[fabricate]* **FSM: Not a stock-length fastener** · MODIFIED PART: shortened 4mm to suit the HEL fitting, which is 4mm shorter than OEM. Do NOT replace with a stock-length bolt - it will bottom before clamping the banjo. CPU-84 |
+| ✅ | AVCS oil feed line LH (driver) | Subaru OEM | OEM oil pipe LH | OEM line retained. Mixed on purpose - OEM driver side, HEL braided passenger side |
+| ✅ | AVCS oil feed line RH (passenger) | HEL HEL-OF34 stainless braided | OEM oil pipe RH | PURCHASED - kit is a pair, one used. Line fitted; BANJO BOLT STILL NEEDS SHORTENING 4mm because the HEL fitting is 4mm shorter than OEM. See CPU-84 |
 | ✅ | Air-oil separator | IAG Street Series V2 | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · USED great condition w/ all lines; drain per interval; cap PCV portions of 21141AA131 |
 | ✅ | Heat sleeve | DEI Reflective 5/8in ID 3ft | n/a new | *[to-buy]* For IAG AOS lines; share purchase with fuel lines |
 | ✅ | Oil dipstick tube | Subaru OEM STI/J3 |  | Tube only - verify dipstick rod separately |

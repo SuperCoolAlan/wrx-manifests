@@ -82,8 +82,8 @@ cooling,3,Water pump + thermostat,Roger Clark Motorsport,Black Series 3-Port,OEM
 engine-lower,2,Crank + cam seals,Subaru OEM,,OEM,,installed,confirmed,,,,Crank seal + 4 cam seals
 oiling,2,Oil pickup tube,IAG,,Moroso unit,,installed,confirmed,,,,Moroso didn't fit the IAG pan
 oiling,2,Turbo oil supply line,Forced Performance,FP Turbo Oil Supply Line - EJ,OEM feed line,,installed,confirmed,,,,Stainless braided; brand-matched to FP Red
-oiling,2,AVCS oil feed line LH (driver),Subaru OEM,,OEM oil pipe LH,,installed,confirmed,,60.00,,INSTALLED 2026-08-20. FSM item 27 Oil pipe LH
-oiling,2,AVCS oil feed line RH (passenger),HEL,HEL-OF34 stainless braided,OEM oil pipe RH,,to-buy,confirmed,,,,FSM item 29 Oil pipe RH. Fitment 06-14 WRX / 04-21 STI / 05-09 LGT / 04-08 FXT - spans both head generations so unaffected by the open head-casting question. Use HEL sealing washers + HEL torque NOT the FSM figure. Clamp to prevent braid abrasion against wiring/coolant hoses
+oiling,2,AVCS oil feed line LH (driver),Subaru OEM,,OEM oil pipe LH,,installed,confirmed,,60.00,,"OEM line retained. Mixed on purpose - OEM driver side, HEL braided passenger side"
+oiling,2,AVCS oil feed line RH (passenger),HEL,HEL-OF34 stainless braided,OEM oil pipe RH,,installed,confirmed,,,,"PURCHASED - kit is a pair, one used. Line fitted; BANJO BOLT STILL NEEDS SHORTENING 4mm because the HEL fitting is 4mm shorter than OEM. See CPU-84"
 oiling,2,Oil dipstick tube,Subaru OEM,STI/J3,,,installed,confirmed,,,,Tube only - verify dipstick rod separately
 fuel,4,Fuel pump hardwire kit,DeatschWerks,FPHWK-10-HD,OEM pump wiring,,installed,confirmed,,,,High-current 10 AWG heavy duty relay kit battery-direct
 fuel,4,Fuel filter,DeatschWerks,8-03-110-010K-6,OEM filter,,installed,confirmed,,,,10 micron; -6AN ports (NOT -010K-8)
@@ -188,3 +188,4 @@ brakes,5,Brake pads,Hawk Performance,compound TBD,,,installed,unverified,,,Track
 ecu-electrical,7,Flex fuel sensor adapter,iWire,rear O2 plug to Continental fuel sensor plug,OEM rear O2 sensor,Rear O2 circuit repurposed for flex fuel,installed,confirmed,iWire,,,Lets the flex sensor use the existing rear O2 circuit. B19 4-pin gray
 induction,3,Header bung plug + crush washer,,M18 x 1.5,,,to-buy,confirmed,,,,Crush washer IN TRANSIT 2026-08-21. Plug the Perrin ELH bung BEFORE the uppipe goes on - CPU-20
 induction,3,Anti-seize - exhaust,Nickel-based,,,,in-stock,confirmed,,,,Used on the header nuts. Nickel not copper - holds up past header flange temperatures
+oiling,2,AVCS banjo bolt RH - SHORTENED 4mm,"Subaru OEM, modified",,,Not a stock-length fastener,fabricate,confirmed,,,,"MODIFIED PART: shortened 4mm to suit the HEL fitting, which is 4mm shorter than OEM. Do NOT replace with a stock-length bolt - it will bottom before clamping the banjo. CPU-84"

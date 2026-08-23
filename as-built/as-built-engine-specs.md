@@ -53,7 +53,7 @@
 ---
 
 ## Bearing shells as fitted
-- **Rod bearings:** King race series, **STD**
+- **Rod bearings:** King race series, **STD** — ⚠ the kit on hand is `CR4125XPG` **STDX** pMax Black (rod kit); shells were mixed from a second kit. Verify STD vs STDX actually installed.
 - **Main bearings:** King race series, **STDX**
 - Per build sheet note: *"Ran STD rod bearings but STDX crank bearings"*
 - Mains then fine-tuned by mixing shell halves per Test Two above

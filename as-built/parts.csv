@@ -2,7 +2,7 @@ system,tab,part,brand,model_pn,supersedes,fsm_impact,status,confidence,source,co
 engine-lower,2,Crankshaft,Subaru OEM,12200AA430,OEM WRX crank,,installed,confirmed,Flatirons Tuning,322.47,,Nitride-treated STi
 engine-lower,2,Pistons,Manley,612000C-4,OEM pistons,,installed,confirmed,Defined Performance,479.99,,EJ257 99.75mm std stroke std bore 8.5:1 dish
 engine-lower,2,Rods,Manley,15024-4 H-Tuff,OEM rods,,installed,confirmed,Defined Performance,379.99,,
-engine-lower,2,Rod bearings,King,STD (race series),OEM,,installed,confirmed,Defined Performance,95.99,,King RACE bearings (2026-08-23). Ran STD rod bearings
+engine-lower,2,Rod bearings,King,STD (race series),OEM,,installed,confirmed,Defined Performance,95.99,,"King RACE bearings (2026-08-23). Ran STD rod bearings. Kit on hand is CR4125XPG STDX pMax Black (rod kit, STDX) - shells were mixed from a second kit; VERIFY whether installed rods are STD or STDX, register may be wrong"
 engine-lower,2,Main bearings,King,STDX (race series),OEM,,installed,confirmed,Defined Performance,65.49,,King RACE bearings (2026-08-23). Mains fine-tuned by mixing shell halves; see as-built-engine-specs.md
 engine-lower,2,Oil pump,Subaru,15010AA360,10mm OEM pump,,installed,confirmed,eBay,89.10,,11mm high-volume
 engine-lower,2,Crank pulley,Perrin,Lightweight,OEM crank pulley,,installed,confirmed,FB bundle,75.00,,DECISION REVERSED 2026-08-20: running the Perrin already installed rather than buying the Fluidampr. Mitigated by conventional OEM flywheel (avoids lightweight-pulley + lightweight-flywheel combo). Reversible - front-of-engine job

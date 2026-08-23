@@ -53,8 +53,8 @@
 ---
 
 ## Bearing shells as fitted
-- **Rod bearings:** King **STD**
-- **Main bearings:** King **STDX**
+- **Rod bearings:** King race series, **STD**
+- **Main bearings:** King race series, **STDX**
 - Per build sheet note: *"Ran STD rod bearings but STDX crank bearings"*
 - Mains then fine-tuned by mixing shell halves per Test Two above
 

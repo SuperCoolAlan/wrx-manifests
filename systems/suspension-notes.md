@@ -1,7 +1,7 @@
 # Suspension Notes — GG Wagon + 05-07 STi Front Knuckles + BC Coilovers
 
 **Date:** 2026-08-19
-**Config:** 2004 GG wagon chassis · **05-07 STi knuckles at ALL FOUR CORNERS** · **BC Racing BR-series coilovers w/ built-in camber plates** (exact PN TBD — Alan retrieving spec sheet) · 5x114.3 all corners
+**Config:** 2004 GG wagon chassis · **05-07 STi knuckles at ALL FOUR CORNERS** · **BC Racing coilovers, BR type converted to DS series, 05-07 STI/GDF application, w/ built-in camber plates** (spec sheet found 2026-08-23 — see "BC coilover spec sheet" below) · 5x114.3 all corners
 
 **Confirmed 2026-08-19 from eBay purchase history:**
 - Front: 05-07 STi RH knuckle 28313FE060 + bearing 28373FE000
@@ -203,11 +203,11 @@ The lower mounts accepted the bolts, which is reasonable evidence the applicatio
 
 ## OPEN — needed to finish this
 
-1. **BC part number — F-02-BR or F-03-BR?** ⚠ TOP PRIORITY. Alan reports "probably BR series." The knuckles are 05-07 STi = F-03-BR application. Check the label on the damper body.
+1. ~~BC part number — F-02-BR or F-03-BR?~~ — ✅ **RESOLVED 2026-08-23: spec sheet reads "BR type, 05-07 STI / GDF"** = the 05-07 STi (F-03) application, matching the knuckles. Lower-mount eyeball check still worth a glance; fitment no longer in question.
 2. ~~Camber plates fitted?~~ — **CONFIRMED 2026-08-19: camber plates are built into the coilovers.** Front camber is adjustable at the top mount — the main lever available, since SAI shifted with the STi knuckles and rear camber is not factory-adjustable.
    - **"Type RA" is NOT a fitment concern.** RA describes the **top mount** (pillowball, camber-adjustable). The **prefix — F-02 vs F-03 — describes the application** and governs the *lower* mount that meets the knuckle. Independent parts of the name; read the prefix, ignore the suffix for fitment. (An earlier note treated RA as pointing to F-02 — that was based on one retailer listing and is weak evidence.)
    - Note: the "5x100 PCD" in BC's Type RA listing refers to the original vehicle application, not the coilover itself. PCD lives in the hub and does not affect strut fitment.
-3. **Actual spring rates** — stock BR is 8 kg/mm F / 6 kg/mm R.
+3. ~~Actual spring rates~~ — ✅ **RESOLVED 2026-08-23:** front `62.200.8`, rear `2.220.6k` per the sheet → read as 8 kg/mm F / 6 kg/mm R (BC standard). See spec sheet section.
 4. ~~Rear knuckle identity~~ — **RESOLVED: 05-07 STi both sides.**
 5. ~~Which rear lateral links~~ — **RESOLVED 2026-08-19: wagon links retained.** So: STi rear knuckles on wagon lateral links. Rear camber is NOT factory-adjustable — get a reading.
 6. **Rear camber reading from an alignment rack** — determines whether adjustable rear lateral links are needed.
@@ -215,7 +215,31 @@ The lower mounts accepted the bolts, which is reasonable evidence the applicatio
    - Wagon spec: **front 20mm / rear 17mm** (vs STi 19mm / 20mm)
    - Confirms the **Wagon / Except-STi** torque branch is correct throughout — stabilizer link at **30 N·m**, not 45
    - Balance note: the wagon's relatively softer rear bar (17mm vs STi 20mm) is worth knowing when setting up for track. If the car understeers on turn-in after alignment, the rear bar is a cheap lever before touching spring rates.
-4. Front/rear spring rates, and whether camber plates are fitted.
+
+---
+
+## BC coilover spec sheet — found 2026-08-23
+
+Transcribed from the paperwork that came with the coilovers:
+
+| Field | As written |
+| -- | -- |
+| Application | **BR type, 05-07 STI / GDF** |
+| Series | **DS** — noted as **"BR converted to DS"** |
+| Use | Street |
+| Springs | BC Racing springs, standard |
+| Front spring label | `62.200.8` |
+| Rear spring label | `2.220.6k` |
+| Front top | Camber plate, pillowball |
+| Rear top | Rubber |
+| Upper mount | RA configuration |
+
+**Interpretation (not on the paper):** BC spring labels read ID.length.rate → front 62mm ID / 200mm / **8 kg/mm**, rear 62mm ID / 220mm / **6 kg/mm** (rear label presumably truncated `62.220.6k`). Confirm by reading the spring ends if it matters.
+
+**Consequences:**
+- Front camber adjustable at the top plate — tell the alignment shop. Rear remains non-adjustable.
+- DS-series damper, not BR — use the DS manual for click counts/damping settings.
+- Pillowball fronts transmit more noise than the rubber rears; expected, not a fault.
 
 ---
 

@@ -84,7 +84,7 @@ Add to TAB 4: `2007 Transmission/CL Clutch System.pdf` (38 pp) — already liste
 | Part | Reuse 5MT? | Basis |
 |---|---|---|
 | **Operating cylinder (slave)** | ✅ **YES** | Two independent NASIOC reports: 02 WRX slave on 05 STi box, and 04 WRX slave on JDM V8 6MT — both worked |
-| **Release fork** | ✅ **MOOT — 6MT fork is installed** | Confirmed 2026-08-20: the fork came off the 2011 6MT. The 5MT fork stays a spare. |
+| **Release fork** | ✅ **VERIFIED — 6MT fork is installed** | Physically confirmed 2026-08-23: the 2004 5MT fork is in storage, visibly different (extra bend). The 2011 fork is the one in the bellhousing. |
 | **Throwout bearing** | ❌ Use 6MT | Mixing a WRX bearing with an STi fork is implicated in the thread's failure case |
 
 ### ⚠ The real lesson: stack consistency, not individual parts
@@ -184,7 +184,7 @@ Alan is **not pulling the bellhousing now**. Disc reportedly low and due for a c
 ### ✅ SUBSTANTIALLY RESOLVED 2026-08-20
 **Alan: "clutch fork was from 2011 6 speed swap i got, probably OEM."**
 
-The fork came with the transmission, so it is the 6MT fork — which was the low-risk assumption. The forum-vs-FSM evidence split is now moot for this car: whatever the general answer is, the part in this bellhousing arrived with this gearbox.
+**2026-08-23: physically verified.** The 2004 fork was found in storage and has an extra bend the 2011 fork lacks — the installed fork is the 6MT unit, no inference needed. Residual disengagement risk is now only the disc diameter (unmeasured) and MC/slave bore match. The forum-vs-FSM evidence split is now moot for this car: whatever the general answer is, the part in this bellhousing arrived with this gearbox.
 
 Residual risk is only that a previous owner swapped it before Alan got the trans. Confirm the PN at the next clutch job (batched with the disc-diameter check), but treat this as settled for planning.
 

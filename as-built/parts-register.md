@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**200 parts** — 148 installed · 22 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**202 parts** — 150 installed · 22 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -229,6 +229,8 @@
 |:-:|---|---|---|---|
 | ⚠️ | Coilovers | BC Racing BR series | OEM struts/springs | **FSM: OEM strut/spring FSM pages void** · PN F-02-BR vs F-03-BR UNKNOWN; camber plates built in; stock rates 8kg/mm F 6kg/mm R |
 | ✅ | DO NOT ORDER - hub gasket | Subaru 28015AA1108A |  | *[not-fitted]* DID NOT FIT. Recorded so it is not reordered |
+| ✅ | Front ABS wheel speed sensor - one side | Aftermarket 01-06 Impreza / 00-04 Legacy FL pattern | 05-07 STi knuckle sensor | Full sensor replaced: aftermarket unit whose connector mates the 04/merged harness directly. Passive VR, same family as the 04 ABS module. Which side (L/R) not recorded |
+| ✅ | Front ABS wheel speed sensor - other side | Subaru 05-07 STi (came on knuckle) | OEM 04 sensor | Original knuckle sensor KEPT; connector transplanted from the aftermarket 01-06 pattern pigtail (hand splice - black/white crossover at the plug is from this). Passive VR. Verify splice continuity + signal per CPU-91 |
 | ⚠️ | Front ball joint | Subaru 20206AJ000 | OEM | Generic GD-era - verify taper seats in STi housing |
 | ✅ | Front knuckles | Subaru 28313FE060 | 04 WRX knuckles | **FSM: Print FS from 2005/2007 not 2004** · 05-07 STi; chosen to preserve GD geometry; gives 5x114.3 |
 | ✅ | Front wheel bearing | Subaru 28373FE000 | OEM |  |

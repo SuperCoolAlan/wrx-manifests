@@ -13,7 +13,7 @@ Motul Break-In 10W-40 (108080), Wix 57712XP filters.
 ## Phase 0 — Before first start
 - [ ] Recheck ALL hose clamps, fittings, fluid levels (Raw: "even if you think you did it")
 - [ ] Clutch pedal adjustment verified (IAG warranty-teardown callout)
-- [ ] New spark plugs installed, gap 0.028" (Raw; colder heat range per Ben for E85 later)
+- [x] New spark plugs: NGK 2309 (LFR7AIX, 1 step colder), gapped 0.027" w/ threaded tool (2026-08-25). Fine for break-in; regap to ≤0.025" at the E85 tune per tuner table (400-500hp band)
 - [ ] Oil filter PRE-FILLED with break-in oil, hand tight
 - [ ] Turbo oil feed line pre-filled (journal-bearing FP Red)
 - [ ] Battery charged, second person recruited (leak watch + fire extinguisher)

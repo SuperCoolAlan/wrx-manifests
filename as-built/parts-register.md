@@ -106,7 +106,7 @@
 | ✅ | Midpipe | XForce part of E4-SW05-MP01-CBS | OEM midpipe | INCLUDED IN THE XFORCE CAT-BACK - not a separate part. The downpipe-to-midpipe joint is therefore downpipe-to-catback |
 | ✅ | TGV deletes | IAG | OEM TGVs | **FSM: IN TGV content void** · IAG TGV deletes. Bought used. Holes drilled slightly to bolt to the intake manifold |
 | ✅ | Turbo inlet | Forced Performance FP 8005010A 84mm | OEM inlet | 84mm silicone; fits FP 84mm FAP cover; has recirc return bung + Mishimoto BPV recirc hose |
-| ✅ | Turbocharger | Forced Performance FP STi Red HTZ R690701874 | OEM VF-series | USED. HTZ variant - older proven design w/ journal-bearing option; CONFIRM bearing type for oil restrictor sizing |
+| ✅ | Turbocharger | Forced Performance FP STi Red HTZ R690701874 | OEM VF-series | USED, ~15k mi low-boost street per PO (bought new). PO spec 2026-08-25: JOURNAL BEARING, welded internal WG flapper (correct for EWG), 10cm hot side, billet wheel, 84mm cover. Feed = full flow, NO restrictor |
 | ✅ | Uppipe | PLM 38mm EWG | OEM uppipe | Bundle price with wastegate; 2-bolt flange matches Perrin collector |
 | ✅ | Wastegate | TiAL MVS 38mm | OEM internal WG | Spring pressure UNKNOWN - record when fitted |
 | ✅ | Wastegate spring stack | TiAL Black + Blue = 1.2 bar / 17.4 psi |  | *[in-stock]* **FSM: Sets MINIMUM boost - cannot run below this** · QUEUED to install. This is the boost FLOOR. See BOOST FLOOR note - reconsider for break-in |

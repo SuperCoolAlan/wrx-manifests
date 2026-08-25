@@ -22,7 +22,7 @@ engine-heads,2,Camshafts,Subaru OEM,,,,installed,unverified,,,,Stage 2 considere
 oiling,2,Oil pan,IAG,,OEM pan,Changes oil capacity - measure and record,installed,confirmed,,,,
 oiling,2,Air-oil separator,IAG,Street Series V2,Entire OEM PCV system,LU PCV content void; all OEM PCV hoses removed,installed,confirmed,,,Drain per interval,USED great condition w/ all lines; drain per interval; cap PCV portions of 21141AA131
 oiling,2,Oil pressure sender,,remote,OEM switch location,,installed,confirmed,,,,Firewall mounted 2026-08-20; torque 25 Nm; THREE BOND 1324
-induction,3,Turbocharger,Forced Performance,FP STi Red HTZ R690701874,OEM VF-series,,installed,confirmed,,1000.00,Shaft play periodic,USED. HTZ variant - older proven design w/ journal-bearing option; CONFIRM bearing type for oil restrictor sizing
+induction,3,Turbocharger,Forced Performance,FP STi Red HTZ R690701874,OEM VF-series,,installed,confirmed,,1000.00,Shaft play periodic,"USED, ~15k mi low-boost street per PO (bought new). PO spec 2026-08-25: JOURNAL BEARING, welded internal WG flapper (correct for EWG), 10cm hot side, billet wheel, 84mm cover. Feed = full flow NO restrictor"
 induction,3,Header,Perrin,Equal Length,OEM manifold,,installed,confirmed,Jacob Ham FB,300.00,Annual collector inspection,304SS welded merge 4-2-1; 14pct larger primaries; 2-4 track seasons
 induction,3,Uppipe,PLM,38mm EWG,OEM uppipe,,installed,confirmed,,450.00,,Bundle price with wastegate; 2-bolt flange matches Perrin collector
 induction,3,Wastegate,TiAL,MVS 38mm,OEM internal WG,,installed,confirmed,,,,Spring pressure UNKNOWN - record when fitted

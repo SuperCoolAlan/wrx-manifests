@@ -166,7 +166,7 @@
 | ✅ | Gauge harness - wire + PCBs | 16 AWG + XLPE |  | Also used: gauge harness PCBs, driver-side wheel well clips |
 | ⚠️ | Gauges | Prosport boost/fuel/oil/volt |  |  |
 | ✅ | Harness merge | iWire |  | Includes the DCCD controller and VSS Pro |
-| ✅ | Ignition coils | NGK | OEM coils | Brand-matched to ILTR7L8R plugs |
+| ✅ | Ignition coils | NGK | OEM coils | Brand-matched to the NGK plugs |
 | ✅ | Knock sensor | Subaru OEM |  | *[in-stock]* **FSM: FU(H4DOTC)-34: 24 N.m, cord exit 60 deg to engine rear** · NEW, on hand, NOT yet installed. Install before intake manifold goes on. CPU-82 |
 | ✅ | Link CAN cable | Link Engine Management CANJST 5-pin 101-0197 |  |  |
 | ✅ | Link XSL expansion loom | Link Engine Management 101-0106 |  | Terminated with a DTM06-8S connector by BW Tuning |
@@ -175,7 +175,7 @@
 | ⚠️ | MEGA fuse holders (x2) | Blue Sea 5001-style |  | *[in-stock]* **FSM: n/a new capability** · Mount on the 3D-printed battery tray fuse platform (108x82mm cantilever, M8 studs). Fuse 1 alternator/Big 3, Fuse 2 audio amp |
 | ✅ | Oil pressure sensor | Prosport 0-100 PSI 1/8in NPT 0.5-4.5V | OEM switch | 24in hose w/ M18x1.5 galley adapter - confirms galley + header bung thread |
 | ✅ | Pressure sensors (x2) | LDM 8990150-0-150 - 0-150 psi standard | n/a new | TWO supplied on invoice AS-0003 - resolves the 'TBD per Ben' entries for BOTH fuel and oil pressure |
-| ✅ | Spark plugs | NGK ILTR7L8R | OEM plugs | One heat range colder for E85 at 500whp |
+| ✅ | Spark plugs | NGK 2309 LFR7AIX | OEM plugs | Iridium IX, 1 step colder. Gapped 0.027in w/ threaded tool (2026-08-25). Fine for break-in/pump gas; tuner table says 400-500hp = 0.025in - expect regap to <=0.025 at the E85 tune. NOTE: register previously said ILTR7L8R - superseded by Alan 2026-08-25; confirm which set is physically in the heads |
 | ✅ | TGV-to-pressure-sensor harness (x2) | BW Tuning custom expansion harness |  | Uses the vacated TGV locations for the pressure sensors |
 | ✅ | Turbo-trans to DCCD-trans adapter | iWire |  | No charge |
 | ✅ | VSS | iWire VSS Pro |  | Speedo correction for 6MT |
@@ -282,6 +282,7 @@
 | Rear rotors (KNS / DBA) | Thickness per event | brakes |
 | Brake pads (Hawk Performance) | Track: inspect every event | brakes |
 | Wideband (Link Engine Management) | Sensor service life | ecu-electrical |
+| Spark plugs (NGK) | inspect at tune | ecu-electrical |
 | Wideband O2 sensor (Bosch) | Sensor service life | ecu-electrical |
 | Oil filters (Wix) | Every oil change | engine-lower |
 | Drain plug crush washers (Subaru OEM) | Every oil change | engine-lower |

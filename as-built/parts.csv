@@ -87,8 +87,8 @@ oiling,2,AVCS oil feed line RH (passenger),HEL,HEL-OF34 stainless braided,OEM oi
 oiling,2,Oil dipstick tube,Subaru OEM,STI/J3,,,installed,confirmed,,,,Tube only - verify dipstick rod separately
 fuel,4,Fuel pump hardwire kit,DeatschWerks,FPHWK-10-HD,OEM pump wiring,,installed,confirmed,,,,High-current 10 AWG heavy duty relay kit battery-direct
 fuel,4,Fuel filter,DeatschWerks,8-03-110-010K-6,OEM filter,,installed,confirmed,,,,10 micron; -6AN ports (NOT -010K-8)
-ecu-electrical,7,Spark plugs,NGK,ILTR7L8R,OEM plugs,,installed,confirmed,,,,One heat range colder for E85 at 500whp
-ecu-electrical,7,Ignition coils,NGK,,OEM coils,,installed,confirmed,,,,Brand-matched to ILTR7L8R plugs
+ecu-electrical,7,Spark plugs,NGK,2309 LFR7AIX,OEM plugs,,installed,confirmed,,,inspect at tune,"Iridium IX, 1 step colder. Gapped 0.027in w/ threaded tool (2026-08-25). Fine for break-in/pump gas; tuner table says 400-500hp = 0.025in - expect regap to <=0.025 at the E85 tune. NOTE: register previously said ILTR7L8R - superseded by Alan 2026-08-25; confirm which set is physically in the heads"
+ecu-electrical,7,Ignition coils,NGK,,OEM coils,,installed,confirmed,,,,Brand-matched to the NGK plugs
 ecu-electrical,7,Oil pressure sensor,Prosport,0-100 PSI 1/8in NPT 0.5-4.5V,OEM switch,,installed,confirmed,,,,24in hose w/ M18x1.5 galley adapter - confirms galley + header bung thread
 drivetrain,4,Pitch stop mount,Perrin,Red N2 polyurethane,OEM pitch stop,,installed,confirmed,,,,Billet body; 90a + 70a bushings
 induction,3,BOV adapter,TBD,,,,undecided,unknown,,0,,Sheet says not needed if going bung-to-hose direct - depends on final BOV choice

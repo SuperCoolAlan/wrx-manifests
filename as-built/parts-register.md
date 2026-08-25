@@ -23,11 +23,11 @@
 | ✅ | Crankshaft | Subaru OEM 12200AA430 | OEM WRX crank | Nitride-treated STi |
 | ✅ | Drain plug crush washers | Subaru OEM 803916010 |  | *[to-buy]* 10-pack. New washer every change per IAG |
 | ✅ | Harmonic damper | Fluidampr 531101 | Perrin lightweight pulley | *[deferred]* NOT BUYING for now - see crank pulley row. Original 2026-07-02 rationale: torsional harmonics at 500whp threaten rod/main bearings |
-| ✅ | Main bearings | King STDX (race series) | OEM | Mains fine-tuned by mixing shell halves; see as-built-engine-specs.md |
+| ✅ | Main bearings | King STDX (race series) | OEM | King RACE bearings (2026-08-23). Mains fine-tuned by mixing shell halves; see as-built-engine-specs.md |
 | ✅ | Oil filters | Wix 57712XP | OEM filter | *[to-buy]* x5 for break-in schedule. IAG specifies OEM or Wix XP. 23 psi bypass. PRE-FILL before install |
 | ✅ | Oil pump | Subaru 15010AA360 | 10mm OEM pump | 11mm high-volume |
-| ✅ | Pistons | Manley 612002C-4 | OEM pistons | Platinum Series dished, 99.75mm, 1.209" CH, w/ rings, 410-411g w/o pin (box 08/13/20). PN corrected from 612000C-4 · 8.5:1 dish |
-| ✅ | Rod bearings | King STD (race series) | OEM | Ran STD rod bearings. Kit on hand: CR4125XPG STDX pMax Black — mixed from a second kit; ⚠ verify STD vs STDX installed |
+| ✅ | Pistons | Manley 612002C-4 | OEM pistons | Platinum Series dished, 99.75mm bore, 1.209in compression height, w/ rings. Box label 08/13/20: 410-411g w/o pin. PN corrected 2026-08-25 from 612000C-4 (register error) - read off the box. 8.5:1 w/ dish |
+| ✅ | Rod bearings | King STD (race series) | OEM | King RACE bearings (2026-08-23). Ran STD rod bearings. Kit on hand is CR4125XPG STDX pMax Black (rod kit, STDX) - shells were mixed from a second kit; VERIFY whether installed rods are STD or STDX, register may be wrong |
 | ✅ | Rods | Manley 15024-4 H-Tuff | OEM rods |  |
 | ✅ | Timing belt kit | Cosworth / RCM High Grip tensioner + Cosworth belt | OEM timing kit | Kevlar belt 300pct stronger than OE |
 
@@ -106,7 +106,7 @@
 | ✅ | Midpipe | XForce part of E4-SW05-MP01-CBS | OEM midpipe | INCLUDED IN THE XFORCE CAT-BACK - not a separate part. The downpipe-to-midpipe joint is therefore downpipe-to-catback |
 | ✅ | TGV deletes | IAG | OEM TGVs | **FSM: IN TGV content void** · IAG TGV deletes. Bought used. Holes drilled slightly to bolt to the intake manifold |
 | ✅ | Turbo inlet | Forced Performance FP 8005010A 84mm | OEM inlet | 84mm silicone; fits FP 84mm FAP cover; has recirc return bung + Mishimoto BPV recirc hose |
-| ✅ | Turbocharger | Forced Performance FP STi Red HTZ R690701874 | OEM VF-series | USED, ~15k mi low-boost street per PO (bought new). PO spec 2026-08-25: JOURNAL BEARING, welded internal WG flapper (correct for EWG), 10cm hot side, billet wheel, 84mm cover. Feed = full flow, NO restrictor |
+| ✅ | Turbocharger | Forced Performance FP STi Red HTZ R690701874 | OEM VF-series | USED, ~15k mi low-boost street per PO (bought new). PO spec 2026-08-25: JOURNAL BEARING, welded internal WG flapper (correct for EWG), 10cm hot side, billet wheel, 84mm cover. Feed = full flow NO restrictor |
 | ✅ | Uppipe | PLM 38mm EWG | OEM uppipe | Bundle price with wastegate; 2-bolt flange matches Perrin collector |
 | ✅ | Wastegate | TiAL MVS 38mm | OEM internal WG | Spring pressure UNKNOWN - record when fitted |
 | ✅ | Wastegate spring stack | TiAL Black + Blue = 1.2 bar / 17.4 psi |  | *[in-stock]* **FSM: Sets MINIMUM boost - cannot run below this** · QUEUED to install. This is the boost FLOOR. See BOOST FLOOR note - reconsider for break-in |

@@ -67,7 +67,7 @@
 | Component | Spec |
 |---|---|
 | Crankshaft | Subaru OEM nitride-treated STi, **12200AA430** |
-| Pistons | Manley **612000C-4**, 99.75mm std stroke, std bore, **8.5:1 dish** |
+| Pistons | Manley **612002C-4** Platinum Series, dished, **99.75mm** bore, 1.209" compression height, w/ rings, **8.5:1**. Box label 08/13/20: **410-411 g w/o pin**. PN corrected 2026-08-25 from 612000C-4 (read off the box) |
 | Rods | Manley **H-Tuff 15024-4** |
 | Oil pump | **11mm**, 15010AA360 |
 | Damper | Fluidampr **531101** |

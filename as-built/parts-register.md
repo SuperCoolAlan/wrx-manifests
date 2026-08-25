@@ -26,7 +26,7 @@
 | ✅ | Main bearings | King STDX (race series) | OEM | Mains fine-tuned by mixing shell halves; see as-built-engine-specs.md |
 | ✅ | Oil filters | Wix 57712XP | OEM filter | *[to-buy]* x5 for break-in schedule. IAG specifies OEM or Wix XP. 23 psi bypass. PRE-FILL before install |
 | ✅ | Oil pump | Subaru 15010AA360 | 10mm OEM pump | 11mm high-volume |
-| ✅ | Pistons | Manley 612000C-4 | OEM pistons | EJ257 99.75mm std stroke std bore 8.5:1 dish |
+| ✅ | Pistons | Manley 612002C-4 | OEM pistons | Platinum Series dished, 99.75mm, 1.209" CH, w/ rings, 410-411g w/o pin (box 08/13/20). PN corrected from 612000C-4 · 8.5:1 dish |
 | ✅ | Rod bearings | King STD (race series) | OEM | Ran STD rod bearings. Kit on hand: CR4125XPG STDX pMax Black — mixed from a second kit; ⚠ verify STD vs STDX installed |
 | ✅ | Rods | Manley 15024-4 H-Tuff | OEM rods |  |
 | ✅ | Timing belt kit | Cosworth / RCM High Grip tensioner + Cosworth belt | OEM timing kit | Kevlar belt 300pct stronger than OE |

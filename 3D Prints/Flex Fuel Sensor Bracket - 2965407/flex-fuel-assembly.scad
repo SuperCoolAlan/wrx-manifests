@@ -147,10 +147,25 @@ module sensor() {
             rotate([0, (conn_dir < 0) ? 180 : 0, 0]) cylinder(d = 14, h = conn_boot);
 }
 
-module hose_stubs() {
-    color("#8b1a1a", 0.35) for (s = [-1, 1])
+module hose_stubs(sides = [-1, 1]) {
+    color("#8b1a1a", 0.35) for (s = sides)
         translate([pax, pay, seat_z + s*(body_w/2 + port_len)])
             rotate([0, s < 0 ? 180 : 0, 0]) cylinder(d = hose_d, h = hose_len);
+}
+
+// 90-degree hose end on one port: short socket out along the port axis, then
+// the hose leg turns square off it. dir_deg clocks the leg about the port axis:
+// 0 points toward -X (the loop/bottom end of the sensor), +90 lifts it to +Y
+// (off the plate face). Socket/leg are [approx] envelope numbers.
+module hose_stub_90(s = 1, dir_deg = 0, socket = 20, leg = 40) {
+    color("#8b1a1a", 0.35)
+        translate([pax, pay, seat_z + s*(body_w/2 + port_len)])
+            rotate([0, s < 0 ? 180 : 0, 0]) {
+                cylinder(d = hose_d, h = socket);
+                translate([0, 0, socket - hose_d/2])
+                    rotate([0, 0, dir_deg]) rotate([0, -90, 0])
+                        cylinder(d = hose_d, h = leg);
+            }
 }
 
 module assembly() {

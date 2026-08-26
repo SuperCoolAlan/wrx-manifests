@@ -3,7 +3,7 @@
 Synthesized 2026-07-21 from: IAG Engine Installation Doc (Oct 2023 PDF), Raw Performance
 (Ron, ex-Axis Power Racing, via IWSTI), and forum consensus (NASIOC/IWSTI builder-conservative
 school). Tailored to THIS build: self-assembled forged EJ257, stock cams (no new-cam break-in
-needed), Link G4X + Ben's base map, EWG w/ 10.15 psi spring (decided 2026-08-25), FP Red, IAG pan (5.5–6 qt),
+needed), Link G4X + Ben's base map, EWG w/ GREEN 4.35 psi spring for break-in (installed 2026-08-26; swap to 10.15 psi after break-in, before dyno tune — CPU-34), FP Red, IAG pan (5.5–6 qt),
 Motul Break-In 10W-40 (108080), Wix 57712XP filters.
 
 ## Fuel rule
@@ -58,9 +58,9 @@ Motul Break-In 10W-40 (108080), Wix 57712XP filters.
 
 ## Phase 5 — 250 → 750 miles
 - Rev ceiling ramps: **+250 rpm per 250 miles** (Raw formula) — ~4,750 @ 500, ~5,000 @ 750
-- Still essentially zero boost — NOTE: Raw allows wastegate-spring boost after 300 mi, but
-  their assumption is a 10–12 psi spring, which our 10.15 spring now matches — but the
-  stronger reason stands: the base map is UNTUNED → follow IAG: no meaningful boost until the tune
+- Still essentially zero boost — NOTE: Raw allows wastegate-spring boost after 300 mi
+  (their assumption is a 10–12 psi spring; our break-in spring is the green 4.35, even softer) —
+  but the stronger reason stands: the base map is UNTUNED → follow IAG: no meaningful boost until the tune
 - Vacuum check: when idle/decel manifold vacuum stops improving change-to-change,
   rings are seated (Motoman-school signal, readable in Link logs)
 - **OIL CHANGE #4 @ 750 mi** + filter + washer → **switch to 300V Competition 5W-40**

@@ -121,7 +121,11 @@ bolt_clear_dia    = 5.5;
 nut_af            = 8.0;
 nut_pocket_af     = 8.2;     // +0.2 light press so the nut stays put
 nut_thickness     = 4.7;
-nut_pocket_relief = 1.5;     // spare thread depth past the nut
+nut_pocket_fit    = 0.2;     // axial fit so the nut fully seats, just sub-flush.
+                             // (The old 1.5mm "thread relief" is gone: the bolt
+                             // comes in from the FRONT, so its tip runs out into
+                             // the pocket's open rear mouth — the relief only
+                             // thinned the clamped floor, 1.8mm at panel_t 8.)
 insert_length         = 10.0;
 insert_pilot_dia      = 6.65;  // validated melt-bore (fuse-insert-dia-test-3)
 insert_seat_clearance = 0.3;
@@ -406,11 +410,11 @@ module m5_mount(x, z, clear_d = bolt_clear_dia) {
     } else {
         translate([x, -1, z]) rotate([-90, 0, 0])
             cylinder(d = clear_d, h = panel_t + 2, $fn = 32);
-        // Bolt tension pulls the nut onto the pocket floor, so the extra depth
-        // past the nut is thread relief — do not remove it.
-        translate([x, nut_thickness + nut_pocket_relief, z]) rotate([90, 0, 0])
+        // Bolt tension pulls the nut onto the pocket floor. Pocket is only
+        // nut-deep now: the clamped floor is panel_t - 4.9 = 3.1mm of meat.
+        translate([x, nut_thickness + nut_pocket_fit, z]) rotate([90, 0, 0])
             cylinder(d = nut_pocket_af / cos(30),
-                     h = nut_thickness + nut_pocket_relief, $fn = 6);
+                     h = nut_thickness + nut_pocket_fit + 1, $fn = 6);
     }
 }
 

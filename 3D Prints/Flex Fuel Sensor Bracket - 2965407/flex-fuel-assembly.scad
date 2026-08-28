@@ -155,15 +155,17 @@ module hose_stubs(sides = [-1, 1]) {
 
 // 90-degree hose end on one port: short socket out along the port axis, then
 // the hose leg turns square off it. dir_deg clocks the leg about the port axis:
-// 0 points toward -X (the loop/bottom end of the sensor), +90 lifts it to +Y
+// 0 points toward -X (the loop/bottom end of the sensor), +90 swings it to -Y
 // (off the plate face). Socket/leg are [approx] envelope numbers.
-module hose_stub_90(s = 1, dir_deg = 0, socket = 20, leg = 40) {
+// droop tips the leg past square, toward the port's outward axis — models a
+// hose that keeps curving after the elbow instead of a rigid 90.
+module hose_stub_90(s = 1, dir_deg = 0, droop = 0, socket = 20, leg = 40) {
     color("#8b1a1a", 0.35)
         translate([pax, pay, seat_z + s*(body_w/2 + port_len)])
             rotate([0, s < 0 ? 180 : 0, 0]) {
                 cylinder(d = hose_d, h = socket);
                 translate([0, 0, socket - hose_d/2])
-                    rotate([0, 0, dir_deg]) rotate([0, -90, 0])
+                    rotate([0, 0, dir_deg]) rotate([0, droop, 0]) rotate([0, -90, 0])
                         cylinder(d = hose_d, h = leg);
             }
 }

@@ -1,41 +1,126 @@
 # Electrical Grounding & Big 3 Notes — 04 WRX + EJ257 Build
 
-**Date:** 2026-05-24
+**Written:** 2026-05-24 · **Substantially revised:** 2026-09-02
 **Build:** 2004 USDM WRX wagon + 2005-era EJ257 + 06 STI intake
-**Context:** High-output alternator (250A class) + 600-700W RMS audio install
+**Context:** Singer 200A alternator (220A peak, 150A idle) + 600-700W RMS audio install
+**Live plan:** Linear CPU-92 · **Diagram:** https://claude.ai/code/artifact/48d2bb6d-593b-402a-b8e7-9dbb591cb25f
+
+> **2026-09-02 revision changed three things materially.** If you read an earlier printout, re-read this file.
+> 1. The **GE-1 / GB-1 identification below was wrong** and is corrected.
+> 2. The **chassis ground went 4 AWG -> 1/0**.
+> 3. The **fuse went 250A ANL -> 225A MEGA**, and the bridge between fuse holders is a **formed copper bar**, not cable.
+> Units are **metric** throughout this revision.
 
 ## OEM Ground Points — 2004 WRX Engine Bay
 
-Confirmed from 2004 Impreza FSM (Wiring Section G1870GE7), Turbo (WRX/STI) diagrams. FSM labels: **GE** = engine, **GB** = body.
+FSM labels: **GE** = engine ground, **GB** = body ground, **GR** = radio ground (legend on WI-8, binder 7-10).
 
-| # | FSM | Location | OEM gauge | Big 3 action |
-|---|---|---|---|---|
-| 1 | **GE-1** | Battery– → engine block (big lug on driver-side bell housing/starter area, under TMIC). Main battery-to-engine cable. | ~6 AWG | **Supplement with 1/0 OFC** — parallel from batt– lug to same engine lug |
-| 2 | **GB-1** | Battery– → driver-side inner fender (pigtail off main neg cable, near battery tray) | ~10-12 AWG | **Supplement with 4 AWG marine tinned** — chassis return path is lower-current than engine return, so 4 AWG is sufficient; saves cost vs 1/0 |
-| 3 | **GE-2** | Braided strap from rear of driver-side cylinder head / intake-manifold stud → firewall/chassis | ~8 AWG braided | **Supplement with 4-6 AWG braided** — NOT 1/0; this is low-current sensor return |
-| 4 | **GB-2** | Front body ground, passenger side near horn/headlight area | ~12-14 AWG | **Skip** — low-current accessory ground only, not Big 3 relevant |
+> ### CORRECTED 2026-09-02 — GE-1 and GB-1 are NOT the battery cables
+>
+> An earlier version of this table described GE-1 as the battery-to-block cable and GB-1 as the battery-to-fender pigtail, and told you to bolt 1/0 onto them. **Both were wrong.** Read from the FSM ground-distribution sheets:
+>
+> - **GE-1** (GND-09, WI-31 / binder 7-33) collects the **ECM, ignition coils 1-4, IAC solenoid, PCV diagnosis connector, neutral position switch, VSS and combination meter.** It is a *signal* harness ground eyelet carrying single-digit amps.
+> - **GB-1** (GND-01, WI-23 / binder 7-25) collects the **sub fan motor, headlight lo-beams, clearance and turn lights, fog light and headlight levelers.** A lighting/fan harness ground.
+>
+> **Do not land Big 3 cable on either.** The heavy battery cables do not appear in the GE/GB scheme at all — the FSM only draws harness, not cable assemblies, so battery-to-block, battery-to-starter and alternator B+ are absent from these illustrations. **The Big 3 landing points are physical lugs you identify on the car**, which is what the string mock-up is for.
+
+| FSM ref | What it actually is | Physical location drawing | Big 3 relevance |
+|---|---|---|---|
+| **GE-1** | ECM / coils / IAC / VSS harness ground | **WI-187, binder 7-387** (2005 STi engine harness; the 2004 equivalent is WI-182 / 7-184) | Not a Big 3 landing point. But it is the reference the Link's knock, MAP and O2 readings sit on — which is what makes the engine→chassis bond worth doing. |
+| **GE-2** | Engine → firewall/chassis strap, rear of driver head | Same drawing, grid A-1/2 | **Supplement it** — this is run 7 |
+| **GB-1** | Lighting / fan harness ground | **WI-173, binder 7-175** (front harness), grid B-1 | Not a Big 3 landing point |
+| **GB-2** | Front body ground, passenger side | Same drawing, grid C-4 | Skip |
+
+**OEM gauges are not published.** The FSM wire table (WI-8 / binder 7-10) tops out at 8 mm² / 67 A and covers harness wire only, not battery cables. Any gauge figure for the heavy cables has to be measured.
 
 **Transmission ground:** MT WRX has NO dedicated heavy trans-to-chassis strap. Trans grounds through bell housing bolts → engine block → GE-1. No separate Big 3 candidate.
 
 **No OEM grounds at strut towers or pitch stop bracket.** Those are aftermarket-only additions.
 
-## The Big 3 Wiring Plan
+## The Big 3 Wiring Plan (revised 2026-09-02)
 
-Three new runs, **gauged by current path**:
+**Big 3 + 1.** Four functional connections. Everything else in the bay is either an OEM cable that stays put or the audio branch riding on the second fuse holder.
 
-1. **Battery+ → Alternator B+ stud** — **1/0 marine tinned red** (~5 ft) + **250-300A ANL fuse near battery+**. Carries full alternator output.
-2. **Battery– → Engine block (GE-1)** — **1/0 marine tinned black** (~12 in). Returns full alternator + cranking current. Stays 1/0.
-3. **Battery– → Chassis (GB-1)** — **4 AWG marine tinned black** (~8 in). Chassis return is lower-current (lights, fans, accessories) — 4 AWG is sufficient and saves cost.
+| # | Run | Gauge | Carries | Protection |
+|---|---|---|---|---|
+| 1 | Alternator B+ → 5001-A load stud | **1/0** | 200 A cont / 220 A peak | **225 A MEGA** |
+| 2 | Battery + → 5001-A battery stud | **1/0** | same | **unfused** — keep to tens of mm |
+| 3 | 5001-A ↔ 5001-B bridge | **copper bar** | ~95 A (audio only) | — |
+| 4 | 5001-B load stud → amps | 4 AWG *(existing)* | ~95 A peak | **125 A MEGA** |
+| 5 | Battery − → engine block | **1/0** | 200 A return + ~700 A cranking | — |
+| 6 | Battery − → chassis | **1/0** | ~125 A chassis return | — |
+| 7 | Engine block → chassis (GE-2) | **4 AWG braid** | ~1/3 of run 6 | — |
 
-**Optional Big 3+1:** Supplement GE-2 with 4-6 AWG braided strap (engine block → chassis behind intake). Highest-return add-on for HO alternator builds — improves ECU/sensor ground cleanliness on the Link G4X (knock, MAP, O2 readings).
+Runs 1, 2 and 3 are one electrical path interrupted by the fuse block. Runs 4 and the amp grounds are already installed.
 
-### Cable budget
+### Why these gauges
 
-| Build level | Cable needed |
+**ABYC E-11 Table 6A, 105 °C insulation, _inside engine spaces_** — the column that matches a hot Subaru bay and the marine tinned cable specced below:
+
+| AWG | Outside engine | **Inside engine** |
+|---|---|---|
+| 1/0 | 285 A | **242 A** |
+| 1 | 245 A | 208 A |
+| 2 | 210 A | 178 A |
+| 4 | 160 A | **136 A** |
+| 8 | 80 A | 68 A |
+
+1/0 is the first size that legitimately covers 200 A in a hot bay. That is why it is not overkill on runs 1, 2 and 5 — and 4 AWG's 136 A leaves no headroom over run 6's load, which is why run 6 went to 1/0 as well.
+
+### The chassis run is NOT low-current — corrected 2026-09-02
+
+An earlier version of this file called the chassis return "lower-current (lights, fans, accessories)" and specced 4 AWG. **That was wrong.** Per the FSM ground-distribution sheets (GND-01…08), nearly everything on the car grounds to the **body**, not the block:
+
+| Load | Draw |
 |---|---|
-| Strict Big 3 (B+ + GE-1 in 1/0; GB-1 in 4 AWG) | **6 ft red 1/0 + 1-2 ft black 1/0 + 1-2 ft black 4 AWG** |
-| Big 3 + GE-2 supplement | Above + 2 ft 4 AWG (or 4-6 AWG braided) |
-| Big 3 + GE-2 + audio amp grounds | **6 ft red 1/0 + 3 ft black 1/0 + 8 ft black 4 AWG** (Boss + RF amp grounds rolled in) |
+| Audio amps, peak | 95 A |
+| Radiator fans, both | 15-25 A |
+| Rear defogger | 15-20 A |
+| Blower motor, high | 10-20 A |
+| DW400 fuel pump | 17-20 A |
+| Headlights | 10-15 A |
+| Seat heaters, wipers, accessories | 15-20 A |
+
+Theoretical sum ~220 A; a realistic simultaneous winter case is **~125 A continuous** against 4 AWG's 136 A. **Run 6 is 1/0.**
+
+**Run 7 is not a zero-current signal wire either.** It sits electrically parallel to run 6 (chassis → block → run 5 → battery−) and takes roughly a third of the chassis return. It is 4 AWG **braid rather than cable** because the engine rocks on its mounts and stranded cable work-hardens across a joint that moves.
+
+### Fusing — a fuse protects the CABLE, not the source
+
+| Run | Cable ampacity | Peak load | Fuse |
+|---|---|---|---|
+| 1 | 242 A (1/0) | 220 A | **225 A MEGA** |
+| 4 | 136 A (4 AWG) | 85-95 A | **125 A MEGA** |
+
+- **225 A, not 250 A.** 250 A sits *above* 1/0's 242 A rating — the cable would fail before the fuse. 225 A brackets it: above the Singer's 220 A peak so it won't nuisance-blow, below 242 A so the cable is protected.
+- **125 A, not 100 A.** 100 A is too close to the 85-95 A combined amp peak and would nuisance-blow on bass transients.
+- **Ordered 2026-09-02:** Littelfuse 298 Series MEGA, `0298225.ZXEH` and `0298125.ZXEH`, 2× each from Mouser. M8 bolt-down, **2000 A interrupting @ 32 VDC**, diffusion-pill time-delay. Bought from an authorized distributor because a fuse's rating is invisible and counterfeit MEGA/ANL fuses are common in the car audio market.
+
+### Cable budget (revised)
+
+| Item | Qty | Runs |
+|---|---|---|
+| 1/0 marine tinned **red** | ~1.5 m | 1, 2 |
+| 1/0 marine tinned **black** | ~1.2 m | 5, 6 |
+| 4 AWG braided strap | 305 mm | 7 |
+
+Run 3 is bar, not cable. Run 4 and the amp grounds are already installed. **These are upper bounds pending the string mock-up** — run 6 is a known ~200 mm; runs 1 (~0.9-1.2 m) and 5 (~0.3-0.6 m) still need roping.
+
+### Bridge bus bar (run 3)
+
+The two Blue Sea 5001 holders mount **vertically, side by side**, per `3D Prints/battery-tray/battery-tray-mtx35.scad` (`fuse_holders_vertical = true`). Holder X centres 23.95 / 64.05 → **stud span 40.10 mm**, studs **M8** at **12.4 N·m** max.
+
+1/0 needs a 60-90 mm bend radius and cannot make a 40 mm span, so the bridge is a **formed C110 copper bar, 19 × 3.2 mm** (61 mm², beats 1/0's 53.5 mm²) — a squared U bent around a 13 mm form, twisted 90° at each end to sit flat on the studs. Full fabrication sequence on Linear CPU-92; the short version is **anneal first, drill last**.
+
+**Bridge the two _upper_ studs, and land the battery+ feed on the alternator holder's stud** (X 23.95). That keeps the alternator's 200 A off the bridge — it then only ever carries audio current. Feeding the other holder instead would put the full 200 A across the link.
+
+### Do NOT delete the OEM alternator lead
+
+Per **WI-17 (binder 7-19, and 7-217 in the STi volume — both agree)**, the alternator's B+ leaves connector F25 as **2× 8 AWG white** through F35 and ties to the **main fuse box bus, downstream of SBF-1 (80 A on turbo models)**. There is no OEM alternator-to-battery cable to delete.
+
+Deleting it would force the car's entire 60-80 A engine load to draw from the battery post **through SBF-1**, which would sit at the edge of an 80 A fuse on a cold night with lights, fans and wipers up. Keep it; the new 1/0 runs in parallel and takes the majority share, and SBF-1 remains its own protection.
+
+⚠ **One open question:** iWire states Subaru runs those 2× 8 AWG "to the fusebox **and the battery**," which conflicts with the schematic. Settle it on the car — disconnect the battery, pull SBF-1, check continuity from the alternator B+ stud to the battery + terminal. Continuity means a direct conductor bypassing the fuse. **The plan is unchanged either way.**
 
 ### Cable type decision (2026-05-31)
 
@@ -58,27 +143,27 @@ Sources:
 
 Avoid: random eBay "marine" cable without UL 1426 certification; any CCA (copper-clad aluminum) at any price.
 
-### Hardware checklist — FINAL ORDER (2026-05-24)
+### Hardware checklist — revised 2026-09-02
 
-| Item | Qty | Notes |
+*Live version on Linear CPU-98.*
+
+| Item | Qty | Status |
 |---|---|---|
-| 1/0 AWG marine tinned **red** (Ancor or equiv) | **6 ft** | B+ run (alt to battery+) — 5 ft + 1 ft margin |
-| 1/0 AWG marine tinned **black** | **3 ft** | GE-1 supplement (engine block return, full alt current) — 1-2 ft + margin |
-| 4 AWG marine tinned **black** | **8 ft** | GB-1 (1 ft) + GE-2 supplement (2 ft) + Boss R1100M amp ground (2 ft) + RF P400-4 amp ground (2 ft) + 1 ft margin |
-| 250-300A ANL fuse + holder | 1 | Near battery+, mandatory safety |
-| 1/0 ring terminals | 6× | Big 3 ends (3 runs × 2 ends each) |
-| 4 AWG ring terminals | 6× | Amp grounds (2 ends × 2 amps) + GE-2 (2 ends) |
-| Adhesive-lined 3:1 heat shrink (variety pack) | 1 | Over every crimp + 1 in cable |
-| PET split braid loom 1/2" nominal | **25 ft** | For 1/0 Big 3 engine bay runs (~7 ft used, rest for future projects). PET = 125°C continuous, standard engine bay loom |
-| PET split braid loom 1/4" nominal | **25 ft** | For 4 AWG GE-2 supplement + future amp ground loom (~2 ft used, rest for spares) |
-| Star washers | 8× | Chassis ground points |
-| Dielectric grease | 1 tube | All ground point contact surfaces |
-| Crimper | 1 | **Renting hydraulic crimper** (decided 2026-05-24). Amazon mechanical 1/0 crimper user purchased is backup / for smaller gauges. |
+| 1/0 marine tinned **red** | ~1.5 m | ⏸ pending mock-up |
+| 1/0 marine tinned **black** | ~1.2 m | ⏸ pending mock-up |
+| 4 AWG braided ground strap, 305 mm | 1 | Kimball Midwest 27490, N.O.S. |
+| C110 copper flat bar, 19 × 3.2 mm, 305 mm | 1 | ✅ ordered 2026-09-02 |
+| Littelfuse `0298225.ZXEH` 225 A MEGA | 2 | ✅ ordered — Mouser |
+| Littelfuse `0298125.ZXEH` 125 A MEGA | 2 | ✅ ordered — Mouser |
+| M8 1/0 ring lugs · heat shrink · PET loom · washers · dielectric grease · cable cutter | — | ✅ on hand |
+| Battery + and − post terminals | 2 | ⏸ blocked on OEM cable gauge |
+| 8.5 mm drill bit, 4× M8 flat washers | — | for the bridge bar |
+| Hydraulic crimper | 1 | renting — **unless** cable is bought made-to-length with ends crimped |
 
-**DIY total budget:** ~$110-170
+**Both battery posts need multi-connection terminals:** + takes the 1/0 to the fuse pair plus the OEM cable to the main fuse box; − takes 1/0 to the block plus 1/0 to the chassis. The + side cannot be specified until the OEM cable is measured.
 
-**Decision (2026-05-24):** Going DIY route, not the JS Alternators Big 3 kit. Reasons:
-- JS kit does NOT include an ANL fuse (mandatory safety component at 250A)
+**Decision (2026-05-24, still holds):** Going DIY route, not the JS Alternators Big 3 kit. Reasons:
+- JS kit does NOT include a fuse (mandatory safety component)
 - DIY saves ~$10 overall vs adding a separate fuse to the kit
 - DIY allows right-sized cable lengths (~8 ft) vs kit overbudget (~14 ft)
 - DIY allows choice of marine-grade tinned cable (better fit for engine bay than welding cable OR audio OFC — see cable type decision above)
@@ -108,16 +193,18 @@ All cable lengths in the hardware checklist are **rough estimates from engine ba
 
 ### Engine bay geometry — rough estimates only
 
-These are the numbers in the hardware checklist below, but treat them as upper-bound estimates pending the mock-up:
+Current estimates, metric, revised 2026-09-02. Treat as upper bounds pending the mock-up:
 
-| Run | Estimated length | Confidence |
+| Run | Estimate | Confidence |
 |---|---|---|
-| Batt+ → Alt B+ (1/0 red) | 5-6 ft | Rough — single longest routed run; biggest mock-up benefit |
-| Batt– → GE-1 engine block (1/0 black) | 1-2 ft | Higher confidence — battery and engine lug are nearby |
-| Batt– → GB-1 fender (4 AWG black) | <1 ft | Higher confidence — fender stud is right next to battery |
-| Back of head → firewall GE-2 (4 AWG) | 1-2 ft | Medium — verify head stud and firewall ground location |
-| Boss amp ground (4 AWG) | 1.5-2 ft | Depends on amp location → seat rail bolt distance |
-| RF amp ground (4 AWG) | 1.5-2 ft | Same |
+| 1 — Alternator B+ → 5001-A (1/0 red) | **0.9-1.2 m** | Alan's estimate 2026-09-02, replacing an earlier 1.5-1.8 m guess. Longest run; biggest mock-up benefit. |
+| 2 — Battery + → 5001-A (1/0 red) | tens of mm | The unfused stub — deliberately as short as possible |
+| 3 — Bridge | 125 mm developed | Copper bar, not cable. Span is 40.10 mm from the tray model. |
+| 5 — Battery − → engine block (1/0 black) | **0.3-0.6 m** | Needs roping; block lug not yet identified on the car |
+| 6 — Battery − → chassis (1/0 black) | **~200 mm** | ✅ Known — Alan 2026-09-02, no roping needed |
+| 7 — Engine block → chassis (4 AWG braid) | 305 mm | ✅ Kimball 27490, length confirmed adequate |
+
+**Amp power feed and amp grounds are already installed** — not in this budget.
 
 ## Audio SQ Considerations
 
@@ -230,7 +317,9 @@ Engine bay grounds are NOT on this ladder.
 
 ## Confidence / Source Flags
 
-- **Confirmed:** GE-1, GE-2, GB-1, GB-2 labels from 2004 Impreza FSM PDF; XS Power BIG3XS kit BOM (14 ft) for pre-made-kit overbudget claim
+- **Confirmed:** GE/GB label *scheme* from the FSM (WI-8 legend); what GE-1 and GB-1 actually collect, read off GND-09 (WI-31) and GND-01 (WI-23); their drawing locations on WI-187 and WI-173; alternator B+ routing to the main fuse box on WI-17, verified in both the 2004 and 2005 volumes; SBF-1 = 80 A on turbo models; ABYC E-11 Table 6A ampacities; Blue Sea 5001 stud spec; Littelfuse 298 series ratings; holder geometry from `battery-tray-mtx35.scad`
+- **⚠ Previously stated as confirmed but WRONG (corrected 2026-09-02):** that GE-1 and GB-1 were the heavy battery cables, and that the chassis return was low-current enough for 4 AWG
+- **Open:** whether the OEM alternator lead also lands on the battery post (iWire says it does; the schematic shows fuse-box only) — settle with a continuity test, SBF-1 pulled
 - **Inferred:** OEM cable gauges (FSM doesn't publish AWG); GE-2 physical location at rear of driver head (forum-corroborated, not FSM-bolt-callout)
 - **Estimated, NOT verified:** Per-run cable lengths (see "Cable Length — ESTIMATES, NOT VERIFIED" section above). Earlier notes attributed lengths to ClubWRX irvin787878 thread; that attribution was an inference from a Google snippet of a now-paywalled thread, not a verified verbatim cut list. String mock-up required before cutting.
 - **Forum consensus:** Strict Big 3 + OEM supplements > many novel grounds; RCA routing as primary whine fix

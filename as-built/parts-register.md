@@ -9,7 +9,7 @@
 **Source of truth:** [`parts.csv`](parts.csv) — edit that, then regenerate.
 **Confidence:** ✅ confirmed · ⚠️ recorded but unverified · ❓ needs confirmation
 
-**202 parts** — 150 installed · 22 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
+**203 parts** — 150 installed · 23 to-buy · 15 in-stock · 3 undecided · 3 fabricate · 3 verify-existing · 2 not-fitted · 1 deferred · 1 planned · 1 sell · 1 spare
 
 ---
 
@@ -57,6 +57,7 @@
 | ✅ | AVCS oil feed line LH (driver) | Subaru OEM | OEM oil pipe LH | OEM line retained. Mixed on purpose - OEM driver side, HEL braided passenger side |
 | ✅ | AVCS oil feed line RH (passenger) | HEL HEL-OF34 stainless braided | OEM oil pipe RH | PURCHASED - kit is a pair, one used. Line fitted; BANJO BOLT STILL NEEDS SHORTENING 4mm because the HEL fitting is 4mm shorter than OEM. See CPU-84 |
 | ✅ | Air-oil separator | IAG Street Series V2 | Entire OEM PCV system | **FSM: LU PCV content void; all OEM PCV hoses removed** · USED great condition w/ all lines; drain per interval; cap PCV portions of 21141AA131 |
+| ✅ | Crankcase pressure balance lines (x2, long runs) | Parts-store PCV-rated hose, OEM ID | Subaru OEM 99081AA060 / 99071AB333 | 2026-09-09: straight hose instead of the OEM molded lines. Short 90° 99071AB352 stays OEM (in hand). OEM lines were never ordered (corrected 2026-09-09). CPU-96 |
 | ✅ | Breather hose - crank port to Y fitting | 3/4in ID |  | *[to-buy]* Crank breather port -> OEM plastic Y fitting -> IAG AOS. MUST be oil-resistant: NBR/nitrile or fluorosilicone-lined. NOT plain silicone - it swells in oil vapour. Measure the run AFTER the turbo is mounted. CPU-38 |
 | ✅ | Heat sleeve | DEI 1in ID | n/a new | *[in-stock]* IN HAND 2026-08-21, 1in ID - supersedes the 5/8in figure previously recorded. Clears the 5/8in ID turbo oil drain comfortably. CHECK the 3/4in ID breather hose: its OD can reach 1in, which would be a marginal fit. For AOS and turbo lines near the header/uppipe |
 | ✅ | Oil dipstick tube | Subaru OEM STI/J3 |  | Tube only - verify dipstick rod separately |
@@ -106,6 +107,7 @@
 | ✅ | Midpipe | XForce part of E4-SW05-MP01-CBS | OEM midpipe | INCLUDED IN THE XFORCE CAT-BACK - not a separate part. The downpipe-to-midpipe joint is therefore downpipe-to-catback |
 | ✅ | TGV deletes | IAG | OEM TGVs | **FSM: IN TGV content void** · IAG TGV deletes. Bought used. Holes drilled slightly to bolt to the intake manifold |
 | ✅ | Turbo inlet | Forced Performance FP 8005010A 84mm | OEM inlet | 84mm silicone; fits FP 84mm FAP cover; has recirc return bung + Mishimoto BPV recirc hose |
+| ✅ | Turbo inlet clamp - turbo end | Mishimoto Stainless constant-tension T-bolt 3.39-3.7in (86.1-94.0mm) |  | *[to-buy]* ORDERED 2026-09-15. Sits over the silicone on the 84mm FAP cover lip. Caliper the fitted hose OD on arrival - want ~88-92mm; 93+ means go a size up. AEM-end clamp still unsized. CPU-105 / CPU-79 |
 | ✅ | Turbocharger | Forced Performance FP STi Red HTZ R690701874 | OEM VF-series | USED, ~15k mi low-boost street per PO (bought new). PO spec 2026-08-25: JOURNAL BEARING, welded internal WG flapper (correct for EWG), 10cm hot side, billet wheel, 84mm cover. Feed = full flow NO restrictor |
 | ✅ | Uppipe | PLM 38mm EWG | OEM uppipe | Bundle price with wastegate; 2-bolt flange matches Perrin collector |
 | ✅ | Wastegate | TiAL MVS 38mm | OEM internal WG | Spring pressure UNKNOWN - record when fitted |
@@ -188,6 +190,7 @@
 |:-:|---|---|---|---|
 | ✅ | Clutch | ACT Stage 2 - HD Performance Street | OEM | Stage 2 kit; supplied the throwout bearing |
 | ✅ | Clutch actuation | Subaru 2004 pedal/MC/hard pipe/slave |  | Both pull type 1.7 ratio 130-135mm; fork came with the 2011 6MT so is 6MT spec |
+| ⚠️ | Clutch slave rebuild kit | Ferguson seal kit (2004 WRX slave) | Aftermarket slave (returned) | Ordered 2026-09-05. Original slave bore inspected good; rebuild instead of replace. Aftermarket RockAuto/eBay slave returned |
 | ✅ | Clutch line | Subaru 2004 WRX STOCK |  | Stock rubber line retained. Part of the 2004 5MT actuation set feeding the 6MT |
 | ✅ | Clutch release fork | Subaru 2011 STi 6MT OEM | 5MT fork | CONFIRMED 2026-08-20: came off the 2011 6MT swap. Completes an internally-consistent 6MT release stack - 6MT flywheel + 6MT clutch + 6MT fork + 6MT bearing |
 | ✅ | Differential CV axle seal | Subaru OEM 806732200 |  | Purchased x2 |

@@ -15,7 +15,7 @@
 | Shifter linkage | ✅ CLOSED | Connected and working |
 | Axles | ✅ CLOSED | Alan reports correct fitment |
 | Driveshaft | ✅ CLOSED | Hybrid of 07 STi + wagon (possibly 2011) parts, assembled from forum research; length and splines verified correct |
-| **Clutch actuation** | ✅ **CLOSED 2026-08-20** | Fork = 2011 6MT OEM, bearing = ACT Stage 2 kit. Release stack is fully 6MT; 2004 pedal/MC/line/slave carry over |
+| **Clutch actuation** | ✅ **CLOSED 2026-08-20** | Fork = 2011 6MT OEM, bearing = ACT Stage 2 kit. Release stack is fully 6MT; 2004 pedal/MC/line/slave carry over. Slave being rebuilt (Ferguson kit), see 2026-09-05 log |
 | DCCD function | ⚠ OPEN | DCCDPro controller — needs *functional* verification at commissioning, not just continuity |
 | Speedo / VSS | ⚠ OPEN | iWire VSS Pro — same; verify against 07 STi cluster |
 
@@ -187,6 +187,9 @@ Alan is **not pulling the bellhousing now**. Disc reportedly low and due for a c
 **2026-08-23: physically verified.** The 2004 fork was found in storage and has an extra bend the 2011 fork lacks — the installed fork is the 6MT unit, no inference needed. Residual disengagement risk is now only the disc diameter (unmeasured) and MC/slave bore match. The forum-vs-FSM evidence split is now moot for this car: whatever the general answer is, the part in this bellhousing arrived with this gearbox.
 
 Residual risk is only that a previous owner swapped it before Alan got the trans. Confirm the PN at the next clutch job (batched with the disc-diameter check), but treat this as settled for planning.
+
+### 2026-09-05: original 2004 slave being rebuilt, aftermarket unit returned
+The aftermarket slave (RockAuto/eBay) is going back. The original 2004 unit leaked after handling; bore inspected and is good (no pitting, no wear ring), so a Ferguson seal kit is ordered and the original stays in the build. Likely cause is over-stroking the piston during handling, not a worn cylinder — inferred, not confirmed. On reinstall: bolt to the bellhousing with the pushrod on the fork before the pedal is touched. MC/slave bore match is unchanged and still closes at the bleed.
 
 ### Risk assessment: LOW
 The 6MT arrived as a complete transmission in a bundle, so absent a deliberate prior swap the installed fork is the one that came in it. Combined with the FSM showing a single shared turbo procedure, this is low priority.

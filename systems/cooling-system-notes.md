@@ -1,8 +1,10 @@
-# Cooling System Notes — 04 WRX + 07 EJ257 + 06 STI Intake
+# Cooling System Notes — 04 WRX wagon + EJ257 (05 short block, V25B heads)
 
 **Date:** 2026-05-23
-**Build:** 2004 USDM WRX wagon chassis + 2005-era EJ257 short block + 2006 STI intake manifold
+**Build:** 2004 USDM WRX wagon chassis + 2005-era EJ257 short block + **V25B (07) heads** + STI intake manifold
 **Donor parts source:** 2004 WRX (original cooling hard lines being reused)
+
+> **Intake manifold year does not affect anything on this page.** Alan, 2026-09-02: the cooling circuit is common across these model years, so the hard lines, the crossover and the bypass pipe are the same parts whichever STI manifold is fitted — and both pipes are already physically verified against the engine. Earlier revisions of this file called the manifold "2006 STI" in one line and "04-05 STI" in another; **its exact year is still unconfirmed**, and it is an induction question (TOC 4.2), not a cooling one. The `21141AA131` decision below turns on the **head** casting, not the manifold.
 
 ## Coolant Flow — Two Key Hard Lines
 
@@ -33,7 +35,7 @@ Reasoning:
 - Since PCV is being capped anyway (IAG AOS), PCV port alignment isn't functionally critical, BUT the mounting bracket geometry on AA131 is the era-match for V25B heads
 - AA131 also ~$50 cheaper than AA122
 
-Frankenstein engine note: 05 short block + V25B (07) heads + 04-05 STI intake manifold. Mixed-era build, so picking AA131 prioritizes head-era match (which is where PCV ports + likely bracket-feet alignment live).
+Frankenstein engine note: 05 short block + V25B (07) heads + STI intake manifold of unconfirmed year. Mixed-era build, so picking AA131 prioritizes head-era match — which is where the PCV ports and likely the bracket-feet alignment live. **The manifold year is not an input to this choice.**
 
 Supersession history: 21141AA120 → 21141AA122 (04-05 era) → 21141AA131 (06-14 STI / 06-07 WRX, current for V25B+ heads)
 

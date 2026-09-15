@@ -117,7 +117,8 @@ by  = plate_face_y;            // sensor bottom face — sits ON the plate
 pax = bx + port_x;             // fuel passage axis along X
 pay = by + port_y;             // fuel passage axis height off the plate face
 
-module sensor() {
+// boot = the loom run past the plug; callers that route their own cable drop it
+module sensor(boot = true) {
     color("#2b2b2b") difference() {
         union() {
             translate([bx, by, seat_z - body_w/2]) rbox(body_len, body_h, body_w, body_r);
@@ -142,7 +143,7 @@ module sensor() {
         translate([bx + conn_x - conn_w/2, by + conn_y - conn_h/2,
                    (conn_dir < 0) ? ccz - conn_len : ccz])
             cube([conn_w, conn_h, conn_len]);
-    color("#1a1a1a")
+    if (boot) color("#1a1a1a")
         translate([bx + conn_x, by + conn_y, ccz + conn_dir * conn_len])
             rotate([0, (conn_dir < 0) ? 180 : 0, 0]) cylinder(d = 14, h = conn_boot);
 }

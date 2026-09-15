@@ -34,7 +34,6 @@ show_ghost = true;   // FPR + cradle + sensor keep-out (%-modifier, never export
 // Clash checks. Render with check=N and read the console: "top level object is
 // empty" means that pair is clear. Anything else is an interference volume.
 //   1 bracket^FPR   2 bracket^sensor   3 FPR^sensor   4 mount^FPR   5 mount^sensor
-//   6 return fitting ^ sensor — this one SHOULD intersect: it is the hose joint.
 //   7 FPR^fusebox   8 sensor^fusebox — the v1 fitment failure, now guarded.
 check = 0;
 
@@ -43,10 +42,12 @@ chassis_hole_spacing = 80.0;  // c-c of the two pillar holes
 chassis_hole_d       = 8.5;   // [MEASURE] bolt not yet sized — 8.5 = M8 clearance
 chassis_hole_slot    = 3.0;   // slop per hole across the axis, absorbs c-c error
 chassis_standoff     = 17.0;  // bolt seat this far forward of the pillar wall
-chassis_hole_tilt    = 14.0;  // bolt axis rises this far above horizontal, nose
+chassis_hole_tilt    = 12.0;  // bolt axis rises this far above horizontal, nose
                               // forward. Too shallow and the panel's lower half
                               // kicks off the pillar wall (v5 fit, photo _008).
-stud_lift            = 5.0;   // chassis anchors (holes, boss pockets, keep-outs)
+                              // LEFT mount only since v8 — the right has its own:
+chassis_hole_tilt_r  =  8.0;  // RIGHT mount's tilt; the bar between blends the two
+stud_lift           = 5.0;   // chassis anchors (holes, boss pockets, keep-outs)
                               // raised this far in the BODY frame — i.e. the
                               // whole bracket hangs this much lower on the car.
                               // mount_pad_top MUST track this (9 + stud_lift) or
@@ -54,17 +55,17 @@ stud_lift            = 5.0;   // chassis anchors (holes, boss pockets, keep-outs
 // Fuse box: shares the RIGHT chassis mount, cannot move. The panel may slip
 // BEHIND it, but nothing mounted on the panel front may enter this volume.
 // All four faces are eyeballed from the v1 fitment photos — [MEASURE] them.
-fusebox_x_left  = -20.0;  // [MEASURE] left face of the box, bracket X
+fusebox_x_left  =   9.2;  // [MEASURE] left face of the box, bracket X — set for the
+                          // ~5mm plug-to-box gap seen at the v7 fit, not measured
 fusebox_x_right = -150.0; // far side, past the panel — exact value irrelevant
 fusebox_y0      = 30.0;   // [MEASURE] box rear face stands well off the pillar wall
                           // (v1 photo 004): the panel + parts can tuck in behind it
 fusebox_y1      = 120.0;  // forward extent
 fusebox_z_top   = -25.0;  // [MEASURE] top of the box body
-fusebox_z_bot   = -165.0; // bottom
-// L-shaped relief at the box's near top corner (v1 photo 004) — the closest
-// corner to the bracket is stepped, so the keep-out gives that bite back.
+fusebox_z_bot   = fusebox_z_top - 75.0;  // ~75mm tall per Alan (v7 fit), not measured
+// Stepped relief along the box's rear-left edge, full height (v1 photo 004, v7
+// fit) — the keep-out gives that bite back from top to bottom.
 fusebox_notch_dx  = 25.0; // [MEASURE] bite into the box from its left face
-fusebox_notch_dz  = 30.0; // [MEASURE] bite down from the box top
 fusebox_notch_len = 50.0; // ~2" per Alan, rearmost part of the box
 
 tower_boss_w         = 26.0;  // [MEASURE] boss width along X
@@ -152,7 +153,7 @@ panel_left_x = panel_left_meas + panel_left_ext;
 // Third mount: M5 bolt + washer into a chassis rivnut, bottom-right quadrant.
 // Plain clear hole — the rivnut is the thread, so no rear pocket. Position is
 // ours to choose; the rivet gets drilled at the car to match the print.
-version_tag = "asandov v7";  // engraved in the panel REAR face, below the sensor mount
+version_tag = "asandov v8";  // engraved in the panel REAR face, below the sensor mount
 version_pos = [33, -76];
 aux_hole    = [15, -88];
 aux_hole_d  = 5.5;
@@ -189,13 +190,13 @@ fpr_ear_center_above_base = 47.0;
 // The cradle is positioned by its own STL origin, then rotated in the panel
 // plane. Cradle-local axes: u = long axis, v = out of the mounting face,
 //// w = across (the bolt-hole line AND the fuel passage).
-ffs_ox  =  80;  // cradle-local origin, bracket X
-ffs_oz  = -41.0;  // cradle-local origin, bracket Z
+ffs_ox  =  79.45; // cradle-local origin, bracket X
+ffs_oz  = -39.35; // cradle-local origin, bracket Z
 ffs_oy  =   2.0;  // ... and forward of the PANEL FRONT FACE. Lifts the whole
                   // cradle off the plate; ffs_backing() grows to fill the gap,
                   // so this is the knob for the sensor's bottom fouling the
                   // body rather than moving ffs_oz.
-ffs_rot = 130.0;  // increasing = clockwise as viewed at the car (+X renders
+ffs_rot = 136.0;  // increasing = clockwise as viewed at the car (+X renders
                   // image-left). Body rides between the two chassis mounts —
                   // ffs_clearance_cut carves its slot through the shroud bar —
                   // and the connector exits clear of the fuse box.
@@ -278,7 +279,13 @@ bracket_steel_t      = 2.0;   // [approx]
 // ---- DERIVED --------------------------------------------------------------
 cx0 = 0;
 cx1 = chassis_hole_spacing;
-boss_axis_len = chassis_standoff / cos(chassis_hole_tilt);
+function boss_axis_len(tilt) = chassis_standoff / cos(tilt);
+function mount_tilt(cx) = cx == cx0 ? chassis_hole_tilt_r : chassis_hole_tilt;
+// Seat bar tilt at any X: each pad is flat at its own tilt, and the hull between
+// the pads' inner ends blends linearly — clips and fillets must follow the same.
+function tilt_at(x) = let (xa = cx0 + mount_pad_w/2, xb = cx1 - mount_pad_w/2,
+                           t  = min(1, max(0, (x - xa) / (xb - xa))))
+    chassis_hole_tilt_r + t * (chassis_hole_tilt - chassis_hole_tilt_r);
 // Seat bar's X span — the reach of the flat top face. ffs_backing() clips to it.
 bar_x0 = cx0 - mount_pad_w/2;
 bar_x1 = cx0 + chassis_hole_spacing + mount_pad_w/2;
@@ -306,7 +313,6 @@ else if (check == 2)   intersection() { bracket(); ffs_solid(); }
 else if (check == 3)   intersection() { fpr_solid(show_return = false); ffs_solid(); }
 else if (check == 4)   intersection() { mount_solid(); fpr_solid(); }
 else if (check == 5)   intersection() { mount_solid(); ffs_solid(); }
-else if (check == 6)   intersection() { fpr_return_fitting(); ffs_solid(); }
 else if (check == 7)   intersection() { fpr_solid(); fusebox_ghost(); }
 else if (check == 8)   intersection() { ffs_solid(); fusebox_ghost(); }
 // 9 sensor ^ everything above the top edge. MUST be empty: anything here is the
@@ -377,7 +383,7 @@ module ffs_clearance_cut() {
     intersection() {
         minkowski() {
             ffs_place() {
-                sensor();
+                sensor(boot = false);
                 hose_stubs(sides = [-1]);
                 hose_stub_90(1, ffs_inlet_clock, ffs_inlet_droop);
             }
@@ -441,9 +447,19 @@ function bottom_edge_pts() = concat(
 
 // Local frame on the bolt axis: origin on the hole centreline at the seat plane,
 // local +Z along the bolt axis (forward and up), local +X still along the wall.
-module mount_frame() {
+module mount_frame(tilt = chassis_hole_tilt) {
     translate([0, chassis_standoff, 0])
-        rotate([chassis_hole_tilt - 90, 0, 0]) children();
+        rotate([tilt - 90, 0, 0]) children();
+}
+
+// Runs children once per X slice with $sx0/$sx1 and that slice's $tilt, so a
+// tilted clip or fillet tracks the blended bar instead of one fixed angle.
+module tilt_slices(x0, x1, n = 16) {
+    for (i = [0 : n - 1])
+        let ($sx0 = x0 + i * (x1 - x0) / n,
+             $sx1 = x0 + (i + 1) * (x1 - x0) / n + (i < n - 1 ? 0.01 : 0),
+             $tilt = tilt_at(x0 + (i + 0.5) * (x1 - x0) / n))
+            children();
 }
 
 module chassis_bosses() {
@@ -462,12 +478,17 @@ module chassis_bosses() {
 // plane: quad corner->T1->C->T2 minus the circle at C leaves the fillet, with
 // C placed on the corner bisector so the arc lands tangent on both faces.
 module shroud_fillet(edge_z, fx0, fw) {
+    tilt_slices(fx0, fx0 + fw)
+        translate([$sx0, 0, 0]) rotate([90, 0, 90])
+            linear_extrude($sx1 - $sx0) shroud_fillet_2d(edge_z, $tilt);
+}
+
+module shroud_fillet_2d(edge_z, tilt) {
     r  = shroud_fillet_r;
     cy = panel_t;                // the corner: panel front face...
     cz = edge_z - shroud_root_h; // ...at this segment's root-strip bottom edge
-    by = chassis_standoff + (mount_pad_h/2)*sin(chassis_hole_tilt)
-         + mount_pad_t*cos(chassis_hole_tilt);
-    bz = -(mount_pad_h/2)*cos(chassis_hole_tilt) + mount_pad_t*sin(chassis_hole_tilt);
+    by = chassis_standoff + (mount_pad_h/2)*sin(tilt) + mount_pad_t*cos(tilt);
+    bz = -(mount_pad_h/2)*cos(tilt) + mount_pad_t*sin(tilt);
     rd  = [by - cy, bz - cz];
     rn  = rd / norm(rd);               // up the ramp underside
     bis = [rn[0], rn[1] - 1];          // + straight down the panel face
@@ -475,24 +496,23 @@ module shroud_fillet(edge_z, fx0, fw) {
     d   = r / bn[0];                   // bn[0] = sin(half corner angle)
     C   = [cy + d*bn[0], cz + d*bn[1]];
     T2  = [cy, cz] + rn * ((C[0]-cy)*rn[0] + (C[1]-cz)*rn[1]);
-    translate([fx0, 0, 0]) rotate([90, 0, 90])
-        linear_extrude(fw)
-            difference() {
-                polygon([[cy, cz], [cy, C[1]], C, T2]);
-                translate(C) circle(r = r, $fn = 64);
-            }
+    difference() {
+        polygon([[cy, cz], [cy, C[1]], C, T2]);
+        translate(C) circle(r = r, $fn = 64);
+    }
 }
 
-// one continuous seat bar across both bosses, in the tilted seat plane.
+// One seat pad per boss, each flat in its own tilted seat plane; shroud_half's
+// hull spans them into the continuous bar. At equal tilts this is the old bar.
 // inset shrinks it all round for the minkowski round-over in shroud_half.
 module seat_bar(inset = 0) {
-    mount_frame() translate([(cx0 + cx1)/2, 0, inset])
-        linear_extrude(mount_pad_t - 2 * inset)
-            offset(r = -inset)
-                offset(r = 5) offset(r = -5)
-                    translate([-(chassis_hole_spacing + mount_pad_w)/2, -mount_pad_top])
-                        square([chassis_hole_spacing + mount_pad_w,
-                                mount_pad_top + mount_pad_h/2]);
+    for (cx = [cx0, cx1])
+        mount_frame(mount_tilt(cx)) translate([cx, 0, inset])
+            linear_extrude(mount_pad_t - 2 * inset)
+                offset(r = -inset)
+                    offset(r = 5) offset(r = -5)
+                        translate([-mount_pad_w/2, -mount_pad_top])
+                            square([mount_pad_w, mount_pad_top + mount_pad_h/2]);
 }
 
 // Bar hulled to a root strip biting the top edge at edge_z. Root ends FLUSH
@@ -534,7 +554,8 @@ module shroud() {
 module mount_solid() { chassis_bosses(); }
 
 module chassis_holes() {
-    for (cx = [cx0, cx1]) translate([0, 0, stud_lift]) mount_frame() translate([cx, 0, 0]) {
+    for (cx = [cx0, cx1])
+        translate([0, 0, stud_lift]) mount_frame(mount_tilt(cx)) translate([cx, 0, 0]) {
         translate([0, 0, -1]) hull()
             for (dx = [-chassis_hole_slot/2, chassis_hole_slot/2])
                 translate([dx, 0, 0])
@@ -564,11 +585,13 @@ module boss_section_2d(grow = 0, grow_xneg = undef, grow_xpos = undef) {
 // The bosses are the car, not the print. Nothing printed may occupy this volume
 // or the pads will never touch their seats.
 module tower_boss_clearance() {
-    translate([0, 0, stud_lift]) mount_frame() {
-        translate([cx0, 0, 0]) boss_pocket(tower_boss_clear + boss_clear_extra_r,
-                                           grow_xpos = boss_clear_inner_r);
-        translate([cx1, 0, 0]) boss_pocket(tower_boss_clear,
-                                           grow_xneg = boss_clear_inner_l);
+    translate([0, 0, stud_lift]) {
+        mount_frame(mount_tilt(cx0)) translate([cx0, 0, 0])
+            boss_pocket(tower_boss_clear + boss_clear_extra_r, mount_tilt(cx0),
+                        grow_xpos = boss_clear_inner_r);
+        mount_frame(mount_tilt(cx1)) translate([cx1, 0, 0])
+            boss_pocket(tower_boss_clear, mount_tilt(cx1),
+                        grow_xneg = boss_clear_inner_l);
     }
 }
 
@@ -580,11 +603,11 @@ function _bpf_shrink(t) = -boss_pocket_fillet_r
                           + boss_pocket_fillet_r * cos(asin(t));
 function _bpf_g(base, t) = is_undef(base) ? undef : base + _bpf_shrink(t);
 
-module boss_pocket(grow, grow_xneg = undef, grow_xpos = undef) {
+module boss_pocket(grow, tilt, grow_xneg = undef, grow_xpos = undef) {
     r = boss_pocket_fillet_r;
     n = 16;
-    translate([0, 0, -boss_axis_len - 10])
-        linear_extrude(boss_axis_len + 10 - r)
+    translate([0, 0, -boss_axis_len(tilt) - 10])
+        linear_extrude(boss_axis_len(tilt) + 10 - r)
             boss_section_2d(grow, grow_xneg, grow_xpos);
     for (i = [0 : n - 1])
         hull() for (t = [i / n, (i + 1) / n])
@@ -595,8 +618,9 @@ module boss_pocket(grow, grow_xneg = undef, grow_xpos = undef) {
 
 module tower_boss_ghost() {
     for (cx = [cx0, cx1])
-        translate([0, 0, stud_lift]) mount_frame() translate([cx, 0, -boss_axis_len])
-            linear_extrude(boss_axis_len) boss_section_2d();
+        translate([0, 0, stud_lift]) mount_frame(mount_tilt(cx))
+            translate([cx, 0, -boss_axis_len(mount_tilt(cx))])
+                linear_extrude(boss_axis_len(mount_tilt(cx))) boss_section_2d();
 }
 
 // =============================================================================
@@ -631,10 +655,9 @@ module fusebox_ghost() {
             cube([fusebox_x_left - fusebox_x_right,
                   fusebox_y1 - fusebox_y0,
                   fusebox_z_top - fusebox_z_bot]);
-        translate([fusebox_x_left - fusebox_notch_dx, fusebox_y0 - 1,
-                   fusebox_z_top - fusebox_notch_dz])
+        translate([fusebox_x_left - fusebox_notch_dx, fusebox_y0 - 1, fusebox_z_bot - 1])
             cube([fusebox_notch_dx + 1, fusebox_notch_len + 1,
-                  fusebox_notch_dz + 1]);
+                  fusebox_z_top - fusebox_z_bot + 2]);
     }
 }
 
@@ -677,8 +700,9 @@ module above_top_edge() {
 module ffs_top_limit() {
     tlz = panel_top_z - panel_tl_drop_z;
     trz = panel_top_z - panel_tr_drop_z;
-    translate([0, 0, stud_lift]) mount_frame()
-        translate([bar_x0, -mount_pad_top, -200]) cube([bar_x1 - bar_x0, 400, 400]);
+    tilt_slices(bar_x0, bar_x1)
+        translate([0, 0, stud_lift]) mount_frame($tilt)
+            translate([$sx0, -mount_pad_top, -200]) cube([$sx1 - $sx0, 400, 400]);
     translate([panel_right_x, -100, trz - 400])
         cube([bar_x0 - panel_right_x, 200, 400]);
     translate([bar_x1, -100, tlz - 400])
@@ -698,22 +722,23 @@ module ffs_back_allowed() {
         cube([panel_left_x - panel_tl_drop_x, 60, 260 + tlz]);
     // through the ramp zone: forward of each arm's rear slant
     // (root rear corner up to the seat bar's rear bottom corner)
-    bb_y = chassis_standoff + (mount_pad_h/2) * sin(chassis_hole_tilt);
-    bb_z = stud_lift - (mount_pad_h/2) * cos(chassis_hole_tilt);
-    translate([panel_right_x, 0, panel_top_z])
-        rotate([atan2(bb_z - panel_top_z, bb_y), 0, 0])
-            translate([0, 0, -100])
-                cube([panel_tl_drop_x - panel_right_x,
-                      norm([bb_y, bb_z - panel_top_z]), 100]);
-    translate([panel_tl_drop_x, 0, tlz])
-        rotate([atan2(bb_z - tlz, bb_y), 0, 0])
-            translate([0, 0, -100])
-                cube([panel_left_x - panel_tl_drop_x,
-                      norm([bb_y, bb_z - tlz]), 100]);
+    tilt_slices(panel_right_x, panel_tl_drop_x) ramp_slant_slab(panel_top_z);
+    tilt_slices(panel_tl_drop_x, panel_left_x) ramp_slant_slab(tlz);
     // bar zone: forward of the seat plane, full reach to the cradle. Bounded to
     // the bar's own span — past it there is no bar to be flush with.
-    translate([0, 0, stud_lift]) mount_frame()
-        translate([bar_x0, -60, 0]) cube([bar_x1 - bar_x0, 120, 60]);
+    tilt_slices(bar_x0, bar_x1)
+        translate([0, 0, stud_lift]) mount_frame($tilt)
+            translate([$sx0, -60, 0]) cube([$sx1 - $sx0, 120, 60]);
+}
+
+// One tilt_slices slab of the ramp-zone clip, rooted at that side's edge height.
+module ramp_slant_slab(root_z) {
+    bb_y = chassis_standoff + (mount_pad_h/2) * sin($tilt);
+    bb_z = stud_lift - (mount_pad_h/2) * cos($tilt);
+    translate([$sx0, 0, root_z])
+        rotate([atan2(bb_z - root_z, bb_y), 0, 0])
+            translate([0, 0, -100])
+                cube([$sx1 - $sx0, norm([bb_y, bb_z - root_z]), 100]);
 }
 
 // M5 bore + hex nut pocket along the cradle NORMAL (square to the tilted seat).
@@ -732,7 +757,7 @@ module ffs_bolt_cut(u, w) {
 module ffs_solid() {
     ffs_place() {
         import(ffs_stl, convexity = 8);
-        sensor();       // from flex-fuel-assembly.scad — single source of truth
+        sensor(boot = false);  // from flex-fuel-assembly.scad; loom not drawn (v7 fit)
         hose_stubs(sides = [-1]);  // upper port: straight run up to the firewall
         // lower port = INLET: 90 hose end, leg aimed at the FPR return.
         hose_stub_90(1, ffs_inlet_clock, ffs_inlet_droop);

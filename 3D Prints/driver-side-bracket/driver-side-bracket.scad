@@ -43,7 +43,7 @@ chassis_hole_spacing = 80.0;  // c-c of the two pillar holes
 chassis_hole_d       = 8.5;   // [MEASURE] bolt not yet sized — 8.5 = M8 clearance
 chassis_hole_slot    = 3.0;   // slop per hole across the axis, absorbs c-c error
 chassis_standoff     = 17.0;  // bolt seat this far forward of the pillar wall
-chassis_hole_tilt    = 13.0;  // bolt axis rises this far above horizontal, nose
+chassis_hole_tilt    = 14.0;  // bolt axis rises this far above horizontal, nose
                               // forward. Too shallow and the panel's lower half
                               // kicks off the pillar wall (v5 fit, photo _008).
 stud_lift            = 5.0;   // chassis anchors (holes, boss pockets, keep-outs)
@@ -72,9 +72,23 @@ tower_boss_h         = 18.0;  // [MEASURE] boss height across the bolt axis
 tower_boss_r         = 3.0;
 tower_boss_clear     = 6.0;   // air around each boss where the body wraps past it
                               // (raised from 1.5 — the tabs are eyeballed [MEASURE])
-boss_clear_extra_r   = 1.0;   // RIGHT boss only: extra radial air — the real
+boss_clear_extra_r   = 3.0;   // RIGHT boss only: extra radial air — the real
                               // brace there runs larger than the placeholder
                               // (v4: was bumping the shroud behind the square)
+boss_clear_inner_l   = 4;   // LEFT boss, INNER (-X) face only: air here is
+                              // independent of tower_boss_clear, so the web
+                              // between the two squares thickens without
+                              // touching the pocket's top/bottom clearance.
+boss_pocket_fillet_r = 2.0;   // cove where the pocket mouth meets the pad
+                              // underside. That lip is a sharp 270-deg corner in
+                              // the bolt load path; this rounds it. Costs exactly
+                              // this much side clearance AT the seat plane (full
+                              // clearance is back one radius down), so it must
+                              // stay below the smallest clear value above.
+boss_clear_inner_r   = 6.0;   // RIGHT boss, INNER (+X) face only. Split out to
+                              // match the left, but left AT the all-round value
+                              // (tower_boss_clear + boss_clear_extra_r) — this
+                              // pocket's side clearance measured correct.
 
 // ---- MOUNT SHROUD ---------------------------------------------------------
 // v3: the FPR no longer rises between the mounts, so the two skinny v1 arms
@@ -138,7 +152,7 @@ panel_left_x = panel_left_meas + panel_left_ext;
 // Third mount: M5 bolt + washer into a chassis rivnut, bottom-right quadrant.
 // Plain clear hole — the rivnut is the thread, so no rear pocket. Position is
 // ours to choose; the rivet gets drilled at the car to match the print.
-version_tag = "asandov v6";  // engraved in the panel REAR face, below the sensor mount
+version_tag = "asandov v7";  // engraved in the panel REAR face, below the sensor mount
 version_pos = [33, -76];
 aux_hole    = [15, -88];
 aux_hole_d  = 5.5;
@@ -175,9 +189,13 @@ fpr_ear_center_above_base = 47.0;
 // The cradle is positioned by its own STL origin, then rotated in the panel
 // plane. Cradle-local axes: u = long axis, v = out of the mounting face,
 //// w = across (the bolt-hole line AND the fuel passage).
-ffs_ox  =  73;  // cradle-local origin, bracket X
-ffs_oz  = -44.0;  // cradle-local origin, bracket Z
-ffs_rot = 125.0;  // increasing = clockwise as viewed at the car (+X renders
+ffs_ox  =  80;  // cradle-local origin, bracket X
+ffs_oz  = -41.0;  // cradle-local origin, bracket Z
+ffs_oy  =   2.0;  // ... and forward of the PANEL FRONT FACE. Lifts the whole
+                  // cradle off the plate; ffs_backing() grows to fill the gap,
+                  // so this is the knob for the sensor's bottom fouling the
+                  // body rather than moving ffs_oz.
+ffs_rot = 130.0;  // increasing = clockwise as viewed at the car (+X renders
                   // image-left). Body rides between the two chassis mounts —
                   // ffs_clearance_cut carves its slot through the shroud bar —
                   // and the connector exits clear of the fuse box.
@@ -326,10 +344,15 @@ module bracket() {
     }
 }
 
-// The flex cradle + sensor, dilated ~1.5mm, CUT from the printed body: struts
+// The flex cradle + sensor, dilated by ffs_cut_clear, CUT from the printed body: struts
 // may bind wherever they like and the sensor's space is simply molded out.
 // No -Y offset — the panel behind the cradle back must stay solid to bolt to.
-ffs_cut_clear = 3.0;
+ffs_cut_clear = 1.0;
+// Closing radius for the pocket projection: the outline is grown by
+// ffs_cut_clear + this, then shrunk back by this. MUST exceed the cradle's
+// 6.5mm ear-hole radius (3.25) less ffs_cut_clear, or those holes survive the
+// projection and leave a pin of body standing in the pocket at each ear.
+ffs_cut_close = 4.0;
 module ffs_clearance_cut() {
     c = ffs_cut_clear;
     // Cradle: its 2D outline grown by c, re-extruded through its depth — ONE
@@ -337,26 +360,31 @@ module ffs_clearance_cut() {
     // ~4.5min per render; shifted copies left stair-stepped shelves.) Undercuts
     // in the cradle profile get filled — a roomier pocket, which is fine.
     // dy 0.02 keeps the grown back face off the panel front (coplanar faces).
-    // grow 1 past clearance then shrink back: closes the cradle's own bolt
-    // holes in the projection (grown alone they survive as 0.5mm voids that
-    // leave hair-thin pins of body standing inside the pocket)
+    // grow ffs_cut_close past clearance then shrink back: closes the cradle's
+    // own bolt holes in the projection (grown alone they survive as small voids
+    // that leave pins of body standing inside the pocket)
     translate([0, 0.02, 0]) ffs_place() rotate([-90, 0, 0])
         linear_extrude(18 + c)
-            offset(r = -1) offset(r = c + 1) projection()
+            offset(r = -ffs_cut_close) offset(r = c + ffs_cut_close) projection()
                 rotate([90, 0, 0]) import(ffs_stl, convexity = 8);
-    // Sensor + hoses: shifted copies — every face is a cylinder, so the copy
-    // dilation stays smooth-looking here. dy 0.3 (not 0.02): the tipped
-    // connector's bottom corner grazes 0.24mm past the panel face, and at 0.02
-    // the copies carve scattered triangular divots there. Holding the cut off
-    // the face trades those for <=0.24mm of ghost-vs-panel kiss — noise.
-    d = c * 0.707;
-    for (o = [[0,0.3,0], [-c,0.3,0], [c,0.3,0], [0,0.3,-c], [0,0.3,c],
-              [-d,0.3,-d], [d,0.3,-d], [-d,0.3,d], [d,0.3,d], [0,c,0]])
-        translate(o) ffs_place() {
-            sensor();
-            hose_stubs(sides = [-1]);
-            hose_stub_90(1, ffs_inlet_clock, ffs_inlet_droop);
+    // Sensor + hoses: exact dilation by a sphere. The old 10 shifted copies
+    // approximated this and left stair-step shelves down the pocket wall where
+    // the copy boundaries crossed at a shallow angle. Only the cradle STL made
+    // minkowski slow; these are a handful of primitives, so it is affordable.
+    // Clipped at the panel front face: the sphere dilates -Y too, and the
+    // sensor never lives behind that plane, so this keeps the cut out of the
+    // plate instead of carving divots where the tipped connector grazes it.
+    intersection() {
+        minkowski() {
+            ffs_place() {
+                sensor();
+                hose_stubs(sides = [-1]);
+                hose_stub_90(1, ffs_inlet_clock, ffs_inlet_droop);
+            }
+            sphere(r = c, $fn = 12);
         }
+        translate([-500, panel_t, -500]) cube([1000, 500, 1000]);
+    }
 }
 
 // =============================================================================
@@ -386,18 +414,26 @@ module panel_2d() {
 // Bottom edge, walking left (+X) -> right (-X) to keep the winding consistent.
 // Past panel_left_meas the profile is held flat at drop_ext — nothing out in the
 // extension has been measured, so it does not get to pretend it is deeper.
-function bottom_z(x) =
+function bottom_z_curve(x) =
     x > panel_left_meas ? -drop_ext
   : let (t     = (panel_left_meas - x) / (panel_left_meas - panel_right_x),
          chord = -drop_left + t * (drop_left - drop_right),
          arch  = bottom_bulge * 4 * t * (1 - t))
     chord + arch;
 
-function bottom_edge_pts() = [
-    for (i = [0 : bottom_segments])
-        let (x = panel_left_x + (i / bottom_segments) * (panel_right_x - panel_left_x))
-        [x, bottom_z(x)]
-];
+// Left of the FPR's RIGHT ear the edge runs flat at that station's height — the
+// triangle under the regulator was backing nothing. Tracks fpr_x/fpr_ear_spacing.
+bottom_flat_x = fpr_x - fpr_hx;
+bottom_flat_z = bottom_z_curve(bottom_flat_x);
+
+function bottom_z(x) = x > bottom_flat_x ? bottom_flat_z : bottom_z_curve(x);
+
+function bottom_edge_pts() = concat(
+    [[panel_left_x, bottom_flat_z], [bottom_flat_x, bottom_flat_z]],
+    [for (i = [1 : bottom_segments])
+        let (x = bottom_flat_x + (i / bottom_segments) * (panel_right_x - bottom_flat_x))
+        [x, bottom_z_curve(x)]]
+);
 
 // =============================================================================
 // CHASSIS INTERFACE
@@ -512,19 +548,49 @@ module chassis_holes() {
     }
 }
 
-module boss_section_2d(grow = 0) {
-    offset(r = tower_boss_r + grow) offset(r = -tower_boss_r)
-        square([tower_boss_w, tower_boss_h], center = true);
+// grow = air on every side; grow_xneg overrides the -X side alone. Corner radius
+// follows grow, so a uniform grow reproduces the plain offset pair exactly.
+module boss_section_2d(grow = 0, grow_xneg = undef, grow_xpos = undef) {
+    gn = is_undef(grow_xneg) ? grow : grow_xneg;
+    gp = is_undef(grow_xpos) ? grow : grow_xpos;
+    r  = tower_boss_r + grow;
+    hull() for (cxy = [[ tower_boss_w/2 + gp - r,  tower_boss_h/2 + grow - r],
+                       [ tower_boss_w/2 + gp - r, -tower_boss_h/2 - grow + r],
+                       [-tower_boss_w/2 - gn + r,  tower_boss_h/2 + grow - r],
+                       [-tower_boss_w/2 - gn + r, -tower_boss_h/2 - grow + r]])
+        translate(cxy) circle(r = r, $fn = 48);
 }
 
 // The bosses are the car, not the print. Nothing printed may occupy this volume
 // or the pads will never touch their seats.
 module tower_boss_clearance() {
-    for (cx = [cx0, cx1])
-        translate([0, 0, stud_lift]) mount_frame() translate([cx, 0, -boss_axis_len - 10])
-            linear_extrude(boss_axis_len + 10)
-                boss_section_2d(tower_boss_clear
-                                + (cx == cx0 ? boss_clear_extra_r : 0));
+    translate([0, 0, stud_lift]) mount_frame() {
+        translate([cx0, 0, 0]) boss_pocket(tower_boss_clear + boss_clear_extra_r,
+                                           grow_xpos = boss_clear_inner_r);
+        translate([cx1, 0, 0]) boss_pocket(tower_boss_clear,
+                                           grow_xneg = boss_clear_inner_l);
+    }
+}
+
+// One boss pocket, its mouth (local z = 0, the seat plane) coved back by
+// boss_pocket_fillet_r so the pad's underside meets the pocket wall on a radius
+// instead of a knife lip. Every face pulls in by the same amount at the mouth,
+// so a per-face clearance override keeps its shape all the way down the cove.
+function _bpf_shrink(t) = -boss_pocket_fillet_r
+                          + boss_pocket_fillet_r * cos(asin(t));
+function _bpf_g(base, t) = is_undef(base) ? undef : base + _bpf_shrink(t);
+
+module boss_pocket(grow, grow_xneg = undef, grow_xpos = undef) {
+    r = boss_pocket_fillet_r;
+    n = 16;
+    translate([0, 0, -boss_axis_len - 10])
+        linear_extrude(boss_axis_len + 10 - r)
+            boss_section_2d(grow, grow_xneg, grow_xpos);
+    for (i = [0 : n - 1])
+        hull() for (t = [i / n, (i + 1) / n])
+            translate([0, 0, -r + r * t]) linear_extrude(0.001)
+                boss_section_2d(_bpf_g(grow, t), _bpf_g(grow_xneg, t),
+                                _bpf_g(grow_xpos, t));
 }
 
 module tower_boss_ghost() {
@@ -574,7 +640,7 @@ module fusebox_ghost() {
 
 // One transform for everything that lives in the cradle frame.
 module ffs_place() {
-    translate([ffs_ox, panel_t, ffs_oz])
+    translate([ffs_ox, panel_t + ffs_oy, ffs_oz])
         rotate([-ffs_tip, 0, 0]) rotate([0, -ffs_rot, 0]) children();
 }
 
@@ -586,8 +652,8 @@ module ffs_backing() {
             // same grown outline as the pocket cut, extruded BACKWARD, so the
             // backing rim lands exactly on the pocket wall — no moat between
             rotate([-90, 0, 0]) translate([0, 0, -45]) linear_extrude(45)
-                offset(r = -1) offset(r = ffs_cut_clear + 1) projection()
-                    rotate([90, 0, 0]) import(ffs_stl, convexity = 8);
+                offset(r = -ffs_cut_close) offset(r = ffs_cut_clear + ffs_cut_close)
+                    projection() rotate([90, 0, 0]) import(ffs_stl, convexity = 8);
             translate([-7 - ffs_cut_clear, -46, -13 - ffs_cut_clear])
                 cube([7 + ffs_cut_clear + ffs_back_u_max, 47,
                       58 + 2 * ffs_cut_clear]);

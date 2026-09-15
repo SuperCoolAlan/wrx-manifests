@@ -6,7 +6,7 @@ source year, then the sections. Sections are padded to even page counts so every
 section starts on a right-hand page when duplexed. No PDF bookmarks - see
 build-binder.py; navigation is the printed contents page in TAB 0.
 """
-import os, io, sys, json
+import os, io, sys, json, hashlib, datetime
 from io import BytesIO
 import pypdf
 from pypdf import PdfWriter, PdfReader
@@ -121,6 +121,22 @@ TRAPS = [
 ]
 def traps_for(tab): return [t for tabs,t in TRAPS if tab in tabs]
 
+# Keyed on a hash of each tab's own text, so a rebuild alone never moves a date. Hand-edit a date to backdate it.
+DATES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cover-dates.json")
+def edited_dates():
+    try:
+        with open(DATES) as f: known = json.load(f)
+    except FileNotFoundError:
+        known = {}
+    today = datetime.date.today().isoformat(); out = {}
+    for tabno,title,subtitle,warnings,items in TABS:
+        blob = json.dumps([title, subtitle, warnings, traps_for(tabno), items], ensure_ascii=False)
+        h = hashlib.sha256(blob.encode()).hexdigest()[:16]
+        prev = known.get(str(tabno), {})
+        out[str(tabno)] = prev if prev.get("hash") == h else {"hash": h, "date": today}
+    with open(DATES, "w") as f: json.dump(out, f, indent=1)
+    return {int(k): v["date"] for k, v in out.items()}
+
 # FSM sources are large and gitignored; point WRX_FSM_SRC at wherever they live.
 SRC = os.environ.get("WRX_FSM_SRC") or os.path.expanduser("~/Downloads")
 OUT = "/Users/alan/Documents/WRX/manual/print"
@@ -189,7 +205,7 @@ TABS = [
    ("Glass / Windows / Mirrors","2004",Y4+"Body/GW Glass-Win-Mir.pdf")]),
 ]
 
-def cover(tabno, title, subtitle, warnings, items, counts, starts):
+def cover(tabno, title, subtitle, warnings, items, counts, starts, edited=None):
     buf = io.BytesIO()
     c = canvas.Canvas(buf, pagesize=letter)
     W,H = letter
@@ -200,16 +216,18 @@ def cover(tabno, title, subtitle, warnings, items, counts, starts):
     c.setFont("Helvetica-Bold",21); c.drawString(m+1.15*inch,H-1.55*inch,title)
     c.setFont("Helvetica",10.5); c.setFillColorRGB(.75,.76,.78)
     c.drawString(m+1.17*inch,H-1.85*inch,subtitle)
+    if edited:
+        c.setFont("Helvetica",8); c.drawRightString(W-m,H-2.3*inch,f"Tab notes last edited {edited}")
     y = H-3.0*inch
     c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica-Bold",8.5)
     c.drawString(m,y,"CONTENTS")
-    c.drawRightString(W-m-0.62*inch,y,"SOURCE YEAR")
+    c.drawRightString(W-m-0.9*inch,y,"SOURCE YEAR")
     c.drawRightString(W-m,y,"START PAGE"); y-=4
     c.setStrokeColorRGB(.80,.80,.82); c.setLineWidth(.6); c.line(m,y,W-m,y); y-=20
     for ((label,src,_),n,st) in zip(items,counts,starts):
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica",11); c.drawString(m,y,label)
         c.setFillColorRGB(.42,.43,.46); c.setFont("Helvetica",9)
-        c.drawRightString(W-m-0.62*inch,y,src)
+        c.drawRightString(W-m-0.9*inch,y,src)
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica",10)
         c.setFillColorRGB(.10,.11,.13); c.setFont("Helvetica-Bold",9)
         c.drawRightString(W-m,y,f"{tabno}-{st}")
@@ -313,6 +331,7 @@ def main():
         print("  Tabs drawing on these will be incomplete. Set WRX_FSM_SRC to the folder holding them.\n")
 
     grand=0; built=[]; manifest=[]
+    dates=edited_dates()
     for tabno,title,subtitle,warnings,items in TABS:
         readers=[]; counts=[]
         for label,src,rel in items:
@@ -323,7 +342,7 @@ def main():
         # The cover paginates when there are many traps, so measure it FIRST -
         # section start pages depend on how many pages it takes.
         meta=[(l,s,None) for l,s,_ in readers]
-        probe=cover(tabno,title,subtitle,traps_for(tabno),meta,counts,[0]*len(counts))
+        probe=cover(tabno,title,subtitle,traps_for(tabno),meta,counts,[0]*len(counts),dates[tabno])
         ncov=len(probe.pages)
         pos=ncov; spans=[]
         for (label,src,_r),n in zip(readers,counts):
@@ -331,7 +350,7 @@ def main():
             pos+=n
             if n % 2 == 1: pos+=1     # duplex pad
         w=PdfWriter()
-        cv=cover(tabno,title,subtitle,traps_for(tabno),meta,counts,[sp["start"] for sp in spans])
+        cv=cover(tabno,title,subtitle,traps_for(tabno),meta,counts,[sp["start"] for sp in spans],dates[tabno])
         if len(cv.pages)!=ncov:
             print(f"  !! TAB {tabno}: cover changed length between passes "
                   f"({ncov} -> {len(cv.pages)}); start pages would be wrong")

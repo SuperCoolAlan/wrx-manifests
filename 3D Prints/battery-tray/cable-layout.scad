@@ -17,6 +17,22 @@
 // =============================================================================
 
 include <battery-tray-mtx35.scad>
+// ---- VIEW PRESETS — sets the OpenSCAD camera on F5 ----
+//   "layout"      whole tray, the original cable study
+//   "bridge"      3/4 view of the two holders, bridge, feed lug
+//   "bridge_rear" looking at the holders square-on from behind the fuse wall
+//   "bridge_top"  straight down: strap on the eyelets, nut stacks vs cover roof
+// Handed to bridge-bar.scad as bb_vp*, which sets $vp* from them — must stay ABOVE that include.
+view = "bridge";
+bridge_ctr = [platform_x_width/2, outer_w - wall_thickness + fuse_wall_thickness + 20,
+              fuse_wall_top_z - fuse_top_inset - fuse_holder_length/2 + 25.4];   // upper studs
+bb_vpr = view == "bridge" ? [65, 0, 210] : view == "bridge_rear" ? [90, 0, 180] : view == "bridge_top" ? [0, 0, 0] : [60, 0, 205];
+bb_vpt = view == "layout" ? [123, 96, 60] : bridge_ctr;
+bb_vpd = view == "bridge" ? 230 : view == "bridge_rear" ? 200 : view == "bridge_top" ? 160 : 1050;
+
+bb_no_demo = true;                       // suppress bridge-bar's standalone preview
+include <bridge-bar.scad>                // copper bridge (CPU-92); pulls in fuse-holder-5001.scad (Blue Sea 5001 from 5001.dxf + CPU-99)
+bar_span = fuse_hx_ctr[1] - fuse_hx_ctr[0];   // the bar follows the tray's holder spacing
 
 // ---- what to show ----
 show_tray    = true;   // the tray itself comes from the include above; false is not possible,
@@ -25,14 +41,18 @@ show_battery = true;
 show_holders = true;
 show_cables  = true;
 
-// ---- Blue Sea 5001, straight off the dimensioned drawing ----
-// 4.070" x 1.500" x 1.649", studs 5/16"-18 [M8] at 2.000" centres,
-// mount holes for #10 [M5] at 3.488" centres.
+// ---- Blue Sea 5001 — geometry lives in fuse-holder-5001.scad ----
 holder_len    = fuse_holder_length;   // 103.38  (already in the design)
 holder_wid    = fuse_holder_width;    //  38.10
-holder_height = 41.87;                // projection out from the mount face, incl. cover
-stud_spacing  = 50.80;                // 2.000"
-lug_standoff  = 30;                   // how far out along the stud the cable lug sits
+holder_height = fh_cover_top;         // projection out from the mount face, to the cover roof
+stud_spacing  = 2*fh_stud_x;          // 50.80
+// Stacks, bottom up — order set by lug_under_fuse in bridge-bar.scad (default false):
+//   A-upper (feed):  plate -> fuse -> STRAP -> 1/0 lug -> washer -> nut
+//   B-upper:         plate -> fuse -> STRAP -> washer -> nut
+//   lower studs:     plate -> fuse -> lug -> washer -> nut
+strap_face_y  = strap_face;                                   // from bridge-bar.scad
+feed_lug_face = lug_under_fuse ? fh_plate_top : strap_face_y + bar_t;
+lug_standoff  = feed_lug_face + lug_t/2;                      // cable lug centreline out from the mount face
 // ---- ORIENTATION STUDY ----
 // false = holders long-axis along X (as designed), stacked in Z
 // true  = holders long-axis along Z (VERTICAL), side by side in X.
@@ -76,14 +96,18 @@ batt_z0 = floor_thickness + ridge_height;
 
 batt_pos_post = [35, 150, batt_z0 + batt_height];   // where you'll clamp the + terminal
 
+// REVISED 2026-09-02: ONE battery+ cable, not two. The two upper studs are now
+// bridged by a formed copper bar (Linear CPU-92), so the feed lands on the
+// ALTERNATOR holder's stud only — that keeps the alternator's 200A off the
+// bridge, which then carries audio current alone. This is also what gets the
+// battery + post down to two connections total (this cable + the OEM lead to
+// the main fuse box), removing the need for a three-way post terminal.
 cables = holders_vertical ? [
-  // Battery + to each fuse's UPPER lug — enters the top exit travelling down.
-  [ "batt+ to alt fuse", "red", 13,
+  [ "batt+ to alt fuse (sole feed)", "red", 13,
     [ [35,150,248],[35,168,246],[34,190,238],[31,208,222],
       [27,220,200],[24.5,226,176],[fuse_hx_ctr[0],lug_y,155],[fuse_hx_ctr[0],lug_y,131.91] ] ],
-  [ "batt+ to audio fuse", "red", 13,
-    [ [52,150,246],[54,170,243],[58,192,235],[62,210,219],
-      [63.5,222,196],[fuse_hx_ctr[1],lug_y,170],[fuse_hx_ctr[1],lug_y,131.91] ] ],
+
+  // Bridge bar is now the formed part from bridge-bar.scad, drawn below with the holders.
 
   // ALTERNATOR — drops in beside the tray's X_MIN side, then one continuous 60mm U
   // back up to the lower lug. No shield contact and no tie needed on the descent.
@@ -204,17 +228,22 @@ if (show_battery)
         translate([batt_x0, batt_y0, batt_z0])
             cube([batt_length, batt_width, batt_height]);
 
+// Holder local frame -> tray: local X (long axis) -> +Z, local Y -> +X, local Z (out) -> +Y
+holder_vert_xform = [[0,1,0,0],[0,0,1,0],[1,0,0,0],[0,0,0,1]];
+
 if (show_holders) {
     if (holders_vertical)
-        for (cx = vx) {
-            color("#222", 0.85)
-                translate([cx - holder_wid/2, y_mount, v_top_z - holder_len])
-                    cube([holder_wid, holder_height, holder_len]);
-            for (sz = v_stud_z)
-                color("silver") translate([cx, y_mount, sz]) rotate([-90,0,0])
-                    cylinder(d=8, h=holder_height + lug_standoff - 20, $fn=16);
+        for (i = [0, 1]) {
+            translate([vx[i], y_mount, v_ctr_z]) multmatrix(holder_vert_xform) {
+                // notch only the side wall facing the other holder (holder 0: local +Y, holder 1: local -Y)
+                fuse_holder_5001(fuse_lift = under_t,
+                                 notch_sides = bar_style == "straight" ? [i == 0 ? 1 : -1] : [],
+                                 notch_top = strap_face_y + bar_t + 0.5);
+                translate([ fh_stud_x, 0, 0]) fh_nut_stack(strap_face_y + (bar_style == "straight" ? bar_t : 0) + (i == 0 && !lug_under_fuse ? lug_t : 0));
+                translate([-fh_stud_x, 0, 0]) fh_nut_stack(fh_plate_top + lug_t + fh_fuse_eye_t);
+            }
             for (bz = v_bolt_z)
-                color("#c33") translate([cx, y_mount-1, bz]) rotate([-90,0,0])
+                color("#c33") translate([vx[i], y_mount-1, bz]) rotate([-90,0,0])
                     cylinder(d=5, h=4, $fn=12);       // M5 bolt positions
         }
     else
@@ -230,3 +259,16 @@ if (show_holders) {
 
 if (show_cables)
     for (c = cables) color(c[1]) cable(c[3], c[2]);
+
+// Bridge: origin at holder 0's upper stud, on the strap's seating face
+show_bridge = true;
+if (show_bridge && holders_vertical) {
+    color("#c60") translate([fuse_hx_ctr[0], y_mount + strap_face_y, v_stud_z[1]]) bridge_bar();
+    if (bar_style == "straight" && lug_under_fuse)   // spacer under the fuse on stud B
+        color("#c60") translate([fuse_hx_ctr[1], y_mount + fh_plate_top, v_stud_z[1]]) bridge_spacer();
+}
+if (bar_style == "U")
+    echo(str("bridge U top Z = ", v_stud_z[1] + bar_top_z, "  (fuse wall top ", fuse_wall_top_z,
+             ", holder top ", v_top_z, ", cover top ", v_ctr_z + fh_cover_len/2, ")"));
+
+

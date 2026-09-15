@@ -2,8 +2,9 @@
 """Splice the WRX build manual from the source FSM PDFs, per manual/print-index.md.
 
 One PDF per binder tab. Each gets a generated cover page listing contents and
-source year, then the sections, bookmarked. Sections are padded to even page
-counts so every section starts on a right-hand page when duplexed.
+source year, then the sections. Sections are padded to even page counts so every
+section starts on a right-hand page when duplexed. No PDF bookmarks - see
+build-binder.py; navigation is the printed contents page in TAB 0.
 """
 import os, io, sys, json
 from io import BytesIO
@@ -17,17 +18,19 @@ from reportlab.lib.units import inch
 # ── TRAPS — single source of truth. Tagged by tab; the TOC imports this. ──────
 # Each entry: (tabs it applies to, text)
 TRAPS = [
- ((2,),   "USE THE 2005 STi SECTION. It covers this EJ257 short block AND its heads,"),
- ((2,),   "   and it is what the engine was actually assembled to."),
- ((2,),   "KEEP THE 2007 H4DOTC SECTION - it is not a duplicate. It is the COMBINED"),
- ((2,),   "   WRX/STi manual and documents 6 fasteners the 2005 STi section omits"),
- ((2,),   "   (con rod bolts 52 N.m, oil pump relief plug 44 N.m, tensioner bracket"),
- ((2,),   "   24.5 N.m, V-belt cover, A/C hoses). It also branches STi vs Except-STi"),
- ((2,),   "   in 5 places - e.g. CRANKSHAFT STOPPER is 75 N.m STi, 72 N.m otherwise."),
- ((2,),   "   TAKE THE STi FIGURE. Where the two sections overlap they AGREE; any"),
- ((2,),   "   ft-lb mismatch is rounding of the same N.m value."),
- ((2,),   "THIS ENGINE IS SINGLE AVCS - intake only, one solenoid per head. So are"),
- ((2,),   "   the 2005 STi and 2007 H4DOTC sections printed here, so they match."),
+ ((2,),   "THE 2005 ME(STi) SECTION IS THE ONLY MECHANICAL SOURCE - SETTLED 2026-09-02."),
+ ((2,),   "   It covers this EJ257 short block AND its heads, it is single AVCS like"),
+ ((2,),   "   this engine, and it is what the engine was actually assembled to. The"),
+ ((2,),   "   V25B casting is 2007-era, but CONFIGURATION governs, not casting date."),
+ ((2,),   "THE 2007 ME(H4DOTC) SECTION WAS REMOVED 2026-09-02 - do not re-add it."),
+ ((2,),   "   It is the COMBINED WRX/STi book, so its default torque is the EJ255"),
+ ((2,),   "   WRX figure and the STi figure is the footnoted exception. Example: the"),
+ ((2,),   "   crankshaft/flywheel spec reads T2: 72 N.m (Except STI), 75 N.m (STI)."),
+ ((2,),   "   THE 2005 STi SECTION GIVES 75 DIRECTLY, with no branch to misread."),
+ ((2,),   "   Its T-code NUMBERING also differs from the 2005 book (24.5 N.m is T4"),
+ ((2,),   "   in 2005 and T5 in 2007), so a T-number cannot be carried between them."),
+ ((2,),   "THIS ENGINE IS SINGLE AVCS - intake only, one solenoid per head, which is"),
+ ((2,),   "   what the 2005 STi section documents."),
  ((2,),   "   Dual AVCS arrived on the 2008 STi - do NOT use a 2008+ manual here."),
  ((3,),   "WHY IS H4SO HERE? Subaru filed ONE starting/charging system for the whole"),
  ((3,),   "   engine range in the H4SO file - it contains sections for NON-TURBO,"),
@@ -107,7 +110,13 @@ TRAPS = [
  ((5,),   "   holding on these discs, despite the 05-07 STi rear knuckles. BOTH the"),
  ((5,),   "   2004 and 2007 PB sections are printed - USE THE 2004 ONE for cable"),
  ((5,),   "   routing and adjustment. 2007 is a cross-check for the STi-era discs."),
- ((5,),   "Pads are Hawk Performance - compound is printed on the backing plate."),
+ ((5,),   "Pads are Hawk HB700B.562 = HPS 5.0. HB700 is the 06-07 WRX front shape."),
+ ((5,),   "   A high-performance STREET pad, correct for break-in - NOT a track pad."),
+ ((5,),   "ABS MODULE IS THE ORIGINAL 2004 CHASSIS UNIT - SETTLED 2026-09-02. USE THE"),
+ ((5,),   "   2004 ABS SECTION. The front wheel speed sensors are 05-07 STi knuckle"),
+ ((5,),   "   parts adapted to mate the 04 harness (one full aftermarket sensor, one"),
+ ((5,),   "   OEM sensor with a transplanted connector), so 2007 is a sensor-side"),
+ ((5,),   "   cross-check only. The module, hydraulic unit and diagnostics are 2004."),
  ((8,),   "Wagon-specific. Sedan pages will mislead."),
 ]
 def traps_for(tab): return [t for tabs,t in TRAPS if tab in tabs]
@@ -129,11 +138,9 @@ TABS = [
    ("Specifications — STi figures","2005",Y5+"General Information/SPC Specs.pdf"),
    ("Recommended Materials (fluids) — ref only","2004",Y4+"General Information/RM Recommended Mat.pdf"),
    ("Periodic Maintenance — ref only","2004",Y4+"General Information/PM Periodic Maint.pdf")]),
- (2,"ENGINE","2005 STi EJ257 governs. The H4DOTC section is a cross-check.",
+ (2,"ENGINE","2005 STi EJ257 is the sole mechanical source.",
   [],
   [("Mechanical — WHOLE ENGINE, THE ONE TO USE","2005 STi EJ257",Y5+"STi Engine/ME(STi) 04 Mechanical.pdf"),
-   ("Mechanical — extra fastener specs + STi callouts","2007 H4DOTC",Y7+"H4DOTC Engine/ME(H4DOTC) Mechanical.pdf"),
-   ("General Description","2005 STi",Y5+"STi Engine/GD(STi) 12 General Desc.pdf"),
    ("Lubrication","2005 STi",Y5+"STi Engine/LU(STi) 07 Lubrication.pdf"),
    ("Intake","2005 STi",Y5+"STi Engine/IN(STi) 03 Intake.pdf"),
    ("Ignition","2005 STi",Y5+"STi Engine/IG(STi) 09 Ignition.pdf"),
@@ -157,7 +164,8 @@ TABS = [
   [("Brakes","2007",Y7+"Chassis/BR Brake.pdf"),
    ("Parking Brake — THE ONE TO USE, cables are 2004","2004",Y4+"Chassis/PB Parking Brake.pdf"),
    ("Parking Brake — cross-check, STi-era rear discs","2007",Y7+"Chassis/PB Parking Brake.pdf"),
-   ("ABS","2007",Y7+"Chassis/ABS.pdf")]),
+   ("ABS — THE ONE TO USE, module is the 2004 chassis unit","2004",Y4+"Chassis/ABS.pdf"),
+   ("ABS — cross-check, STi-era wheel speed sensors","2007",Y7+"Chassis/ABS.pdf")]),
  (6,"SUSPENSION / CHASSIS","* MIXED: STi knuckles on wagon links.",
   [],
   [("Front Susp — STi knuckle/hub","2007",Y7+"Chassis/FS Front Suspension.pdf"),

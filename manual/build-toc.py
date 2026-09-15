@@ -31,12 +31,14 @@ if os.path.exists(_bi):
 MATRIX=[("Body, interior, glass, trim","2004 GG wagon","Sedan pages mislead — this is a wagon"),
  ("Chassis wiring / body harness","2004 GG","Spliced to a 2005 STi engine harness by iWire"),
  ("Engine — short block","2005 STi",""),
- ("Engine — HEADS / valvetrain","2007 H4DOTC","V25B STi Cosworth heads. 2007 STi has no ME section"),
+ ("Engine — heads / valvetrain","2005 STi","V25B heads, but SINGLE AVCS and built to the 05 section"),
  ("Engine harness","2005 STi","Diagrams do not describe this car post-merge"),
  ("Cooling","2005 H4DOTC","Mishimoto rad + ECFT, RCM pump + 70C thermostat"),
  ("Exhaust","2005 H4DOTC","REFERENCE ONLY — aftermarket end to end, catless"),
  ("Starting / charging","2005 H4SO","Singer 200A/220A, 14.8V reg — not the 90A OEM"),
  ("Brakes — calipers","2007","06-07 WRX 4/2-pot. Rotors are KNS aftermarket"),
+ ("Parking brake","2004","Original 2004 cables, verified holding on the KNS discs"),
+ ("ABS","2004","Module is the original 2004 chassis unit"),
  ("Front + rear suspension","2007 + 2005 + 2004","STi knuckles, WAGON links/subframe — all three needed"),
  ("Power steering","2004",""),
  ("Transmission / DCCD / driveline","2007 as proxy","Actual unit is a 2011 6MT. Verify torques vs 2011"),
@@ -65,6 +67,27 @@ TRAPS=_T   # ALL traps, tab-tagged. Never truncate this - a dropped trap is a tr
 
 c=canvas.Canvas(os.path.join(OUT,"TAB0_CONTENTS.pdf"),pagesize=letter)
 
+FOOT="START PAGE = the number printed on the page in your binder.   PDF PAGE = the page to jump to in WRX-BINDER.pdf on a screen."
+BOT=0.75*inch   # contents rows stop here; the footer sits at 0.42in
+
+def _colheads(yy):
+    c.setFillColorRGB(*MUTE); c.setFont("Helvetica-Bold",7.2)
+    c.drawRightString(W-M-1.55*inch,yy,"SOURCE YEAR")
+    c.drawRightString(W-M-0.62*inch,yy,"START PAGE")
+    c.drawRightString(W-M,yy,"PDF PAGE")
+
+def _break(yy,need):
+    """Start a new contents page if `need` points will not fit above BOT."""
+    if yy-need>=BOT: return yy
+    c.setFont("Helvetica",7.5); c.setFillColorRGB(*MUTE); c.drawString(M,0.42*inch,FOOT)
+    c.showPage()
+    yy=H-M-6
+    c.setFillColorRGB(*INK); c.setFont("Helvetica-Bold",8)
+    c.drawString(M,yy,"CONTENTS  (continued)")
+    yy-=5; c.setStrokeColorRGB(*RULE); c.setLineWidth(.7); c.line(M,yy,W-M,yy); yy-=13
+    _colheads(yy)
+    return yy-13
+
 # ---------- page 1 : contents ----------
 c.setFillColorRGB(*INK); c.rect(0,H-1.55*inch,W,1.55*inch,fill=1,stroke=0)
 c.setFillColorRGB(1,1,1); c.setFont("Helvetica-Bold",22)
@@ -75,18 +98,17 @@ c.drawString(M,H-1.34*inch,"Assembled from the 2004 / 2005 / 2007 FSMs \u2014 se
 y=H-1.92*inch
 c.setFillColorRGB(*INK); c.setFont("Helvetica-Bold",8); c.drawString(M,y,"CONTENTS")
 y-=5; c.setStrokeColorRGB(*RULE); c.setLineWidth(.7); c.line(M,y,W-M,y); y-=13
-c.setFillColorRGB(*MUTE); c.setFont("Helvetica-Bold",7.2)
-c.drawRightString(W-M-1.55*inch,y,"SOURCE YEAR")
-c.drawRightString(W-M-0.62*inch,y,"START PAGE")
-c.drawRightString(W-M,y,"PDF PAGE")
+_colheads(y)
 
 grand=0
 for tn,title,secs in TABS:
     tot=sum(p for _,_,_,p in secs); grand+=tot
+    y=_break(y,12.5+10.8)   # never orphan a tab heading from its first row
     c.setFillColorRGB(*INK); c.setFont("Helvetica-Bold",10.5)
     c.drawString(M,y,f"TAB {tn}   {title}")
     y-=12.5
     for lab,src,start,pp in secs:
+        y=_break(y,10.8)
         c.setFillColorRGB(.28,.29,.32); c.setFont("Helvetica",9.5)
         c.drawString(M+0.26*inch,y,lab)
         bold = ("2007 H4DOTC" in src) or ("H4SO" in src)
@@ -102,10 +124,12 @@ for tn,title,secs in TABS:
         c.drawRightString(W-M,y,str(a) if a else "")
         y-=10.8
     y-=3.5
+y=_break(y,24)
 c.setStrokeColorRGB(*RULE); c.line(M,y+4,W-M,y+4); y-=10
-c.setFont("Helvetica-Bold",10.5); c.drawString(M,y,"TOTAL PAGES"); c.drawRightString(W-M,y,f"{grand} pages")
+c.setFillColorRGB(*INK); c.setFont("Helvetica-Bold",10.5)
+c.drawString(M,y,"TOTAL PAGES"); c.drawRightString(W-M,y,f"{grand} pages")
 c.setFont("Helvetica",7.5); c.setFillColorRGB(*MUTE)
-c.drawString(M,0.42*inch,"START PAGE = the number printed on the page in your binder.   PDF PAGE = the page to jump to in WRX-BINDER.pdf on a screen.")
+c.drawString(M,0.42*inch,FOOT)
 c.showPage()
 
 # ---------- page 2 : matrix ----------

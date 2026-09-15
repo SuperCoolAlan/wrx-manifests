@@ -9,7 +9,7 @@ import subprocess, sys, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 STEPS = ["build-manual.py", "build-readfirst.py", "build-fluids.py",
          "build-aswired.py", "build-toc.py", "build-binder.py",
-         "build-toc.py", "build-binder.py"]
+         "build-toc.py", "build-binder.py", "build-colorsplit.py"]
 for i, s in enumerate(STEPS, 1):
     print(f"[{i}/{len(STEPS)}] {s}")
     r = subprocess.run([sys.executable, os.path.join(HERE, s)])

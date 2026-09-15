@@ -5,18 +5,36 @@ Only OUR pages are checked - tab covers and the front-matter documents.
 Subaru's own pages are their business and often bleed by design.
 Run after manual/build-all.py.
 """
-import os, sys, json
+import os, sys, re
 from pypdf import PdfReader
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "manual", "print")
 TOP, BOTTOM, SIDE = 8.0, 4.0, 20.0   # footer band sits at y=6, so 4 is the floor
 
+# Read the Tm operands straight out of the content stream rather than using
+# pypdf's visitor_text, which reports tm=(0,0) for the first string after a font
+# change and made every one of those look like text sitting at y=0. Safe here
+# because this checker only ever looks at our own reportlab-generated pages, and
+# reportlab emits an explicit "1 0 0 1 x y Tm" immediately before each Tj.
+_TM = re.compile(rb"([-\d.]+)\s+([-\d.]+)\s+Tm\b")
+_TJ = re.compile(rb"\((.*?)(?<!\\)\)\s*Tj", re.S)
+
 def positions(page):
+    try:
+        data = page.get_contents().get_data()
+    except AttributeError:
+        return []                      # no content stream (blank padding page)
     hits = []
-    def visit(text, cm, tm, font, size):
-        if text.strip(): hits.append((tm[4], tm[5], text.strip(), size or 0))
-    page.extract_text(visitor_text=visit)
+    for m in _TM.finditer(data):
+        x, y = float(m.group(1)), float(m.group(2))
+        block = data[m.end():]
+        end = block.find(b"ET")        # stay inside this BT/ET block
+        t = _TJ.search(block if end < 0 else block[:end])
+        if not t: continue             # a Tm that positions no text
+        txt = t.group(1).decode("latin-1", "replace")
+        txt = txt.replace("\\(", "(").replace("\\)", ")").replace("\\\\", "\\")
+        if txt.strip(): hits.append((x, y, txt.strip(), 0))
     return hits
 
 def check(path, page_idxs, label):

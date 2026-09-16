@@ -80,6 +80,7 @@ boss_clear_inner_l   = 4;   // LEFT boss, INNER (-X) face only: air here is
                               // independent of tower_boss_clear, so the web
                               // between the two squares thickens without
                               // touching the pocket's top/bottom clearance.
+boss_drop_l          = 10.0;  // LEFT boss only: reaches this much further DOWN [MEASURE]
 boss_pocket_fillet_r = 2.0;   // cove where the pocket mouth meets the pad
                               // underside. That lip is a sharp 270-deg corner in
                               // the bolt load path; this rounds it. Costs exactly
@@ -153,7 +154,7 @@ panel_left_x = panel_left_meas + panel_left_ext;
 // Third mount: M5 bolt + washer into a chassis rivnut, bottom-right quadrant.
 // Plain clear hole — the rivnut is the thread, so no rear pocket. Position is
 // ours to choose; the rivet gets drilled at the car to match the print.
-version_tag = "asandov v8";  // engraved in the panel REAR face, below the sensor mount
+version_tag = "asandov v9";  // engraved in the panel REAR face, below the sensor mount
 version_pos = [33, -76];
 aux_hole    = [15, -88];
 aux_hole_d  = 5.5;
@@ -190,13 +191,13 @@ fpr_ear_center_above_base = 47.0;
 // The cradle is positioned by its own STL origin, then rotated in the panel
 // plane. Cradle-local axes: u = long axis, v = out of the mounting face,
 //// w = across (the bolt-hole line AND the fuel passage).
-ffs_ox  =  79.45; // cradle-local origin, bracket X
-ffs_oz  = -39.35; // cradle-local origin, bracket Z
+ffs_ox  =  78.32; // cradle-local origin, bracket X
+ffs_oz  = -40.14; // cradle-local origin, bracket Z
 ffs_oy  =   2.0;  // ... and forward of the PANEL FRONT FACE. Lifts the whole
                   // cradle off the plate; ffs_backing() grows to fill the gap,
                   // so this is the knob for the sensor's bottom fouling the
                   // body rather than moving ffs_oz.
-ffs_rot = 136.0;  // increasing = clockwise as viewed at the car (+X renders
+ffs_rot = 137.0;  // increasing = clockwise as viewed at the car (+X renders
                   // image-left). Body rides between the two chassis mounts —
                   // ffs_clearance_cut carves its slot through the shroud bar —
                   // and the connector exits clear of the fuse box.
@@ -571,13 +572,14 @@ module chassis_holes() {
 
 // grow = air on every side; grow_xneg overrides the -X side alone. Corner radius
 // follows grow, so a uniform grow reproduces the plain offset pair exactly.
-module boss_section_2d(grow = 0, grow_xneg = undef, grow_xpos = undef) {
+// drop extends the bottom edge only (local +y is DOWN in the mount frame).
+module boss_section_2d(grow = 0, grow_xneg = undef, grow_xpos = undef, drop = 0) {
     gn = is_undef(grow_xneg) ? grow : grow_xneg;
     gp = is_undef(grow_xpos) ? grow : grow_xpos;
     r  = tower_boss_r + grow;
-    hull() for (cxy = [[ tower_boss_w/2 + gp - r,  tower_boss_h/2 + grow - r],
+    hull() for (cxy = [[ tower_boss_w/2 + gp - r,  tower_boss_h/2 + grow - r + drop],
                        [ tower_boss_w/2 + gp - r, -tower_boss_h/2 - grow + r],
-                       [-tower_boss_w/2 - gn + r,  tower_boss_h/2 + grow - r],
+                       [-tower_boss_w/2 - gn + r,  tower_boss_h/2 + grow - r + drop],
                        [-tower_boss_w/2 - gn + r, -tower_boss_h/2 - grow + r]])
         translate(cxy) circle(r = r, $fn = 48);
 }
@@ -591,7 +593,7 @@ module tower_boss_clearance() {
                         grow_xpos = boss_clear_inner_r);
         mount_frame(mount_tilt(cx1)) translate([cx1, 0, 0])
             boss_pocket(tower_boss_clear, mount_tilt(cx1),
-                        grow_xneg = boss_clear_inner_l);
+                        grow_xneg = boss_clear_inner_l, drop = boss_drop_l);
     }
 }
 
@@ -603,24 +605,25 @@ function _bpf_shrink(t) = -boss_pocket_fillet_r
                           + boss_pocket_fillet_r * cos(asin(t));
 function _bpf_g(base, t) = is_undef(base) ? undef : base + _bpf_shrink(t);
 
-module boss_pocket(grow, tilt, grow_xneg = undef, grow_xpos = undef) {
+module boss_pocket(grow, tilt, grow_xneg = undef, grow_xpos = undef, drop = 0) {
     r = boss_pocket_fillet_r;
     n = 16;
     translate([0, 0, -boss_axis_len(tilt) - 10])
         linear_extrude(boss_axis_len(tilt) + 10 - r)
-            boss_section_2d(grow, grow_xneg, grow_xpos);
+            boss_section_2d(grow, grow_xneg, grow_xpos, drop);
     for (i = [0 : n - 1])
         hull() for (t = [i / n, (i + 1) / n])
             translate([0, 0, -r + r * t]) linear_extrude(0.001)
                 boss_section_2d(_bpf_g(grow, t), _bpf_g(grow_xneg, t),
-                                _bpf_g(grow_xpos, t));
+                                _bpf_g(grow_xpos, t), drop);
 }
 
 module tower_boss_ghost() {
     for (cx = [cx0, cx1])
         translate([0, 0, stud_lift]) mount_frame(mount_tilt(cx))
             translate([cx, 0, -boss_axis_len(mount_tilt(cx))])
-                linear_extrude(boss_axis_len(mount_tilt(cx))) boss_section_2d();
+                linear_extrude(boss_axis_len(mount_tilt(cx)))
+                    boss_section_2d(drop = cx == cx1 ? boss_drop_l : 0);
 }
 
 // =============================================================================

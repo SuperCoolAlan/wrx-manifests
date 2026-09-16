@@ -151,12 +151,12 @@ rim_chamfer     = 1.0;    // 45-deg break on the chassis slots + counterbore rim
 
 panel_left_x = panel_left_meas + panel_left_ext;
 
-// Third mount: M5 bolt + washer into a chassis rivnut, bottom-right quadrant.
+// Third mount: M5 bolt + washer into a chassis rivnut, between the FPR and sensor inlet.
 // Plain clear hole — the rivnut is the thread, so no rear pocket. Position is
 // ours to choose; the rivet gets drilled at the car to match the print.
-version_tag = "asandov v9";  // engraved in the panel REAR face, below the sensor mount
+version_tag = "asandov v10";  // engraved in the panel REAR face, below the sensor mount
 version_pos = [33, -76];
-aux_hole    = [15, -88];
+aux_hole    = [38, -89];
 aux_hole_d  = 5.5;
 aux_cb_d    = 13.0;  // counterbore: DIN125 M5 washer (10) + socket room
 aux_cb_deep = 4.5;   // head 3.5 + washer ~1 nest sub-flush; 3.5mm floor left
@@ -181,11 +181,12 @@ insert_seat_clearance = 0.3;
 fpr_ear_spacing = 52.0;
 fpr_ear_hole_d  = 5.5;
 fpr_x           = 69.0;   // [MEASURE] moved DOWN-LEFT per v1 fitment (2026-08-26):
-fpr_ear_z       = -103.0; // at the drawn top-centre spot the RIGHT side fitting hit
+fpr_ear_z       = -108.0; // at the drawn top-centre spot the RIGHT side fitting hit
                           // the fuse box. v3 fitment (2026-08-28): dropped a further
                           // 5mm — at -98 the adjuster stem crowded the sensor body
                           // and the sensor return hose caught the FPR's nipple.
 fpr_ear_center_above_base = 47.0;
+fpr_rot         = 5.0;    // clockwise as viewed at the car, about the ear midpoint (fpr_x, fpr_ear_z)
 
 // ---- FLEX FUEL CRADLE PLACEMENT -------------------------------------------
 // The cradle is positioned by its own STL origin, then rotated in the panel
@@ -293,7 +294,7 @@ bar_x1 = cx0 + chassis_hole_spacing + mount_pad_w/2;
 
 fpr_hx     = fpr_ear_spacing / 2;
 fpr_base_z = fpr_ear_z - fpr_ear_center_above_base;
-fpr_pts    = [[fpr_x - fpr_hx, fpr_ear_z], [fpr_x + fpr_hx, fpr_ear_z]];
+fpr_pts    = [for (s = [-1, 1]) [fpr_x + s * fpr_hx * cos(fpr_rot), fpr_ear_z + s * fpr_hx * sin(fpr_rot)]];
 
 // Cradle hole centres, mapped out of the STL frame into the panel.
 // (STL-local: both holes at u=34.05, w=+39.0 / -7.0 — read off the mesh.)
@@ -430,7 +431,7 @@ function bottom_z_curve(x) =
 
 // Left of the FPR's RIGHT ear the edge runs flat at that station's height — the
 // triangle under the regulator was backing nothing. Tracks fpr_x/fpr_ear_spacing.
-bottom_flat_x = fpr_x - fpr_hx;
+bottom_flat_x = fpr_pts[0][0];
 bottom_flat_z = bottom_z_curve(bottom_flat_x);
 
 function bottom_z(x) = x > bottom_flat_x ? bottom_flat_z : bottom_z_curve(x);
@@ -790,7 +791,15 @@ module fpr_return_fitting() {
     }
 }
 
-module fpr_solid(show_return = true) {
+// Must match fpr_pts: the ghost and the printed ear holes turn together.
+module fpr_place() {
+    translate([fpr_x, 0, fpr_ear_z]) rotate([0, -fpr_rot, 0])
+        translate([-fpr_x, 0, -fpr_ear_z]) children();
+}
+
+module fpr_solid(show_return = true) fpr_place() fpr_solid_unplaced(show_return);
+
+module fpr_solid_unplaced(show_return) {
     if (show_return) fpr_return_fitting();
     bz = fpr_base_z;
     ear_w = fpr_ear_spacing + 2 * 9;  // [approx] overall ear span

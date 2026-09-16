@@ -399,15 +399,25 @@ module ffs_clearance_cut() {
 // PANEL
 // =============================================================================
 
+// Round-over as stacked insets, not minkowski: minkowski on the curved bottom
+// edge leaves sliver faces that slicers report as non-manifold.
+panel_round_steps = 8;
+function _round_inset(d) = edge_round - sqrt(pow(edge_round, 2) - pow(edge_round - d, 2));
+
 module panel() {
-    minkowski() {
-        translate([0, panel_t - edge_round, 0]) rotate([90, 0, 0])
-            linear_extrude(panel_t - 2 * edge_round)
-                offset(r = -edge_round)
-                    offset(r = corner_r) offset(r = -corner_r) panel_2d();
-        sphere(edge_round, $fn = 24);
+    n = panel_round_steps;
+    h = edge_round / n;
+    rotate([-90, 0, 0]) mirror([0, 1, 0]) {
+        for (side = [0, 1], i = [0 : n - 1])
+            translate([0, 0, side == 0 ? i * h : panel_t - (i + 1) * h])
+                linear_extrude(h)
+                    offset(delta = -_round_inset((i + 0.5) * h)) panel_outline_2d();
+        translate([0, 0, edge_round]) linear_extrude(panel_t - 2 * edge_round)
+            panel_outline_2d();
     }
 }
+
+module panel_outline_2d() offset(r = corner_r) offset(r = -corner_r) panel_2d();
 
 module panel_2d() {
     polygon(concat([[panel_right_x, panel_top_z - panel_tr_drop_z],

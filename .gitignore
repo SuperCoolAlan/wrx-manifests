@@ -47,6 +47,7 @@ eBay/
 3D Prints/**
 !3D Prints/**/
 !3D Prints/**/*.scad
+!3D Prints/**/BUILD-NOTES.md
 wrx-tgv/
 hammond/
 Rock Auto returns/

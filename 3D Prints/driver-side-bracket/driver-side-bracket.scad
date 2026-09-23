@@ -169,25 +169,35 @@ panel_left_x = panel_left_meas + panel_left_ext;
 // Third mount: M5 bolt + washer into a chassis rivnut, between the FPR and sensor inlet.
 // Plain clear hole — the rivnut is the thread, so no rear pocket. Position is
 // ours to choose; the rivet gets drilled at the car to match the print.
-version_tag = "asandov v11";  // engraved in the panel REAR face, below the sensor mount
+version_tag = "asandov v12";  // engraved in the panel REAR face, below the sensor mount
 version_pos = [33, -76];
-aux_hole    = [38, -89];
+aux_hole    = [38, -94];
 aux_hole_d  = 5.5;
 aux_cb_d    = 13.0;  // counterbore: DIN125 M5 washer (10) + socket room
 aux_cb_deep = 4.5;   // head 3.5 + washer ~1 nest sub-flush; 3.5mm floor left
 
+// Zip-tie pair for the sensor connector's cable (battery-tray convention): two
+// vertical through-slots, the band crossing behind in a rear-face channel.
+tie_x        = panel_right_x + 10;                                   // cable line
+tie_z        = panel_top_z - shroud_root_h - arm_bite_extra_r - 15;  // 15 below the right arm's root
+tie_slot_w   = 3.0;   // across X — band thickness plus slop
+tie_slot_h   = 8.0;   // along Z — takes up to a 4.8mm tie
+tie_pitch    = 10.0;  // slot c-c; the right slot keeps ~3.5mm to the panel edge
+tie_relief_d = 2.0;   // channel depth into the REAR face: it bears on the pillar
+tie_relief_h = 6.0;   // wall, so a proud band would hold the part off it
+
 // ---- M5 HARDWARE (battery-tray "BOLT" convention) -------------------------
-mount_mode        = "BOLT";  // "BOLT" = M5 screw + hex nut in a rear pocket
+mount_mode        = "BOLT";  // "BOLT" = M5 screw + hex nut embedded at a pause
                              // "INSERT" = M5x10 heat-set melt-bore from the front
 bolt_clear_dia    = 5.5;
 nut_af            = 8.0;
 nut_pocket_af     = 8.2;     // +0.2 light press so the nut stays put
 nut_thickness     = 4.7;
-nut_pocket_fit    = 0.2;     // axial fit so the nut fully seats, just sub-flush.
-                             // (The old 1.5mm "thread relief" is gone: the bolt
-                             // comes in from the FRONT, so its tip runs out into
-                             // the pocket's open rear mouth — the relief only
-                             // thinned the clamped floor, 1.8mm at panel_t 8.)
+nut_pocket_fit    = 0.2;     // axial air over the nut: keeps it under the nozzle
+// FPR nuts are embedded: dropped in at a print pause, sealed by the layers above.
+nut_embed_skin    = 1.1;     // rear-face skin under the nut; puts the pocket top
+                             // at 6.0 — on a layer boundary, the pause height
+layer_h           = 0.2;     // stepped-bridge layer height above the nut
 insert_length         = 10.0;
 insert_pilot_dia      = 6.65;  // validated melt-bore (fuse-insert-dia-test-3)
 insert_seat_clearance = 0.3;
@@ -201,6 +211,10 @@ fpr_ear_z       = -108.99; // at the drawn top-centre spot the RIGHT side fittin
                           // 5mm — at -98 the adjuster stem crowded the sensor body
                           // and the sensor return hose caught the FPR's nipple.
 fpr_ear_center_above_base = 47.0;
+fpr_pad_h       = 2.0;    // raised seat under the steel bracket: clamped plastic
+                          // over the embedded nut is panel_t + this - 6.0 (pause)
+fpr_pad_r       = 9.0;    // flat top reaches this far round each ear hole — must
+                          // cover the steel ear ends, 9 past the hole centre
 fpr_rot         = 7.0;    // clockwise as viewed at the car, about the ear midpoint (fpr_x, fpr_ear_z)
 
 // ---- FLEX FUEL CRADLE PLACEMENT -------------------------------------------
@@ -349,7 +363,7 @@ module bracket() {
     difference() {
         union() {
             difference() {
-                union() { panel(); chassis_bosses(); }
+                union() { panel(); chassis_bosses(); fpr_pad(); }
                 // render() pre-evaluates the 6-copy STL cut through CGAL: without
                 // it the preview CSG normalizer gives up ("empty tree", blank F5).
                 render(convexity = 6) ffs_clearance_cut();
@@ -373,7 +387,19 @@ module bracket() {
                 text(version_tag, size = 8, halign = "center", valign = "center");
         ffs_bolt_cut(ffs_stl_hole_u, 39.0);
         ffs_bolt_cut(ffs_stl_hole_u, -7.0);
+        tie_slots();
     }
+}
+
+module tie_slots() {
+    rr = tie_slot_w / 2;
+    for (dx = [-tie_pitch/2, tie_pitch/2])
+        translate([tie_x + dx, -1, tie_z]) rotate([-90, 0, 0])
+            linear_extrude(panel_t + 2) hull()
+                for (dz = [-(tie_slot_h/2 - rr), tie_slot_h/2 - rr])
+                    translate([0, dz]) circle(r = rr, $fn = 20);
+    translate([tie_x - tie_pitch/2, -1, tie_z - tie_relief_h/2])
+        cube([tie_pitch, tie_relief_d + 1, tie_relief_h]);
 }
 
 // The flex cradle + sensor, dilated by ffs_cut_clear, CUT from the printed body: struts
@@ -463,10 +489,18 @@ function bottom_z_curve(x) =
          arch  = bottom_bulge * 4 * t * (1 - t))
     chord + arch;
 
-// Left of the FPR's RIGHT ear the edge runs flat at that station's height — the
-// triangle under the regulator was backing nothing. Tracks fpr_x/fpr_ear_spacing.
-bottom_flat_x = fpr_pts[0][0];
-bottom_flat_z = bottom_z_curve(bottom_flat_x);
+// The edge runs flat under the regulator, bottom_flat_drop below the curve's
+// height at the FPR's RIGHT ear. Tracks fpr_x/fpr_ear_spacing.
+bottom_flat_drop = 3.0;
+bottom_flat_z = bottom_z_curve(fpr_pts[0][0]) - bottom_flat_drop;
+// The flat starts where the curve reaches it, so the two meet without a step.
+function bottom_x_curve(z) =
+    let (a = -4 * bottom_bulge,
+         b = (drop_left - drop_right) + 4 * bottom_bulge,
+         c = -drop_left - z,
+         t = (-b + sqrt(b*b - 4*a*c)) / (2*a))
+    panel_left_meas - t * (panel_left_meas - panel_right_x);
+bottom_flat_x = bottom_x_curve(bottom_flat_z);
 
 function bottom_z(x) = x > bottom_flat_x ? bottom_flat_z : bottom_z_curve(x);
 
@@ -689,6 +723,31 @@ module tower_boss_ghost() {
 // M5 MOUNT — through-hole + rear nut pocket, or front melt-bore
 // =============================================================================
 
+// Seat for the FPR's steel bracket: spans both ears and runs down to the bottom
+// edge, chamfered 45 deg up from the plate face. Stacked insets like panel().
+module fpr_pad() {
+    n = 8;
+    s = fpr_pad_h / n;
+    rotate([-90, 0, 0]) mirror([0, 1, 0]) {
+        // fills the panel's front round-over, so the pad meets the edge flush
+        translate([0, 0, panel_t - edge_round]) linear_extrude(edge_round + 0.01)
+            fpr_pad_2d(0);
+        for (i = [0 : n - 1])
+            translate([0, 0, panel_t + i * s]) linear_extrude(s + (i < n - 1 ? 0.01 : 0))
+                fpr_pad_2d((i + 0.5) * s);
+    }
+}
+
+// Pad outline inset by d, clipped to the panel inset by d — the chamfer runs
+// round the free sides and along the panel edges alike.
+module fpr_pad_2d(d) {
+    intersection() {
+        offset(delta = -d) hull() for (p = fpr_pts, dz = [0, -300])
+            translate([p[0], p[1] + dz]) circle(r = fpr_pad_r + fpr_pad_h, $fn = 64);
+        offset(delta = -d) panel_outline_2d();
+    }
+}
+
 module m5_mount(x, z, clear_d = bolt_clear_dia) {
     if (mount_mode == "INSERT") {
         translate([x, panel_t + 1, z]) rotate([90, 0, 0])
@@ -696,12 +755,18 @@ module m5_mount(x, z, clear_d = bolt_clear_dia) {
                      h = insert_length + insert_seat_clearance + 1, $fn = 48);
     } else {
         translate([x, -1, z]) rotate([-90, 0, 0])
-            cylinder(d = clear_d, h = panel_t + 2, $fn = 32);
-        // Bolt tension pulls the nut onto the pocket floor. Pocket is only
-        // nut-deep now: the clamped floor is panel_t - 4.9 = 3.1mm of meat.
-        translate([x, nut_thickness + nut_pocket_fit, z]) rotate([90, 0, 0])
+            cylinder(d = clear_d, h = panel_t + fpr_pad_h + 2, $fn = 32);
+        // Closed pocket: the nut must sit below its top or the nozzle hits it.
+        top = nut_embed_skin + nut_thickness + nut_pocket_fit;
+        translate([x, nut_embed_skin, z]) rotate([-90, 0, 0])
             cylinder(d = nut_pocket_af / cos(30),
-                     h = nut_thickness + nut_pocket_fit + 1, $fn = 6);
+                     h = nut_thickness + nut_pocket_fit, $fn = 6);
+        // Stepped bridge over the hex: a bolt-wide slot, then a bolt-wide
+        // square, so each layer bridges between edges the one below printed.
+        translate([x - nut_pocket_af / cos(30) / 2, top - 0.01, z - clear_d/2])
+            cube([nut_pocket_af / cos(30), layer_h + 0.01, clear_d]);
+        translate([x - clear_d/2, top - 0.01, z - clear_d/2])
+            cube([clear_d, 2 * layer_h + 0.01, clear_d]);
     }
 }
 
@@ -859,7 +924,7 @@ module fpr_return_fitting() {
 
 // Must match fpr_pts: the ghost and the printed ear holes turn together.
 module fpr_place() {
-    translate([fpr_x, 0, fpr_ear_z]) rotate([0, -fpr_rot, 0])
+    translate([fpr_x, fpr_pad_h, fpr_ear_z]) rotate([0, -fpr_rot, 0])
         translate([-fpr_x, 0, -fpr_ear_z]) children();
 }
 
